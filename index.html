@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Daily Dose Astrology | आज का राशिफल</title>
+
+  <meta
+    name="description"
+    content="Daily Dose Astrology पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>🌟 Daily Dose Astrology</h1>
+    <p>आज का राशिफल</p>
+  </header>
+
+  <main class="container">
+
+    <section class="date-section">
+      <h2 id="todayDate">आज का राशिफल</h2>
+    </section>
+
+    <section class="rashi-grid">
+
+      <button class="rashi-card" onclick="showRashi('मेष')">
+        <span>♈</span>
+        <strong>मेष</strong>
+        <small>Aries</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('वृषभ')">
+        <span>♉</span>
+        <strong>वृषभ</strong>
+        <small>Taurus</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('मिथुन')">
+        <span>♊</span>
+        <strong>मिथुन</strong>
+        <small>Gemini</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('कर्क')">
+        <span>♋</span>
+        <strong>कर्क</strong>
+        <small>Cancer</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('सिंह')">
+        <span>♌</span>
+        <strong>सिंह</strong>
+        <small>Leo</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('कन्या')">
+        <span>♍</span>
+        <strong>कन्या</strong>
+        <small>Virgo</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('तुला')">
+        <span>♎</span>
+        <strong>तुला</strong>
+        <small>Libra</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('वृश्चिक')">
+        <span>♏</span>
+        <strong>वृश्चिक</strong>
+        <small>Scorpio</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('धनु')">
+        <span>♐</span>
+        <strong>धनु</strong>
+        <small>Sagittarius</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('मकर')">
+        <span>♑</span>
+        <strong>मकर</strong>
+        <small>Capricorn</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('कुंभ')">
+        <span>♒</span>
+        <strong>कुंभ</strong>
+        <small>Aquarius</small>
+      </button>
+
+      <button class="rashi-card" onclick="showRashi('मीन')">
+        <span>♓</span>
+        <strong>मीन</strong>
+        <small>Pisces</small>
+      </button>
+
+    </section>
+
+    <section id="prediction" class="prediction hidden">
+
+      <h2 id="rashiTitle"></h2>
+
+      <div class="prediction-item">
+        <h3>❤️ प्रेम</h3>
+        <p id="love"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>💼 करियर</h3>
+        <p id="career"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>💰 धन</h3>
+        <p id="money"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>❤️‍🩹 स्वास्थ्य</h3>
+        <p id="health"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>🔢 शुभ अंक</h3>
+        <p id="luckyNumber"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>🎨 शुभ रंग</h3>
+        <p id="luckyColor"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>🙏 आज की सलाह</h3>
+        <p id="advice"></p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Daily Dose Astrology</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
