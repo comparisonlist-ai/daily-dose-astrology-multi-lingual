@@ -17,8 +17,19 @@
 <body>
 
   <header class="header">
+
+    <div class="language-selector">
+      <label for="languageSelect">🌐</label>
+
+      <select id="languageSelect" onchange="setLanguage(this.value)">
+        <option value="hi">हिन्दी</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
     <h1>🌟 Daily Dose Astrology</h1>
     <p>आज का राशिफल</p>
+
   </header>
 
   <main class="container">
@@ -29,73 +40,73 @@
 
     <section class="rashi-grid">
 
-      <button class="rashi-card" onclick="showRashi('मेष')">
+      <button class="rashi-card" data-rashi="मेष" onclick="showRashi('मेष')">
         <span>♈</span>
         <strong>मेष</strong>
         <small>Aries</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('वृषभ')">
+      <button class="rashi-card" data-rashi="वृषभ" onclick="showRashi('वृषभ')">
         <span>♉</span>
         <strong>वृषभ</strong>
         <small>Taurus</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('मिथुन')">
+      <button class="rashi-card" data-rashi="मिथुन" onclick="showRashi('मिथुन')">
         <span>♊</span>
         <strong>मिथुन</strong>
         <small>Gemini</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('कर्क')">
+      <button class="rashi-card" data-rashi="कर्क" onclick="showRashi('कर्क')">
         <span>♋</span>
         <strong>कर्क</strong>
         <small>Cancer</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('सिंह')">
+      <button class="rashi-card" data-rashi="सिंह" onclick="showRashi('सिंह')">
         <span>♌</span>
         <strong>सिंह</strong>
         <small>Leo</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('कन्या')">
+      <button class="rashi-card" data-rashi="कन्या" onclick="showRashi('कन्या')">
         <span>♍</span>
         <strong>कन्या</strong>
         <small>Virgo</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('तुला')">
+      <button class="rashi-card" data-rashi="तुला" onclick="showRashi('तुला')">
         <span>♎</span>
         <strong>तुला</strong>
         <small>Libra</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('वृश्चिक')">
+      <button class="rashi-card" data-rashi="वृश्चिक" onclick="showRashi('वृश्चिक')">
         <span>♏</span>
         <strong>वृश्चिक</strong>
         <small>Scorpio</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('धनु')">
+      <button class="rashi-card" data-rashi="धनु" onclick="showRashi('धनु')">
         <span>♐</span>
         <strong>धनु</strong>
         <small>Sagittarius</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('मकर')">
+      <button class="rashi-card" data-rashi="मकर" onclick="showRashi('मकर')">
         <span>♑</span>
         <strong>मकर</strong>
         <small>Capricorn</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('कुंभ')">
+      <button class="rashi-card" data-rashi="कुंभ" onclick="showRashi('कुंभ')">
         <span>♒</span>
         <strong>कुंभ</strong>
         <small>Aquarius</small>
       </button>
 
-      <button class="rashi-card" onclick="showRashi('मीन')">
+      <button class="rashi-card" data-rashi="मीन" onclick="showRashi('मीन')">
         <span>♓</span>
         <strong>मीन</strong>
         <small>Pisces</small>
