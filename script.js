@@ -706,6 +706,4 @@ function showTodayDate() {
 }
 document.addEventListener("DOMContentLoaded", () => {
   updateInterface();
-  loadLiveRashifal();
 });
-
