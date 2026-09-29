@@ -443,9 +443,39 @@ const rashifal = {
     }
   }
 };
-
+const WORKER_URL =
+  "https://daily-rashifal-app.comparisonlist.workers.dev/";
 let currentLanguage = localStorage.getItem("language") || "hi";
 let currentRashi = null;
+let liveRashifal = null;
+
+async function loadLiveRashifal() {
+  try {
+    const response = await fetch(WORKER_URL);
+
+    if (!response.ok) {
+      throw new Error("Worker request failed");
+    }
+
+    const result = await response.json();
+
+    if (
+      result.success &&
+      result.data &&
+      Array.isArray(result.data.rashifal)
+    ) {
+      liveRashifal = result.data.rashifal;
+      console.log("Live GrahaAPI Rashifal loaded:", liveRashifal);
+
+      if (currentRashi) {
+        showRashi(currentRashi, false);
+      }
+    }
+  } catch (error) {
+    console.error("Live Rashifal unavailable:", error);
+    liveRashifal = null;
+  }
+}
 
 function setLanguage(language) {
   currentLanguage = language;
@@ -545,7 +575,59 @@ function updateInterface() {
 }
 
 function showRashi(rashi, scroll = true) {
-  const data = rashifal[rashi];
+  let data = rashifal[rashi];
+
+  if (liveRashifal) {
+    const liveData = liveRashifal.find(
+      item => item.rashi_hi === rashi
+    );
+
+    if (liveData) {
+      data = {
+        nameHi: liveData.rashi_hi,
+        nameEn: liveData.rashi_en,
+        nameOr: rashifal[rashi].nameOr,
+
+        love: {
+          hi: liveData.predictions_hi.love,
+          en: liveData.predictions_en.love,
+          or: rashifal[rashi].love.or
+        },
+
+        career: {
+          hi: liveData.predictions_hi.career,
+          en: liveData.predictions_en.career,
+          or: rashifal[rashi].career.or
+        },
+
+        money: {
+          hi: liveData.predictions_hi.finance,
+          en: liveData.predictions_en.finance,
+          or: rashifal[rashi].money.or
+        },
+
+        health: {
+          hi: liveData.predictions_hi.health,
+          en: liveData.predictions_en.health,
+          or: rashifal[rashi].health.or
+        },
+
+        luckyNumber: liveData.lucky.number,
+
+        luckyColor: {
+          hi: liveData.lucky.colors[0],
+          en: liveData.lucky.colors[0],
+          or: rashifal[rashi].luckyColor.or
+        },
+
+        advice: {
+          hi: liveData.predictions_hi.spirit,
+          en: liveData.predictions_en.spirit,
+          or: rashifal[rashi].advice.or
+        }
+      };
+    }
+  }
 
   if (!data) {
     return;
