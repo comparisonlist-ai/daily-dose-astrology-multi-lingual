@@ -499,18 +499,18 @@ function updateInterface() {
 
   document.title =
     isEnglish
-      ? "Daily Dose Astrology | Today's Horoscope"
+      ? "   Daily Rashifal App | Today's Horoscope"
       : isOdia
-      ? "Daily Dose Astrology | ଆଜିର ରାଶିଫଳ"
-      : "Daily Dose Astrology | आज का राशिफल";
+      ? "   Daily Rashifal App | ଆଜିର ରାଶିଫଳ"
+      : "   Daily Rashifal App | आज का राशिफल";
 
   document.querySelector('meta[name="description"]').setAttribute(
     "content",
     isEnglish
-      ? "Daily Dose Astrology brings you today's horoscope, love, career, money, health, lucky number, lucky color and daily advice."
+      ? "    Daily Rashifal App    brings you today's horoscope, love, career, money, health, lucky number, lucky color and daily advice."
       : isOdia
-      ? "Daily Dose Astrology ରେ ଜାଣନ୍ତୁ ଆଜିର ରାଶିଫଳ, ପ୍ରେମ, କ୍ୟାରିୟର, ଧନ, ସ୍ୱାସ୍ଥ୍ୟ, ଶୁଭ ଅଙ୍କ, ଶୁଭ ରଙ୍ଗ ଏବଂ ଆଜିର ପରାମର୍ଶ।"
-      : "Daily Dose Astrology पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
+      ? "    Daily Rashifal App    ରେ ଜାଣନ୍ତୁ ଆଜିର ରାଶିଫଳ, ପ୍ରେମ, କ୍ୟାରିୟର, ଧନ, ସ୍ୱାସ୍ଥ୍ୟ, ଶୁଭ ଅଙ୍କ, ଶୁଭ ରଙ୍ଗ ଏବଂ ଆଜିର ପରାମର୍ଶ।"
+      : "    Daily Rashifal App  पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
   );
 
   document.querySelector(".header p").textContent =
@@ -573,7 +573,7 @@ function updateInterface() {
       : "🙏 आज की सलाह";
 
   document.querySelector("footer p").textContent =
-    "© 2026 Daily Dose Astrology";
+    "© 2026  Daily Rashifal App ";
 }
 
 function showRashi(rashi, scroll = true) {
