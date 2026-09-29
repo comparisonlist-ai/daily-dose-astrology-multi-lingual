@@ -445,7 +445,7 @@ const rashifal = {
 };
 
 const WORKER_URL =
-  "https://wandering-mountain-fffa.comparisonlist.workers.dev/";
+  "https://daily-rashifal-app.comparisonlist.workers.dev/";
 
 let currentLanguage = localStorage.getItem("language") || "hi";
 let currentRashi = null;
