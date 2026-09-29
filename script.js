@@ -443,8 +443,10 @@ const rashifal = {
     }
   }
 };
+
 const WORKER_URL =
-  "https://daily-rashifal-app.comparisonlist.workers.dev/";
+  "https://wandering-mountain-fffa.comparisonlist.workers.dev/";
+
 let currentLanguage = localStorage.getItem("language") || "hi";
 let currentRashi = null;
 let liveRashifal = null;
@@ -704,6 +706,8 @@ function showRashi(rashi, scroll = true) {
 function showTodayDate() {
   updateInterface();
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   updateInterface();
+  loadLiveRashifal();
 });
