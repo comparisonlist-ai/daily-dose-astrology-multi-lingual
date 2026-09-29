@@ -704,7 +704,8 @@ function showRashi(rashi, scroll = true) {
 function showTodayDate() {
   updateInterface();
 }
-
 document.addEventListener("DOMContentLoaded", () => {
   updateInterface();
+  loadLiveRashifal();
 });
+
