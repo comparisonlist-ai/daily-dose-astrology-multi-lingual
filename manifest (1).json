@@ -1,13 +1,1 @@
-{
-  "background_color": "#0b1026",
-  "description": "    Daily Rashifal App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "Daily Rashifal App",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "Rashifal",
-  "start_url": "/",
-  "theme_color": "rgb(212, 175, 55)",
-  "id": "/daily-rashifal-app/"
-}
+
