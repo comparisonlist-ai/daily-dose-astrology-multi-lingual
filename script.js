@@ -576,58 +576,75 @@ function updateInterface() {
     "© 2026  Daily Rashifal App ";
 }
 
-function showRashi(rashi, scroll = true) {
+
+  function showRashi(rashi, scroll = true) {
   let data = rashifal[rashi];
 
+  // Match the selected static Rashi with the LIVE GrahaAPI Rashi
+  // using English name, because Hindi names can differ slightly
+  // (for example: वृषभ vs वृष).
   if (liveRashifal) {
-    const liveData = liveRashifal.find(
-      item => item.rashi_hi === rashi
+    const staticData = rashifal[rashi];
+
+    const liveData = liveRashifal.find(item =>
+      item.rashi_en === staticData.nameEn
     );
 
     if (liveData) {
       data = {
         nameHi: liveData.rashi_hi,
         nameEn: liveData.rashi_en,
-        nameOr: rashifal[rashi].nameOr,
+        nameOr: staticData.nameOr,
 
         love: {
-          hi: liveData.predictions_hi.love,
-          en: liveData.predictions_en.love,
-          or: rashifal[rashi].love.or
+          hi: liveData.predictions_hi?.love || staticData.love.hi,
+          en: liveData.predictions_en?.love || staticData.love.en,
+          or: staticData.love.or
         },
 
         career: {
-          hi: liveData.predictions_hi.career,
-          en: liveData.predictions_en.career,
-          or: rashifal[rashi].career.or
+          hi: liveData.predictions_hi?.career || staticData.career.hi,
+          en: liveData.predictions_en?.career || staticData.career.en,
+          or: staticData.career.or
         },
 
         money: {
-          hi: liveData.predictions_hi.finance,
-          en: liveData.predictions_en.finance,
-          or: rashifal[rashi].money.or
+          hi: liveData.predictions_hi?.finance || staticData.money.hi,
+          en: liveData.predictions_en?.finance || staticData.money.en,
+          or: staticData.money.or
         },
 
         health: {
-          hi: liveData.predictions_hi.health,
-          en: liveData.predictions_en.health,
-          or: rashifal[rashi].health.or
+          hi: liveData.predictions_hi?.health || staticData.health.hi,
+          en: liveData.predictions_en?.health || staticData.health.en,
+          or: staticData.health.or
         },
 
-        luckyNumber: liveData.lucky.number,
+        luckyNumber:
+          liveData.lucky?.number ?? staticData.luckyNumber,
 
         luckyColor: {
-          hi: liveData.lucky.colors[0],
-          en: liveData.lucky.colors[0],
-          or: rashifal[rashi].luckyColor.or
+          hi:
+            liveData.lucky?.colors?.[0] ||
+            staticData.luckyColor.hi,
+          en:
+            liveData.lucky?.colors?.[0] ||
+            staticData.luckyColor.en,
+          or: staticData.luckyColor.or
         },
 
         advice: {
-          hi: liveData.predictions_hi.spirit,
-          en: liveData.predictions_en.spirit,
-          or: rashifal[rashi].advice.or
+          hi: liveData.predictions_hi?.spirit || staticData.advice.hi,
+          en: liveData.predictions_en?.spirit || staticData.advice.en,
+          or: staticData.advice.or
         }
       };
+
+      console.log(
+        "Displaying LIVE GrahaAPI data:",
+        liveData.rashi_en,
+        liveData.rashi_hi
+      );
     }
   }
 
@@ -667,16 +684,24 @@ function showRashi(rashi, scroll = true) {
       : "✨ " + name + " राशि का आज का राशिफल";
 
   document.getElementById("love").textContent =
-    isEnglish ? data.love.en : isOdia ? data.love.or : data.love.hi;
+    isEnglish ? data.love.en :
+    isOdia ? data.love.or :
+    data.love.hi;
 
   document.getElementById("career").textContent =
-    isEnglish ? data.career.en : isOdia ? data.career.or : data.career.hi;
+    isEnglish ? data.career.en :
+    isOdia ? data.career.or :
+    data.career.hi;
 
   document.getElementById("money").textContent =
-    isEnglish ? data.money.en : isOdia ? data.money.or : data.money.hi;
+    isEnglish ? data.money.en :
+    isOdia ? data.money.or :
+    data.money.hi;
 
   document.getElementById("health").textContent =
-    isEnglish ? data.health.en : isOdia ? data.health.or : data.health.hi;
+    isEnglish ? data.health.en :
+    isOdia ? data.health.or :
+    data.health.hi;
 
   document.getElementById("luckyNumber").textContent =
     data.luckyNumber;
@@ -689,7 +714,9 @@ function showRashi(rashi, scroll = true) {
       : data.luckyColor.hi;
 
   document.getElementById("advice").textContent =
-    isEnglish ? data.advice.en : isOdia ? data.advice.or : data.advice.hi;
+    isEnglish ? data.advice.en :
+    isOdia ? data.advice.or :
+    data.advice.hi;
 
   const prediction = document.getElementById("prediction");
 
@@ -702,6 +729,9 @@ function showRashi(rashi, scroll = true) {
     });
   }
 }
+  
+
+  
 
 function showTodayDate() {
   updateInterface();
