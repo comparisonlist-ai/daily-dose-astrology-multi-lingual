@@ -162,3 +162,12 @@ footer {
     padding: 5px 6px;
   }
 }
+
+.site-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
