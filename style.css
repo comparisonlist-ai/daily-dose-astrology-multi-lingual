@@ -161,13 +161,13 @@ footer {
     font-size: 13px;
     padding: 5px 6px;
   }
-}
-
-.site-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  vertical-align: middle;
-  margin-right: 8px;
+.header h1 .site-logo {
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+  margin-right: 8px !important;
 }
 
