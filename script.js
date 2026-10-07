@@ -499,13 +499,9 @@ function setLanguage(language) {
   }
 }
 
-
 const isEnglish = currentLanguage === "en";
 const isOdia = currentLanguage === "or";
-const isBengali = currentLanguage === "bn";
 
-  const isEnglish = currentLanguage === "en";
-const isOdia = currentLanguage === "or";
 
   document.title =
     isEnglish
