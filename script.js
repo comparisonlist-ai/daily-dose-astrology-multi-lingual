@@ -447,7 +447,13 @@ const rashifal = {
 const WORKER_URL =
   "https://daily-rashifal-app.comparisonlist.workers.dev/";
 
-let currentLanguage = localStorage.getItem("language") || "hi";
+const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+
+let currentLanguage =
+  ["en", "hi", "or", "bn", "ta", "te", "mr"].includes(urlLanguage)
+    ? urlLanguage
+    : localStorage.getItem("language") || "hi";
+
 let currentRashi = null;
 let liveRashifal = null;
 
