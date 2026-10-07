@@ -504,11 +504,8 @@ const isEnglish = currentLanguage === "en";
 const isOdia = currentLanguage === "or";
 const isBengali = currentLanguage === "bn";
 
-  document.documentElement.lang =
-  isEnglish ? "en" :
-  isOdia ? "or" :
-  isBengali ? "bn" :
-  "hi";
+  const isEnglish = currentLanguage === "en";
+const isOdia = currentLanguage === "or";
 
   document.title =
     isEnglish
