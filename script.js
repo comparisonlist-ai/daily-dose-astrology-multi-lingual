@@ -500,9 +500,9 @@ function setLanguage(language) {
 }
 
 
-function updateInterface() {
-  const isEnglish = currentLanguage === "en";
-  const isOdia = currentLanguage === "or";
+const isEnglish = currentLanguage === "en";
+const isOdia = currentLanguage === "or";
+const isBengali = currentLanguage === "bn";
 
   document.documentElement.lang =
     isEnglish ? "en" : isOdia ? "or" : "hi";
