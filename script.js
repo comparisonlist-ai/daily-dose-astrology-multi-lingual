@@ -478,10 +478,13 @@ async function loadLiveRashifal() {
     liveRashifal = null;
   }
 }
-
 function setLanguage(language) {
   currentLanguage = language;
   localStorage.setItem("language", language);
+
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", language);
+  window.history.replaceState({}, "", url);
 
   updateInterface();
 
@@ -489,6 +492,7 @@ function setLanguage(language) {
     showRashi(currentRashi, false);
   }
 }
+
 
 function updateInterface() {
   const isEnglish = currentLanguage === "en";
