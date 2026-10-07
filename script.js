@@ -499,6 +499,8 @@ function setLanguage(language) {
   }
 }
 
+
+function updateInterface() {
 const isEnglish = currentLanguage === "en";
 const isOdia = currentLanguage === "or";
 
