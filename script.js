@@ -749,3 +749,72 @@ document.addEventListener("DOMContentLoaded", () => {
   updateInterface();
   loadLiveRashifal();
 });
+
+
+/* AstroSeek PWA Installation */
+(() => {
+  let deferredPrompt = null;
+
+  const banner = document.getElementById("install-banner");
+  const installBtn = document.getElementById("install-btn");
+  const installHelp = document.getElementById("install-help");
+
+  if (!banner || !installBtn || !installHelp) return;
+
+  const isInstalled = () =>
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
+
+  if (isInstalled()) {
+    banner.style.display = "none";
+    return;
+  }
+
+  banner.style.display = "block";
+
+  installHelp.textContent =
+    "Tap Install App to install, or use your browser menu.";
+
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+
+    installBtn.disabled = false;
+    installHelp.textContent = "Ready to install AstroSeek!";
+  });
+
+  installBtn.addEventListener("click", async () => {
+    if (deferredPrompt) {
+      const promptEvent = deferredPrompt;
+      deferredPrompt = null;
+
+      try {
+        await promptEvent.prompt();
+        const choice = await promptEvent.userChoice;
+
+        if (choice.outcome === "accepted") {
+          installHelp.textContent = "Installation accepted!";
+        } else {
+          installHelp.textContent =
+            "Installation cancelled. You can try again later.";
+        }
+      } catch (error) {
+        installHelp.textContent =
+          "Please use your browser menu to install AstroSeek.";
+      }
+
+      return;
+    }
+
+    installHelp.textContent =
+      "In Chrome, tap ⋮ (three dots) and choose Install app. " +
+      "If unavailable, choose Add to Home screen.";
+  });
+
+  window.addEventListener("appinstalled", () => {
+    banner.style.display = "none";
+    deferredPrompt = null;
+  });
+})();
+
+
