@@ -9,7 +9,7 @@
   "short_name": "Rashifal",
   "start_url": "/",
   "theme_color": "#d4af37",
-  "id": "/daily-rashifal-app/",
+  "id": "/",
   "icons": [
     {
       "src": "icon-512.png",
