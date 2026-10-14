@@ -239,22 +239,25 @@
     banner.style.display = 'block';
   });
 
-  installBtn.addEventListener('click', async () => {
-    if (!deferredPrompt) {
-      help.textContent =
-        'If installation is unavailable here, open your browser menu and select Install app.';
-      return;
-    }
+  
+installBtn.addEventListener('click', async () => {
+  if (!deferredPrompt) {
+    help.textContent =
+      'To install AstroSeek, open Chrome menu ⋮ and select Install app.';
+    return;
+  }
 
-    deferredPrompt.prompt();
-    const result = await deferredPrompt.userChoice;
+  deferredPrompt.prompt();
 
-    if (result.outcome === 'accepted') {
-      banner.style.display = 'none';
-    }
+  const result = await deferredPrompt.userChoice;
 
-    deferredPrompt = null;
-  });
+  if (result.outcome === 'accepted') {
+    banner.style.display = 'none';
+  }
+
+  deferredPrompt = null;
+});
+
 
   window.addEventListener('appinstalled', () => {
     banner.style.display = 'none';
