@@ -267,6 +267,50 @@ installBtn.addEventListener('click', async () => {
 </script>
 </body>
 
+<script>
+let deferredInstallPrompt = null;
+
+const installBtn = document.getElementById('install-btn');
+const installHelp = document.getElementById('install-help');
+const installBanner = document.getElementById('install-banner');
+
+// Capture Chrome's installation prompt when available
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+
+  installBanner.style.display = 'block';
+  installBtn.style.display = 'inline-block';
+  installHelp.textContent = 'Tap Install App to install AstroSeek.';
+});
+
+// Start installation when the visitor taps the button
+installBtn.addEventListener('click', async () => {
+  if (deferredInstallPrompt) {
+    deferredInstallPrompt.prompt();
+
+    const choice = await deferredInstallPrompt.userChoice;
+
+    if (choice.outcome === 'accepted') {
+      installHelp.textContent = 'AstroSeek installation started!';
+    } else {
+      installHelp.textContent = 'Installation cancelled. You can try again.';
+    }
+
+    deferredInstallPrompt = null;
+  } else {
+    installHelp.textContent =
+      'To install AstroSeek, open Chrome menu ⋮ and select Install app.';
+  }
+});
+
+// Update the banner after successful installation
+window.addEventListener('appinstalled', () => {
+  installHelp.textContent = 'AstroSeek is installed successfully!';
+  installBtn.style.display = 'none';
+});
+</script>
+
   
 </body>
 </html>
