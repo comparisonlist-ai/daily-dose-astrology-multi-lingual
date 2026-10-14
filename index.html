@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-
-
-<script src='https://push.aplu.io/push-notify.js'></script>
-
-
-  <link rel="manifest" href="manifest.json">
-
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>   Daily Horoscope(Rashifal) App  | आज का राशिफल</title>
+  <title>Daily Horoscope(Rashifal) App | आज का राशिफल</title>
 
-  
-      
-
-  
   <meta
-    
     name="description"
-    content="    Daily Horoscope(Rashifal) App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
+    content="Daily Horoscope(Rashifal) App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
   >
 
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
   <link rel="stylesheet" href="style.css">
 
-
+  <script src="https://push.aplu.io/push-notify.js"></script>
 </head>
 
 <body>
 
-<div id="install-banner" style="display:block;  padding:16px; margin:16px 0; border:1px solid #d4af37; border-radius:12px; background:#0b1026; color:#ffffff; text-align:center;">
-  <h3 style="color:#d4af37; margin-top:0;">Install AstroSeek App</h3>
-  <p>Get quick access to your daily Rashifal on your phone!</p>
-  <button id="install-btn" style="background:#d4af37; color:#0b1026; padding:12px 22px; border:0; border-radius:8px; font-weight:bold; cursor:pointer;">
-    📲 Install App
-  </button>
-  <p id="install-help" style="font-size:13px; margin-bottom:0;"></p>
-</div>
+  <!-- App installation banner -->
+  <div id="install-banner"
+       style="display:block; padding:16px; margin:16px 0; border:1px solid #d4af37; border-radius:12px; background:#0b1026; color:#ffffff; text-align:center;">
 
-  
+    <h3 style="color:#d4af37; margin-top:0;">
+      Install AstroSeek App
+    </h3>
+
+    <p>Get quick access to your daily Rashifal on your phone!</p>
+
+    <button id="install-btn"
+            type="button"
+            style="background:#d4af37; color:#0b1026; padding:12px 22px; border:0; border-radius:8px; font-weight:bold; cursor:pointer;">
+      📲 Install App
+    </button>
+
+    <p id="install-help" style="font-size:13px; margin-bottom:0;"></p>
+  </div>
+
   <header class="header">
 
     <div class="language-selector">
       <label for="languageSelect">🌐</label>
 
       <select id="languageSelect" onchange="setLanguage(this.value)">
-  <option value="hi">हिन्दी</option>
-  <option value="en">English</option>
-  <option value="or">ଓଡ଼ିଆ</option>
-</select>
+        <option value="hi">हिन्दी</option>
+        <option value="en">English</option>
+        <option value="or">ଓଡ଼ିଆ</option>
+      </select>
     </div>
 
-    <h1> <p>आज का राशिफल</p>
-  <img src="icon-512.png" alt="Astroseek Solutions Logo" class="site-logo">
-  Daily Rashifal App
-</h1>
+    <h1>
+      <p>आज का राशिफल</p>
+      <img src="icon-512.png" alt="Astroseek Solutions Logo" class="site-logo">
+      Daily Rashifal App
+    </h1>
 
   </header>
 
@@ -168,127 +167,4 @@
 
       <div class="prediction-item">
         <h3>🔢 शुभ अंक</h3>
-        <p id="luckyNumber"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3>🎨 शुभ रंग</h3>
-        <p id="luckyColor"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3>🙏 आज की सलाह</h3>
-        <p id="advice"></p>
-      </div>
-
-    </section>
-
-  </main>
-
-  
-<script async="async" data-cfasync="false" src="https://bauval.org/21/ede64c38e1abbb1ac4ffde43b5a796b3"></script>
-<div id="container-ede64c38e1abbb1ac4ffde43b5a796b3"></div>
-
-
-  <footer>
-    <p>© 2026    Daily Horoscope(Rashifal) App    </p>
-  </footer>
-
-  
-<nav class="footer-nav" aria-label="Footer navigation">
-  <a href="about.html">About Us</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms and Conditions</a>
-  <a href="blog.html">Blog</a>
-</nav>
-
-
-  <script src="script.js"></script>
-
-
-<script>
-(function(s) {
-  s.dataset.zone = '12013061';
-  s.src = 'https://nap5k.com/tag.min.js';
-})([document.documentElement, document.body]
-  .filter(Boolean)
-  .pop()
-  .appendChild(document.createElement('script')));
-</script>
-
-
-<script>
-(function () {
-  let deferredPrompt;
-
-  const banner = document.getElementById('install-banner');
-  const installBtn = document.getElementById('install-btn');
-  const help = document.getElementById('install-help');
-
-  if (!banner || !installBtn) return;
-
-  // Do not show the banner if already running as an installed app.
-  const isInstalled =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.navigator.standalone === true;
-
-  if (isInstalled) return;
-
-  // Show the banner when the browser offers its install prompt.
-  window.addEventListener('beforeinstallprompt', (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
-    banner.style.display = 'block';
-  });
-
-  
-installBtn.addEventListener('click', async () => {
-  if (!deferredPrompt) {
-    help.textContent =
-      'To install AstroSeek, open Chrome menu ⋮ and select Install app.';
-    return;
-  }
-
-  deferredPrompt.prompt();
-
-  const result = await deferredPrompt.userChoice;
-
-  if (result.outcome === 'accepted') {
-    banner.style.display = 'none';
-  }
-
-  deferredPrompt = null;
-});
-
-
-  window.addEventListener('appinstalled', () => {
-    banner.style.display = 'none';
-    deferredPrompt = null;
-  });
-})();
-</script>
-</body>
-
-<script>
-let deferredInstallPrompt = null;
-
-const installBtn = document.getElementById('install-btn');
-const installHelp = document.getElementById('install-help');
-const installBanner = document.getElementById('install-banner');
-
-// Capture Chrome's installation prompt when available
-window.addEventListener('beforeinstallprompt', (event) => {
-  event.preventDefault();
-  deferredInstallPrompt = event;
-
-  installBanner.style.display = 'block';
-  installBtn.style.display = 'inline-block';
-  installHelp.textContent = 'Tap Install App to install AstroSeek.';
-});
-
-
-
-  
-</body>
-</html>
+        <
