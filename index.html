@@ -14,7 +14,19 @@
 
   <title>   Daily Horoscope(Rashifal) App  | आज का राशिफल</title>
 
+  
+<div id="install-banner" style="display:none; padding:16px; margin:16px 0; border:1px solid #d4af37; border-radius:12px; background:#0b1026; color:#ffffff; text-align:center;">
+  <h3 style="color:#d4af37; margin-top:0;">Install AstroSeek App</h3>
+  <p>Get quick access to your daily Rashifal on your phone!</p>
+  <button id="install-btn" style="background:#d4af37; color:#0b1026; padding:12px 22px; border:0; border-radius:8px; font-weight:bold; cursor:pointer;">
+    📲 Install App
+  </button>
+  <p id="install-help" style="font-size:13px; margin-bottom:0;"></p>
+</div>
+
+  
   <meta
+    
     name="description"
     content="    Daily Horoscope(Rashifal) App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
   >
@@ -202,6 +214,55 @@
   .appendChild(document.createElement('script')));
 </script>
 
+
+<script>
+(function () {
+  let deferredPrompt;
+
+  const banner = document.getElementById('install-banner');
+  const installBtn = document.getElementById('install-btn');
+  const help = document.getElementById('install-help');
+
+  if (!banner || !installBtn) return;
+
+  // Do not show the banner if already running as an installed app.
+  const isInstalled =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+
+  if (isInstalled) return;
+
+  // Show the banner when the browser offers its install prompt.
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+    banner.style.display = 'block';
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) {
+      help.textContent =
+        'If installation is unavailable here, open your browser menu and select Install app.';
+      return;
+    }
+
+    deferredPrompt.prompt();
+    const result = await deferredPrompt.userChoice;
+
+    if (result.outcome === 'accepted') {
+      banner.style.display = 'none';
+    }
+
+    deferredPrompt = null;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    banner.style.display = 'none';
+    deferredPrompt = null;
+  });
+})();
+</script>
+</body>
 
   
 </body>
