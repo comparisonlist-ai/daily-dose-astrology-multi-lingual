@@ -601,20 +601,26 @@ function updateInterface() {
     );
   }
 
-  // Translate the zodiac cards without changing their data.
-  document.querySelectorAll(".rashi-card").forEach(card => {
-    const rashi = card.getAttribute("data-rashi");
-    const data = rashifal[rashi];
-    const nameElement = card.querySelector("strong");
+  // Translate both zodiac names to prevent duplicates.
+document.querySelectorAll(".rashi-card").forEach(card => {
+  const rashi = card.getAttribute("data-rashi");
+  const data = rashifal[rashi];
+  const nameElement = card.querySelector("strong");
+  const englishNameElement = card.querySelector("small");
 
-    if (!data || !nameElement) return;
+  if (!data || !nameElement || !englishNameElement) return;
 
-    nameElement.textContent = isEnglish
-      ? data.nameEn
-      : isOdia
-      ? data.nameOr
-      : data.nameHi;
-  });
+  if (isEnglish) {
+    nameElement.textContent = data.nameEn;
+    englishNameElement.textContent = "";
+  } else if (isOdia) {
+    nameElement.textContent = data.nameOr;
+    englishNameElement.textContent = data.nameEn;
+  } else {
+    nameElement.textContent = data.nameHi;
+    englishNameElement.textContent = data.nameEn;
+  }
+});
 
   // Translate headings only when the corresponding elements exist.
   const headings = document.querySelectorAll(
