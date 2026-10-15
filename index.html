@@ -1,149 +1,435 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Daily Horoscope(Rashifal) App | आज का राशिफल</title>
+  <title>Daily Rashifal App | आज का राशिफल</title>
 
   <meta
     name="description"
-    content="Daily Horoscope(Rashifal) App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
+    content="Daily Rashifal App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
   >
 
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#0b1026">
+  <meta name="color-scheme" content="dark">
 
-<script src="script.js" defer></script>
-<script src="https://push.aplu.io/push-notify.js"></script>
+  <link rel="canonical" href="https://astroseek.solutions/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon-512.png">
+
+  <!-- Keep the existing JavaScript file -->
+  <script src="script.js" defer></script>
+
+  <!-- Preserve Aplu notifications -->
+  <script src="https://push.aplu.io/push-notify.js"></script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #0b1026;
+      --panel: #141c38;
+      --panel-light: #1b2546;
+      --gold: #d4af37;
+      --text: #f5f5f5;
+      --muted: #c1c8dc;
+      --border: #34405e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Noto Sans",
+        "Noto Sans Devanagari", sans-serif;
+      line-height: 1.65;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    .header {
+      padding: 24px 16px;
+      text-align: center;
+      background: #101832;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header p {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .site-logo {
+      display: block;
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      margin: 12px auto;
+      border-radius: 18px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 5vw, 2.1rem);
+      line-height: 1.3;
+    }
+
+    .language-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .language-area label {
+      color: var(--muted);
+    }
+
+    #languageSelect {
+      max-width: 100%;
+      padding: 9px 12px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+    }
+
+    .container {
+      width: min(100% - 28px, 1000px);
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    .today-date {
+      margin: 0 0 22px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      color: var(--gold);
+      text-align: center;
+      font-size: 1.35rem;
+    }
+
+    .rashi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .rashi-card {
+      min-width: 0;
+      min-height: 108px;
+      padding: 14px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .rashi-card:hover,
+    .rashi-card:focus-visible {
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .rashi-card.selected {
+      background: var(--panel-light);
+      border: 2px solid var(--gold);
+    }
+
+    .rashi-card span {
+      font-size: 1.6rem;
+    }
+
+    .rashi-card strong {
+      font-size: 1rem;
+      overflow-wrap: anywhere;
+    }
+
+    .rashi-card small {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .prediction {
+      margin-top: 30px;
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      scroll-margin-top: 16px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .prediction > h2 {
+      margin: 0 0 20px;
+      color: var(--gold);
+      text-align: center;
+      font-size: 1.45rem;
+    }
+
+    .prediction-item {
+      margin: 12px 0;
+      padding: 14px;
+      background: var(--panel-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .prediction-item h3 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 1.05rem;
+    }
+
+    .prediction-item p {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 20px 14px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    #install-banner {
+      display: none;
+      width: min(100% - 24px, 680px);
+      margin: 18px auto;
+      padding: 16px;
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+    }
+
+    #install-banner h2 {
+      margin: 0 0 6px;
+      color: var(--gold);
+      font-size: 1.15rem;
+    }
+
+    #install-help {
+      margin: 6px 0 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    #install-btn {
+      padding: 10px 20px;
+      color: #101010;
+      background: var(--gold);
+      border: 0;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #install-btn:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 360px) {
+      .container {
+        width: calc(100% - 18px);
+      }
+
+      .rashi-grid {
+        gap: 7px;
+      }
+
+      .rashi-card {
+        min-height: 100px;
+        padding: 10px 3px;
+      }
+
+      .rashi-card strong {
+        font-size: 0.9rem;
+      }
+
+      .prediction {
+        padding: 12px;
+      }
+    }
+
+    @media (min-width: 650px) {
+      .rashi-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .prediction {
+        padding: 26px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- App installation banner -->
-  <div id="install-banner"
-       style="display:block; padding:16px; margin:16px 0; border:1px solid #d4af37; border-radius:12px; background:#0b1026; color:#ffffff; text-align:center;">
-
-    <h3 style="color:#d4af37; margin-top:0;">
-      Install AstroSeek App
-    </h3>
-
-    <p>Get quick access to your daily Rashifal on your phone!</p>
-
-    <button id="install-btn"
-            type="button"
-            style="background:#d4af37; color:#0b1026; padding:12px 22px; border:0; border-radius:8px; font-weight:bold; cursor:pointer;">
-      📲 Install App
-    </button>
-
-    <p id="install-help" style="font-size:13px; margin-bottom:0;"></p>
-  </div>
-
   <header class="header">
+    <p>आज का राशिफल</p>
 
-    <div class="language-selector">
-      <label for="languageSelect">🌐</label>
+    <img
+      src="icon-512.png"
+      alt="AstroSeek Solutions Logo"
+      class="site-logo"
+      width="88"
+      height="88"
+    >
 
-      <select id="languageSelect" onchange="setLanguage(this.value)">
+    <h1>Daily Rashifal App</h1>
+
+    <div class="language-area">
+      <label for="languageSelect">Language / भाषा:</label>
+
+      <select
+        id="languageSelect"
+        onchange="setLanguage(this.value)"
+      >
         <option value="hi">हिन्दी</option>
         <option value="en">English</option>
         <option value="or">ଓଡ଼ିଆ</option>
       </select>
     </div>
-
-    <h1>
-      <p>आज का राशिफल</p>
-      <img src="icon-512.png" alt="Astroseek Solutions Logo" class="site-logo">
-      Daily Rashifal App
-    </h1>
-
   </header>
 
   <main class="container">
+    <p id="todayDate" class="today-date"></p>
 
-    <section class="date-section">
-      <h2 id="todayDate">आज का राशिफल</h2>
+    <section aria-labelledby="zodiacHeading">
+      <h2 id="zodiacHeading" class="section-title">
+        अपनी राशि चुनें
+      </h2>
+
+      <div class="rashi-grid">
+        <button type="button" class="rashi-card"
+          data-rashi="मेष" onclick="showRashi('मेष')">
+          <span aria-hidden="true">♈</span>
+          <strong>मेष</strong>
+          <small>Aries</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="वृषभ" onclick="showRashi('वृषभ')">
+          <span aria-hidden="true">♉</span>
+          <strong>वृषभ</strong>
+          <small>Taurus</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="मिथुन" onclick="showRashi('मिथुन')">
+          <span aria-hidden="true">♊</span>
+          <strong>मिथुन</strong>
+          <small>Gemini</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="कर्क" onclick="showRashi('कर्क')">
+          <span aria-hidden="true">♋</span>
+          <strong>कर्क</strong>
+          <small>Cancer</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="सिंह" onclick="showRashi('सिंह')">
+          <span aria-hidden="true">♌</span>
+          <strong>सिंह</strong>
+          <small>Leo</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="कन्या" onclick="showRashi('कन्या')">
+          <span aria-hidden="true">♍</span>
+          <strong>कन्या</strong>
+          <small>Virgo</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="तुला" onclick="showRashi('तुला')">
+          <span aria-hidden="true">♎</span>
+          <strong>तुला</strong>
+          <small>Libra</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="वृश्चिक" onclick="showRashi('वृश्चिक')">
+          <span aria-hidden="true">♏</span>
+          <strong>वृश्चिक</strong>
+          <small>Scorpio</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="धनु" onclick="showRashi('धनु')">
+          <span aria-hidden="true">♐</span>
+          <strong>धनु</strong>
+          <small>Sagittarius</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="मकर" onclick="showRashi('मकर')">
+          <span aria-hidden="true">♑</span>
+          <strong>मकर</strong>
+          <small>Capricorn</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="कुंभ" onclick="showRashi('कुंभ')">
+          <span aria-hidden="true">♒</span>
+          <strong>कुंभ</strong>
+          <small>Aquarius</small>
+        </button>
+
+        <button type="button" class="rashi-card"
+          data-rashi="मीन" onclick="showRashi('मीन')">
+          <span aria-hidden="true">♓</span>
+          <strong>मीन</strong>
+          <small>Pisces</small>
+        </button>
+      </div>
     </section>
 
-    <section class="rashi-grid">
-
-      <button class="rashi-card" data-rashi="मेष" onclick="showRashi('मेष')">
-        <span>♈</span>
-        <strong>मेष</strong>
-        <small>Aries</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="वृषभ" onclick="showRashi('वृषभ')">
-        <span>♉</span>
-        <strong>वृषभ</strong>
-        <small>Taurus</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="मिथुन" onclick="showRashi('मिथुन')">
-        <span>♊</span>
-        <strong>मिथुन</strong>
-        <small>Gemini</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="कर्क" onclick="showRashi('कर्क')">
-        <span>♋</span>
-        <strong>कर्क</strong>
-        <small>Cancer</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="सिंह" onclick="showRashi('सिंह')">
-        <span>♌</span>
-        <strong>सिंह</strong>
-        <small>Leo</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="कन्या" onclick="showRashi('कन्या')">
-        <span>♍</span>
-        <strong>कन्या</strong>
-        <small>Virgo</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="तुला" onclick="showRashi('तुला')">
-        <span>♎</span>
-        <strong>तुला</strong>
-        <small>Libra</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="वृश्चिक" onclick="showRashi('वृश्चिक')">
-        <span>♏</span>
-        <strong>वृश्चिक</strong>
-        <small>Scorpio</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="धनु" onclick="showRashi('धनु')">
-        <span>♐</span>
-        <strong>धनु</strong>
-        <small>Sagittarius</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="मकर" onclick="showRashi('मकर')">
-        <span>♑</span>
-        <strong>मकर</strong>
-        <small>Capricorn</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="कुंभ" onclick="showRashi('कुंभ')">
-        <span>♒</span>
-        <strong>कुंभ</strong>
-        <small>Aquarius</small>
-      </button>
-
-      <button class="rashi-card" data-rashi="मीन" onclick="showRashi('मीन')">
-        <span>♓</span>
-        <strong>मीन</strong>
-        <small>Pisces</small>
-      </button>
-
-    </section>
-
-    <section id="prediction" class="prediction hidden">
-
+    <section
+      id="prediction"
+      class="prediction hidden"
+      aria-live="polite"
+      aria-labelledby="rashiTitle"
+    >
       <h2 id="rashiTitle"></h2>
 
       <div class="prediction-item">
@@ -168,4 +454,36 @@
 
       <div class="prediction-item">
         <h3>🔢 शुभ अंक</h3>
-        
+        <p id="luckyNumber"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>🎨 शुभ रंग</h3>
+        <p id="luckyColor"></p>
+      </div>
+
+      <div class="prediction-item">
+        <h3>🙏 आज की सलाह</h3>
+        <p id="advice"></p>
+      </div>
+    </section>
+  </main>
+
+  <section id="install-banner" aria-label="Install AstroSeek">
+    <h2>Install AstroSeek App</h2>
+    <p>अपने फोन पर Daily Rashifal App इंस्टॉल करें।</p>
+
+    <button type="button" id="install-btn">
+      Install App
+    </button>
+
+    <p id="install-help" aria-live="polite">
+      Tap Install App to install, or use your browser menu.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Daily Rashifal App</p>
+  </footer>
+</body>
+</html>
