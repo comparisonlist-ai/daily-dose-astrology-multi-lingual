@@ -463,8 +463,7 @@ let liveRashifal = null;
 
   
 
-let currentRashi = null;
-let liveRashifal = null;
+
 
 async function loadLiveRashifal() {
   try {
@@ -509,38 +508,56 @@ function setLanguage(language) {
 }
 
 
+
 function updateInterface() {
-const isEnglish = currentLanguage === "en";
-const isOdia = currentLanguage === "or";
+  const isEnglish = currentLanguage === "en";
+  const isOdia = currentLanguage === "or";
 
+  document.title = isEnglish
+    ? "Daily Rashifal App | Today's Horoscope"
+    : isOdia
+    ? "Daily Rashifal App | ଆଜିର ରାଶିଫଳ"
+    : "Daily Rashifal App | आज का राशिफल";
 
-  document.title =
-    isEnglish
-      ? "   Daily Rashifal App | Today's Horoscope"
-      : isOdia
-      ? "   Daily Rashifal App | ଆଜିର ରାଶିଫଳ"
-      : "   Daily Rashifal App | आज का राशिफल";
-
-  document.querySelector('meta[name="description"]').setAttribute(
-    "content",
-    isEnglish
-      ? "    Daily Rashifal App    brings you today's horoscope, love, career, money, health, lucky number, lucky color and daily advice."
-      : isOdia
-      ? "    Daily Rashifal App    ରେ ଜାଣନ୍ତୁ ଆଜିର ରାଶିଫଳ, ପ୍ରେମ, କ୍ୟାରିୟର, ଧନ, ସ୍ୱାସ୍ଥ୍ୟ, ଶୁଭ ଅଙ୍କ, ଶୁଭ ରଙ୍ଗ ଏବଂ ଆଜିର ପରାମର୍ଶ।"
-      : "    Daily Rashifal App  पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
+  // Update the description only if its meta tag exists.
+  const description = document.querySelector(
+    'meta[name="description"]'
   );
 
-  document.querySelector(".header p").textContent =
-    isEnglish
+  if (description) {
+    description.setAttribute(
+      "content",
+      isEnglish
+        ? "Daily Rashifal App brings you today's horoscope, love, career, money, health, lucky number, lucky color and daily advice."
+        : isOdia
+        ? "Daily Rashifal App ରେ ଜାଣନ୍ତୁ ଆଜିର ରାଶିଫଳ, ପ୍ରେମ, କ୍ୟାରିୟର, ଧନ, ସ୍ୱାସ୍ଥ୍ୟ, ଶୁଭ ଅଙ୍କ, ଶୁଭ ରଙ୍ଗ ଏବଂ ଆଜିର ପରାମର୍ଶ।"
+        : "Daily Rashifal App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
+    );
+  }
+
+  // Update the main heading if it exists.
+  const headerText = document.querySelector(".header p");
+
+  if (headerText) {
+    headerText.textContent = isEnglish
       ? "Today's Horoscope"
       : isOdia
       ? "ଆଜିର ରାଶିଫଳ"
       : "आज का राशिफल";
+  }
 
-  document.getElementById("languageSelect").value = currentLanguage;
+  // Keep the language selector synchronized.
+  const languageSelect = document.getElementById("languageSelect");
 
-  document.getElementById("todayDate").textContent =
-    new Date().toLocaleDateString(
+  if (languageSelect) {
+    languageSelect.value = currentLanguage;
+  }
+
+  // Update today's date.
+  const todayDate = document.getElementById("todayDate");
+
+  if (todayDate) {
+    todayDate.textContent = new Date().toLocaleDateString(
       isEnglish ? "en-IN" : isOdia ? "or-IN" : "hi-IN",
       {
         weekday: "long",
@@ -549,49 +566,58 @@ const isOdia = currentLanguage === "or";
         day: "numeric"
       }
     );
+  }
 
+  // Translate the zodiac cards without changing their data.
   document.querySelectorAll(".rashi-card").forEach(card => {
     const rashi = card.getAttribute("data-rashi");
     const data = rashifal[rashi];
+    const nameElement = card.querySelector("strong");
 
-    card.querySelector("strong").textContent =
-      isEnglish
-        ? data.nameEn
-        : isOdia
-        ? data.nameOr
-        : data.nameHi;
+    if (!data || !nameElement) return;
+
+    nameElement.textContent = isEnglish
+      ? data.nameEn
+      : isOdia
+      ? data.nameOr
+      : data.nameHi;
   });
 
-  const headings = document.querySelectorAll(".prediction-item h3");
+  // Translate headings only when the corresponding elements exist.
+  const headings = document.querySelectorAll(
+    ".prediction-item h3"
+  );
 
-  headings[0].textContent =
-    isEnglish ? "❤️ Love" : isOdia ? "❤️ ପ୍ରେମ" : "❤️ प्रेम";
+  const headingTranslations = [
+    ["❤️ Love", "❤️ ପ୍ରେମ", "❤️ प्रेम"],
+    ["💼 Career", "💼 କ୍ୟାରିୟର", "💼 करियर"],
+    ["💰 Money", "💰 ଧନ", "💰 धन"],
+    ["❤️‍🩹 Health", "❤️‍🩹 ସ୍ୱାସ୍ଥ୍ୟ", "❤️‍🩹 स्वास्थ्य"],
+    ["🔢 Lucky Number", "🔢 ଶୁଭ ଅଙ୍କ", "🔢 शुभ अंक"],
+    ["🎨 Lucky Color", "🎨 ଶୁଭ ରଙ୍ଗ", "🎨 शुभ रंग"],
+    ["🙏 Today's Advice", "🙏 ଆଜିର ପରାମର୍ଶ", "🙏 आज की सलाह"]
+  ];
 
-  headings[1].textContent =
-    isEnglish ? "💼 Career" : isOdia ? "💼 କ୍ୟାରିୟର" : "💼 करियर";
+  headings.forEach((heading, index) => {
+    const translations = headingTranslations[index];
 
-  headings[2].textContent =
-    isEnglish ? "💰 Money" : isOdia ? "💰 ଧନ" : "💰 धन";
+    if (!translations) return;
 
-  headings[3].textContent =
-    isEnglish ? "❤️‍🩹 Health" : isOdia ? "❤️‍🩹 ସ୍ୱାସ୍ଥ୍ୟ" : "❤️‍🩹 स्वास्थ्य";
-
-  headings[4].textContent =
-    isEnglish ? "🔢 Lucky Number" : isOdia ? "🔢 ଶୁଭ ଅଙ୍କ" : "🔢 शुभ अंक";
-
-  headings[5].textContent =
-    isEnglish ? "🎨 Lucky Color" : isOdia ? "🎨 ଶୁଭ ରଙ୍ଗ" : "🎨 शुभ रंग";
-
-  headings[6].textContent =
-    isEnglish
-      ? "🙏 Today's Advice"
+    heading.textContent = isEnglish
+      ? translations[0]
       : isOdia
-      ? "🙏 ଆଜିର ପରାମର୍ଶ"
-      : "🙏 आज की सलाह";
+      ? translations[1]
+      : translations[2];
+  });
 
-  document.querySelector("footer p").textContent =
-    "© 2026  Daily Rashifal App ";
+  // Update the footer only if it exists.
+  const footerText = document.querySelector("footer p");
+
+  if (footerText) {
+    footerText.textContent = "© 2026 Daily Rashifal App";
+  }
 }
+
 
 
   function showRashi(rashi, scroll = true) {
