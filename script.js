@@ -523,6 +523,29 @@ function updateInterface() {
   const isEnglish = currentLanguage === "en";
   const isOdia = currentLanguage === "or";
 
+    // Translate the short installation link prompt.
+  const installPrompt = document.getElementById("installPrompt");
+
+  if (installPrompt) {
+    const promptText =
+      isEnglish
+        ? "Want your daily horoscope? "
+        : isOdia
+        ? "ପ୍ରତିଦିନର ରାଶିଫଳ ଚାହୁଁଛନ୍ତି? "
+        : "रोज़ाना राशिफल चाहिए? ";
+
+    installPrompt.replaceChildren(
+      document.createTextNode(promptText)
+    );
+
+    const installLink = document.createElement("a");
+    installLink.id = "installLink";
+    installLink.href = "install.html";
+    installLink.textContent = "Click here";
+
+    installPrompt.appendChild(installLink);
+  }
+
   document.title = isEnglish
     ? "Daily Rashifal App | Today's Horoscope"
     : isOdia
