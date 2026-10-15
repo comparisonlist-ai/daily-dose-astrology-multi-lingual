@@ -492,9 +492,20 @@ async function loadLiveRashifal() {
     liveRashifal = null;
   }
 }
+
+
 function setLanguage(language) {
+  if (!supportedLanguages.includes(language)) {
+    return;
+  }
+
   currentLanguage = language;
-  localStorage.setItem("language", language);
+
+  try {
+    localStorage.setItem("language", language);
+  } catch (error) {
+    console.warn("Could not save language preference:", error);
+  }
 
   const url = new URL(window.location.href);
   url.searchParams.set("lang", language);
@@ -506,7 +517,6 @@ function setLanguage(language) {
     showRashi(currentRashi, false);
   }
 }
-
 
 
 function updateInterface() {
