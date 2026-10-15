@@ -130,6 +130,33 @@ body {
 }
 
 footer {
+
+footer {
+  padding: 20px 14px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-links {
+  margin: 0 0 12px;
+  line-height: 2;
+}
+
+.footer-links a {
+  color: #d4af37;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+  
   text-align: center;
   padding: 25px 15px;
   margin-top: 20px;
