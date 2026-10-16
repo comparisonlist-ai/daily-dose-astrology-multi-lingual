@@ -1,4 +1,4 @@
-
+ 
  
 <!DOCTYPE html>
 <html lang="hi">
@@ -353,7 +353,9 @@ footer p {
 
       <select
         id="languageSelect"
-        onchange="setLanguage(this.value)"
+
+onchange="setLanguage(this.value); document.getElementById('zodiacHeading').textContent = ({hi:'अपनी राशि चुनें',en:'Select Your Zodiac Sign',or:'ନିଜ ରାଶି ବାଛନ୍ତୁ'})[this.value] || 'अपनी राशि चुनें';"
+       
       >
         <option value="hi">हिन्दी</option>
         <option value="en">English</option>
