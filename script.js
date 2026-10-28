@@ -926,33 +926,75 @@ function switchFinderTab(tab) {
   }
 }
 
+
+
+
+  
+  window.addEventListener("appinstalled", () => {
+    banner.style.display = "none";
+    deferredPrompt = null;
+
+/* --- Rashi Finder Functions --- */
+
+function switchFinderTab(tab) {
+  const nameBox = document.getElementById("nameFinderBox");
+  const dobBox = document.getElementById("dobFinderBox");
+  const nameBtn = document.getElementById("tabNameBtn");
+  const dobBtn = document.getElementById("tabDobBtn");
+
+  if (tab === 'name') {
+    nameBox.classList.remove("hidden");
+    dobBox.classList.add("hidden");
+    nameBtn.style.background = "var(--panel-light)";
+    nameBtn.style.color = "var(--gold)";
+    nameBtn.style.borderColor = "var(--gold)";
+    dobBtn.style.background = "var(--panel)";
+    dobBtn.style.color = "var(--muted)";
+    dobBtn.style.borderColor = "var(--border)";
+  } else {
+    dobBox.classList.remove("hidden");
+    nameBox.classList.add("hidden");
+    dobBtn.style.background = "var(--panel-light)";
+    dobBtn.style.color = "var(--gold)";
+    dobBtn.style.borderColor = "var(--gold)";
+    nameBtn.style.background = "var(--panel)";
+    nameBtn.style.color = "var(--muted)";
+    nameBtn.style.borderColor = "var(--border)";
+  }
+}
+
 // Vedic Name Syllable Mapping (Naam Akshara to Rashi)
 function findRashiByName() {
-  const input = document.getElementById("userNameInput").value.trim().toLowerCase();
+  const inputEl = document.getElementById("userNameInput");
   const msg = document.getElementById("nameResultMsg");
+  
+  if (!inputEl || !msg) return;
+  
+  const input = inputEl.value.trim().toLowerCase();
   if (!input) {
     msg.textContent = "कृपया अपना नाम दर्ज करें।";
     return;
   }
 
-  const char = input.charAt(0);
   let matchedRashi = null;
 
+  // सरल और सटीक नाम अक्षर मैपिंग (Name to Rashi Prefix mapping)
   const nameMapping = {
-    "मेष": ["chu", "che", "cho", "la", "li", "lu", "le", "lo", "a", "चु", "चे", "चो", "ला", "ली", "लू", "ले", "लो", "अ"],
-    "वृषभ": ["i", "u", "e", "o", "va", "vi", "vu", "ve", "vo", "इ", "उ", "ए", "ओ", "वा", "वी", "वू", "वे", "वो"],
-    "मिथुन": ["ka", "ki", "ku", "gha", "ng", "chha", "ke", "ko", "ha", "क", "की", "कु", "घ", "छ", "के", "को", "ह"],
-    "कर्क": ["hi", "hu", "he", "ho", "da", "di", "du", "de", "do", "ही", "हू", "हे", "हो", "डा", "डी", "डु", "डे", "डो"],
+    "मेष": ["chu", "che", "cho", "la", "li", "lu", "le", "lo", "a", "चु", "चे", "चो", "ला", "ली", "लू", "ले", "लो", "अ", "आ"],
+    "वृषभ": ["i", "u", "e", "o", "va", "vi", "vu", "ve", "vo", "इ", "उ", "ए", "ओ", "वा", "वी", "वू", "वे", "वो", "ब", "बी", "बू"],
+    "मिथुन": ["ka", "ki", "ku", "gha", "chha", "ke", "ko", "ha", "क", "की", "कु", "घ", "छ", "के", "को", "ह"],
+    "कर्क": ["hi", "hu", "he", "ho", "da", "di", "du", "de", "do", "ही", "हू", "हे", "हो", "डा", "डी", "डु", "डे", "डो", "ड"],
     "सिंह": ["ma", "mi", "mu", "me", "mo", "ta", "ti", "tu", "te", "म", "मी", "मु", "मे", "मो", "टा", "टी", "टु", "टे"],
-    "कन्या": ["to", "pa", "pi", "pu", "sha", "n-", "th", "pe", "po", "टो", "पा", "पी", "पू", "ष", "ण", "ठ", "पे", "पो"],
-    "तुला": ["ra", "ri", "ru", "re", "ro", "ta", "ti", "tu", "te", "र", "री", "रु", "रे", "रो", "ता", "ती", "तु", "ते"],
-    "वृश्चिक": ["to", "na", "ni", "nu", "ne", "no", "ya", "yi", "yu", "तो", "ना", "नी", "नु", "ने", "नो", "या", "यी", "यु"],
-    "धनु": ["ye", "yo", "bha", "bhi", "bu", "dha", "pha", "dha", "bhe", "ये", "यो", "भा", "भी", "भू", "ध", "फा", "ढा", "भे"],
-    "मकर": ["bho", "ja", "ji", "ju", "je", "jo", "kha", "ghi", "ga", "भो", "जा", "जी", "जू", "जे", "जो", "ख", "गी", "ग"],
-    "कुंभ": ["gu", "ge", "go", "sa", "si", "su", "se", "so", "da", "गु", "गे", "गो", "सा", "सी", "सु", "से", "सो", "द"],
-    "मीन": ["di", "du", "th", "jh", "yna", "de", "do", "cha", "chi", "दी", "दू", "थ", "झ", "ञ", "दे", "दो", "चा", "ची"]
+    "कन्या": ["to", "pa", "pi", "pu", "sha", "pe", "po", "टो", "पा", "पी", "पू", "ष", "ण", "ठ", "पे", "पो", "प"],
+    "तुला": ["ra", "ri", "ru", "re", "ro", "ta", "ti", "tu", "te", "र", "री", "रु", "रे", "रो", "ता", "ती", "तु", "ते", "त"],
+    "वृश्चिक": ["to", "na", "ni", "nu", "ne", "no", "ya", "yi", "yu", "तो", "ना", "नी", "नु", "ने", "नो", "या", "यी", "यु", "न"],
+    "धनु": ["ye", "yo", "bha", "bhi", "bu", "dha", "pha", "bhe", "ये", "यो", "भा", "भी", "भू", "ध", "फा", "ढा", "भे", "भ"],
+    "मकर": ["bho", "ja", "ji", "ju", "je", "jo", "kha", "ga", "भो", "जा", "जी", "जू", "जे", "जो", "ख", "गी", "ग", "ज", "जी"],
+    "कुंभ": ["gu", "ge", "go", "sa", "si", "su", "se", "so", "da", "गु", "गे", "गो", "सा", "सी", "सु", "से", "सो", "द", "स"],
+    "मीन": ["di", "du", "th", "jh", "de", "do", "cha", "chi", "दी", "दू", "थ", "झ", "दे", "दो", "चा", "ची", "च", "द"]
   };
 
+  // जांच करें कि क्या नाम किसी मान्य अक्षर से शुरू होता है
   for (const [rashi, prefixes] of Object.entries(nameMapping)) {
     if (prefixes.some(p => input.startsWith(p))) {
       matchedRashi = rashi;
@@ -960,6 +1002,7 @@ function findRashiByName() {
     }
   }
 
+  // यदि कोई सटीक मैच न मिले, तो सुरक्षित डिफ़ॉल्ट राशि चुनें (जैसे Susama के लिए कुंभ या मकर)
   if (!matchedRashi) {
     const rashisList = Object.keys(rashifal);
     matchedRashi = rashisList[input.charCodeAt(0) % rashisList.length];
@@ -972,8 +1015,12 @@ function findRashiByName() {
 
 // Approximate Date of Birth to Zodiac
 function findRashiByDob() {
-  const dobVal = document.getElementById("userDobInput").value;
+  const dobEl = document.getElementById("userDobInput");
   const msg = document.getElementById("dobResultMsg");
+  
+  if (!dobEl || !msg) return;
+  
+  const dobVal = dobEl.value;
   if (!dobVal) {
     msg.textContent = "कृपया अपनी जन्मतिथि चुनें।";
     return;
@@ -1002,10 +1049,7 @@ function findRashiByDob() {
   showRashi(r, true);
 }
 
-  
-  window.addEventListener("appinstalled", () => {
-    banner.style.display = "none";
-    deferredPrompt = null;
+    
   });
 })();
 
