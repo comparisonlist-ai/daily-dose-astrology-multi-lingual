@@ -885,6 +885,115 @@ document.addEventListener("DOMContentLoaded", () => {
       "If unavailable, choose Add to Home screen.";
   });
 
+
+/* --- Rashi Finder Functions --- */
+
+function switchFinderTab(tab) {
+  const nameBox = document.getElementById("nameFinderBox");
+  const dobBox = document.getElementById("dobFinderBox");
+  const nameBtn = document.getElementById("tabNameBtn");
+  const dobBtn = document.getElementById("tabDobBtn");
+  const isEn = currentLanguage === "en";
+  const isOr = currentLanguage === "or";
+
+  if (tab === 'name') {
+    nameBox.classList.remove("hidden");
+    dobBox.classList.add("hidden");
+    nameBtn.style.background = "var(--panel-light)";
+    nameBtn.style.color = "var(--gold)";
+    nameBtn.style.borderColor = "var(--gold)";
+    dobBtn.style.background = "var(--panel)";
+    dobBtn.style.color = "var(--muted)";
+    dobBtn.style.borderColor = "var(--border)";
+  } else {
+    dobBox.classList.remove("hidden");
+    nameBox.classList.add("hidden");
+    dobBtn.style.background = "var(--panel-light)";
+    dobBtn.style.color = "var(--gold)";
+    dobBtn.style.borderColor = "var(--gold)";
+    nameBtn.style.background = "var(--panel)";
+    nameBtn.style.color = "var(--muted)";
+    nameBtn.style.borderColor = "var(--border)";
+  }
+}
+
+// Vedic Name Syllable Mapping (Naam Akshara to Rashi)
+function findRashiByName() {
+  const input = document.getElementById("userNameInput").value.trim().toLowerCase();
+  const msg = document.getElementById("nameResultMsg");
+  if (!input) {
+    msg.textContent = "कृपया अपना नाम दर्ज करें।";
+    return;
+  }
+
+  const char = input.charAt(0);
+  let matchedRashi = null;
+
+  const nameMapping = {
+    "मेष": ["chu", "che", "cho", "la", "li", "lu", "le", "lo", "a", "चु", "चे", "चो", "ला", "ली", "लू", "ले", "लो", "अ"],
+    "वृषभ": ["i", "u", "e", "o", "va", "vi", "vu", "ve", "vo", "इ", "उ", "ए", "ओ", "वा", "वी", "वू", "वे", "वो"],
+    "मिथुन": ["ka", "ki", "ku", "gha", "ng", "chha", "ke", "ko", "ha", "क", "की", "कु", "घ", "छ", "के", "को", "ह"],
+    "कर्क": ["hi", "hu", "he", "ho", "da", "di", "du", "de", "do", "ही", "हू", "हे", "हो", "डा", "डी", "डु", "डे", "डो"],
+    "सिंह": ["ma", "mi", "mu", "me", "mo", "ta", "ti", "tu", "te", "म", "मी", "मु", "मे", "मो", "टा", "टी", "टु", "टे"],
+    "कन्या": ["to", "pa", "pi", "pu", "sha", "n-", "th", "pe", "po", "टो", "पा", "पी", "पू", "ष", "ण", "ठ", "पे", "पो"],
+    "तुला": ["ra", "ri", "ru", "re", "ro", "ta", "ti", "tu", "te", "र", "री", "रु", "रे", "रो", "ता", "ती", "तु", "ते"],
+    "वृश्चिक": ["to", "na", "ni", "nu", "ne", "no", "ya", "yi", "yu", "तो", "ना", "नी", "नु", "ने", "नो", "या", "यी", "यु"],
+    "धनु": ["ye", "yo", "bha", "bhi", "bu", "dha", "pha", "dha", "bhe", "ये", "यो", "भा", "भी", "भू", "ध", "फा", "ढा", "भे"],
+    "मकर": ["bho", "ja", "ji", "ju", "je", "jo", "kha", "ghi", "ga", "भो", "जा", "जी", "जू", "जे", "जो", "ख", "गी", "ग"],
+    "कुंभ": ["gu", "ge", "go", "sa", "si", "su", "se", "so", "da", "गु", "गे", "गो", "सा", "सी", "सु", "से", "सो", "द"],
+    "मीन": ["di", "du", "th", "jh", "yna", "de", "do", "cha", "chi", "दी", "दू", "थ", "झ", "ञ", "दे", "दो", "चा", "ची"]
+  };
+
+  for (const [rashi, prefixes] of Object.entries(nameMapping)) {
+    if (prefixes.some(p => input.startsWith(p))) {
+      matchedRashi = rashi;
+      break;
+    }
+  }
+
+  if (!matchedRashi) {
+    const rashisList = Object.keys(rashifal);
+    matchedRashi = rashisList[input.charCodeAt(0) % rashisList.length];
+  }
+
+  msg.style.color = "var(--gold)";
+  msg.textContent = `सफलता! आपकी राशि है: ${matchedRashi}`;
+  showRashi(matchedRashi, true);
+}
+
+// Approximate Date of Birth to Zodiac
+function findRashiByDob() {
+  const dobVal = document.getElementById("userDobInput").value;
+  const msg = document.getElementById("dobResultMsg");
+  if (!dobVal) {
+    msg.textContent = "कृपया अपनी जन्मतिथि चुनें।";
+    return;
+  }
+
+  const date = new Date(dobVal);
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+  let r = "मेष";
+
+  if ((m == 3 && d >= 21) || (m == 4 && d >= 19)) r = "मेष";
+  else if ((m == 4 && d >= 20) || (m == 5 && d >= 20)) r = "वृषभ";
+  else if ((m == 5 && d >= 21) || (m == 6 && d >= 20)) r = "मिथुन";
+  else if ((m == 6 && d >= 21) || (m == 7 && d >= 22)) r = "कर्क";
+  else if ((m == 7 && d >= 23) || (m == 8 && d >= 22)) r = "सिंह";
+  else if ((m == 8 && d >= 23) || (m == 9 && d >= 22)) r = "कन्या";
+  else if ((m == 9 && d >= 23) || (m == 10 && d >= 22)) r = "तुला";
+  else if ((m == 10 && d >= 23) || (m == 11 && d >= 21)) r = "वृश्चिक";
+  else if ((m == 11 && d >= 22) || (m == 12 && d >= 21)) r = "धनु";
+  else if ((m == 12 && d >= 22) || (m == 1 && d >= 19)) r = "मकर";
+  else if ((m == 1 && d >= 20) || (m == 2 && d >= 18)) r = "कुंभ";
+  else r = "मीन";
+
+  msg.style.color = "var(--gold)";
+  msg.textContent = `सफलता! आपकी राशि है: ${r}`;
+  showRashi(r, true);
+}
+
+  
   window.addEventListener("appinstalled", () => {
     banner.style.display = "none";
     deferredPrompt = null;
