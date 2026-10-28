@@ -518,6 +518,15 @@ function setLanguage(language) {
   }
 }
 
+  // Update Rashi Finder Title dynamically
+  const finderTitle = document.getElementById("finderTitle");
+  if (finderTitle) {
+    finderTitle.textContent = isEnglish
+      ? "🔍 Find Your Rashi by Name or DOB"
+      : isOdia
+      ? "🔍 ନାମ କିମ୍ବା ଜନ୍ମ ତାରିଖ ଦ୍ୱାରା ରାଶି ଜାଣନ୍ତୁ"
+      : "🔍 नाम या जन्म तिथि से राशि जानें";
+  }
 
 function updateInterface() {
   const isEnglish = currentLanguage === "en";
