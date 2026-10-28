@@ -444,12 +444,9 @@ const rashifal = {
   }
 };
 
-const WORKER_URL =
-  "https://daily-rashifal-app.comparisonlist.workers.dev/";
-
+const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev/";
 
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
-
 const supportedLanguages = ["hi", "en", "or"];
 
 let currentLanguage = supportedLanguages.includes(urlLanguage)
@@ -461,28 +458,15 @@ let currentLanguage = supportedLanguages.includes(urlLanguage)
 let currentRashi = null;
 let liveRashifal = null;
 
-  
-
-
-
 async function loadLiveRashifal() {
   try {
     const response = await fetch(WORKER_URL);
-
     if (!response.ok) {
       throw new Error("Worker request failed");
     }
-
     const result = await response.json();
-
-    if (
-      result.success &&
-      result.data &&
-      Array.isArray(result.data.rashifal)
-    ) {
+    if (result.success && result.data && Array.isArray(result.data.rashifal)) {
       liveRashifal = result.data.rashifal;
-      console.log("Live GrahaAPI Rashifal loaded:", liveRashifal);
-
       if (currentRashi) {
         showRashi(currentRashi, false);
       }
@@ -493,14 +477,11 @@ async function loadLiveRashifal() {
   }
 }
 
-
 function setLanguage(language) {
   if (!supportedLanguages.includes(language)) {
     return;
   }
-
   currentLanguage = language;
-
   try {
     localStorage.setItem("language", language);
   } catch (error) {
@@ -512,13 +493,16 @@ function setLanguage(language) {
   window.history.replaceState({}, "", url);
 
   updateInterface();
-
   if (currentRashi) {
     showRashi(currentRashi, false);
   }
 }
 
-  // Update Rashi Finder Title dynamically
+function updateInterface() {
+  const isEnglish = currentLanguage === "en";
+  const isOdia = currentLanguage === "or";
+
+  // Dynamic Finder Title translation
   const finderTitle = document.getElementById("finderTitle");
   if (finderTitle) {
     finderTitle.textContent = isEnglish
@@ -528,30 +512,20 @@ function setLanguage(language) {
       : "🔍 नाम या जन्म तिथि से राशि जानें";
   }
 
-function updateInterface() {
-  const isEnglish = currentLanguage === "en";
-  const isOdia = currentLanguage === "or";
-
-    // Translate the short installation link prompt.
   const installPrompt = document.getElementById("installPrompt");
-
   if (installPrompt) {
-    const promptText =
-      isEnglish
-        ? "Want your daily horoscope? "
-        : isOdia
-        ? "ପ୍ରତିଦିନର ରାଶିଫଳ ଚାହୁଁଛନ୍ତି? "
-        : "रोज़ाना राशिफल चाहिए? ";
+    const promptText = isEnglish
+      ? "Want your daily horoscope? "
+      : isOdia
+      ? "ପ୍ରତିଦିନର ରାଶିଫଳ ଚାହୁଁଛନ୍ତି? "
+      : "रोज़ाना राशिफल चाहिए? ";
 
-    installPrompt.replaceChildren(
-      document.createTextNode(promptText)
-    );
+    installPrompt.replaceChildren(document.createTextNode(promptText));
 
     const installLink = document.createElement("a");
     installLink.id = "installLink";
     installLink.href = "install.html";
     installLink.textContent = "Click here";
-
     installPrompt.appendChild(installLink);
   }
 
@@ -561,11 +535,7 @@ function updateInterface() {
     ? "Daily Rashifal App | ଆଜିର ରାଶିଫଳ"
     : "Daily Rashifal App | आज का राशिफल";
 
-  // Update the description only if its meta tag exists.
-  const description = document.querySelector(
-    'meta[name="description"]'
-  );
-
+  const description = document.querySelector('meta[name="description"]');
   if (description) {
     description.setAttribute(
       "content",
@@ -577,9 +547,7 @@ function updateInterface() {
     );
   }
 
-  // Update the main heading if it exists.
   const headerText = document.querySelector(".header p");
-
   if (headerText) {
     headerText.textContent = isEnglish
       ? "Today's Horoscope"
@@ -588,16 +556,12 @@ function updateInterface() {
       : "आज का राशिफल";
   }
 
-  // Keep the language selector synchronized.
   const languageSelect = document.getElementById("languageSelect");
-
   if (languageSelect) {
     languageSelect.value = currentLanguage;
   }
 
-  // Update today's date.
   const todayDate = document.getElementById("todayDate");
-
   if (todayDate) {
     todayDate.textContent = new Date().toLocaleDateString(
       isEnglish ? "en-IN" : isOdia ? "or-IN" : "hi-IN",
@@ -610,32 +574,27 @@ function updateInterface() {
     );
   }
 
-  // Translate both zodiac names to prevent duplicates.
-document.querySelectorAll(".rashi-card").forEach(card => {
-  const rashi = card.getAttribute("data-rashi");
-  const data = rashifal[rashi];
-  const nameElement = card.querySelector("strong");
-  const englishNameElement = card.querySelector("small");
+  document.querySelectorAll(".rashi-card").forEach(card => {
+    const rashi = card.getAttribute("data-rashi");
+    const data = rashifal[rashi];
+    const nameElement = card.querySelector("strong");
+    const englishNameElement = card.querySelector("small");
 
-  if (!data || !nameElement || !englishNameElement) return;
+    if (!data || !nameElement || !englishNameElement) return;
 
-  if (isEnglish) {
-    nameElement.textContent = data.nameEn;
-    englishNameElement.textContent = "";
-  } else if (isOdia) {
-    nameElement.textContent = data.nameOr;
-    englishNameElement.textContent = data.nameEn;
-  } else {
-    nameElement.textContent = data.nameHi;
-    englishNameElement.textContent = data.nameEn;
-  }
-});
+    if (isEnglish) {
+      nameElement.textContent = data.nameEn;
+      englishNameElement.textContent = "";
+    } else if (isOdia) {
+      nameElement.textContent = data.nameOr;
+      englishNameElement.textContent = data.nameEn;
+    } else {
+      nameElement.textContent = data.nameHi;
+      englishNameElement.textContent = data.nameEn;
+    }
+  });
 
-  // Translate headings only when the corresponding elements exist.
-  const headings = document.querySelectorAll(
-    ".prediction-item h3"
-  );
-
+  const headings = document.querySelectorAll(".prediction-item h3");
   const headingTranslations = [
     ["❤️ Love", "❤️ ପ୍ରେମ", "❤️ प्रेम"],
     ["💼 Career", "💼 କ୍ୟାରିୟର", "💼 करियर"],
@@ -648,9 +607,7 @@ document.querySelectorAll(".rashi-card").forEach(card => {
 
   headings.forEach((heading, index) => {
     const translations = headingTranslations[index];
-
     if (!translations) return;
-
     heading.textContent = isEnglish
       ? translations[0]
       : isOdia
@@ -658,90 +615,60 @@ document.querySelectorAll(".rashi-card").forEach(card => {
       : translations[2];
   });
 
-  // Update the footer only if it exists.
   const footerText = document.querySelector("footer p");
-
   if (footerText) {
     footerText.textContent = "© 2026 Daily Rashifal App";
   }
 }
 
-
-
-  function showRashi(rashi, scroll = true) {
+function showRashi(rashi, scroll = true) {
   let data = rashifal[rashi];
 
-  // Match the selected static Rashi with the LIVE GrahaAPI Rashi
-  // using English name, because Hindi names can differ slightly
-  // (for example: वृषभ vs वृष).
   if (liveRashifal) {
     const staticData = rashifal[rashi];
-
-    const liveData = liveRashifal.find(item =>
-      item.rashi_en === staticData.nameEn
-    );
+    const liveData = liveRashifal.find(item => item.rashi_en === staticData.nameEn);
 
     if (liveData) {
       data = {
         nameHi: liveData.rashi_hi,
         nameEn: liveData.rashi_en,
         nameOr: staticData.nameOr,
-
         love: {
           hi: liveData.predictions_hi?.love || staticData.love.hi,
           en: liveData.predictions_en?.love || staticData.love.en,
           or: staticData.love.or
         },
-
         career: {
           hi: liveData.predictions_hi?.career || staticData.career.hi,
           en: liveData.predictions_en?.career || staticData.career.en,
           or: staticData.career.or
         },
-
         money: {
           hi: liveData.predictions_hi?.finance || staticData.money.hi,
           en: liveData.predictions_en?.finance || staticData.money.en,
           or: staticData.money.or
         },
-
         health: {
           hi: liveData.predictions_hi?.health || staticData.health.hi,
           en: liveData.predictions_en?.health || staticData.health.en,
           or: staticData.health.or
         },
-
-        luckyNumber:
-          liveData.lucky?.number ?? staticData.luckyNumber,
-
+        luckyNumber: liveData.lucky?.number ?? staticData.luckyNumber,
         luckyColor: {
-          hi:
-            liveData.lucky?.colors?.[0] ||
-            staticData.luckyColor.hi,
-          en:
-            liveData.lucky?.colors?.[0] ||
-            staticData.luckyColor.en,
+          hi: liveData.lucky?.colors?.[0] || staticData.luckyColor.hi,
+          en: liveData.lucky?.colors?.[0] || staticData.luckyColor.en,
           or: staticData.luckyColor.or
         },
-
         advice: {
           hi: liveData.predictions_hi?.spirit || staticData.advice.hi,
           en: liveData.predictions_en?.spirit || staticData.advice.en,
           or: staticData.advice.or
         }
       };
-
-      console.log(
-        "Displaying LIVE GrahaAPI data:",
-        liveData.rashi_en,
-        liveData.rashi_hi
-      );
     }
   }
 
-  if (!data) {
-    return;
-  }
+  if (!data) return;
 
   currentRashi = rashi;
 
@@ -749,68 +676,30 @@ document.querySelectorAll(".rashi-card").forEach(card => {
     card.classList.remove("selected");
   });
 
-  const selectedCard = document.querySelector(
-    '.rashi-card[data-rashi="' + rashi + '"]'
-  );
-
+  const selectedCard = document.querySelector('.rashi-card[data-rashi="' + rashi + '"]');
   if (selectedCard) {
     selectedCard.classList.add("selected");
   }
 
   const isEnglish = currentLanguage === "en";
   const isOdia = currentLanguage === "or";
+  const name = isEnglish ? data.nameEn : isOdia ? data.nameOr : data.nameHi;
 
-  const name =
-    isEnglish
-      ? data.nameEn
-      : isOdia
-      ? data.nameOr
-      : data.nameHi;
+  document.getElementById("rashiTitle").textContent = isEnglish
+    ? "✨ " + name + " Today's Horoscope"
+    : isOdia
+    ? "✨ " + name + " ଆଜିର ରାଶିଫଳ"
+    : "✨ " + name + " राशि का आज का राशिफल";
 
-  document.getElementById("rashiTitle").textContent =
-    isEnglish
-      ? "✨ " + name + " Today's Horoscope"
-      : isOdia
-      ? "✨ " + name + " ଆଜିର ରାଶିଫଳ"
-      : "✨ " + name + " राशि का आज का राशिफल";
-
-  document.getElementById("love").textContent =
-    isEnglish ? data.love.en :
-    isOdia ? data.love.or :
-    data.love.hi;
-
-  document.getElementById("career").textContent =
-    isEnglish ? data.career.en :
-    isOdia ? data.career.or :
-    data.career.hi;
-
-  document.getElementById("money").textContent =
-    isEnglish ? data.money.en :
-    isOdia ? data.money.or :
-    data.money.hi;
-
-  document.getElementById("health").textContent =
-    isEnglish ? data.health.en :
-    isOdia ? data.health.or :
-    data.health.hi;
-
-  document.getElementById("luckyNumber").textContent =
-    data.luckyNumber;
-
-  document.getElementById("luckyColor").textContent =
-    isEnglish
-      ? data.luckyColor.en
-      : isOdia
-      ? data.luckyColor.or
-      : data.luckyColor.hi;
-
-  document.getElementById("advice").textContent =
-    isEnglish ? data.advice.en :
-    isOdia ? data.advice.or :
-    data.advice.hi;
+  document.getElementById("love").textContent = isEnglish ? data.love.en : isOdia ? data.love.or : data.love.hi;
+  document.getElementById("career").textContent = isEnglish ? data.career.en : isOdia ? data.career.or : data.career.hi;
+  document.getElementById("money").textContent = isEnglish ? data.money.en : isOdia ? data.money.or : data.money.hi;
+  document.getElementById("health").textContent = isEnglish ? data.health.en : isOdia ? data.health.or : data.health.hi;
+  document.getElementById("luckyNumber").textContent = data.luckyNumber;
+  document.getElementById("luckyColor").textContent = isEnglish ? data.luckyColor.en : isOdia ? data.luckyColor.or : data.luckyColor.hi;
+  document.getElementById("advice").textContent = isEnglish ? data.advice.en : isOdia ? data.advice.or : data.advice.hi;
 
   const prediction = document.getElementById("prediction");
-
   prediction.classList.remove("hidden");
 
   if (scroll) {
@@ -820,9 +709,6 @@ document.querySelectorAll(".rashi-card").forEach(card => {
     });
   }
 }
-  
-
-  
 
 function showTodayDate() {
   updateInterface();
@@ -833,109 +719,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadLiveRashifal();
 });
 
-
-/* AstroSeek PWA Installation */
-(() => {
-  let deferredPrompt = null;
-
-  const banner = document.getElementById("install-banner");
-  const installBtn = document.getElementById("install-btn");
-  const installHelp = document.getElementById("install-help");
-
-  if (!banner || !installBtn || !installHelp) return;
-
-  const isInstalled = () =>
-    window.matchMedia("(display-mode: standalone)").matches ||
-    window.navigator.standalone === true;
-
-  if (isInstalled()) {
-    banner.style.display = "none";
-    return;
-  }
-
-  banner.style.display = "block";
-
-  installHelp.textContent =
-    "Tap Install App to install, or use your browser menu.";
-
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
-
-    installBtn.disabled = false;
-    installHelp.textContent = "Ready to install AstroSeek!";
-  });
-
-  installBtn.addEventListener("click", async () => {
-    if (deferredPrompt) {
-      const promptEvent = deferredPrompt;
-      deferredPrompt = null;
-
-      try {
-        await promptEvent.prompt();
-        const choice = await promptEvent.userChoice;
-
-        if (choice.outcome === "accepted") {
-          installHelp.textContent = "Installation accepted!";
-        } else {
-          installHelp.textContent =
-            "Installation cancelled. You can try again later.";
-        }
-      } catch (error) {
-        installHelp.textContent =
-          "Please use your browser menu to install AstroSeek.";
-      }
-
-      return;
-    }
-
-    installHelp.textContent =
-      "In Chrome, tap ⋮ (three dots) and choose Install app. " +
-      "If unavailable, choose Add to Home screen.";
-  });
-
-
 /* --- Rashi Finder Functions --- */
-
-function switchFinderTab(tab) {
-  const nameBox = document.getElementById("nameFinderBox");
-  const dobBox = document.getElementById("dobFinderBox");
-  const nameBtn = document.getElementById("tabNameBtn");
-  const dobBtn = document.getElementById("tabDobBtn");
-  const isEn = currentLanguage === "en";
-  const isOr = currentLanguage === "or";
-
-  if (tab === 'name') {
-    nameBox.classList.remove("hidden");
-    dobBox.classList.add("hidden");
-    nameBtn.style.background = "var(--panel-light)";
-    nameBtn.style.color = "var(--gold)";
-    nameBtn.style.borderColor = "var(--gold)";
-    dobBtn.style.background = "var(--panel)";
-    dobBtn.style.color = "var(--muted)";
-    dobBtn.style.borderColor = "var(--border)";
-  } else {
-    dobBox.classList.remove("hidden");
-    nameBox.classList.add("hidden");
-    dobBtn.style.background = "var(--panel-light)";
-    dobBtn.style.color = "var(--gold)";
-    dobBtn.style.borderColor = "var(--gold)";
-    nameBtn.style.background = "var(--panel)";
-    nameBtn.style.color = "var(--muted)";
-    nameBtn.style.borderColor = "var(--border)";
-  }
-}
-
-
-
-
-  
-  window.addEventListener("appinstalled", () => {
-    banner.style.display = "none";
-    deferredPrompt = null;
-
-/* --- Rashi Finder Functions --- */
-
 function switchFinderTab(tab) {
   const nameBox = document.getElementById("nameFinderBox");
   const dobBox = document.getElementById("dobFinderBox");
@@ -963,13 +747,12 @@ function switchFinderTab(tab) {
   }
 }
 
-// Vedic Name Syllable Mapping (Naam Akshara to Rashi)
 function findRashiByName() {
   const inputEl = document.getElementById("userNameInput");
   const msg = document.getElementById("nameResultMsg");
-  
+
   if (!inputEl || !msg) return;
-  
+
   const input = inputEl.value.trim().toLowerCase();
   if (!input) {
     msg.textContent = "कृपया अपना नाम दर्ज करें।";
@@ -977,15 +760,13 @@ function findRashiByName() {
   }
 
   let matchedRashi = null;
-
-  // सरल और सटीक नाम अक्षर मैपिंग (Name to Rashi Prefix mapping)
   const nameMapping = {
     "मेष": ["chu", "che", "cho", "la", "li", "lu", "le", "lo", "a", "चु", "चे", "चो", "ला", "ली", "लू", "ले", "लो", "अ", "आ"],
     "वृषभ": ["i", "u", "e", "o", "va", "vi", "vu", "ve", "vo", "इ", "उ", "ए", "ओ", "वा", "वी", "वू", "वे", "वो", "ब", "बी", "बू"],
     "मिथुन": ["ka", "ki", "ku", "gha", "chha", "ke", "ko", "ha", "क", "की", "कु", "घ", "छ", "के", "को", "ह"],
     "कर्क": ["hi", "hu", "he", "ho", "da", "di", "du", "de", "do", "ही", "हू", "हे", "हो", "डा", "डी", "डु", "डे", "डो", "ड"],
     "सिंह": ["ma", "mi", "mu", "me", "mo", "ta", "ti", "tu", "te", "म", "मी", "मु", "मे", "मो", "टा", "टी", "टु", "टे"],
-    "कन्या": ["to", "pa", "pi", "pu", "sha", "pe", "po", "टो", "पा", "पी", "पू", "ष", "ण", "ठ", "पे", "पो", "प"],
+    "कन्या": ["to", "pa", "pi", "pu", "sha", "pe", "po", "टो", "पा", "పీ", "पू", "ष", "ण", "ठ", "पे", "पो", "प"],
     "तुला": ["ra", "ri", "ru", "re", "ro", "ta", "ti", "tu", "te", "र", "री", "रु", "रे", "रो", "ता", "ती", "तु", "ते", "त"],
     "वृश्चिक": ["to", "na", "ni", "nu", "ne", "no", "ya", "yi", "yu", "तो", "ना", "नी", "नु", "ने", "नो", "या", "यी", "यु", "न"],
     "धनु": ["ye", "yo", "bha", "bhi", "bu", "dha", "pha", "bhe", "ये", "यो", "भा", "भी", "भू", "ध", "फा", "ढा", "भे", "भ"],
@@ -994,7 +775,6 @@ function findRashiByName() {
     "मीन": ["di", "du", "th", "jh", "de", "do", "cha", "chi", "दी", "दू", "थ", "झ", "दे", "दो", "चा", "ची", "च", "द"]
   };
 
-  // जांच करें कि क्या नाम किसी मान्य अक्षर से शुरू होता है
   for (const [rashi, prefixes] of Object.entries(nameMapping)) {
     if (prefixes.some(p => input.startsWith(p))) {
       matchedRashi = rashi;
@@ -1002,7 +782,6 @@ function findRashiByName() {
     }
   }
 
-  // यदि कोई सटीक मैच न मिले, तो सुरक्षित डिफ़ॉल्ट राशि चुनें (जैसे Susama के लिए कुंभ या मकर)
   if (!matchedRashi) {
     const rashisList = Object.keys(rashifal);
     matchedRashi = rashisList[input.charCodeAt(0) % rashisList.length];
@@ -1013,13 +792,12 @@ function findRashiByName() {
   showRashi(matchedRashi, true);
 }
 
-// Approximate Date of Birth to Zodiac
 function findRashiByDob() {
   const dobEl = document.getElementById("userDobInput");
   const msg = document.getElementById("dobResultMsg");
-  
+
   if (!dobEl || !msg) return;
-  
+
   const dobVal = dobEl.value;
   if (!dobVal) {
     msg.textContent = "कृपया अपनी जन्मतिथि चुनें।";
@@ -1049,8 +827,56 @@ function findRashiByDob() {
   showRashi(r, true);
 }
 
-    
+/* AstroSeek PWA Installation */
+(() => {
+  let deferredPrompt = null;
+  const banner = document.getElementById("install-banner");
+  const installBtn = document.getElementById("install-btn");
+  const installHelp = document.getElementById("install-help");
+
+  if (!banner || !installBtn || !installHelp) return;
+
+  const isInstalled = () =>
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
+
+  if (isInstalled()) {
+    banner.style.display = "none";
+    return;
+  }
+
+  banner.style.display = "block";
+  installHelp.textContent = "Tap Install App to install, or use your browser menu.";
+
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+    installBtn.disabled = false;
+    installHelp.textContent = "Ready to install AstroSeek!";
+  });
+
+  installBtn.addEventListener("click", async () => {
+    if (deferredPrompt) {
+      const promptEvent = deferredPrompt;
+      deferredPrompt = null;
+      try {
+        await promptEvent.prompt();
+        const choice = await promptEvent.userChoice;
+        if (choice.outcome === "accepted") {
+          installHelp.textContent = "Installation accepted!";
+        } else {
+          installHelp.textContent = "Installation cancelled. You can try again later.";
+        }
+      } catch (error) {
+        installHelp.textContent = "Please use your browser menu to install AstroSeek.";
+      }
+      return;
+    }
+    installHelp.textContent = "In Chrome, tap ⋮ (three dots) and choose Install app.";
+  });
+
+  window.addEventListener("appinstalled", () => {
+    banner.style.display = "none";
+    deferredPrompt = null;
   });
 })();
-
-
