@@ -372,7 +372,38 @@ onchange="setLanguage(this.value); document.getElementById('zodiacHeading').text
   रोज़ाना राशिफल चाहिए?
   <a id="installLink" href="install.html">Click here</a>
 </p>
-    <section aria-labelledby="zodiacHeading">
+  
+       <!-- Rashi Finder by Name or DOB -->
+    <section class="prediction" style="margin-top: 0; margin-bottom: 25px;">
+      <h2 id="finderTitle" style="font-size: 1.25rem; margin-bottom: 14px;">🔍 नाम या जन्म तिथि से राशि जानें</h2>
+      
+      <div style="display: flex; gap: 8px; margin-bottom: 12px; justify-content: center;">
+        <button type="button" id="tabNameBtn" onclick="switchFinderTab('name')" style="padding: 8px 16px; background: var(--panel-light); border: 1px solid var(--gold); border-radius: 6px; color: var(--gold); cursor: pointer; font-weight: bold;">नाम से (By Name)</button>
+        <button type="button" id="tabDobBtn" onclick="switchFinderTab('dob')" style="padding: 8px 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; color: var(--muted); cursor: pointer;">जन्मतिथि से (By DOB)</button>
+      </div>
+
+      <!-- By Name Input -->
+      <div id="nameFinderBox">
+        <div style="display: flex; gap: 8px;">
+          <input type="text" id="userNameInput" placeholder="अपना पहला नाम लिखें (e.g. Rahul)" style="flex: 1; padding: 10px 14px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
+          <button type="button" onclick="findRashiByName()" style="padding: 10px 20px; background: var(--gold); color: #101010; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">खोजें</button>
+        </div>
+        <small id="nameResultMsg" style="display: block; margin-top: 8px; color: var(--muted); text-align: center;"></small>
+      </div>
+
+      <!-- By DOB Input -->
+      <div id="dobFinderBox" class="hidden">
+        <div style="display: flex; gap: 8px;">
+          <input type="date" id="userDobInput" style="flex: 1; padding: 10px 14px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
+          <button type="button" onclick="findRashiByDob()" style="padding: 10px 20px; background: var(--gold); color: #101010; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">खोजें</button>
+        </div>
+        <small id="dobResultMsg" style="display: block; margin-top: 8px; color: var(--muted); text-align: center;"></small>
+      </div>
+    </section>
+
+   
+   
+   <section aria-labelledby="zodiacHeading">
       <h2 id="zodiacHeading" class="section-title">
         अपनी राशि चुनें
       </h2>
