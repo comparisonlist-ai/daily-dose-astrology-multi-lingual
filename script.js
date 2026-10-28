@@ -747,6 +747,7 @@ function switchFinderTab(tab) {
   }
 }
 
+// Vedic Name Syllable Mapping (Naam Akshara to Rashi)
 function findRashiByName() {
   const inputEl = document.getElementById("userNameInput");
   const msg = document.getElementById("nameResultMsg");
@@ -766,7 +767,7 @@ function findRashiByName() {
     "मिथुन": ["ka", "ki", "ku", "gha", "chha", "ke", "ko", "ha", "क", "की", "कु", "घ", "छ", "के", "को", "ह"],
     "कर्क": ["hi", "hu", "he", "ho", "da", "di", "du", "de", "do", "ही", "हू", "हे", "हो", "डा", "डी", "डु", "डे", "डो", "ड"],
     "सिंह": ["ma", "mi", "mu", "me", "mo", "ta", "ti", "tu", "te", "म", "मी", "मु", "मे", "मो", "टा", "टी", "टु", "टे"],
-    "कन्या": ["to", "pa", "pi", "pu", "sha", "pe", "po", "टो", "पा", "పీ", "पू", "ष", "ण", "ठ", "पे", "पो", "प"],
+    "कन्या": ["to", "pa", "pi", "pu", "sha", "pe", "po", "टो", "पा", "पी", "पू", "ष", "ण", "ठ", "पे", "पो", "प"],
     "तुला": ["ra", "ri", "ru", "re", "ro", "ta", "ti", "tu", "te", "र", "री", "रु", "रे", "रो", "ता", "ती", "तु", "ते", "त"],
     "वृश्चिक": ["to", "na", "ni", "nu", "ne", "no", "ya", "yi", "yu", "तो", "ना", "नी", "नु", "ने", "नो", "या", "यी", "यु", "न"],
     "धनु": ["ye", "yo", "bha", "bhi", "bu", "dha", "pha", "bhe", "ये", "यो", "भा", "भी", "भू", "ध", "फा", "ढा", "भे", "भ"],
@@ -789,6 +790,8 @@ function findRashiByName() {
 
   msg.style.color = "var(--gold)";
   msg.textContent = `सफलता! आपकी राशि है: ${matchedRashi}`;
+  
+  // सीधे उस राशि का राशिफल दिखाने और स्क्रॉल करने के लिए
   showRashi(matchedRashi, true);
 }
 
@@ -824,8 +827,11 @@ function findRashiByDob() {
 
   msg.style.color = "var(--gold)";
   msg.textContent = `सफलता! आपकी राशि है: ${r}`;
+  
+  // सीधे उस राशि का राशिफल दिखाने और स्क्रॉल करने के लिए
   showRashi(r, true);
 }
+
 
 /* AstroSeek PWA Installation */
 (() => {
