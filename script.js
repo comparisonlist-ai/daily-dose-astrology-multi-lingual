@@ -1,4 +1,4 @@
-const rashifal = {
+Const rashifal = {
   "मेष": {
     nameHi: "मेष",
     nameEn: "Aries",
@@ -446,11 +446,10 @@ const rashifal = {
 
 const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev/";
 
-
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
 const supportedLanguages = ["hi", "en", "or"];
 
-// Automatically detect browser/device language (e.g., 'en-US' -> 'en')
+// Automatically detect browser/device language as fallback if no preference is saved
 let browserLang = "";
 try {
   const navLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
@@ -522,6 +521,27 @@ function updateInterface() {
       : isOdia
       ? "🔍 ନାମ କିମ୍ବା ଜନ୍ମ ତାରିଖ ଦ୍ୱାରା ରାଶି ଜାଣନ୍ତୁ"
       : "🔍 नाम या जन्म तिथि से राशि जानें";
+  }
+
+  // Search Input Placeholders
+  const nameInput = document.getElementById("userNameInput");
+  if (nameInput) {
+    nameInput.placeholder = isEnglish
+      ? "Enter name or initial letter..."
+      : isOdia
+      ? "ନାମ କିମ୍ବା ପ୍ରଥମ ଅକ୍ଷର ଲେଖନ୍ତୁ..."
+      : "नाम या पहला अक्षर दर्ज करें...";
+  }
+
+  // Search Buttons Text (Uniform "Search" with magnifying glass in all languages)
+  const nameSearchBtn = document.getElementById("nameSearchBtn");
+  if (nameSearchBtn) {
+    nameSearchBtn.textContent = "🔍 Search";
+  }
+
+  const dobSearchBtn = document.getElementById("dobSearchBtn");
+  if (dobSearchBtn) {
+    dobSearchBtn.textContent = "🔍 Search";
   }
 
   const installPrompt = document.getElementById("installPrompt");
@@ -731,8 +751,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadLiveRashifal();
 });
 
-
-/* --- Rashi Finder Functions --- */
+/* --- Rashi Finder Functions (Shows only Rashi name in active language) --- */
 function switchFinderTab(tab) {
   const nameBox = document.getElementById("nameFinderBox");
   const dobBox = document.getElementById("dobFinderBox");
@@ -769,7 +788,12 @@ function findRashiByName() {
 
   const input = inputEl.value.trim().toLowerCase();
   if (!input) {
-    msg.textContent = "कृपया अपना नाम दर्ज करें।";
+    msg.style.color = "var(--muted)";
+    msg.textContent = currentLanguage === "en" 
+      ? "Please enter your name." 
+      : currentLanguage === "or" 
+      ? "ଦୟାକରି ଆପଣଙ୍କ ନାମ ଲେଖନ୍ତୁ।" 
+      : "कृपया अपना नाम दर्ज करें।";
     return;
   }
 
@@ -784,7 +808,7 @@ function findRashiByName() {
     "तुला": ["ra", "ri", "ru", "re", "ro", "ta", "ti", "tu", "te", "र", "री", "रु", "रे", "रो", "ता", "ती", "तु", "ते", "त"],
     "वृश्चिक": ["to", "na", "ni", "nu", "ne", "no", "ya", "yi", "yu", "तो", "ना", "नी", "नु", "ने", "नो", "या", "यी", "यु", "न"],
     "धनु": ["ye", "yo", "bha", "bhi", "bu", "dha", "pha", "bhe", "ये", "यो", "भा", "भी", "भू", "ध", "फा", "ढा", "भे", "भ"],
-    "मकर": ["bho", "ja", "ji", "ju", "je", "jo", "kha", "ga", "भो", "जा", "जी", "जू", "जे", "जो", "ख", "गी", "ग", "ज", "जी"],
+    "मकर": ["bho", "ja", "ji", "ju", "je", "jo", "kha", "ga", "भो", "जा", "जी", "जू", "जे", "जो", "ख", "गी", "ଗ", "ज", "जी"],
     "कुंभ": ["gu", "ge", "go", "sa", "si", "su", "se", "so", "da", "गु", "गे", "गो", "सा", "सी", "सु", "से", "सो", "द", "स"],
     "मीन": ["di", "du", "th", "jh", "de", "do", "cha", "chi", "दी", "दू", "थ", "झ", "दे", "दो", "चा", "ची", "च", "द"]
   };
@@ -801,11 +825,19 @@ function findRashiByName() {
     matchedRashi = rashisList[input.charCodeAt(0) % rashisList.length];
   }
 
+  const rashiData = rashifal[matchedRashi];
+  const displayName = currentLanguage === "en" 
+    ? rashiData.nameEn 
+    : currentLanguage === "or" 
+    ? rashiData.nameOr 
+    : rashiData.nameHi;
+
   msg.style.color = "var(--gold)";
-  msg.textContent = `सफलता! आपकी राशि है: ${matchedRashi}`;
-  
-  // सीधे उस राशि का राशिफल दिखाने और स्क्रॉल करने के लिए
-  showRashi(matchedRashi, true);
+  msg.textContent = currentLanguage === "en" 
+    ? `Your Zodiac Sign: ${displayName}` 
+    : currentLanguage === "or" 
+    ? `ଆପଣଙ୍କ ରାଶି: ${displayName}` 
+    : `आपकी राशि है: ${displayName}`;
 }
 
 function findRashiByDob() {
@@ -816,7 +848,12 @@ function findRashiByDob() {
 
   const dobVal = dobEl.value;
   if (!dobVal) {
-    msg.textContent = "कृपया अपनी जन्मतिथि चुनें।";
+    msg.style.color = "var(--muted)";
+    msg.textContent = currentLanguage === "en" 
+      ? "Please select your date of birth." 
+      : currentLanguage === "or" 
+      ? "ଦୟାକରି ଆପଣଙ୍କ ଜନ୍ମ ତାରିଖ ବାଛନ୍ତୁ।" 
+      : "कृपया अपनी जन्मतिथि चुनें।";
     return;
   }
 
@@ -838,11 +875,19 @@ function findRashiByDob() {
   else if ((m == 1 && d >= 20) || (m == 2 && d >= 18)) r = "कुंभ";
   else r = "मीन";
 
+  const rashiData = rashifal[r];
+  const displayName = currentLanguage === "en" 
+    ? rashiData.nameEn 
+    : currentLanguage === "or" 
+    ? rashiData.nameOr 
+    : rashiData.nameHi;
+
   msg.style.color = "var(--gold)";
-  msg.textContent = `सफलता! आपकी राशि है: ${r}`;
-  
-  // सीधे उस राशि का राशिफल दिखाने और स्क्रॉल करने के लिए
-  showRashi(r, true);
+  msg.textContent = currentLanguage === "en" 
+    ? `Your Zodiac Sign: ${displayName}` 
+    : currentLanguage === "or" 
+    ? `ଆପଣଙ୍କ ରାଶି: ${displayName}` 
+    : `आपकी राशि है: ${displayName}`;
 }
 
 
