@@ -12,7 +12,7 @@ const appData = {
       tabName: "नाम से (By Name)",
       tabDob: "जन्मतिथि से (By DOB)",
       namePlaceholder: "अपना पहला नाम लिखें (e.g. Rahul)",
-      findBtn: "खोजें",
+      findBtn: "Search",
       installText: "रोज़ाना राशिफल चाहिए?",
       installLink: "Click here",
       loveTitle: "❤️ प्रेम",
@@ -23,7 +23,7 @@ const appData = {
       luckyColorTitle: "🎨 शुभ रंग",
       adviceTitle: "🙏 आज की सलाह",
       nameNotFound: "कृपया वैध नाम दर्ज करें।",
-      rashiFoundMsg: (rashi) => `আপনার ରାଶି (त Wasi): ${rashi} (${getEnglishName(rashi)})`,
+      rashiFoundMsg: (rashi) => `आपकी राशि: ${rashi} (${getEnglishName(rashi)})`,
       dobNotFound: "कृपया वैध जन्मतिथि चुनें।"
     },
     en: {
@@ -54,7 +54,7 @@ const appData = {
       tabName: "ନାମରୁ (By Name)",
       tabDob: "ଜନ୍ମ ତାରିଖରୁ (By DOB)",
       namePlaceholder: "ଆପଣଙ୍କ ପ୍ରଥମ ନାମ ଲେଖନ୍ତୁ (e.g. Rahul)",
-      findBtn: "ଖୋଜନ୍ତୁ",
+      findBtn: "Search",
       installText: "ପ୍ରତିଦିନ ରାଶିଫଳ ଚାହାଁନ୍ତି କି?",
       installLink: "Click here",
       loveTitle: "❤️ ପ୍ରେମ",
@@ -136,7 +136,7 @@ const appData = {
       enName: "Aquarius",
       hi: { love: "मित्रों का सहयोग मिलेगा। प्रेम संबंधों में प्रगाढ़ता आएगी।", career: "नई तकनीक या आइडिया पर काम करने का अवसर मिलेगा।", money: "अचानक खर्चे सामने आ सकते हैं, बजट का ध्यान रखें।", health: "मानसिक रूप से तरोताजा महसूस करेंगे।", luckyNumber: "4", luckyColor: "आसमानी (Sky Blue)", advice: "नया सीखने का प्रयास करें।" },
       en: { love: "Support from friends will be helpful. Intimacy in love will increase.", career: "Opportunity to work on new technology or innovative ideas.", money: "Sudden expenses may pop up; keep an eye on your budget.", health: "You will feel mentally refreshed and active.", luckyNumber: "4", luckyColor: "Sky Blue", advice: "Always keep trying to learn new things." },
-      or: { love: "ବନ୍ଧୁମାନଙ୍କର ସହଯୋଗ ମିଳିବ। ପ୍ରେମ ସମ୍ପର୍କରେ ଘନିଷ୍ଠତା ବୃଦ୍ଧି ପାଇବ।", career: "ନୂତନ ପ୍ରଯୁକ୍ତିବିଦ୍ୟା କିମ୍ବା ਵਿਚାରରେ କାର୍ଯ୍ୟ କରିବାର ସୁଯୋଗ ମିଳିବ।", money: "ଅତର୍କିତ ଖର୍ଚ୍ଚ ସାମ୍ନାକୁ ଆସିପାରେ, ବଜେଟ୍ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ।", health: "ମାନସିକ ଭାବରେ ସତେଜ ଅନୁଭବ କରିବେ।", luckyNumber: "4", luckyColor: "ଆକାଶ ନୀଳ (Sky Blue)", advice: "କିଛି ନୂଆ ଶିଖିବା ପାଇଁ ଚେଷ୍ଟା କରନ୍ତୁ।" }
+      or: { love: "ବନ୍ଧୁମାନଙ୍କର ସହଯୋଗ ମିଳିବ। ପ୍ରେମ ସମ୍ପର୍କରେ ଘନିଷ୍ଠତା ବୃଦ୍ଧି ପାଇବ।", career: "ନୂତନ ପ୍ରଯୁକ୍ତିବିଦ୍ୟା କିମ୍ବା ବିଚାରରେ କାର୍ଯ୍ୟ କରିବାର ସୁଯୋଗ ମିଳିବ।", money: "ଅତର୍କିତ ଖର୍ଚ୍ଚ ସାମ୍ନାକୁ ଆସିପାରେ, ବଜେଟ୍ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ।", health: "ମାନସିକ ଭାବରେ ସତେଜ ଅନୁଭବ କରିବେ।", luckyNumber: "4", luckyColor: "ଆକାଶ ନୀଳ (Sky Blue)", advice: "କିଛି ନୂଆ ଶିଖିବା ପାଇଁ ଚେଷ୍ଟା କରନ୍ତୁ।" }
     },
     "मीन": {
       enName: "Pisces",
@@ -209,6 +209,11 @@ function setLanguage(lang) {
   const userNameInput = document.getElementById("userNameInput");
   if (userNameInput) userNameInput.placeholder = t.namePlaceholder;
 
+  // Update search buttons text to "Search" for all languages
+  document.querySelectorAll('button[onclick="findRashiByName()"], button[onclick="findRashiByDob()"]').forEach(btn => {
+    btn.textContent = t.findBtn;
+  });
+
   const installPrompt = document.getElementById("installPrompt");
   if (installPrompt) {
     installPrompt.innerHTML = `${t.installText} <a id="installLink" href="install.html">${t.installLink}</a>`;
@@ -264,23 +269,6 @@ function findRashiByName() {
   const firstLetter = input[0];
   let matchedRashi = null;
 
-  // Simple phonetic/character mapping for English and Hindi initials
-  const nameMapping = {
-    'मेष': ['a', 'l', 'e', 'अ', 'च', 'चू', 'ला', 'ली'],
-    'वृषभ': ['i', 'u', 'v', 'इ', 'उ', 'व', 'ई', 'ऊ'],
-    'मिथुन': ['k', 'g', 'h', 'क', 'घ', 'छ', 'ह'],
-    'कर्क': ['h', 'd', 'ह', 'ड', 'ही', 'हू', 'डा'],
-    'सिंह': ['m', 't', 'म', 'ट', 'मा', 'मी', 'टा'],
-    'कन्या': ['p', 't', 'ष', 'ण', 'प', 'ठ', 'पा', 'पी'],
-    'तुला': ['r', 't', 'र', 'त', 'रा', 'री', 'ता'],
-    'वृश्चिक': ['t', 'n', 'y', 'न', 'या', 'तो', 'ना'],
-    'धनु': ['y', 'bh', 'ध', 'फ', 'भ', 'ये', 'भा'],
-    'मकर': ['bh', 'j', 'k', 'ख', 'ज', 'गा', 'भो', 'जा'],
-    'कुंभ': ['g', 's', 'द', 'स', 'गू', 'सा', 'सी'],
-    'मीन': ['d', 'th', 'झ', 'ञ', 'द', 'दे', 'दी', 'चा']
-  };
-
-  // Fallback direct heuristic based on English alphabets if exact match fails
   const letterToRashiEn = {
     'a': 'मेष', 'b': 'वृषभ', 'c': 'मिथुन', 'd': 'कर्क', 'e': 'सिंह',
     'f': 'कन्या', 'g': 'तुला', 'h': 'वृश्चिक', 'i': 'धनु', 'j': 'मकर',
@@ -321,7 +309,7 @@ function findRashiByDob() {
   else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) rashi = "तुला";
   else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) rashi = "वृश्चिक";
   else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) rashi = "धनु";
-  else if ((month === 12 && day >= 22) || (month === 1, day <= 19)) rashi = "मकर";
+  else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) rashi = "मकर";
   else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) rashi = "कुंभ";
   else rashi = "मीन";
 
