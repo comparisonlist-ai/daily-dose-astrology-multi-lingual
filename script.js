@@ -243,6 +243,18 @@ function updateUI() {
     updateTodayDate();
 }
 
+// Function to format day or month with a leading zero
+function formatNumber(num) {
+    return String(num).padStart(2, '0');
+}
+
+// Example usage when gathering values from your date dropdowns or inputs:
+let day = formatNumber(document.getElementById('daySelect').value);     // e.g., '5' becomes '05'
+let month = formatNumber(document.getElementById('monthSelect').value); // e.g., '9' becomes '09'
+let year = document.getElementById('yearSelect').value;
+
+let formattedDate = `${year}-${month}-${day}`;
+
 // --- Dynamic Date Formatter ---
 function updateTodayDate() {
   const dateEl = document.getElementById("todayDate");
@@ -402,6 +414,12 @@ document.addEventListener('DOMContentLoaded', () => {
       showRashi(rashi);
     });
   });
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Call your function that loads the home view or default tab
+    showHomeView(); // Replace with your actual home initialization function
+});
 
   updateUI();
 });
