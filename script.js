@@ -1,3 +1,28 @@
+
+// --- 1. PLACE AT THE TOP OF SCRIPT.JS ---
+const translations = {
+    en: { /* ... your english strings ... */ },
+    hi: { /* ... your hindi strings ... */ },
+    or: { /* ... your odia strings ... */ },
+    bn: {
+        title: "দৈনিক ডোজ জ্যোতিষ",
+        subtitle: "আপনার সঠিক দৈনিক রাশিফল জেনে নিন",
+        selectLanguage: "ভাষা নির্বাচন করুন",
+        todayRashifal: "আজকের রাশিফল",
+        installApp: "প্রতিদিনের আপডেটের জন্য অ্যাপটি ইনস্টল করুন",
+        installBtn: "এখনই ইনস্টল করুন",
+        loading: "ভবিষ্যদ্বাণী লোড হচ্ছে...",
+        rashis: {
+            aries: "মেষ", taurus: "বৃষ", gemini: "মিথুন", cancer: "কর্কট",
+            leo: "সিংহ", virgo: "কন্যা", libra: "তুলা", scorpio: "বৃশ্চিক",
+            sagittarius: "धনু / ধনু", capricorn: "মকর", aquarius: "কুম্ভ", pisces: "মীন"
+        }
+    }
+};
+
+let currentLang = localStorage.getItem('astroseek_lang') || 'bn';
+
+
 // --- Data Store for Predictions & Translations ---
 const appData = {
   currentLang: 'hi',
@@ -164,6 +189,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// --- 2. PLACE IN YOUR CORE FUNCTIONS SECTION ---
+function changeLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('astroseek_lang', lang);
+    updateUI();
+}
+
+function updateUI() {
+    const t = translations[currentLang];
+    
+    // Update static DOM texts safely (match your HTML element IDs)
+    if(document.getElementById('appTitle')) document.getElementById('appTitle').innerText = t.title;
+    if(document.getElementById('appSubtitle')) document.getElementById('appSubtitle').innerText = t.subtitle;
+    if(document.getElementById('todayHeading')) document.getElementById('todayHeading').innerText = t.todayRashifal;
+    if(document.getElementById('pwaText')) document.getElementById('pwaText').innerText = t.installApp;
+    if(document.getElementById('pwaBtn')) document.getElementById('pwaBtn').innerText = t.installBtn;
+    
+    // Refresh your Rashi grid dynamically
+    if(typeof renderRashiGrid === 'function') renderRashiGrid();
+}
+
+async function fetchRashifal(rashiId) {
+    const apiLangMap = { en: 'en', hi: 'hi', or: 'or', bn: 'bn' };
+    const requestLang = apiLangMap[currentLang] || 'en';
+
+    try {
+        const response = await fetch(`https://api.astroseek.solutions/v1/horoscope?rashi=${rashiId}&lang=${requestLang}`);
+        const data = await response.json();
+        return data.prediction;
+    } catch (error) {
+        console.error("Error fetching horoscope:", error);
+        return currentLang === 'bn' ? "দুঃখিত, তথ্য লোড করতে সমস্যা হচ্ছে।" : "Error loading data.";
+    }
+}
+
 
 // --- Dynamic Date Formatter ---
 function updateTodayDate() {
@@ -355,3 +416,13 @@ function showRashi(rashiName) {
   predSection.classList.remove("hidden");
   predSection.scrollIntoView({ behavior: 'smooth' });
 }
+
+// --- 3. PLACE AT THE BOTTOM OF SCRIPT.JS ---
+document.addEventListener('DOMContentLoaded', () => {
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+        langSelect.value = currentLang;
+    }
+    updateUI();
+});
+
