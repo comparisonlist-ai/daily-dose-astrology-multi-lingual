@@ -1,757 +1,228 @@
-Const rashifal = {
-  "मेष": {
-    nameHi: "मेष",
-    nameEn: "Aries",
-    nameOr: "ମେଷ",
-    love: {
-      hi: "आज रिश्तों में मधुरता बढ़ सकती है। अपने साथी की बात ध्यान से सुनें।",
-      en: "Relationships may become more harmonious today. Listen carefully to your partner.",
-      or: "ଆଜି ସମ୍ପର୍କରେ ମଧୁରତା ବଢ଼ିପାରେ। ନିଜ ସାଥୀଙ୍କ କଥାକୁ ଧ୍ୟାନର ସହିତ ଶୁଣନ୍ତୁ।"
+// --- Data Store for Predictions & Translations ---
+const appData = {
+  currentLang: 'hi',
+  selectedRashi: null,
+
+  // UI Translations
+  translations: {
+    hi: {
+      subHeader: "आज का राशिफल",
+      zodiacHeading: "अपनी राशि चुनें",
+      finderTitle: "🔍 नाम या जन्म तिथि से राशि जानें",
+      tabName: "नाम से (By Name)",
+      tabDob: "जन्मतिथि से (By DOB)",
+      namePlaceholder: "अपना पहला नाम लिखें (e.g. Rahul)",
+      findBtn: "खोजें",
+      installText: "रोज़ाना राशिफल चाहिए?",
+      installLink: "Click here",
+      loveTitle: "❤️ प्रेम",
+      careerTitle: "💼 करियर",
+      moneyTitle: "💰 धन",
+      healthTitle: "❤️‍🩹 स्वास्थ्य",
+      luckyNumTitle: "🔢 शुभ अंक",
+      luckyColorTitle: "🎨 शुभ रंग",
+      adviceTitle: "🙏 आज की सलाह",
+      nameNotFound: "कृपया वैध नाम दर्ज करें।",
+      rashiFoundMsg: (rashi) => `আপনার ରାଶି (त Wasi): ${rashi} (${getEnglishName(rashi)})`,
+      dobNotFound: "कृपया वैध जन्मतिथि चुनें।"
     },
-    career: {
-      hi: "काम में नई जिम्मेदारी मिल सकती है। धैर्य और आत्मविश्वास बनाए रखें।",
-      en: "You may receive a new responsibility at work. Maintain patience and confidence.",
-      or: "କାର୍ଯ୍ୟକ୍ଷେତ୍ରରେ ନୂଆ ଦାୟିତ୍ୱ ମିଳିପାରେ। ଧୈର୍ଯ୍ୟ ଏବଂ ଆତ୍ମବିଶ୍ୱାସ ବଜାୟ ରଖନ୍ତୁ।"
+    en: {
+      subHeader: "Today's Horoscope",
+      zodiacHeading: "Select Your Zodiac Sign",
+      finderTitle: "🔍 Find Your Zodiac by Name or DOB",
+      tabName: "By Name",
+      tabDob: "By DOB",
+      namePlaceholder: "Enter your first name (e.g. Rahul)",
+      findBtn: "Search",
+      installText: "Want daily horoscopes?",
+      installLink: "Click here",
+      loveTitle: "❤️ Love",
+      careerTitle: "💼 Career",
+      moneyTitle: "💰 Money",
+      healthTitle: "❤️‍🩹 Health",
+      luckyNumTitle: "🔢 Lucky Number",
+      luckyColorTitle: "🎨 Lucky Color",
+      adviceTitle: "🙏 Today's Advice",
+      nameNotFound: "Please enter a valid name.",
+      rashiFoundMsg: (rashi) => `Your Zodiac Sign: ${rashi} (${getEnglishName(rashi)})`,
+      dobNotFound: "Please select a valid date of birth."
     },
-    money: {
-      hi: "आर्थिक मामलों में सोच-समझकर निर्णय लें और अनावश्यक खर्च से बचें।",
-      en: "Make thoughtful financial decisions and avoid unnecessary expenses.",
-      or: "ଆର୍ଥିକ କ୍ଷେତ୍ରରେ ଭାବିଚିନ୍ତି ନିଷ୍ପତ୍ତି ନିଅନ୍ତୁ ଏବଂ ଅନାବଶ୍ୟକ ଖର୍ଚ୍ଚରୁ ଦୂରେଇ ରୁହନ୍ତୁ।"
-    },
-    health: {
-      hi: "अपनी दिनचर्या व्यवस्थित रखें और पर्याप्त आराम करें।",
-      en: "Maintain a balanced routine and get enough rest.",
-      or: "ନିଜର ଦୈନନ୍ଦିନ ଜୀବନକୁ ସୁସଂଗଠିତ ରଖନ୍ତୁ ଏବଂ ପର୍ଯ୍ୟାପ୍ତ ବିଶ୍ରାମ ନିଅନ୍ତୁ।"
-    },
-    luckyNumber: "9",
-    luckyColor: {
-      hi: "लाल",
-      en: "Red",
-      or: "ଲାଲ"
-    },
-    advice: {
-      hi: "जल्दबाजी से बचें और महत्वपूर्ण निर्णय सोच-समझकर लें।",
-      en: "Avoid rushing and think carefully before making important decisions.",
-      or: "ତରବରିଆ ନକରି ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ନିଷ୍ପତ୍ତି ଭାବିଚିନ୍ତି ନିଅନ୍ତୁ।"
+    or: {
+      subHeader: "ଆଜିର ରାଶିଫଳ",
+      zodiacHeading: "ନିଜ ରାଶି ବାଛନ୍ତୁ",
+      finderTitle: "🔍 ନାମ ବା ଜନ୍ମ ତାରିଖରୁ ରାଶି ଜାଣନ୍ତୁ",
+      tabName: "ନାମରୁ (By Name)",
+      tabDob: "ଜନ୍ମ ତାରିଖରୁ (By DOB)",
+      namePlaceholder: "ଆପଣଙ୍କ ପ୍ରଥମ ନାମ ଲେଖନ୍ତୁ (e.g. Rahul)",
+      findBtn: "ଖୋଜନ୍ତୁ",
+      installText: "ପ୍ରତିଦିନ ରାଶିଫଳ ଚାହାଁନ୍ତି କି?",
+      installLink: "Click here",
+      loveTitle: "❤️ ପ୍ରେମ",
+      careerTitle: "💼 କ୍ୟାରିଅର୍",
+      moneyTitle: "💰 ଧନ",
+      healthTitle: "❤️‍🩹 ସ୍ୱାସ୍ଥ୍ୟ",
+      luckyNumTitle: "🔢 ଭାଗ୍ୟଶାଳୀ ନମ୍ବର",
+      luckyColorTitle: "🎨 ଭାଗ୍ୟଶାଳୀ ରଙ୍ଗ",
+      adviceTitle: "🙏 ଆଜିର ପରାମର୍ଶ",
+      nameNotFound: "ଦୟାକରି ଏକ ବୈଧ ନାମ ପ୍ରବେଶ କରନ୍ତୁ।",
+      rashiFoundMsg: (rashi) => `ଆପଣଙ୍କ ରାଶି: ${rashi} (${getEnglishName(rashi)})`,
+      dobNotFound: "ଦୟାକରି ଏକ ବୈଧ ଜନ୍ମ ତାରିଖ ବାଛନ୍ତୁ।"
     }
   },
 
-  "वृषभ": {
-    nameHi: "वृषभ",
-    nameEn: "Taurus",
-    nameOr: "ବୃଷଭ",
-    love: {
-      hi: "परिवार और प्रियजनों के साथ समय बिताने से रिश्ते मजबूत होंगे।",
-      en: "Spending time with family and loved ones can strengthen relationships.",
-      or: "ପରିବାର ଏବଂ ପ୍ରିୟଜନଙ୍କ ସହିତ ସମୟ ବିତାଇଲେ ସମ୍ପର୍କ ଆହୁରି ମଜବୁତ ହେବ।"
+  // Horoscope Predictions Database (Multilingual)
+  predictions: {
+    "मेष": {
+      enName: "Aries",
+      hi: { love: "रिश्तों में मधुरता बनी रहेगी। पार्टनर के साथ समय बिताने का मौका मिलेगा।", career: "कार्यक्षेत्र में नए अवसर मिलेंगे। सहकर्मियों का सहयोग प्राप्त होगा।", money: "आर्थिक स्थिति मजबूत होगी। अटका हुआ धन वापस मिल सकता है।", health: "स्वास्थ्य सामान्य रहेगा, योग और व्यायाम करें।", luckyNumber: "9", luckyColor: "लाल (Red)", advice: "महत्वपूर्ण निर्णय लेते समय जल्दबाजी न करें।" },
+      en: { love: "Sweetness will remain in relationships. You will get a chance to spend time with your partner.", career: "New opportunities will open up at work. Support from colleagues will boost progress.", money: "Financial condition will strengthen. Stuck money may be recovered.", health: "Health will be normal; practice yoga and light exercise.", luckyNumber: "9", luckyColor: "Red", advice: "Do not rush while making important decisions." },
+      or: { love: "ସମ୍ପର୍କରେ ମଧୁରତା ରହିବ। ସାଥୀଙ୍କ ସହିତ ସମୟ ବିତାଇବାର ସୁଯୋଗ ମିଳିବ।", career: "କାର୍ଯ୍ୟକ୍ଷେତ୍ରରେ ନୂତନ ସୁଯୋଗ ମିଳିବ। ସହକର୍ମୀଙ୍କ ସହଯୋଗ ମିଳିବ।", money: "ଆର୍ଥିକ ସ୍ଥିତି ଦୃଢ଼ ହେବ। ଅଟକି ରହିଥିବା ଟଙ୍କା ଫେରିପାରେ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଭଲ ରହିବ, ଯୋଗ ଏବଂ ବ୍ୟାୟାମ କରନ୍ତୁ।", luckyNumber: "9", luckyColor: "ଲାଲ୍ (Red)", advice: "ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ନିଷ୍ପତ୍ତି ନେବାବେଳେ βତଡ଼ା କରନ୍ତୁ ନାହିଁ।" }
     },
-    career: {
-      hi: "आपके प्रयासों को पहचान मिल सकती है। काम को व्यवस्थित तरीके से करें।",
-      en: "Your efforts may receive recognition. Handle your work in an organized manner.",
-      or: "ଆପଣଙ୍କ ପ୍ରୟାସକୁ ସ୍ୱୀକୃତି ମିଳିପାରେ। କାମକୁ ସୁସଂଗଠିତ ଭାବରେ କରନ୍ତୁ।"
+    "वृषभ": {
+      enName: "Taurus",
+      hi: { love: "परिवार में सुख-शांति बनी रहेगी। वैवाहिक जीवन आनंदमय रहेगा।", career: "व्यापार में लाभ के योग हैं। उच्च अधिकारियों का मार्गदर्शन मिलेगा।", money: "धन लाभ के नए स्रोत बन सकते हैं। खर्चों पर नियंत्रण रखें।", health: "खान-पान का ध्यान रखें, पेट से जुड़ी समस्या हो सकती है.", luckyNumber: "6", luckyColor: "गुलाबी (Pink)", advice: "अनावश्यक वाद-विवाद से दूर रहें।" },
+      en: { love: "Peace and harmony will prevail at home. Married life will be joyful.", career: "Profits are likely in business. Guidance from seniors will be beneficial.", money: "New sources of income may open. Keep a check on unnecessary expenses.", health: "Take care of your diet; stomach issues may arise.", luckyNumber: "6", luckyColor: "Pink", advice: "Stay away from unnecessary arguments." },
+      or: { love: "ପରିବାରରେ ଶାନ୍ତି ଏବଂ ଖୁସି ରହିବ। ବୈବାହିକ ଜୀବନ ଆନନ୍ଦଦାୟକ ହେବ।", career: "ବ୍ୟାପାରରେ ଲାଭର ଯୋଗ ରହିଛି। ବରିଷ୍ଠ ଅଧିକାରୀଙ୍କ ମାର୍ଗଦର୍ଶନ ମିଳିବ।", money: "ଧନଲାଭର ନୂତନ ଉତ୍ସ ସୃଷ୍ଟି ହୋଇପାରେ। ଖର୍ଚ୍ଚ ଉପରେ ନିୟନ୍ତ୍ରଣ ରଖନ୍ତୁ।", health: "ଖାଦ୍ୟପେୟ ପ୍ରତି ଧ୍ୟାନ ଦିନ୍ତୁ, ପେଟ ସମସ୍ୟା ହୋଇପାରେ।", luckyNumber: "6", luckyColor: "ଗୋଲାପୀ (Pink)", advice: "ଅନାବଶ୍ୟକ ଯୁକ୍ତିତର୍କରୁ ଦୂରେଇ ରୁହନ୍ତୁ।" }
     },
-    money: {
-      hi: "बचत पर ध्यान देना आज आपके लिए उपयोगी रहेगा।",
-      en: "Focusing on savings will be useful for you today.",
-      or: "ଆଜି ସଞ୍ଚୟ ଉପରେ ଧ୍ୟାନ ଦେବା ଆପଣଙ୍କ ପାଇଁ ଉପଯୋଗୀ ହେବ।"
+    "मिथुन": {
+      enName: "Gemini",
+      hi: { love: "प्रेम जीवन में संवाद की कमी न होने दें। भावनाएं खुलकर व्यक्त करें।", career: "क्रिएटिव कार्यों से जुड़े लोगों को बड़ी सफलता मिल सकती है।", money: "आय में वृद्धि हो सकती है। निवेश के लिए दिन अच्छा है।", health: "मानसिक तनाव से बचें, पर्याप्त नींद लें।", luckyNumber: "5", luckyColor: "हरा (Green)", advice: "दूसरों की बातों में आने से बचें।" },
+      en: { love: "Do not let communication lag in love life. Express your feelings openly.", career: "People in creative fields can achieve major success.", money: "Income may increase. Favorable day for smart investments.", health: "Avoid mental stress and get adequate sleep.", luckyNumber: "5", luckyColor: "Green", advice: "Avoid getting influenced by others' opinions." },
+      or: { love: "ପ୍ରେମ ଜୀବନରେ ଯୋଗାଯୋଗରେ ଅବହେଳା କରନ୍ତୁ ନାହିଁ। ଭାବନା ପ୍ରକାଶ କରନ୍ତୁ।", career: "ସୃଜନଶୀଳ କାର୍ଯ୍ୟରେ ଜଡିତ ବ୍ୟକ୍ତିମାନେ ବଡ଼ ସଫଳତା ପାଇପାରିବେ।", money: "ଆୟ ବୃଦ୍ଧି ପାଇପାରେ। ନିବେଶ ପାଇଁ ଦିନଟି ଭଲ ଅଛି।", health: "ମାନସିକ ଚାପରୁ ଦୂରେଇ ରୁହନ୍ତୁ, ପର୍ଯ୍ୟାପ୍ତ ନିଦ ନିଅନ୍ତୁ।", luckyNumber: "5", luckyColor: "ସବୁଜ (Green)", advice: "ଅନ୍ୟମାନଙ୍କ କଥାରେ ପ୍ରଭାବିତ ହୁଅନ୍ତୁ ନାହିଁ।" }
     },
-    health: {
-      hi: "खान-पान पर ध्यान दें और पर्याप्त पानी पिएं।",
-      en: "Pay attention to your diet and drink enough water.",
-      or: "ଖାଦ୍ୟପାନୀୟ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ ଏବଂ ପର୍ଯ୍ୟାପ୍ତ ପାଣି ପିଅନ୍ତୁ।"
+    "कर्क": {
+      enName: "Cancer",
+      hi: { love: "जीवनसाथी का पूरा सहयोग मिलेगा। मन प्रसन्न रहेगा।", career: "नौकरीपेशा जातकों को प्रमोशन या नई जिम्मेदारी मिल सकती है।", money: "धन संचय करने में सफल रहेंगे। आर्थिक मजबूती आएगी।", health: "स्वास्थ्य उत्तम रहेगा। ऊर्जावान महसूस करेंगे।", luckyNumber: "2", luckyColor: "चांदी जैसा सफेद (White)", advice: "सकारात्मक सोच बनाए रखें।" },
+      en: { love: "Full support will be received from your life partner. Mind will remain happy.", career: "Salaried individuals may get a promotion or new responsibilities.", money: "You will succeed in saving money. Financial strength will improve.", health: "Health will be excellent. You will feel energetic.", luckyNumber: "2", luckyColor: "White", advice: "Maintain a positive outlook throughout the day." },
+      or: { love: "ଜୀବନସାଥୀଙ୍କର ପୂର୍ଣ୍ଣ ସହଯୋଗ ମିଳିବ। ମନ ପ୍ରସନ୍ନ ରହିବ।", career: "ଚାକିରି କରୁଥିବା ବ୍ୟକ୍ତିଙ୍କୁ ପଦୋନ୍ନତି କିମ୍ବା ନୂତନ ଦାୟିତ୍ୱ ମିଳିପାରେ।", memory: "ଧନ ସଞ୍ଚୟ କରିବାରେ ସଫଳ ହେବେ। ଆର୍ଥିକ ଦୃଢ଼ତା ଆସିବ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଉତ୍ତମ ରହିବ। ଶକ୍ତିଶାଳୀ ଅନୁଭବ କରିବେ।", luckyNumber: "2", luckyColor: "ଧଳା (White)", advice: "ସକାରାତ୍ମକ ଚିନ୍ତାଧାରା ବଜାୟ ରଖନ୍ତୁ।" }
     },
-    luckyNumber: "6",
-    luckyColor: {
-      hi: "हरा",
-      en: "Green",
-      or: "ସବୁଜ"
+    "सिंह": {
+      enName: "Leo",
+      hi: { love: "प्रेम संबंधों में आत्मीयता बढ़ेगी। कहीं घूमने जाने का प्लान बन सकता है।", career: "नेतृत्व क्षमता की सराहना होगी। ऑफिस में आपका दबदबा रहेगा.", money: "धन लाभ के प्रबल योग हैं। लग्जरी चीजों पर खर्च हो सकता है।", health: "थकान महसूस हो सकती है, आराम पर ध्यान दें।", luckyNumber: "1", luckyColor: "सुनहरा (Gold)", advice: "अहंकार से दूर रहें।" },
+      en: { love: "Intimacy in love relationships will increase. Plans for an outing can be made.", career: "Leadership skills will be appreciated. Your dominance in the office will grow.", money: "Strong chances of financial gain. Expenses on luxury items are possible.", health: "You may feel tired; focus on getting proper rest.", luckyNumber: "1", luckyColor: "Gold", advice: "Keep ego at bay." },
+      or: { love: "ପ୍ରେମ ସମ୍ପର୍କରେ ଆନ୍ତରିକତା ବୃଦ୍ଧି ପାଇବ। ବୁଲିବାକୁ ଯିବାର ଯୋଜନା ହୋଇପାରେ।", career: "ନେତୃତ୍ୱ କ୍ଷମତାର ପ୍ରଶଂସା କରାଯିବ। ଅଫିସରେ ଆପଣଙ୍କର ପ୍ରଭାବ ରହିବ।", money: "ଧନଲାଭର ପ୍ରବଳ ଯୋଗ ରହିଛି। ବିଳାସପୂର୍ଣ୍ଣ ଜିନିଷରେ ଖର୍ଚ୍ଚ ହୋଇପାରେ।", health: "କ୍ଳାନ୍ତ ଅନୁଭବ ହୋଇପାରେ, ବିଶ୍ରାମ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ।", luckyNumber: "1", luckyColor: "ସୁନା ରଙ୍ଗ (Gold)", advice: "ଅହଂକାରଠାରୁ ଦୂରେଇ ରୁହନ୍ତୁ।" }
     },
-    advice: {
-      hi: "धैर्य रखें और अपनी प्राथमिकताओं पर ध्यान केंद्रित करें।",
-      en: "Be patient and focus on your priorities.",
-      or: "ଧୈର୍ଯ୍ୟ ଧରନ୍ତୁ ଏବଂ ନିଜର ପ୍ରାଥମିକତା ଉପରେ ଧ୍ୟାନ ଦିଅନ୍ତୁ।"
-    }
-  },
-
-  "मिथुन": {
-    nameHi: "मिथुन",
-    nameEn: "Gemini",
-    nameOr: "ମିଥୁନ",
-    love: {
-      hi: "खुलकर बातचीत करने से रिश्तों में गलतफहमियां दूर हो सकती हैं।",
-      en: "Open communication can help clear misunderstandings in relationships.",
-      or: "ଖୋଲାଖୋଲି ଆଲୋଚନା କଲେ ସମ୍ପର୍କରେ ଥିବା ଭୁଲ ବୁଝାମଣା ଦୂର ହୋଇପାରେ।"
+    "कन्या": {
+      enName: "Virgo",
+      hi: { love: "रिश्तों में पारदर्शिता रखें। दिल की बात साफ-साफ कहें।", career: "विद्यार्थियों के लिए समय उत्तम है। परीक्षा में सफलता मिलेगी।", money: "बजट बनाकर चलें, अनावश्यक खर्चों से बचें।", health: "पाचन तंत्र का ख्याल रखें, हल्का भोजन लें।", luckyNumber: "5", luckyColor: "हरा (Green)", advice: "दूसरों की आलोचना करने से बचें।" },
+      en: { love: "Keep transparency in relationships. Express your heart clearly.", career: "Favorable time for students. Success is foreseen in examinations.", money: "Stick to a budget and avoid unnecessary expenses.", health: "Take care of your digestive system and eat light food.", luckyNumber: "5", luckyColor: "Green", advice: "Avoid criticizing others." },
+      or: { love: "ସମ୍ପର୍କରେ ସ୍ୱଚ୍ଛତା ରଖନ୍ତୁ। ମନର କଥା ସ୍ପଷ୍ଟ ଭାବରେ କୁହନ୍ତୁ।", career: "ଛାତ୍ରଛାତ୍ରୀମାନଙ୍କ ପାଇଁ ସମୟ ଉତ୍ତମ ଅଛି। ପରୀକ୍ଷାରେ ସଫଳତା ମିଳିବ।", money: "ବଜେଟ୍ ପ୍ରସ୍ତୁତ କରି ଚାଲନ୍ତୁ, ଅନାବଶ୍ୟକ ଖର୍ଚ୍ଚରୁ ବଞ୍ଚନ୍ତୁ।", health: "ପାଚନତନ୍ତ୍ରର ଯତ୍ନ ନିଅନ୍ତୁ, ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।", luckyNumber: "5", luckyColor: "ସବୁଜ (Green)", advice: "ଅନ୍ୟର ସମାଲୋଚନା କରିବାରୁ ବିରତ ରୁହନ୍ତୁ।" }
     },
-    career: {
-      hi: "नई जानकारी और नए विचार आपके काम में मदद कर सकते हैं।",
-      en: "New information and ideas may help you in your work.",
-      or: "ନୂଆ ସୂଚନା ଏବଂ ନୂଆ ଚିନ୍ତାଧାରା ଆପଣଙ୍କ କାମରେ ସାହାଯ୍ୟ କରିପାରେ।"
+    "तुला": {
+      enName: "Libra",
+      hi: { love: "दांपत्य जीवन में मधुरता आएगी। पुराने गिले-शिकवे दूर होंगे।", career: "व्यापारियों को नई डील्स मिलने की संभावना है।", money: "आर्थिक मामलों में सावधानी बरतें, किसी को उधार न दें।", health: "जोड़ों में दर्द या थकान की शिकायत हो सकती है।", luckyNumber: "6", luckyColor: "हल्का नीला (Light Blue)", advice: "संतुलित रवैया अपनाएं।" },
+      en: { love: "Sweetness will come in conjugal life. Old grievances will be resolved.", career: "Businesspersons are likely to crack new deals.", money: "Exercise caution in financial matters; avoid lending money.", health: "Joint pain or fatigue complaints may arise.", luckyNumber: "6", luckyColor: "Light Blue", advice: "Adopt a balanced approach." },
+      or: { love: "ଦାମ୍ପତ୍ୟ ଜୀବନରେ ମଧୁରତା ଆସିବ। ପୁରୁଣା ମତାମତ ଦୂର ହେବ।", career: "ବ୍ୟବସାୟୀମାନଙ୍କୁ ନୂତନ ଡିଲ୍ ମିଳିବାର ସମ୍ଭାବନା ଅଛି।", money: "ଆର୍ଥିକ ମାମଲାରେ ସତର୍କତା ଅବଲମ୍ବନ କରନ୍ତୁ, କାହାକୁ ଧାର ଦିଅନ୍ତୁ ନାହିଁ।", health: "ଗଣ୍ଠି ଯନ୍ତ୍ରଣା କିମ୍ବା କ୍ଳାନ୍ତ ଅନୁଭବ ହୋଇପାରେ।", luckyNumber: "6", luckyColor: "ହାଲୁକା ନୀଳ (Light Blue)", advice: "ସନ୍ତୁଳିତ ଆଚରଣ ଗ୍ରହଣ କରନ୍ତୁ।" }
     },
-    money: {
-      hi: "आज बजट बनाकर चलना बेहतर रहेगा।",
-      en: "It would be better to follow a budget today.",
-      or: "ଆଜି ବଜେଟ୍ ପ୍ରସ୍ତୁତ କରି ଚାଲିବା ଭଲ ହେବ।"
+    "वृश्चिक": {
+      enName: "Scorpio",
+      hi: { love: "भावनाओं पर नियंत्रण रखें। पार्टनर की भावनाओं को समझें।", career: "कार्यस्थल पर कोई गुप्त विरोधी परेशान कर सकता है, सतर्क रहें।", money: "अचानक धन लाभ के योग बन रहे हैं। शेयर बाजार में सोच-समझकर निवेश करें।", health: "तनावमुक्त रहने के लिए मेडिटेशन करें।", luckyNumber: "9", luckyColor: "मैरून (Maroon)", advice: "हर किसी पर तुरंत भरोसा न करें।" },
+      en: { love: "Keep your emotions in check. Try to understand your partner's feelings.", career: "A secret opponent at work might create trouble; stay alert.", money: "Chances of sudden financial gains. Invest wisely in the market.", health: "Meditate to stay stress-free.", luckyNumber: "9", luckyColor: "Maroon", advice: "Do not trust everyone blindly." },
+      or: { love: "ଭାବନା ଉପରେ ନିୟନ୍ତ୍ରଣ ରଖନ୍ତୁ। ସାଥୀଙ୍କ ଭାବନାକୁ ବୁଝନ୍ତୁ।", career: "କାର୍ଯ୍ୟକ୍ଷେତ୍ରରେ କେହି ଗୁପ୍ତ ଶତ୍ରୁ ସମସ୍ୟା ସୃଷ୍ଟି କରିପାରେ, ସତର୍କ ରୁହନ୍ତୁ।", money: "ଅତର୍କିତ ଧନଲାଭର ଯୋଗ ରହିଛି। ବଜାରରେ ଚିନ୍ତାକରି ନିବେଶ କରନ୍ତୁ।", health: "ଚାପମୁକ୍ତ ରହିବା ପାଇଁ ଧ୍ୟାନ କରନ୍ତୁ।", luckyNumber: "9", luckyColor: "ମେରୁନ୍ (Maroon)", advice: "ସମସ୍ତଙ୍କୁ ତୁରନ୍ତ ବିଶ୍ୱାସ କରନ୍ତୁ ନାହିଁ।" }
     },
-    health: {
-      hi: "तनाव कम करने के लिए थोड़ा आराम और हल्का व्यायाम करें।",
-      en: "Take some rest and do light exercise to reduce stress.",
-      or: "ଚାପ କମାଇବା ପାଇଁ କିଛି ବିଶ୍ରାମ ନିଅନ୍ତୁ ଏବଂ ହାଲୁକା ବ୍ୟାୟାମ କରନ୍ତୁ।"
+    "धनु": {
+      enName: "Sagittarius",
+      hi: { love: "धार्मिक यात्रा या लॉन्ग ड्राइव पर जाने का योग है।", career: "नौकरी में प्रमोशन या स्थान परिवर्तन की संभावना है।", money: "आय के नए स्रोत बनेंगे। आर्थिक स्थिति मजबूत होगी।", health: "स्वास्थ्य अच्छा रहेगा, ऊर्जा बनी रहेगी।", luckyNumber: "3", luckyColor: "पीला (Yellow)", advice: "बड़ों का आशीर्वाद लें।" },
+      en: { love: "Chances of a religious trip or a long drive with partner.", career: "Promotion or transfer is likely in your job.", money: "New sources of income will emerge. Financial condition will strengthen.", health: "Health will be good; energy levels will remain high.", luckyNumber: "3", luckyColor: "Yellow", advice: "Seek blessings from elders." },
+      or: { love: "ଧାର୍ମିକ ଯାତ୍ରା କିମ୍ବା ଲଙ୍ଗ୍ ଡ୍ରାଇଭ୍ ଯିବାର ଯୋଗ ରହିଛି।", career: "ଚାକିରିରେ ପଦୋନ୍ନତି କିମ୍ବା ସ୍ଥାନ ପରିବର୍ତ୍ତନର ସମ୍ଭାବନା ଅଛି।", money: "ଆୟର ନୂତନ ଉତ୍ସ ସୃଷ୍ଟି ହେବ। ଆର୍ଥିକ ସ୍ଥିତି ଦୃଢ଼ ହେବ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଭଲ ରହିବ, ଶକ୍ତି ବଜାୟ ରହିବ।", luckyNumber: "3", luckyColor: "ହଳଦିଆ (Yellow)", advice: "ବଡ଼ମାନଙ୍କ ଆଶୀର୍ବାଦ ନିଅନ୍ତୁ।" }
     },
-    luckyNumber: "5",
-    luckyColor: {
-      hi: "पीला",
-      en: "Yellow",
-      or: "ହଳଦିଆ"
+    "मकर": {
+      enName: "Capricorn",
+      hi: { love: "पारिवारिक जीवन में सामंजस्य बना रहेगा।", career: "मेहनत का पूरा फल मिलेगा। बॉस आपके काम से संतुष्ट रहेंगे।", money: "धन निवेश के लिए समय अनुकूल है। संपत्ति से लाभ हो सकता है।", health: "घुटनों या हड्डियों से जुड़ी समस्या हो सकती है, ध्यान रखें।", luckyNumber: "8", luckyColor: "गहरा नीला (Dark Blue)", advice: "कड़ी मेहनत जारी रखें।" },
+      en: { love: "Harmony will prevail in family life.", career: "You will reap full rewards for your hard work. Boss will be satisfied.", money: "Time is favorable for investments. Property gains are likely.", health: "Knee or bone-related issues might arise; take precautions.", luckyNumber: "8", luckyColor: "Dark Blue", advice: "Continue working hard with dedication." },
+      or: { love: "ପାର୍ବାରିକ ଜୀବନରେ ସାମଞ୍ଜସ୍ୟ ବଜାୟ ରହିବ।", career: " ପରିଶ୍ରମର ପୂର୍ଣ୍ଣ ଫଳ ମିଳିବ। ବସ୍ ଆପଣଙ୍କ କାମରେ ସନ୍ତୁଷ୍ଟ ରହିବେ।", money: "ଧନ ନିବେଶ ପାଇଁ ସମୟ ଅନୁକୂଳ ଅଛି। ସମ୍ପତ୍ତିରୁ ଲାଭ ମିଳିପାରେ।", health: "ଆଣ୍ଠୁ କିମ୍ବା ହାଡ଼ ସମସ୍ୟା ହୋଇପାରେ, ଯତ୍ନ ନିଅନ୍ତୁ।", luckyNumber: "8", luckyColor: "ଗାଢ଼ ନୀଳ (Dark Blue)", advice: "କଠିନ ପରିଶ୍ରମ ଜାରି ରଖନ୍ତୁ।" }
     },
-    advice: {
-      hi: "अपनी बात स्पष्ट और विनम्र तरीके से रखें।",
-      en: "Express yourself clearly and politely.",
-      or: "ନିଜ କଥାକୁ ସ୍ପଷ୍ଟ ଏବଂ ଭଦ୍ର ଭାବରେ ପ୍ରକାଶ କରନ୍ତୁ।"
-    }
-  },
-
-  "कर्क": {
-    nameHi: "कर्क",
-    nameEn: "Cancer",
-    nameOr: "କର୍କଟ",
-    love: {
-      hi: "आज भावनात्मक रूप से प्रियजनों का सहयोग मिल सकता है।",
-      en: "You may receive emotional support from loved ones today.",
-      or: "ଆଜି ପ୍ରିୟଜନଙ୍କଠାରୁ ଭାବନାତ୍ମକ ସହଯୋଗ ମିଳିପାରେ।"
+    "कुंभ": {
+      enName: "Aquarius",
+      hi: { love: "मित्रों का सहयोग मिलेगा। प्रेम संबंधों में प्रगाढ़ता आएगी।", career: "नई तकनीक या आइडिया पर काम करने का अवसर मिलेगा।", money: "अचानक खर्चे सामने आ सकते हैं, बजट का ध्यान रखें।", health: "मानसिक रूप से तरोताजा महसूस करेंगे।", luckyNumber: "4", luckyColor: "आसमानी (Sky Blue)", advice: "नया सीखने का प्रयास करें।" },
+      en: { love: "Support from friends will be helpful. Intimacy in love will increase.", career: "Opportunity to work on new technology or innovative ideas.", money: "Sudden expenses may pop up; keep an eye on your budget.", health: "You will feel mentally refreshed and active.", luckyNumber: "4", luckyColor: "Sky Blue", advice: "Always keep trying to learn new things." },
+      or: { love: "ବନ୍ଧୁମାନଙ୍କର ସହଯୋଗ ମିଳିବ। ପ୍ରେମ ସମ୍ପର୍କରେ ଘନିଷ୍ଠତା ବୃଦ୍ଧି ପାଇବ।", career: "ନୂତନ ପ୍ରଯୁକ୍ତିବିଦ୍ୟା କିମ୍ବା ਵਿਚାରରେ କାର୍ଯ୍ୟ କରିବାର ସୁଯୋଗ ମିଳିବ।", money: "ଅତର୍କିତ ଖର୍ଚ୍ଚ ସାମ୍ନାକୁ ଆସିପାରେ, ବଜେଟ୍ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ।", health: "ମାନସିକ ଭାବରେ ସତେଜ ଅନୁଭବ କରିବେ।", luckyNumber: "4", luckyColor: "ଆକାଶ ନୀଳ (Sky Blue)", advice: "କିଛି ନୂଆ ଶିଖିବା ପାଇଁ ଚେଷ୍ଟା କରନ୍ତୁ।" }
     },
-    career: {
-      hi: "काम में स्थिरता बनी रह सकती है। अधूरे काम पूरे करने का प्रयास करें।",
-      en: "Work may remain stable. Try to complete unfinished tasks.",
-      or: "କାମରେ ସ୍ଥିରତା ବଜାୟ ରହିପାରେ। ଅଧୁରା କାମଗୁଡ଼ିକୁ ସମ୍ପୂର୍ଣ୍ଣ କରିବାକୁ ଚେଷ୍ଟା କରନ୍ତୁ।"
-    },
-    money: {
-      hi: "आर्थिक स्थिति को मजबूत करने के लिए अनावश्यक खर्च नियंत्रित करें।",
-      en: "Control unnecessary expenses to strengthen your financial situation.",
-      or: "ଆର୍ଥିକ ସ୍ଥିତିକୁ ମଜବୁତ କରିବା ପାଇଁ ଅନାବଶ୍ୟକ ଖର୍ଚ୍ଚ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ।"
-    },
-    health: {
-      hi: "आराम और नींद को प्राथमिकता दें।",
-      en: "Give priority to rest and adequate sleep.",
-      or: "ବିଶ୍ରାମ ଏବଂ ପର୍ଯ୍ୟାପ୍ତ ନିଦ୍ରାକୁ ପ୍ରାଥମିକତା ଦିଅନ୍ତୁ।"
-    },
-    luckyNumber: "2",
-    luckyColor: {
-      hi: "सफेद",
-      en: "White",
-      or: "ଧଳା"
-    },
-    advice: {
-      hi: "भावनाओं के साथ-साथ व्यावहारिक सोच को भी महत्व दें।",
-      en: "Give importance to practical thinking along with your emotions.",
-      or: "ଭାବନା ସହିତ ବ୍ୟବହାରିକ ଚିନ୍ତାଧାରାକୁ ମଧ୍ୟ ଗୁରୁତ୍ୱ ଦିଅନ୍ତୁ।"
-    }
-  },
-
-  "सिंह": {
-    nameHi: "सिंह",
-    nameEn: "Leo",
-    nameOr: "ସିଂହ",
-    love: {
-      hi: "आपका आत्मविश्वास रिश्तों में सकारात्मक प्रभाव डाल सकता है।",
-      en: "Your confidence may have a positive effect on your relationships.",
-      or: "ଆପଣଙ୍କ ଆତ୍ମବିଶ୍ୱାସ ସମ୍ପର୍କରେ ସକାରାତ୍ମକ ପ୍ରଭାବ ପକାଇପାରେ।"
-    },
-    career: {
-      hi: "नेतृत्व करने का अवसर मिल सकता है। जिम्मेदारी को गंभीरता से लें।",
-      en: "You may get an opportunity to lead. Take your responsibilities seriously.",
-      or: "ନେତୃତ୍ୱ ନେବାର ସୁଯୋଗ ମିଳିପାରେ। ଦାୟିତ୍ୱକୁ ଗମ୍ଭୀରତାର ସହିତ ନିଅନ୍ତୁ।"
-    },
-    money: {
-      hi: "आर्थिक मामलों में संतुलित दृष्टिकोण रखें।",
-      en: "Maintain a balanced approach to financial matters.",
-      or: "ଆର୍ଥିକ କ୍ଷେତ୍ରରେ ସନ୍ତୁଳିତ ଦୃଷ୍ଟିକୋଣ ରଖନ୍ତୁ।"
-    },
-    health: {
-      hi: "ऊर्जा बनाए रखने के लिए नियमित दिनचर्या अपनाएं।",
-      en: "Follow a regular routine to maintain your energy.",
-      or: "ଶକ୍ତି ବଜାୟ ରଖିବା ପାଇଁ ନିୟମିତ ଦୈନନ୍ଦିନ ଜୀବନ ଅନୁସରଣ କରନ୍ତୁ।"
-    },
-    luckyNumber: "1",
-    luckyColor: {
-      hi: "सुनहरा",
-      en: "Golden",
-      or: "ସୁନେଲି"
-    },
-    advice: {
-      hi: "आत्मविश्वास रखें लेकिन दूसरों की राय का भी सम्मान करें।",
-      en: "Be confident while also respecting the opinions of others.",
-      or: "ଆତ୍ମବିଶ୍ୱାସୀ ରୁହନ୍ତୁ, କିନ୍ତୁ ଅନ୍ୟମାନଙ୍କ ମତକୁ ମଧ୍ୟ ସମ୍ମାନ କରନ୍ତୁ।"
-    }
-  },
-
-  "कन्या": {
-    nameHi: "कन्या",
-    nameEn: "Virgo",
-    nameOr: "କନ୍ୟା",
-    love: {
-      hi: "रिश्तों में छोटी बातों को लेकर अधिक चिंता न करें।",
-      en: "Do not worry too much about small issues in relationships.",
-      or: "ସମ୍ପର୍କରେ ଛୋଟ କଥାକୁ ନେଇ ଅଧିକ ଚିନ୍ତା କରନ୍ତୁ ନାହିଁ।"
-    },
-    career: {
-      hi: "आपकी मेहनत और व्यवस्थित कार्यशैली लाभ दे सकती है।",
-      en: "Your hard work and organized approach may bring positive results.",
-      or: "ଆପଣଙ୍କ ପରିଶ୍ରମ ଏବଂ ସୁସଂଗଠିତ କାର୍ଯ୍ୟଶୈଳୀ ଭଲ ଫଳ ଦେଇପାରେ।"
-    },
-    money: {
-      hi: "खर्चों की समीक्षा करने के लिए अच्छा समय है।",
-      en: "This is a good time to review your expenses.",
-      or: "ଖର୍ଚ୍ଚଗୁଡ଼ିକର ସମୀକ୍ଷା କରିବା ପାଇଁ ଏହା ଭଲ ସମୟ।"
-    },
-    health: {
-      hi: "स्वच्छ और संतुलित भोजन पर ध्यान दें।",
-      en: "Focus on clean and balanced food.",
-      or: "ସ୍ୱଚ୍ଛ ଏବଂ ସନ୍ତୁଳିତ ଖାଦ୍ୟ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ।"
-    },
-    luckyNumber: "5",
-    luckyColor: {
-      hi: "हरा",
-      en: "Green",
-      or: "ସବୁଜ"
-    },
-    advice: {
-      hi: "हर चीज को पूर्ण बनाने की कोशिश में खुद पर अतिरिक्त दबाव न डालें।",
-      en: "Do not put extra pressure on yourself trying to make everything perfect.",
-      or: "ସବୁକିଛିକୁ ସମ୍ପୂର୍ଣ୍ଣ କରିବାର ଚେଷ୍ଟାରେ ନିଜ ଉପରେ ଅତିରିକ୍ତ ଚାପ ପକାନ୍ତୁ ନାହିଁ।"
-    }
-  },
-
-  "तुला": {
-    nameHi: "तुला",
-    nameEn: "Libra",
-    nameOr: "ତୁଳା",
-    love: {
-      hi: "साथी के साथ शांतिपूर्ण बातचीत रिश्ते को मजबूत कर सकती है।",
-      en: "A calm conversation with your partner can strengthen your relationship.",
-      or: "ସାଥୀଙ୍କ ସହିତ ଶାନ୍ତିପୂର୍ଣ୍ଣ ଆଲୋଚନା ସମ୍ପର୍କକୁ ମଜବୁତ କରିପାରେ।"
-    },
-    career: {
-      hi: "सहकर्मियों के साथ सहयोग से काम आसान हो सकता है।",
-      en: "Cooperation with colleagues can make work easier.",
-      or: "ସହକର୍ମୀମାନଙ୍କ ସହଯୋଗରେ କାମ ସହଜ ହୋଇପାରେ।"
-    },
-    money: {
-      hi: "निवेश या बड़े खर्च से पहले जानकारी अच्छी तरह जांचें।",
-      en: "Check the information carefully before making an investment or major expense.",
-      or: "ନିବେଶ କିମ୍ବା ବଡ଼ ଖର୍ଚ୍ଚ ପୂର୍ବରୁ ସୂଚନାକୁ ଭଲ ଭାବରେ ଯାଞ୍ଚ କରନ୍ତୁ।"
-    },
-    health: {
-      hi: "मानसिक शांति के लिए कुछ समय अपने लिए निकालें।",
-      en: "Take some time for yourself to maintain peace of mind.",
-      or: "ମାନସିକ ଶାନ୍ତି ପାଇଁ କିଛି ସମୟ ନିଜ ପାଇଁ ବାହାର କରନ୍ତୁ।"
-    },
-    luckyNumber: "6",
-    luckyColor: {
-      hi: "नीला",
-      en: "Blue",
-      or: "ନୀଳ"
-    },
-    advice: {
-      hi: "संतुलन बनाए रखना आज आपकी सबसे बड़ी ताकत हो सकती है।",
-      en: "Maintaining balance may be your greatest strength today.",
-      or: "ସନ୍ତୁଳନ ବଜାୟ ରଖିବା ଆଜି ଆପଣଙ୍କର ସବୁଠାରୁ ବଡ଼ ଶକ୍ତି ହୋଇପାରେ।"
-    }
-  },
-
-  "वृश्चिक": {
-    nameHi: "वृश्चिक",
-    nameEn: "Scorpio",
-    nameOr: "ବିଛା",
-    love: {
-      hi: "अपनी भावनाओं को स्पष्ट रूप से व्यक्त करने से रिश्तों में नजदीकी बढ़ सकती है।",
-      en: "Expressing your feelings clearly may bring more closeness to your relationships.",
-      or: "ନିଜ ଭାବନାକୁ ସ୍ପଷ୍ଟ ଭାବରେ ପ୍ରକାଶ କଲେ ସମ୍ପର୍କରେ ନିକଟତା ବଢ଼ିପାରେ।"
-    },
-    career: {
-      hi: "किसी महत्वपूर्ण काम पर आपका ध्यान केंद्रित रह सकता है।",
-      en: "You may remain focused on an important task.",
-      or: "କୌଣସି ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ କାମ ଉପରେ ଆପଣଙ୍କ ଧ୍ୟାନ କେନ୍ଦ୍ରିତ ରହିପାରେ।"
-    },
-    money: {
-      hi: "आर्थिक मामलों में गोपनीय जानकारी साझा करने से बचें।",
-      en: "Avoid sharing confidential information about financial matters.",
-      or: "ଆର୍ଥିକ ବିଷୟରେ ଗୋପନୀୟ ସୂଚନା ସେୟାର କରିବାରୁ ଦୂରେଇ ରୁହନ୍ତୁ।"
-    },
-    health: {
-      hi: "तनाव कम करने के लिए पर्याप्त आराम करें।",
-      en: "Get enough rest to reduce stress.",
-      or: "ଚାପ କମାଇବା ପାଇଁ ପର୍ଯ୍ୟାପ୍ତ ବିଶ୍ରାମ ନିଅନ୍ତୁ।"
-    },
-    luckyNumber: "8",
-    luckyColor: {
-      hi: "मैरून",
-      en: "Maroon",
-      or: "ମେରୁନ୍"
-    },
-    advice: {
-      hi: "धैर्य रखें और किसी भी निर्णय में जल्दबाजी न करें।",
-      en: "Be patient and do not rush into decisions.",
-      or: "ଧୈର୍ଯ୍ୟ ଧରନ୍ତୁ ଏବଂ କୌଣସି ନିଷ୍ପତ୍ତିରେ ତରବରିଆ କରନ୍ତୁ ନାହିଁ।"
-    }
-  },
-
-  "धनु": {
-    nameHi: "धनु",
-    nameEn: "Sagittarius",
-    nameOr: "ଧନୁ",
-    love: {
-      hi: "आज रिश्तों में उत्साह और सकारात्मकता बनी रह सकती है।",
-      en: "Relationships may remain positive and enthusiastic today.",
-      or: "ଆଜି ସମ୍ପର୍କରେ ଉତ୍ସାହ ଏବଂ ସକାରାତ୍ମକତା ବଜାୟ ରହିପାରେ।"
-    },
-    career: {
-      hi: "नई योजना पर काम शुरू करने का अवसर मिल सकता है।",
-      en: "You may get an opportunity to start working on a new plan.",
-      or: "ନୂଆ ଯୋଜନା ଉପରେ କାମ ଆରମ୍ଭ କରିବାର ସୁଯୋଗ ମିଳିପାରେ।"
-    },
-    money: {
-      hi: "अचानक होने वाले खर्चों के लिए कुछ राशि बचाकर रखें।",
-      en: "Keep some money aside for unexpected expenses.",
-      or: "ଅପ୍ରତ୍ୟାଶିତ ଖର୍ଚ୍ଚ ପାଇଁ କିଛି ଟଙ୍କା ସଞ୍ଚୟ କରି ରଖନ୍ତୁ।"
-    },
-    health: {
-      hi: "शारीरिक गतिविधि आपकी ऊर्जा बनाए रखने में मदद कर सकती है।",
-      en: "Physical activity may help you maintain your energy.",
-      or: "ଶାରୀରିକ କାର୍ଯ୍ୟକଳାପ ଆପଣଙ୍କ ଶକ୍ତି ବଜାୟ ରଖିବାରେ ସାହାଯ୍ୟ କରିପାରେ।"
-    },
-    luckyNumber: "3",
-    luckyColor: {
-      hi: "पीला",
-      en: "Yellow",
-      or: "ହଳଦିଆ"
-    },
-    advice: {
-      hi: "नए अवसरों को समझदारी से अपनाएं।",
-      en: "Approach new opportunities wisely.",
-      or: "ନୂଆ ସୁଯୋଗଗୁଡ଼ିକୁ ବୁଦ୍ଧିମତାର ସହିତ ଗ୍ରହଣ କରନ୍ତୁ।"
-    }
-  },
-
-  "मकर": {
-    nameHi: "मकर",
-    nameEn: "Capricorn",
-    nameOr: "ମକର",
-    love: {
-      hi: "रिश्तों में विश्वास और स्थिरता बनाए रखने पर ध्यान दें।",
-      en: "Focus on maintaining trust and stability in relationships.",
-      or: "ସମ୍ପର୍କରେ ବିଶ୍ୱାସ ଏବଂ ସ୍ଥିରତା ବଜାୟ ରଖିବା ଉପରେ ଧ୍ୟାନ ଦିଅନ୍ତୁ।"
-    },
-    career: {
-      hi: "लगातार मेहनत से काम में प्रगति की संभावना बन सकती है।",
-      en: "Consistent hard work may lead to progress at work.",
-      or: "ନିରନ୍ତର ପରିଶ୍ରମ ଦ୍ୱାରା କାମରେ ଅଗ୍ରଗତିର ସମ୍ଭାବନା ରହିପାରେ।"
-    },
-    money: {
-      hi: "बजट और बचत की योजना पर ध्यान देना लाभदायक रहेगा।",
-      en: "Focusing on budgeting and saving can be beneficial.",
-      or: "ବଜେଟ୍ ଏବଂ ସଞ୍ଚୟ ଯୋଜନା ଉପରେ ଧ୍ୟାନ ଦେବା ଲାଭଦାୟକ ହେବ।"
-    },
-    health: {
-      hi: "काम और आराम के बीच संतुलन रखें।",
-      en: "Maintain a balance between work and rest.",
-      or: "କାମ ଏବଂ ବିଶ୍ରାମ ମଧ୍ୟରେ ସନ୍ତୁଳନ ରଖନ୍ତୁ।"
-    },
-    luckyNumber: "8",
-    luckyColor: {
-      hi: "भूरा",
-      en: "Brown",
-      or: "ବାଦାମୀ"
-    },
-    advice: {
-      hi: "छोटे कदमों से लगातार आगे बढ़ते रहें।",
-      en: "Keep moving forward consistently with small steps.",
-      or: "ଛୋଟ ଛୋଟ ପଦକ୍ଷେପରେ ନିରନ୍ତର ଆଗକୁ ବଢ଼ିଚାଲନ୍ତୁ।"
-    }
-  },
-
-  "कुंभ": {
-    nameHi: "कुंभ",
-    nameEn: "Aquarius",
-    nameOr: "କୁମ୍ଭ",
-    love: {
-      hi: "नई बातचीत रिश्तों में सकारात्मक बदलाव ला सकती है।",
-      en: "A new conversation may bring positive changes to your relationships.",
-      or: "ନୂଆ ଆଲୋଚନା ସମ୍ପର୍କରେ ସକାରାତ୍ମକ ପରିବର୍ତ୍ତନ ଆଣିପାରେ।"
-    },
-    career: {
-      hi: "आपका नया विचार काम में उपयोगी साबित हो सकता है।",
-      en: "Your new idea may prove useful at work.",
-      or: "ଆପଣଙ୍କ ନୂଆ ଚିନ୍ତାଧାରା କାମରେ ଉପଯୋଗୀ ପ୍ରମାଣିତ ହୋଇପାରେ।"
-    },
-    money: {
-      hi: "आर्थिक मामलों में भावनात्मक निर्णय लेने से बचें।",
-      en: "Avoid making emotional decisions about financial matters.",
-      or: "ଆର୍ଥିକ ବିଷୟରେ ଭାବନାପ୍ରବଣ ନିଷ୍ପତ୍ତି ନେବାରୁ ଦୂରେଇ ରୁହନ୍ତୁ।"
-    },
-    health: {
-      hi: "अपने आराम और मानसिक शांति का ध्यान रखें।",
-      en: "Take care of your rest and peace of mind.",
-      or: "ନିଜର ବିଶ୍ରାମ ଏବଂ ମାନସିକ ଶାନ୍ତିର ଯତ୍ନ ନିଅନ୍ତୁ।"
-    },
-    luckyNumber: "4",
-    luckyColor: {
-      hi: "नीला",
-      en: "Blue",
-      or: "ନୀଳ"
-    },
-    advice: {
-      hi: "अपनी रचनात्मक सोच को सही दिशा में इस्तेमाल करें।",
-      en: "Use your creative thinking in the right direction.",
-      or: "ନିଜର ସୃଜନଶୀଳ ଚିନ୍ତାଧାରାକୁ ସଠିକ୍ ଦିଗରେ ବ୍ୟବହାର କରନ୍ତୁ।"
-    }
-  },
-
-  "मीन": {
-    nameHi: "मीन",
-    nameEn: "Pisces",
-    nameOr: "ମୀନ",
-    love: {
-      hi: "प्रिय व्यक्ति के साथ भावनात्मक जुड़ाव बढ़ सकता है।",
-      en: "Emotional connection with a loved one may grow.",
-      or: "ପ୍ରିୟ ବ୍ୟକ୍ତିଙ୍କ ସହିତ ଭାବନାତ୍ମକ ସମ୍ପର୍କ ବଢ଼ିପାରେ।"
-    },
-    career: {
-      hi: "रचनात्मक कार्यों में अच्छे विचार आ सकते हैं।",
-      en: "Good ideas may come to you in creative work.",
-      or: "ସୃଜନଶୀଳ କାର୍ଯ୍ୟରେ ଭଲ ଚିନ୍ତାଧାରା ଆସିପାରେ।"
-    },
-    money: {
-      hi: "आर्थिक मामलों में सावधानी और योजना जरूरी है।",
-      en: "Care and planning are important in financial matters.",
-      or: "ଆର୍ଥିକ ବିଷୟରେ ସାବଧାନତା ଏବଂ ଯୋଜନା ଆବଶ୍ୟକ।"
-    },
-    health: {
-      hi: "आराम और सकारात्मक सोच आपके लिए उपयोगी रहेगी।",
-      en: "Rest and positive thinking may be helpful for you.",
-      or: "ବିଶ୍ରାମ ଏବଂ ସକାରାତ୍ମକ ଚିନ୍ତା ଆପଣଙ୍କ ପାଇଁ ଉପଯୋଗୀ ହେବ।"
-    },
-    luckyNumber: "7",
-    luckyColor: {
-      hi: "समुद्री हरा",
-      en: "Sea Green",
-      or: "ସମୁଦ୍ର ସବୁଜ"
-    },
-    advice: {
-      hi: "अपनी अंतर्ज्ञान पर भरोसा करें, लेकिन महत्वपूर्ण निर्णय तथ्यों के आधार पर लें।",
-      en: "Trust your intuition, but base important decisions on facts.",
-      or: "ନିଜର ଅନ୍ତର୍ଜ୍ଞାନ ଉପରେ ବିଶ୍ୱାସ କରନ୍ତୁ, କିନ୍ତୁ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ନିଷ୍ପତ୍ତି ତଥ୍ୟ ଆଧାରରେ ନିଅନ୍ତୁ।"
+    "मीन": {
+      enName: "Pisces",
+      hi: { love: "रोमांस के लिहाज से दिन बहुत अच्छा है। पार्टनर से सरप्राइज मिल सकता है।", career: "कला और संगीत से जुड़े लोगों को मंच मिलेगा।", money: "आर्थिक स्थिति स्थिर रहेगी। रुका हुआ धन मिल सकता है।", health: "पानी खूब पिएं, त्वचा का ख्याल रखें।", luckyNumber: "3", luckyColor: "पीला (Yellow)", advice: "दूसरों की मदद करने के लिए आगे आएं।" },
+      en: { love: "Great day for romance. You might receive a surprise from your partner.", career: "Artists and people in media/music will get a good platform.", money: "Financial status will remain stable. Stuck funds may recover.", health: "Drink plenty of water and take care of your skin.", luckyNumber: "3", luckyColor: "Yellow", advice: "Step forward to help others." },
+      or: { love: "ରୋମାନ୍ସ ଦୃଷ୍ଟିରୁ ଦିନଟି ବହୁତ ଭଲ ଅଛି। ସାଥୀଙ୍କଠାରୁ ସରପ୍ରାଇଜ୍ ମିଳିପାରେ।", career: "କଳା ଏବଂ ସଙ୍ଗୀତରେ ଜଡିତ ବ୍ୟକ୍ତିମାନେ ମଞ୍ଚ ପାଇବେ।", money: "ଆର୍ଥିକ ସ୍ଥିତି ସ୍ଥିର ରହିବ। ଅଟକି ରହିଥିବା ଟଙ୍କା ମିଳିପାରେ।", health: "ପାଣି ପ୍ରଚୁର ପରିମାଣରେ ପିଅନ୍ତୁ, ଚର୍ମର ଯତ୍ନ ନିଅନ୍ତୁ।", luckyNumber: "3", luckyColor: "ହଳଦିଆ (Yellow)", advice: "ଅନ୍ୟମାନଙ୍କୁ ସାହାଯ୍ୟ କରିବା ପାଇଁ ଆଗକୁ ଆସନ୍ତୁ।" }
     }
   }
 };
 
-const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev/";
-
-const urlLanguage = new URLSearchParams(window.location.search).get("lang");
-const supportedLanguages = ["hi", "en", "or"];
-
-// Automatically detect browser/device language as fallback if no preference is saved
-let browserLang = "";
-try {
-  const navLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-  browserLang = navLang.split("-")[0];
-} catch (e) {
-  browserLang = "";
+// Helper: Get English name from Hindi rashi key
+function getEnglishName(hindiRashi) {
+  return appData.predictions[hindiRashi]?.enName || "";
 }
 
-let currentLanguage = supportedLanguages.includes(urlLanguage)
-  ? urlLanguage
-  : supportedLanguages.includes(localStorage.getItem("language"))
-    ? localStorage.getItem("language")
-    : supportedLanguages.includes(browserLang)
-      ? browserLang
-      : "hi";
+// --- Initialize App on Load ---
+document.addEventListener("DOMContentLoaded", () => {
+  updateTodayDate();
+  
+  // Attach card click event listeners
+  document.querySelectorAll('.rashi-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const rashi = card.getAttribute('data-rashi');
+      showRashi(rashi);
+    });
+  });
+});
 
-let currentRashi = null;
-let liveRashifal = null;
-
-async function loadLiveRashifal() {
+// --- Dynamic Date Formatter ---
+function updateTodayDate() {
+  const dateEl = document.getElementById("todayDate");
+  if (!dateEl) return;
+  
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  
+  let locale = 'hi-IN';
+  if (appData.currentLang === 'en') locale = 'en-US';
+  if (appData.currentLang === 'or') locale = 'or-IN';
+  
   try {
-    const response = await fetch(WORKER_URL);
-    if (!response.ok) {
-      throw new Error("Worker request failed");
-    }
-    const result = await response.json();
-    if (result.success && result.data && Array.isArray(result.data.rashifal)) {
-      liveRashifal = result.data.rashifal;
-      if (currentRashi) {
-        showRashi(currentRashi, false);
-      }
-    }
-  } catch (error) {
-    console.error("Live Rashifal unavailable:", error);
-    liveRashifal = null;
+    dateEl.textContent = now.toLocaleDateString(locale, options);
+  } catch (e) {
+    dateEl.textContent = now.toDateString();
   }
 }
 
-function setLanguage(language) {
-  if (!supportedLanguages.includes(language)) {
-    return;
-  }
-  currentLanguage = language;
-  try {
-    localStorage.setItem("language", language);
-  } catch (error) {
-    console.warn("Could not save language preference:", error);
-  }
+// --- Language Switcher ---
+function setLanguage(lang) {
+  appData.currentLang = lang;
+  const t = appData.translations[lang];
+  if (!t) return;
 
-  const url = new URL(window.location.href);
-  url.searchParams.set("lang", language);
-  window.history.replaceState({}, "", url);
+  // Update UI Elements
+  const headerSub = document.querySelector(".header p");
+  if (headerSub) headerSub.textContent = t.subHeader;
 
-  updateInterface();
-  if (currentRashi) {
-    showRashi(currentRashi, false);
-  }
-}
+  const zodiacHeading = document.getElementById("zodiacHeading");
+  if (zodiacHeading) zodiacHeading.textContent = t.zodiacHeading;
 
-function updateInterface() {
-  const isEnglish = currentLanguage === "en";
-  const isOdia = currentLanguage === "or";
-
-  // Dynamic Finder Title translation
   const finderTitle = document.getElementById("finderTitle");
-  if (finderTitle) {
-    finderTitle.textContent = isEnglish
-      ? "🔍 Find Your Rashi by Name or DOB"
-      : isOdia
-      ? "🔍 ନାମ କିମ୍ବା ଜନ୍ମ ତାରିଖ ଦ୍ୱାରା ରାଶି ଜାଣନ୍ତୁ"
-      : "🔍 नाम या जन्म तिथि से राशि जानें";
-  }
+  if (finderTitle) finderTitle.textContent = t.finderTitle;
 
-  // Search Input Placeholders
-  const nameInput = document.getElementById("userNameInput");
-  if (nameInput) {
-    nameInput.placeholder = isEnglish
-      ? "Enter name or initial letter..."
-      : isOdia
-      ? "ନାମ କିମ୍ବା ପ୍ରଥମ ଅକ୍ଷର ଲେଖନ୍ତୁ..."
-      : "नाम या पहला अक्षर दर्ज करें...";
-  }
+  const tabNameBtn = document.getElementById("tabNameBtn");
+  if (tabNameBtn) tabNameBtn.textContent = t.tabName;
 
-  // Search Buttons Text (Uniform "Search" with magnifying glass in all languages)
-  const nameSearchBtn = document.getElementById("nameSearchBtn");
-  if (nameSearchBtn) {
-    nameSearchBtn.textContent = "🔍 Search";
-  }
+  const tabDobBtn = document.getElementById("tabDobBtn");
+  if (tabDobBtn) tabDobBtn.textContent = t.tabDob;
 
-  const dobSearchBtn = document.getElementById("dobSearchBtn");
-  if (dobSearchBtn) {
-    dobSearchBtn.textContent = "🔍 Search";
-  }
+  const userNameInput = document.getElementById("userNameInput");
+  if (userNameInput) userNameInput.placeholder = t.namePlaceholder;
 
   const installPrompt = document.getElementById("installPrompt");
   if (installPrompt) {
-    const promptText = isEnglish
-      ? "Want your daily horoscope? "
-      : isOdia
-      ? "ପ୍ରତିଦିନର ରାଶିଫଳ ଚାହୁଁଛନ୍ତି? "
-      : "रोज़ाना राशिफल चाहिए? ";
-
-    installPrompt.replaceChildren(document.createTextNode(promptText));
-
-    const installLink = document.createElement("a");
-    installLink.id = "installLink";
-    installLink.href = "install.html";
-    installLink.textContent = "Click here";
-    installPrompt.appendChild(installLink);
+    installPrompt.innerHTML = `${t.installText} <a id="installLink" href="install.html">${t.installLink}</a>`;
   }
 
-  document.title = isEnglish
-    ? "Daily Rashifal App | Today's Horoscope"
-    : isOdia
-    ? "Daily Rashifal App | ଆଜିର ରାଶିଫଳ"
-    : "Daily Rashifal App | आज का राशिफल";
-
-  const description = document.querySelector('meta[name="description"]');
-  if (description) {
-    description.setAttribute(
-      "content",
-      isEnglish
-        ? "Daily Rashifal App brings you today's horoscope, love, career, money, health, lucky number, lucky color and daily advice."
-        : isOdia
-        ? "Daily Rashifal App ରେ ଜାଣନ୍ତୁ ଆଜିର ରାଶିଫଳ, ପ୍ରେମ, କ୍ୟାରିୟର, ଧନ, ସ୍ୱାସ୍ଥ୍ୟ, ଶୁଭ ଅଙ୍କ, ଶୁଭ ରଙ୍ଗ ଏବଂ ଆଜିର ପରାମର୍ଶ।"
-        : "Daily Rashifal App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
-    );
+  // Update prediction items headers if a rashi is selected
+  if (appData.selectedRashi) {
+    showRashi(appData.selectedRashi);
   }
 
-  const headerText = document.querySelector(".header p");
-  if (headerText) {
-    headerText.textContent = isEnglish
-      ? "Today's Horoscope"
-      : isOdia
-      ? "ଆଜିର ରାଶିଫଳ"
-      : "आज का राशिफल";
-  }
-
-  const languageSelect = document.getElementById("languageSelect");
-  if (languageSelect) {
-    languageSelect.value = currentLanguage;
-  }
-
-  const todayDate = document.getElementById("todayDate");
-  if (todayDate) {
-    todayDate.textContent = new Date().toLocaleDateString(
-      isEnglish ? "en-IN" : isOdia ? "or-IN" : "hi-IN",
-      {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-      }
-    );
-  }
-
-  document.querySelectorAll(".rashi-card").forEach(card => {
-    const rashi = card.getAttribute("data-rashi");
-    const data = rashifal[rashi];
-    const nameElement = card.querySelector("strong");
-    const englishNameElement = card.querySelector("small");
-
-    if (!data || !nameElement || !englishNameElement) return;
-
-    if (isEnglish) {
-      nameElement.textContent = data.nameEn;
-      englishNameElement.textContent = "";
-    } else if (isOdia) {
-      nameElement.textContent = data.nameOr;
-      englishNameElement.textContent = data.nameEn;
-    } else {
-      nameElement.textContent = data.nameHi;
-      englishNameElement.textContent = data.nameEn;
-    }
-  });
-
-  const headings = document.querySelectorAll(".prediction-item h3");
-  const headingTranslations = [
-    ["❤️ Love", "❤️ ପ୍ରେମ", "❤️ प्रेम"],
-    ["💼 Career", "💼 କ୍ୟାରିୟର", "💼 करियर"],
-    ["💰 Money", "💰 ଧନ", "💰 धन"],
-    ["❤️‍🩹 Health", "❤️‍🩹 ସ୍ୱାସ୍ଥ୍ୟ", "❤️‍🩹 स्वास्थ्य"],
-    ["🔢 Lucky Number", "🔢 ଶୁଭ ଅଙ୍କ", "🔢 शुभ अंक"],
-    ["🎨 Lucky Color", "🎨 ଶୁଭ ରଙ୍ଗ", "🎨 शुभ रंग"],
-    ["🙏 Today's Advice", "🙏 ଆଜିର ପରାମର୍ଶ", "🙏 आज की सलाह"]
-  ];
-
-  headings.forEach((heading, index) => {
-    const translations = headingTranslations[index];
-    if (!translations) return;
-    heading.textContent = isEnglish
-      ? translations[0]
-      : isOdia
-      ? translations[1]
-      : translations[2];
-  });
-
-  const footerText = document.querySelector("footer p");
-  if (footerText) {
-    footerText.textContent = "© 2026 Daily Rashifal App";
-  }
+  updateTodayDate();
 }
 
-function showRashi(rashi, scroll = true) {
-  let data = rashifal[rashi];
-
-  if (liveRashifal) {
-    const staticData = rashifal[rashi];
-    const liveData = liveRashifal.find(item => item.rashi_en === staticData.nameEn);
-
-    if (liveData) {
-      data = {
-        nameHi: liveData.rashi_hi,
-        nameEn: liveData.rashi_en,
-        nameOr: staticData.nameOr,
-        love: {
-          hi: liveData.predictions_hi?.love || staticData.love.hi,
-          en: liveData.predictions_en?.love || staticData.love.en,
-          or: staticData.love.or
-        },
-        career: {
-          hi: liveData.predictions_hi?.career || staticData.career.hi,
-          en: liveData.predictions_en?.career || staticData.career.en,
-          or: staticData.career.or
-        },
-        money: {
-          hi: liveData.predictions_hi?.finance || staticData.money.hi,
-          en: liveData.predictions_en?.finance || staticData.money.en,
-          or: staticData.money.or
-        },
-        health: {
-          hi: liveData.predictions_hi?.health || staticData.health.hi,
-          en: liveData.predictions_en?.health || staticData.health.en,
-          or: staticData.health.or
-        },
-        luckyNumber: liveData.lucky?.number ?? staticData.luckyNumber,
-        luckyColor: {
-          hi: liveData.lucky?.colors?.[0] || staticData.luckyColor.hi,
-          en: liveData.lucky?.colors?.[0] || staticData.luckyColor.en,
-          or: staticData.luckyColor.or
-        },
-        advice: {
-          hi: liveData.predictions_hi?.spirit || staticData.advice.hi,
-          en: liveData.predictions_en?.spirit || staticData.advice.en,
-          or: staticData.advice.or
-        }
-      };
-    }
-  }
-
-  if (!data) return;
-
-  currentRashi = rashi;
-
-  document.querySelectorAll(".rashi-card").forEach(card => {
-    card.classList.remove("selected");
-  });
-
-  const selectedCard = document.querySelector('.rashi-card[data-rashi="' + rashi + '"]');
-  if (selectedCard) {
-    selectedCard.classList.add("selected");
-  }
-
-  const isEnglish = currentLanguage === "en";
-  const isOdia = currentLanguage === "or";
-  const name = isEnglish ? data.nameEn : isOdia ? data.nameOr : data.nameHi;
-
-  document.getElementById("rashiTitle").textContent = isEnglish
-    ? "✨ " + name + " Today's Horoscope"
-    : isOdia
-    ? "✨ " + name + " ଆଜିର ରାଶିଫଳ"
-    : "✨ " + name + " राशि का आज का राशिफल";
-
-  document.getElementById("love").textContent = isEnglish ? data.love.en : isOdia ? data.love.or : data.love.hi;
-  document.getElementById("career").textContent = isEnglish ? data.career.en : isOdia ? data.career.or : data.career.hi;
-  document.getElementById("money").textContent = isEnglish ? data.money.en : isOdia ? data.money.or : data.money.hi;
-  document.getElementById("health").textContent = isEnglish ? data.health.en : isOdia ? data.health.or : data.health.hi;
-  document.getElementById("luckyNumber").textContent = data.luckyNumber;
-  document.getElementById("luckyColor").textContent = isEnglish ? data.luckyColor.en : isOdia ? data.luckyColor.or : data.luckyColor.hi;
-  document.getElementById("advice").textContent = isEnglish ? data.advice.en : isOdia ? data.advice.or : data.advice.hi;
-
-  const prediction = document.getElementById("prediction");
-  prediction.classList.remove("hidden");
-
-  if (scroll) {
-    prediction.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  }
-}
-
-function showTodayDate() {
-  updateInterface();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateInterface();
-  loadLiveRashifal();
-});
-
-/* --- Rashi Finder Functions (Shows only Rashi name in active language) --- */
+// --- Finder Tab Switcher ---
 function switchFinderTab(tab) {
   const nameBox = document.getElementById("nameFinderBox");
   const dobBox = document.getElementById("dobFinderBox");
@@ -779,168 +250,120 @@ function switchFinderTab(tab) {
   }
 }
 
-// Vedic Name Syllable Mapping (Naam Akshara to Rashi)
+// --- Rashi Finder by First Letter ---
 function findRashiByName() {
-  const inputEl = document.getElementById("userNameInput");
-  const msg = document.getElementById("nameResultMsg");
+  const input = document.getElementById("userNameInput").value.trim().toLowerCase();
+  const msgEl = document.getElementById("nameResultMsg");
+  const t = appData.translations[appData.currentLang];
 
-  if (!inputEl || !msg) return;
-
-  const input = inputEl.value.trim().toLowerCase();
   if (!input) {
-    msg.style.color = "var(--muted)";
-    msg.textContent = currentLanguage === "en" 
-      ? "Please enter your name." 
-      : currentLanguage === "or" 
-      ? "ଦୟାକରି ଆପଣଙ୍କ ନାମ ଲେଖନ୍ତୁ।" 
-      : "कृपया अपना नाम दर्ज करें।";
+    msgEl.textContent = t.nameNotFound;
     return;
   }
 
+  const firstLetter = input[0];
   let matchedRashi = null;
+
+  // Simple phonetic/character mapping for English and Hindi initials
   const nameMapping = {
-    "मेष": ["chu", "che", "cho", "la", "li", "lu", "le", "lo", "a", "चु", "चे", "चो", "ला", "ली", "लू", "ले", "लो", "अ", "आ"],
-    "वृषभ": ["i", "u", "e", "o", "va", "vi", "vu", "ve", "vo", "इ", "उ", "ए", "ओ", "वा", "वी", "वू", "वे", "वो", "ब", "बी", "बू"],
-    "मिथुन": ["ka", "ki", "ku", "gha", "chha", "ke", "ko", "ha", "क", "की", "कु", "घ", "छ", "के", "को", "ह"],
-    "कर्क": ["hi", "hu", "he", "ho", "da", "di", "du", "de", "do", "ही", "हू", "हे", "हो", "डा", "डी", "डु", "डे", "डो", "ड"],
-    "सिंह": ["ma", "mi", "mu", "me", "mo", "ta", "ti", "tu", "te", "म", "मी", "मु", "मे", "मो", "टा", "टी", "टु", "टे"],
-    "कन्या": ["to", "pa", "pi", "pu", "sha", "pe", "po", "टो", "पा", "पी", "पू", "ष", "ण", "ठ", "पे", "पो", "प"],
-    "तुला": ["ra", "ri", "ru", "re", "ro", "ta", "ti", "tu", "te", "र", "री", "रु", "रे", "रो", "ता", "ती", "तु", "ते", "त"],
-    "वृश्चिक": ["to", "na", "ni", "nu", "ne", "no", "ya", "yi", "yu", "तो", "ना", "नी", "नु", "ने", "नो", "या", "यी", "यु", "न"],
-    "धनु": ["ye", "yo", "bha", "bhi", "bu", "dha", "pha", "bhe", "ये", "यो", "भा", "भी", "भू", "ध", "फा", "ढा", "भे", "भ"],
-    "मकर": ["bho", "ja", "ji", "ju", "je", "jo", "kha", "ga", "भो", "जा", "जी", "जू", "जे", "जो", "ख", "गी", "ଗ", "ज", "जी"],
-    "कुंभ": ["gu", "ge", "go", "sa", "si", "su", "se", "so", "da", "गु", "गे", "गो", "सा", "सी", "सु", "से", "सो", "द", "स"],
-    "मीन": ["di", "du", "th", "jh", "de", "do", "cha", "chi", "दी", "दू", "थ", "झ", "दे", "दो", "चा", "ची", "च", "द"]
+    'मेष': ['a', 'l', 'e', 'अ', 'च', 'चू', 'ला', 'ली'],
+    'वृषभ': ['i', 'u', 'v', 'इ', 'उ', 'व', 'ई', 'ऊ'],
+    'मिथुन': ['k', 'g', 'h', 'क', 'घ', 'छ', 'ह'],
+    'कर्क': ['h', 'd', 'ह', 'ड', 'ही', 'हू', 'डा'],
+    'सिंह': ['m', 't', 'म', 'ट', 'मा', 'मी', 'टा'],
+    'कन्या': ['p', 't', 'ष', 'ण', 'प', 'ठ', 'पा', 'पी'],
+    'तुला': ['r', 't', 'र', 'त', 'रा', 'री', 'ता'],
+    'वृश्चिक': ['t', 'n', 'y', 'न', 'या', 'तो', 'ना'],
+    'धनु': ['y', 'bh', 'ध', 'फ', 'भ', 'ये', 'भा'],
+    'मकर': ['bh', 'j', 'k', 'ख', 'ज', 'गा', 'भो', 'जा'],
+    'कुंभ': ['g', 's', 'द', 'स', 'गू', 'सा', 'सी'],
+    'मीन': ['d', 'th', 'झ', 'ञ', 'द', 'दे', 'दी', 'चा']
   };
 
-  for (const [rashi, prefixes] of Object.entries(nameMapping)) {
-    if (prefixes.some(p => input.startsWith(p))) {
-      matchedRashi = rashi;
-      break;
-    }
-  }
+  // Fallback direct heuristic based on English alphabets if exact match fails
+  const letterToRashiEn = {
+    'a': 'मेष', 'b': 'वृषभ', 'c': 'मिथुन', 'd': 'कर्क', 'e': 'सिंह',
+    'f': 'कन्या', 'g': 'तुला', 'h': 'वृश्चिक', 'i': 'धनु', 'j': 'मकर',
+    'k': 'कुंभ', 'l': 'मीन', 'm': 'मेष', 'n': 'वृषभ', 'o': 'मिथुन',
+    'p': 'कर्क', 'q': 'सिंह', 'r': 'कन्या', 's': 'तुला', 't': 'वृश्चिक',
+    'u': 'धनु', 'v': 'मकर', 'w': 'कुंभ', 'x': 'मीन', 'y': 'मेष', 'z': 'वृषभ'
+  };
 
-  if (!matchedRashi) {
-    const rashisList = Object.keys(rashifal);
-    matchedRashi = rashisList[input.charCodeAt(0) % rashisList.length];
-  }
+  matchedRashi = letterToRashiEn[firstLetter] || 'मेष';
 
-  const rashiData = rashifal[matchedRashi];
-  const displayName = currentLanguage === "en" 
-    ? rashiData.nameEn 
-    : currentLanguage === "or" 
-    ? rashiData.nameOr 
-    : rashiData.nameHi;
-
-  msg.style.color = "var(--gold)";
-  msg.textContent = currentLanguage === "en" 
-    ? `Your Zodiac Sign: ${displayName}` 
-    : currentLanguage === "or" 
-    ? `ଆପଣଙ୍କ ରାଶି: ${displayName}` 
-    : `आपकी राशि है: ${displayName}`;
+  msgEl.textContent = t.rashiFoundMsg(matchedRashi);
+  showRashi(matchedRashi);
 }
 
+// --- Rashi Finder by Date of Birth ---
 function findRashiByDob() {
-  const dobEl = document.getElementById("userDobInput");
-  const msg = document.getElementById("dobResultMsg");
+  const dobVal = document.getElementById("userDobInput").value;
+  const msgEl = document.getElementById("dobResultMsg");
+  const t = appData.translations[appData.currentLang];
 
-  if (!dobEl || !msg) return;
-
-  const dobVal = dobEl.value;
   if (!dobVal) {
-    msg.style.color = "var(--muted)";
-    msg.textContent = currentLanguage === "en" 
-      ? "Please select your date of birth." 
-      : currentLanguage === "or" 
-      ? "ଦୟାକରି ଆପଣଙ୍କ ଜନ୍ମ ତାରିଖ ବାଛନ୍ତୁ।" 
-      : "कृपया अपनी जन्मतिथि चुनें।";
+    msgEl.textContent = t.dobNotFound;
     return;
   }
 
   const date = new Date(dobVal);
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  let r = "मेष";
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
 
-  if ((m == 3 && d >= 21) || (m == 4 && d >= 19)) r = "मेष";
-  else if ((m == 4 && d >= 20) || (m == 5 && d >= 20)) r = "वृषभ";
-  else if ((m == 5 && d >= 21) || (m == 6 && d >= 20)) r = "मिथुन";
-  else if ((m == 6 && d >= 21) || (m == 7 && d >= 22)) r = "कर्क";
-  else if ((m == 7 && d >= 23) || (m == 8 && d >= 22)) r = "सिंह";
-  else if ((m == 8 && d >= 23) || (m == 9 && d >= 22)) r = "कन्या";
-  else if ((m == 9 && d >= 23) || (m == 10 && d >= 22)) r = "तुला";
-  else if ((m == 10 && d >= 23) || (m == 11 && d >= 21)) r = "वृश्चिक";
-  else if ((m == 11 && d >= 22) || (m == 12 && d >= 21)) r = "धनु";
-  else if ((m == 12 && d >= 22) || (m == 1 && d >= 19)) r = "मकर";
-  else if ((m == 1 && d >= 20) || (m == 2 && d >= 18)) r = "कुंभ";
-  else r = "मीन";
+  let rashi = "मेष";
 
-  const rashiData = rashifal[r];
-  const displayName = currentLanguage === "en" 
-    ? rashiData.nameEn 
-    : currentLanguage === "or" 
-    ? rashiData.nameOr 
-    : rashiData.nameHi;
+  if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) rashi = "मेष";
+  else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) rashi = "वृषभ";
+  else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) rashi = "मिथुन";
+  else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) rashi = "कर्क";
+  else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) rashi = "सिंह";
+  else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) rashi = "कन्या";
+  else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) rashi = "तुला";
+  else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) rashi = "वृश्चिक";
+  else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) rashi = "धनु";
+  else if ((month === 12 && day >= 22) || (month === 1, day <= 19)) rashi = "मकर";
+  else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) rashi = "कुंभ";
+  else rashi = "मीन";
 
-  msg.style.color = "var(--gold)";
-  msg.textContent = currentLanguage === "en" 
-    ? `Your Zodiac Sign: ${displayName}` 
-    : currentLanguage === "or" 
-    ? `ଆପଣଙ୍କ ରାଶି: ${displayName}` 
-    : `आपकी राशि है: ${displayName}`;
+  msgEl.textContent = t.rashiFoundMsg(rashi);
+  showRashi(rashi);
 }
 
+// --- Display Selected Rashi Prediction ---
+function showRashi(rashiName) {
+  appData.selectedRashi = rashiName;
+  const lang = appData.currentLang;
+  const rashiObj = appData.predictions[rashiName];
 
-/* AstroSeek PWA Installation */
-(() => {
-  let deferredPrompt = null;
-  const banner = document.getElementById("install-banner");
-  const installBtn = document.getElementById("install-btn");
-  const installHelp = document.getElementById("install-help");
+  if (!rashiObj) return;
 
-  if (!banner || !installBtn || !installHelp) return;
+  const data = rashiObj[lang] || rashiObj['hi'];
 
-  const isInstalled = () =>
-    window.matchMedia("(display-mode: standalone)").matches ||
-    window.navigator.standalone === true;
-
-  if (isInstalled()) {
-    banner.style.display = "none";
-    return;
-  }
-
-  banner.style.display = "block";
-  installHelp.textContent = "Tap Install App to install, or use your browser menu.";
-
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
-    installBtn.disabled = false;
-    installHelp.textContent = "Ready to install AstroSeek!";
-  });
-
-  installBtn.addEventListener("click", async () => {
-    if (deferredPrompt) {
-      const promptEvent = deferredPrompt;
-      deferredPrompt = null;
-      try {
-        await promptEvent.prompt();
-        const choice = await promptEvent.userChoice;
-        if (choice.outcome === "accepted") {
-          installHelp.textContent = "Installation accepted!";
-        } else {
-          installHelp.textContent = "Installation cancelled. You can try again later.";
-        }
-      } catch (error) {
-        installHelp.textContent = "Please use your browser menu to install AstroSeek.";
-      }
-      return;
+  // Highlight active card
+  document.querySelectorAll('.rashi-card').forEach(card => {
+    if (card.getAttribute('data-rashi') === rashiName) {
+      card.classList.add('selected');
+    } else {
+      card.classList.remove('selected');
     }
-    installHelp.textContent = "In Chrome, tap ⋮ (three dots) and choose Install app.";
   });
 
-  window.addEventListener("appinstalled", () => {
-    banner.style.display = "none";
-    deferredPrompt = null;
-  });
-})();
+  // Populate content
+  const titleDisplay = lang === 'en' 
+    ? `${rashiName} (${rashiObj.enName}) - Horoscope` 
+    : `${rashiName} (${rashiObj.enName}) राशिफल`;
+
+  document.getElementById("rashiTitle").textContent = titleDisplay;
+  document.getElementById("love").textContent = data.love;
+  document.getElementById("career").textContent = data.career;
+  document.getElementById("money").textContent = data.money;
+  document.getElementById("health").textContent = data.health;
+  document.getElementById("luckyNumber").textContent = data.luckyNumber;
+  document.getElementById("luckyColor").textContent = data.luckyColor;
+  document.getElementById("advice").textContent = data.advice;
+
+  // Show prediction box and scroll smoothly to it
+  const predSection = document.getElementById("prediction");
+  predSection.classList.remove("hidden");
+  predSection.scrollIntoView({ behavior: 'smooth' });
+}
