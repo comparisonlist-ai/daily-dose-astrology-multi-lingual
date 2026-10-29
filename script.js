@@ -446,14 +446,26 @@ const rashifal = {
 
 const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev/";
 
+
 const urlLanguage = new URLSearchParams(window.location.search).get("lang");
 const supportedLanguages = ["hi", "en", "or"];
+
+// Automatically detect browser/device language (e.g., 'en-US' -> 'en')
+let browserLang = "";
+try {
+  const navLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+  browserLang = navLang.split("-")[0];
+} catch (e) {
+  browserLang = "";
+}
 
 let currentLanguage = supportedLanguages.includes(urlLanguage)
   ? urlLanguage
   : supportedLanguages.includes(localStorage.getItem("language"))
     ? localStorage.getItem("language")
-    : "hi";
+    : supportedLanguages.includes(browserLang)
+      ? browserLang
+      : "hi";
 
 let currentRashi = null;
 let liveRashifal = null;
