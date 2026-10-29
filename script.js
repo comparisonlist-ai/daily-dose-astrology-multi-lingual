@@ -719,6 +719,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadLiveRashifal();
 });
 
+
 /* --- Rashi Finder Functions --- */
 function switchFinderTab(tab) {
   const nameBox = document.getElementById("nameFinderBox");
