@@ -243,18 +243,6 @@ function updateUI() {
     updateTodayDate();
 }
 
-// Function to format day or month with a leading zero
-function formatNumber(num) {
-    return String(num).padStart(2, '0');
-}
-
-// Example usage when gathering values from your date dropdowns or inputs:
-let day = formatNumber(document.getElementById('daySelect').value);     // e.g., '5' becomes '05'
-let month = formatNumber(document.getElementById('monthSelect').value); // e.g., '9' becomes '09'
-let year = document.getElementById('yearSelect').value;
-
-let formattedDate = `${year}-${month}-${day}`;
-
 // --- Dynamic Date Formatter ---
 function updateTodayDate() {
   const dateEl = document.getElementById("todayDate");
@@ -328,9 +316,9 @@ function findRashiByName() {
   showRashi(matchedRashi);
 }
 
-// --- Rashi Finder by Date of Birth ---
+// --- Rashi Finder by Date of Birth (With Auto-Zero Padding for Single Digits) ---
 function findRashiByDob() {
-  const dobVal = document.getElementById("userDobInput").value;
+  let dobVal = document.getElementById("userDobInput").value.trim();
   const msgEl = document.getElementById("dobResultMsg");
   const t = appData.translations[currentLang];
 
@@ -339,7 +327,24 @@ function findRashiByDob() {
     return;
   }
 
+  // Handle standard d/m/yyyy or dd/mm/yyyy inputs and automatically prepend zeros to single digits
+  if (dobVal.includes('/')) {
+    let parts = dobVal.split('/');
+    if (parts.length === 3) {
+      let day = parts[0].padStart(2, '0');
+      let month = parts[1].padStart(2, '0');
+      let year = parts[2];
+      dobVal = `${year}-${month}-${day}`; // Convert to standard ISO format for safe JS parsing
+      document.getElementById("userDobInput").value = `${day}/${month}/${year}`; // Update UI field with padded zeros
+    }
+  }
+
   const date = new Date(dobVal);
+  if (isNaN(date.getTime())) {
+    msgEl.textContent = t.dobNotFound;
+    return;
+  }
+
   const month = date.getMonth() + 1;
   const day = date.getDate();
 
@@ -351,75 +356,4 @@ function findRashiByDob() {
   else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) rashi = "सिंह";
   else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) rashi = "कन्या";
   else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) rashi = "तुला";
-  else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) rashi = "वृश्चिक";
-  else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) rashi = "धनु";
-  else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) rashi = "ମକର" /* mकर */, rashi = "मकर";
-  else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) rashi = "कुंभ";
-  else rashi = "मीन";
-
-  msgEl.textContent = t.rashiFoundMsg(rashi);
-  showRashi(rashi);
-}
-
-// --- Display Selected Rashi Prediction ---
-function showRashi(rashiName) {
-  appData.selectedRashi = rashiName;
-  const rashiObj = appData.predictions[rashiName];
-  if (!rashiObj) return;
-
-  const data = rashiObj[currentLang] || rashiObj['hi'];
-
-  // Highlight active card
-  document.querySelectorAll('.rashi-card').forEach(card => {
-    if (card.getAttribute('data-rashi') === rashiName) {
-      card.classList.add('selected');
-    } else {
-      card.classList.remove('selected');
-    }
-  });
-
-  // Populate content headings and values
-  const titleDisplay = currentLang === 'en' 
-    ? `${rashiName} (${rashiObj.enName}) - Horoscope` 
-    : `${rashiName} (${rashiObj.enName}) राशिफल`;
-
-  if(document.getElementById("rashiTitle")) document.getElementById("rashiTitle").textContent = titleDisplay;
-  if(document.getElementById("love")) document.getElementById("love").textContent = data.love;
-  if(document.getElementById("career")) document.getElementById("career").textContent = data.career;
-  if(document.getElementById("money")) document.getElementById("money").textContent = data.money;
-  if(document.getElementById("health")) document.getElementById("health").textContent = data.health;
-  if(document.getElementById("luckyNumber")) document.getElementById("luckyNumber").textContent = data.luckyNumber;
-  if(document.getElementById("luckyColor")) document.getElementById("luckyColor").textContent = data.luckyColor;
-  if(document.getElementById("advice")) document.getElementById("advice").textContent = data.advice;
-
-  // Show prediction box and scroll smoothly to it
-  const predSection = document.getElementById("prediction");
-  if (predSection) {
-    predSection.classList.remove("hidden");
-    predSection.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-
-// --- Initialize App on Load ---
-document.addEventListener('DOMContentLoaded', () => {
-  const langSelect = document.getElementById('langSelect');
-  if (langSelect) {
-      langSelect.value = currentLang;
-  }
-  
-  // Attach card click event listeners
-  document.querySelectorAll('.rashi-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const rashi = card.getAttribute('data-rashi');
-      showRashi(rashi);
-    });
-  });
-
-
-  document.addEventListener("DOMContentLoaded", function() {
-    // Call your function that loads the home view or default tab
-    showHomeView(); // Replace with your actual home initialization function
-});
-
-  updateUI();
-});
+  else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) rashi = "
