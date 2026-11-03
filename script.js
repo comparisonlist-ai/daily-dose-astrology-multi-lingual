@@ -8,7 +8,7 @@ const appData = {
   translations: {
     hi: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "गुरुवार, 29 अक्टूबर 2026",
+      appSubtitle: "",
       todayRashifal: "आज का राशिफल",
       zodiacHeading: "अपनी राशि चुनें",
       finderTitle: "🔍 नाम या जन्म तिथि से राशि जानें",
@@ -33,7 +33,7 @@ const appData = {
     },
     en: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "Thursday, October 29, 2026",
+      appSubtitle: "",
       todayRashifal: "Today's Horoscope",
       zodiacHeading: "Select Your Zodiac Sign",
       finderTitle: "🔍 Find Your Zodiac by Name or DOB",
@@ -58,7 +58,7 @@ const appData = {
     },
     or: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "ଗୁରୁବାର, 29 ଅକ୍ଟୋବର 2026",
+      appSubtitle: "",
       todayRashifal: "ଆଜିର ରାଶିଫଳ",
       zodiacHeading: "ନିଜ ରାଶି ବାଛନ୍ତୁ",
       finderTitle: "🔍 ନାମ ବା ଜନ୍ମ ତାରିଖରୁ ରାଶି ଜାଣନ୍ତୁ",
@@ -83,7 +83,7 @@ const appData = {
     },
     bn: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "বৃহস্পতিবার, ২৯ অক্টোবর ২০২৬",
+      appSubtitle: "",
       todayRashifal: "আজকের রাশিফল",
       zodiacHeading: "আপনার রাশি বেছে নিন",
       finderTitle: "🔍 নাম বা জন্ম তারিখ দিয়ে রাশি জানুন",
