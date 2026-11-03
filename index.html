@@ -337,12 +337,32 @@
         <small id="nameResultMsg" style="display: block; margin-top: 8px; color: var(--muted); text-align: center;"></small>
       </div>
 
-      <!-- By DOB Input -->
+      <!-- By DOB Input (Layman Friendly Dropdowns) -->
       <div id="dobFinderBox" class="hidden">
-        <div style="display: flex; gap: 8px;">
-          <input type="date" id="userDobInput" style="flex: 1; padding: 10px 14px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
-          <button type="button" onclick="findRashiByDob()" style="padding: 10px 20px; background: var(--gold); color: #101010; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Search</button>
+        <div style="display: flex; gap: 6px; margin-bottom: 10px;">
+          <select id="dobDay" style="flex: 1; padding: 10px 6px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
+            <option value="" disabled selected>दिन (Day)</option>
+          </select>
+
+          <select id="dobMonth" style="flex: 1.5; padding: 10px 6px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
+            <option value="" disabled selected>महीना (Month)</option>
+            <option value="1">जनवरी (Jan)</option>
+            <option value="2">फरवरी (Feb)</option>
+            <option value="3">मार्च (Mar)</option>
+            <option value="4">अप्रैल (Apr)</option>
+            <option value="5">मई (May)</option>
+            <option value="6">जून (Jun)</option>
+            <option value="7">जुलाई (Jul)</option>
+            <option value="8">अगस्त (Aug)</option>
+            <option value="9">सितंबर (Sep)</option>
+            <option value="10">अक्टूबर (Oct)</option>
+            <option value="11">नवंबर (Nov)</option>
+            <option value="12">दिसंबर (Dec)</option>
+          </select>
+
+          <input type="number" id="dobYear" placeholder="वर्ष (YYYY)" min="1930" max="2026" style="flex: 1.2; padding: 10px 8px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
         </div>
+        <button type="button" onclick="findRashiByDobFriendly()" style="width: 100%; padding: 10px 20px; background: var(--gold); color: #101010; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Search</button>
         <small id="dobResultMsg" style="display: block; margin-top: 8px; color: var(--muted); text-align: center;"></small>
       </div>
     </section>
