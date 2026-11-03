@@ -1,4 +1,5 @@
-// --- 1. Global State & Configuration ---
+
+  // --- 1. Global State & Configuration ---
 let currentLang = localStorage.getItem('astroseek_lang') || 'hi';
 
 const appData = {
@@ -27,7 +28,7 @@ const appData = {
       adviceTitle: "🙏 आज की सलाह",
       nameNotFound: "कृपया वैध नाम दर्ज करें।",
       rashiFoundMsg: (rashi) => `आपकी राशि: ${rashi} (${getEnglishName(rashi)})`,
-      dobNotFound: "कृपया वैध जन्मतिथि चुनें।"
+      dobNotFound: "कृपया सही दिन, महीना और वर्ष चुनें।"
     },
     en: {
       appTitle: "Daily Rashifal App",
@@ -50,7 +51,7 @@ const appData = {
       adviceTitle: "🙏 Today's Advice",
       nameNotFound: "Please enter a valid name.",
       rashiFoundMsg: (rashi) => `Your Zodiac Sign: ${rashi} (${getEnglishName(rashi)})`,
-      dobNotFound: "Please select a valid date of birth."
+      dobNotFound: "Please select a valid day, month, and year."
     },
     or: {
       appTitle: "Daily Rashifal App",
@@ -73,7 +74,7 @@ const appData = {
       adviceTitle: "🙏 ଆଜିର ପରାମର୍ଶ",
       nameNotFound: "ଦୟାକରି ଏକ ବୈଧ ନାମ ପ୍ରବେଶ କରନ୍ତୁ।",
       rashiFoundMsg: (rashi) => `ଆପଣଙ୍କ ରାଶି: ${rashi} (${getEnglishName(rashi)})`,
-      dobNotFound: "ଦୟାକରି ଏକ ବୈଧ ଜନ୍ମ ତାରିଖ ବାଛନ୍ତୁ।"
+      dobNotFound: "ଦୟାକରି ସଠିକ୍ ଦିନ, ମାସ ଏବଂ ବର୍ଷ ବାଛନ୍ତୁ।"
     },
     bn: {
       appTitle: "Daily Rashifal App",
@@ -96,11 +97,11 @@ const appData = {
       adviceTitle: "🙏 আজকের পরামর্শ",
       nameNotFound: "অনুগ্রহ করে একটি বৈধ নাম লিখুন।",
       rashiFoundMsg: (rashi) => `আপনার রাশি: ${rashi} (${getEnglishName(rashi)})`,
-      dobNotFound: "অনুগ্রহ করে একটি বৈধ জন্ম তারিখ নির্বাচন করুন।"
+      dobNotFound: "অনুগ্রহ করে সঠিক দিন, মাস এবং বছর নির্বাচন করুন।"
     }
   },
 
-  // Horoscope Predictions Database (Multilingual)
+  // Horoscope Predictions Database (Fallback)
   predictions: {
     "मेष": {
       enName: "Aries",
@@ -205,7 +206,6 @@ function updateUI() {
     const t = appData.translations[currentLang];
     if (!t) return;
     
-    // Safely update static DOM texts matching your HTML element IDs
     if(document.getElementById('appTitle')) document.getElementById('appTitle').innerText = t.appTitle;
     if(document.getElementById('appSubtitle')) document.getElementById('appSubtitle').innerText = t.appSubtitle;
     if(document.getElementById('todayHeading')) document.getElementById('todayHeading').innerText = t.todayRashifal;
@@ -222,8 +222,7 @@ function updateUI() {
     if(document.getElementById('hLuckyColor')) document.getElementById('hLuckyColor').innerText = t.luckyColorTitle;
     if(document.getElementById('hAdvice')) document.getElementById('hAdvice').innerText = t.adviceTitle;
 
-    // Update search buttons text
-    document.querySelectorAll('button[onclick="findRashiByName()"], button[onclick="findRashiByDob()"]').forEach(btn => {
+    document.querySelectorAll('button[onclick="findRashiByName()"], button[onclick="findRashiByDobFriendly()"]').forEach(btn => {
         btn.textContent = t.findBtn;
     });
 
@@ -232,7 +231,6 @@ function updateUI() {
         installPrompt.innerHTML = `${t.installText} <a id="installLink" href="install.html">${t.installLink}</a>`;
     }
 
-    // Refresh currently displayed rashi card texts if a rashi is selected
     if (appData.selectedRashi) {
         showRashi(appData.selectedRashi);
     }
@@ -313,36 +311,18 @@ function findRashiByName() {
   showRashi(matchedRashi);
 }
 
-// --- Rashi Finder by Date of Birth ---
-function findRashiByDob() {
-  let dobVal = document.getElementById("userDobInput").value.trim();
+// --- Layman Friendly DOB Rashi Finder ---
+function findRashiByDobFriendly() {
+  const day = parseInt(document.getElementById("dobDay").value);
+  const month = parseInt(document.getElementById("dobMonth").value);
+  const year = parseInt(document.getElementById("dobYear").value);
   const msgEl = document.getElementById("dobResultMsg");
   const t = appData.translations[currentLang];
 
-  if (!dobVal) {
+  if (!day || !month || !year || isNaN(day) || isNaN(month) || isNaN(year)) {
     msgEl.textContent = t.dobNotFound;
     return;
   }
-
-  if (dobVal.includes('/')) {
-    let parts = dobVal.split('/');
-    if (parts.length === 3) {
-      let day = parts[0].padStart(2, '0');
-      let month = parts[1].padStart(2, '0');
-      let year = parts[2];
-      dobVal = `${year}-${month}-${day}`;
-      document.getElementById("userDobInput").value = `${day}/${month}/${year}`;
-    }
-  }
-
-  const date = new Date(dobVal);
-  if (isNaN(date.getTime())) {
-    msgEl.textContent = t.dobNotFound;
-    return;
-  }
-
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
 
   let rashi = "मेष";
   if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) rashi = "मेष";
@@ -362,13 +342,9 @@ function findRashiByDob() {
   showRashi(rashi);
 }
 
-// --- Display Selected Rashi Prediction ---
-function showRashi(rashiName) {
+// --- Async showRashi with GrahaApi & Local Fallback Support ---
+async function showRashi(rashiName) {
   appData.selectedRashi = rashiName;
-  const rashiObj = appData.predictions[rashiName];
-  if (!rashiObj) return;
-
-  const data = rashiObj[currentLang] || rashiObj['hi'];
 
   // Highlight active card
   document.querySelectorAll('.rashi-card').forEach(card => {
@@ -379,31 +355,70 @@ function showRashi(rashiName) {
     }
   });
 
-  const titleDisplay = currentLang === 'en' 
-    ? `${rashiName} (${rashiObj.enName}) - Horoscope` 
-    : `${rashiName} (${rashiObj.enName}) राशिफल`;
-
-  if(document.getElementById("rashiTitle")) document.getElementById("rashiTitle").textContent = titleDisplay;
-  if(document.getElementById("love")) document.getElementById("love").textContent = data.love;
-  if(document.getElementById("career")) document.getElementById("career").textContent = data.career;
-  if(document.getElementById("money")) document.getElementById("money").textContent = data.money;
-  if(document.getElementById("health")) document.getElementById("health").textContent = data.health;
-  if(document.getElementById("luckyNumber")) document.getElementById("luckyNumber").textContent = data.luckyNumber;
-  if(document.getElementById("luckyColor")) document.getElementById("luckyColor").textContent = data.luckyColor;
-  if(document.getElementById("advice")) document.getElementById("advice").textContent = data.advice;
-
   const predSection = document.getElementById("prediction");
   if (predSection) {
     predSection.classList.remove("hidden");
     predSection.scrollIntoView({ behavior: 'smooth' });
   }
+
+  if(document.getElementById("rashiTitle")) {
+    document.getElementById("rashiTitle").textContent = `${rashiName} - Loading...`;
+  }
+
+  let data = null;
+  let titleDisplay = "";
+
+  try {
+    // Attempt fetching live content from GrahaApi endpoint
+    const response = await fetch(`https://api.astroseek.solutions/v1/horoscope?rashi=${encodeURIComponent(rashiName)}&lang=${currentLang}`);
+    if (response.ok) {
+      const json = await response.json();
+      data = json.prediction || json;
+    }
+  } catch (error) {
+    console.warn("GrahaApi fetch failed, falling back to local database:", error);
+  }
+
+  // Fallback to local static database if API fails or is offline
+  if (!data) {
+    const rashiObj = appData.predictions[rashiName];
+    if (!rashiObj) return;
+    data = rashiObj[currentLang] || rashiObj['hi'];
+    
+    titleDisplay = currentLang === 'en' 
+      ? `${rashiName} (${rashiObj.enName}) - Horoscope` 
+      : `${rashiName} (${rashiObj.enName}) राशिफल`;
+  } else {
+    titleDisplay = `${rashiName} राशिफल`;
+  }
+
+  if(document.getElementById("rashiTitle")) document.getElementById("rashiTitle").textContent = titleDisplay;
+
+  // Populate UI fields safely
+  if(document.getElementById("love")) document.getElementById("love").textContent = data.love || "";
+  if(document.getElementById("career")) document.getElementById("career").textContent = data.career || "";
+  if(document.getElementById("money")) document.getElementById("money").textContent = data.money || "";
+  if(document.getElementById("health")) document.getElementById("health").textContent = data.health || "";
+  if(document.getElementById("luckyNumber")) document.getElementById("luckyNumber").textContent = data.luckyNumber || "";
+  if(document.getElementById("luckyColor")) document.getElementById("luckyColor").textContent = data.luckyColor || "";
+  if(document.getElementById("advice")) document.getElementById("advice").textContent = data.advice || "";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const langSelect = document.getElementById('languageSelect');
-
   if (langSelect) {
     langSelect.value = currentLang;
+  }
+
+  // Populate Day dropdown choices dynamically (1 to 31)
+  const daySelect = document.getElementById('dobDay');
+  if (daySelect) {
+    for (let i = 1; i <= 31; i++) {
+      let opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = i;
+      daySelect.appendChild(opt);
+    }
   }
 
   document.querySelectorAll('.rashi-card').forEach(card => {
