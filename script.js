@@ -405,26 +405,20 @@ function showRashi(rashiName) {
   }
 }
 
-// --- Initialize App on Load ---
 document.addEventListener('DOMContentLoaded', () => {
-  const langSelect = document.getElementById('langSelect');
+  const langSelect = document.getElementById('languageSelect');
+
   if (langSelect) {
-      langSelect.value = currentLang;
+    langSelect.value = currentLang;
   }
-  
-  // Attach card click event listeners
+
   document.querySelectorAll('.rashi-card').forEach(card => {
     card.addEventListener('click', () => {
-      const rashi = card.getAttribute('data-rashi');
-      showRashi(rashi);
+      showRashi(card.getAttribute('data-rashi'));
     });
   });
 
-  // Ensure default home / main container state initializes correctly on visit
-  const predSection = document.getElementById("prediction");
-  if (predSection) {
-    predSection.classList.add("hidden"); // Keeps prediction hidden until user selects a sign or searches
-  }
+  document.getElementById('prediction')?.classList.add('hidden');
 
   updateUI();
 });
