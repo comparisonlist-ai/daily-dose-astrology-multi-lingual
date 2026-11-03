@@ -8,7 +8,7 @@ const appData = {
   translations: {
     hi: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "",
+      appSubtitle: "आज का राशिफल",
       todayRashifal: "आज का राशिफल",
       zodiacHeading: "अपनी राशि चुनें",
       finderTitle: "🔍 नाम या जन्म तिथि से राशि जानें",
@@ -18,8 +18,6 @@ const appData = {
       findBtn: "Search",
       installText: "रोज़ाना राशिफल चाहिए?",
       installLink: "Click here",
-      installApp: "प्रतिदिन अपडेट के लिए ऐप इंस्टॉल करें",
-      installBtn: "अभी इंस्टॉल करें",
       loveTitle: "❤️ प्रेम",
       careerTitle: "💼 करियर",
       moneyTitle: "💰 धन",
@@ -33,7 +31,7 @@ const appData = {
     },
     en: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "",
+      appSubtitle: "Today's Horoscope",
       todayRashifal: "Today's Horoscope",
       zodiacHeading: "Select Your Zodiac Sign",
       finderTitle: "🔍 Find Your Zodiac by Name or DOB",
@@ -43,8 +41,6 @@ const appData = {
       findBtn: "Search",
       installText: "Want daily horoscopes?",
       installLink: "Click here",
-      installApp: "Install App for Daily Updates",
-      installBtn: "Install Now",
       loveTitle: "❤️ Love",
       careerTitle: "💼 Career",
       moneyTitle: "💰 Money",
@@ -58,7 +54,7 @@ const appData = {
     },
     or: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "",
+      appSubtitle: "ଆଜିର ରାଶିଫଳ",
       todayRashifal: "ଆଜିର ରାଶିଫଳ",
       zodiacHeading: "ନିଜ ରାଶି ବାଛନ୍ତୁ",
       finderTitle: "🔍 ନାମ ବା ଜନ୍ମ ତାରିଖରୁ ରାଶି ଜାଣନ୍ତୁ",
@@ -68,8 +64,6 @@ const appData = {
       findBtn: "Search",
       installText: "ପ୍ରତିଦିନ ରାଶିଫଳ ଚାହାଁନ୍ତି କି?",
       installLink: "Click here",
-      installApp: "ପ୍ରତିଦିନ ଅପଡେଟ୍ ପାଇଁ ଆପ୍ ইনস্টল କରନ୍ତୁ",
-      installBtn: "ବର୍ତ୍ତମାନ ଇନଷ୍ଟଲ୍ କରନ୍ତୁ",
       loveTitle: "❤️ ପ୍ରେମ",
       careerTitle: "💼 କ୍ୟାରିଅର୍",
       moneyTitle: "💰 ଧନ",
@@ -83,7 +77,7 @@ const appData = {
     },
     bn: {
       appTitle: "Daily Rashifal App",
-      appSubtitle: "",
+      appSubtitle: "আজকের রাশিফল",
       todayRashifal: "আজকের রাশিফল",
       zodiacHeading: "আপনার রাশি বেছে নিন",
       finderTitle: "🔍 নাম বা জন্ম তারিখ দিয়ে রাশি জানুন",
@@ -93,8 +87,6 @@ const appData = {
       findBtn: "Search",
       installText: "দৈনিক রাশিফল চান?",
       installLink: "Click here",
-      installApp: "প্রতিদিনের আপডেটের জন্য অ্যাপটি ইনস্টল করুন",
-      installBtn: "এখনই ইনস্টল করুন",
       loveTitle: "❤️ প্রেম",
       careerTitle: "💼 ক্যারিয়ার",
       moneyTitle: "💰 ধন",
@@ -150,7 +142,7 @@ const appData = {
       hi: { love: "रिश्तों में पारदर्शिता रखें। दिल की बात साफ-साफ कहें।", career: "विद्यार्थियों के लिए समय उत्तम है। परीक्षा में सफलता मिलेगी।", money: "बजट बनाकर चलें, अनावश्यक खर्चों से बचें।", health: "पाचन तंत्र का ख्याल रखें, हल्का भोजन लें.", luckyNumber: "5", luckyColor: "हरा (Green)", advice: "दूसरों की आलोचना करने से बचें।" },
       en: { love: "Keep transparency in relationships. Express your heart clearly.", career: "Favorable time for students. Success is foreseen in examinations.", money: "Stick to a budget and avoid unnecessary expenses.", health: "Take care of your digestive system and eat light food.", luckyNumber: "5", luckyColor: "Green", advice: "Avoid criticizing others." },
       or: { love: "ସମ୍ପର୍କରେ ସ୍ୱଚ୍ଛତା ରଖନ୍ତୁ। ମନର କଥା ସ୍ପଷ୍ଟ ଭାବରେ କୁହନ୍ତୁ।", career: "ଛାତ୍ରଛାତ୍ରୀମାନଙ୍କ ପାଇଁ ସମୟ ଉତ୍ତମ ଅଛି। ପରୀକ୍ଷାରେ ସଫଳତା ମିଳିବ।", money: "ବଜେଟ୍ ପ୍ରସ୍ତୁତ କରି ଚାଲନ୍ତୁ, ଅନାବଶ୍ୟକ ଖର୍ଚ୍ଚରୁ ବଞ୍ଚନ୍ତୁ।", health: "ପାଚନତନ୍ତ୍ରର ଯତ୍ନ ନିଅନ୍ତୁ, ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।", luckyNumber: "5", luckyColor: "ସବୁଜ (Green)", advice: "ଅନ୍ୟର ସମାଲୋଚନା କରିବାରୁ ବିରତ ରୁହନ୍ତୁ।" },
-      bn: { love: "সম্পর্কে স্বচ্ছতা বজায় রাখুন। মনের কথা স্পষ্টভাবে বলুন।", career: "ছাত্রছাত্রীদের জন্য সময় চমৎকার। পরীক্ষায় সাফল্য পাবেন।",money: "বাজেট মেনে চলুন, অপ্রয়োজনীয় খরচ এড়িয়ে চলুন।", health: "হজম শক্তির যত্ন নিন, হালকা খাবার খান।", luckyNumber: "৫", luckyColor: "সবুজ (Green)", advice: "অন্যের সমালোচনা করা থেকে বিরত থাকুন।" }
+      bn: { love: "সম্পর্কে স্বচ্ছতা বজায় রাখুন। মনের কথা স্পষ্টভাবে বলুন।", career: "ছাত্রছাত্রীদের জন্য সময় চমৎকার। পরীক্ষায় সাফল্য পাবেন।", money: "বাজেট মেনে চলুন, অপ্রয়োজনীয় খরচ এড়িয়ে চলুন।", health: "হজম শক্তির যত্ন নিন, হালকা খাবার খান।", luckyNumber: "৫", luckyColor: "সবুজ (Green)", advice: "অন্যের সমালোচনা করা থেকে বিরত থাকুন।" }
     },
     "तुला": {
       enName: "Libra",
@@ -177,7 +169,7 @@ const appData = {
       enName: "Capricorn",
       hi: { love: "पारिवारिक जीवन में सामंजस्य बना रहेगा.", career: "मेहनत का पूरा फल मिलेगा। बॉस आपके काम से संतुष्ट रहेंगे।", money: "धन निवेश के लिए समय अनुकूल है। संपत्ति से लाभ हो सकता है.", health: "घुटनों या हड्डियों से जुड़ी समस्या हो सकती है, ध्यान रखें.", luckyNumber: "8", luckyColor: "गहरा नीला (Dark Blue)", advice: "कड़ी मेहनत जारी रखें।" },
       en: { love: "Harmony will prevail in family life.", career: "You will reap full rewards for your hard work. Boss will be satisfied.", money: "Time is favorable for investments. Property gains are likely.", health: "Knee or bone-related issues might arise; take precautions.", luckyNumber: "8", luckyColor: "Dark Blue", advice: "Continue working hard with dedication." },
-      or: { love: "ପାର୍ବାରିକ ଜୀବନରେ ସାମଞ୍ଜସ୍ୟ ବଜାୟ ରହିବ।", career: " ପରିଶ୍ରମର ପୂର୍ଣ୍ଣ ଫଳ ମିଳିବ। ବସ୍ ଆପଣଙ୍କ କାମରେ ସନ୍ତୁଷ୍ଟ ରହିବେ।", money: "ଧନ ନିବେଶ ପାଇଁ ସମୟ ଅନୁକୂଳ ଅଛି। ସମ୍ପତ୍ତିରୁ ଲାଭ ମିଳିପାରେ।", health: "ଆଣ୍ଠୁ କିମ୍ବା ହାଡ଼ ସମସ୍ୟା ହୋଇପାରେ, ଯତ୍ନ ନିଅନ୍ତୁ।", luckyNumber: "8", luckyColor: "ଗାଢ଼ ନୀଳ (Dark Blue)", advice: "କଠିନ ପରିଶ୍ରମ ଜାରି ରଖନ୍ତୁ।" },
+      or: { love: "ପାର୍ବାରିକ ଜୀବନରେ ସାମଞ୍ଜସ୍ୟ ବଜାୟ ରହିବ।", career: "ପରିଶ୍ରମର ପୂର୍ଣ୍ଣ ଫଳ ମିଳିବ। ବସ୍ ଆପଣଙ୍କ କାମରେ ସନ୍ତୁଷ୍ଟ ରହିବେ।", money: "ଧନ ନିବେଶ ପାଇଁ ସମୟ ଅନୁକୂଳ ଅଛି। ସମ୍ପତ୍ତିରୁ ଲାଭ ମିଳିପାରେ।", health: "ଆଣ୍ଠୁ କିମ୍ବା ହାଡ଼ ସମସ୍ୟା ହୋଇପାରେ, ଯତ୍ନ ନିଅନ୍ତୁ।", luckyNumber: "8", luckyColor: "ଗାଢ଼ ନୀଳ (Dark Blue)", advice: "କଠିନ ପରିଶ୍ରମ ଜାରି ରଖନ୍ତୁ।" },
       bn: { love: "পারিবারিক জীবনে সুখ-শান্তি বজায় থাকবে।", career: "পরিশ্রমের পুরো ফল পাবেন। বস্ আপনার কাজে সন্তুষ্ট থাকবেন।", money: "বিনিয়োগের জন্য সময় অনুকূল। সম্পত্তি থেকে লাভ হতে পারে।", health: "হাঁটু বা হাড় সংক্রান্ত সমস্যা হতে পারে, যত্ন নিন।", luckyNumber: "৮", luckyColor: "গাঢ় নীল (Dark Blue)", advice: "কঠোর পরিশ্রম চালিয়ে যান।" }
     },
     "कुंभ": {
@@ -222,8 +214,13 @@ function updateUI() {
     if(document.getElementById('tabNameBtn')) document.getElementById('tabNameBtn').innerText = t.tabName;
     if(document.getElementById('tabDobBtn')) document.getElementById('tabDobBtn').innerText = t.tabDob;
     if(document.getElementById('userNameInput')) document.getElementById('userNameInput').placeholder = t.namePlaceholder;
-    if(document.getElementById('pwaText')) document.getElementById('pwaText').innerText = t.installApp;
-    if(document.getElementById('pwaBtn')) document.getElementById('pwaBtn').innerText = t.installBtn;
+    if(document.getElementById('hLove')) document.getElementById('hLove').innerText = t.loveTitle;
+    if(document.getElementById('hCareer')) document.getElementById('hCareer').innerText = t.careerTitle;
+    if(document.getElementById('hMoney')) document.getElementById('hMoney').innerText = t.moneyTitle;
+    if(document.getElementById('hHealth')) document.getElementById('hHealth').innerText = t.healthTitle;
+    if(document.getElementById('hLuckyNum')) document.getElementById('hLuckyNum').innerText = t.luckyNumTitle;
+    if(document.getElementById('hLuckyColor')) document.getElementById('hLuckyColor').innerText = t.luckyColorTitle;
+    if(document.getElementById('hAdvice')) document.getElementById('hAdvice').innerText = t.adviceTitle;
 
     // Update search buttons text
     document.querySelectorAll('button[onclick="findRashiByName()"], button[onclick="findRashiByDob()"]').forEach(btn => {
@@ -316,7 +313,7 @@ function findRashiByName() {
   showRashi(matchedRashi);
 }
 
-// --- Rashi Finder by Date of Birth (With Auto-Zero Padding for Single Digits) ---
+// --- Rashi Finder by Date of Birth ---
 function findRashiByDob() {
   let dobVal = document.getElementById("userDobInput").value.trim();
   const msgEl = document.getElementById("dobResultMsg");
@@ -327,15 +324,14 @@ function findRashiByDob() {
     return;
   }
 
-  // Handle standard d/m/yyyy or dd/mm/yyyy inputs and automatically prepend zeros to single digits
   if (dobVal.includes('/')) {
     let parts = dobVal.split('/');
     if (parts.length === 3) {
       let day = parts[0].padStart(2, '0');
       let month = parts[1].padStart(2, '0');
       let year = parts[2];
-      dobVal = `${year}-${month}-${day}`; // Convert to standard ISO format for safe JS parsing
-      document.getElementById("userDobInput").value = `${day}/${month}/${year}`; // Update UI field with padded zeros
+      dobVal = `${year}-${month}-${day}`;
+      document.getElementById("userDobInput").value = `${day}/${month}/${year}`;
     }
   }
 
@@ -383,7 +379,6 @@ function showRashi(rashiName) {
     }
   });
 
-  // Populate content headings and values
   const titleDisplay = currentLang === 'en' 
     ? `${rashiName} (${rashiObj.enName}) - Horoscope` 
     : `${rashiName} (${rashiObj.enName}) राशिफल`;
@@ -397,7 +392,6 @@ function showRashi(rashiName) {
   if(document.getElementById("luckyColor")) document.getElementById("luckyColor").textContent = data.luckyColor;
   if(document.getElementById("advice")) document.getElementById("advice").textContent = data.advice;
 
-  // Show prediction box and scroll smoothly to it
   const predSection = document.getElementById("prediction");
   if (predSection) {
     predSection.classList.remove("hidden");
