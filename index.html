@@ -348,7 +348,16 @@ footer p {
 
     <h1>Daily Rashifal App</h1>
 
-    
+    <div class="language-area">
+  <label for="languageSelect">Language / भाषा:</label>
+
+  <select id="languageSelect" onchange="changeLanguage(this.value)">
+    <option value="hi">हिन्दी</option>
+    <option value="en">English</option>
+    <option value="or">ଓଡ଼ିଆ</option>
+    <option value="bn">বাংলা</option>
+  </select>
+</div>
 
        Here is the exact map of where to place each code block inside your script.js file so everything hooks up cleanly without breaking your app structure.
 ### 1. At the Very Top of script.js (Global Dictionaries & State)
