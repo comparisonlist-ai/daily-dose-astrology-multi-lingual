@@ -371,7 +371,7 @@ async function showRashi(rashiName) {
   try {
     const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
       headers: {
-        'Authorization': `Bearer YOUR_GRAHA_API_KEY`,
+        'Authorization': `Bearer your_real_api_key_here',
         'Content-Type': 'application/json'
       }
     });
