@@ -341,7 +341,7 @@ function findRashiByDobFriendly() {
   showRashi(rashi);
 }
 
-// --- Async showRashi with GrahaApi & Local Fallback Support ---
+// --- Async showRashi with Local Fallback Support ---
 async function showRashi(rashiName) {
   appData.selectedRashi = rashiName;
 
@@ -367,12 +367,11 @@ async function showRashi(rashiName) {
   let data = null;
   let titleDisplay = "";
 
-  
+  // Optional GrahaApi fetch block (wrapped safely so errors don't break fallback)
   try {
-    // Direct call using your API key (or replace with your public endpoint if it allows direct browser access)
     const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
       headers: {
-        'Authorization': `Bearer YOUR_GRAHA_API_KEY`, // Or leave headers out if your API is open/public
+        'Authorization': `Bearer YOUR_GRAHA_API_KEY`,
         'Content-Type': 'application/json'
       }
     });
@@ -394,15 +393,6 @@ async function showRashi(rashiName) {
             luckyColor: matchedObj.lucky?.colors ? matchedObj.lucky.colors.join(', ') : "",
             advice: preds.overall || ""
           };
-        }
-      }
-    }
-  } catch (error) {
-    console.warn("Direct API fetch failed, falling back to local database:", error);
-  }
-
-
-    
         }
       }
     }
