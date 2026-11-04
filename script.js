@@ -367,13 +367,19 @@ async function showRashi(rashiName) {
   let data = null;
   let titleDisplay = "";
 
+  
   try {
-    // Attempt fetching live content from GrahaApi endpoint through Cloudflare proxy
-    const response = await fetch(`/api/rashifal`);
+    // Direct call using your API key (or replace with your public endpoint if it allows direct browser access)
+    const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
+      headers: {
+        'Authorization': `Bearer YOUR_GRAHA_API_KEY`, // Or leave headers out if your API is open/public
+        'Content-Type': 'application/json'
+      }
+    });
+    
     if (response.ok) {
       const json = await response.json();
       if (json.success && json.data && json.data.rashifal) {
-        // Find the specific rashi block matching the selected rashi name
         const matchedObj = json.data.rashifal.find(item => item.rashi_hi === rashiName || item.rashi_en.toLowerCase() === rashiName.toLowerCase());
         if (matchedObj) {
           const langKey = currentLang === 'en' ? 'predictions_en' : 'predictions_hi';
@@ -388,6 +394,15 @@ async function showRashi(rashiName) {
             luckyColor: matchedObj.lucky?.colors ? matchedObj.lucky.colors.join(', ') : "",
             advice: preds.overall || ""
           };
+        }
+      }
+    }
+  } catch (error) {
+    console.warn("Direct API fetch failed, falling back to local database:", error);
+  }
+
+
+    
         }
       }
     }
