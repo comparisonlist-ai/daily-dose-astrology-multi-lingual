@@ -367,38 +367,43 @@ async function showRashi(rashiName) {
   let data = null;
   let titleDisplay = "";
 
-  // Optional GrahaApi fetch block (wrapped safely so errors don't break fallback)
+  // Secure GrahaApi fetch block using environment variables (Fallback safe)
   try {
-    const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
-      headers: {
-        'Authorization': `Bearer your_real_api_key_here`,
-        'Content-Type': 'application/json'
+    const apiKey = typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GRAHA_API_KEY 
+      ? import.meta.env.VITE_GRAHA_API_KEY 
+      : '';
 
-      }
-    });
-    
-    if (response.ok) {
-      const json = await response.json();
-      if (json.success && json.data && json.data.rashifal) {
-        const matchedObj = json.data.rashifal.find(item => item.rashi_hi === rashiName || item.rashi_en.toLowerCase() === rashiName.toLowerCase());
-        if (matchedObj) {
-          const langKey = currentLang === 'en' ? 'predictions_en' : 'predictions_hi';
-          const preds = matchedObj[langKey] || matchedObj.predictions_en;
-          
-          data = {
-            love: preds.love || "N/A",
-            career: preds.career || "N/A",
-            money: preds.finance || preds.money || "N/A",
-            health: preds.health || "N/A",
-            luckyNumber: matchedObj.lucky?.number?.toString() || "",
-            luckyColor: matchedObj.lucky?.colors ? matchedObj.lucky.colors.join(', ') : "",
-            advice: preds.overall || ""
-          };
+    if (apiKey) {
+      const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        const json = await response.json();
+        if (json.success && json.data && json.data.rashifal) {
+          const matchedObj = json.data.rashifal.find(item => item.rashi_hi === rashiName || item.rashi_en.toLowerCase() === rashiName.toLowerCase());
+          if (matchedObj) {
+            const langKey = currentLang === 'en' ? 'predictions_en' : 'predictions_hi';
+            const preds = matchedObj[langKey] || matchedObj.predictions_en;
+            
+            data = {
+              love: preds.love || "N/A",
+              career: preds.career || "N/A",
+              money: preds.finance || preds.money || "N/A",
+              health: preds.health || "N/A",
+              luckyNumber: matchedObj.lucky?.number?.toString() || "",
+              luckyColor: matchedObj.lucky?.colors ? matchedObj.lucky.colors.join(', ') : "",
+              advice: preds.overall || ""
+            };
+          }
         }
       }
     }
   } catch (error) {
-    console.warn("GrahaApi fetch failed, falling back to local database:", error);
+    console.warn("GrahaApi fetch failed or unconfigured, falling back to local database:", error);
   }
 
   // Fallback to local static database if API fails or is offline
