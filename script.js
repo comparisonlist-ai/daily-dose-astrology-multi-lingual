@@ -367,13 +367,11 @@ async function showRashi(rashiName) {
   let data = null;
   let titleDisplay = "";
 
-  // Secure GrahaApi fetch block using environment variables (Fallback safe)
+  // GrahaApi fetch block supporting window.GRAHA_API_KEY or static direct placeholder
   try {
-    const apiKey = typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GRAHA_API_KEY 
-      ? import.meta.env.VITE_GRAHA_API_KEY 
-      : '';
+    const apiKey = (typeof window !== 'undefined' && window.GRAHA_API_KEY) ? window.GRAHA_API_KEY : '';
 
-    if (apiKey) {
+    if (apiKey && apiKey !== 'YOUR_API_KEY_HERE') {
       const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
         headers: {
           'Authorization': `Bearer ${apiKey}`,
@@ -403,7 +401,7 @@ async function showRashi(rashiName) {
       }
     }
   } catch (error) {
-    console.warn("GrahaApi fetch failed or unconfigured, falling back to local database:", error);
+    console.warn("GrahaApi fetch failed, falling back to local database:", error);
   }
 
   // Fallback to local static database if API fails or is offline
