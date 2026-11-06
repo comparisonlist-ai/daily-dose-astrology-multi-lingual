@@ -367,36 +367,32 @@ async function showRashi(rashiName) {
   let data = null;
   let titleDisplay = "";
 
-  // GrahaApi fetch block supporting window.GRAHA_API_KEY or static direct placeholder
+  // GrahaApi fetch block with correct API Key and formatting
   try {
-    const apiKey = (typeof window !== 'undefined' && window.GRAHA_API_KEY) ? window.GRAHA_API_KEY : '';
+    const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
+      headers: {
+        'Authorization': `Bearer your_real_api_key_here`,
+        'Content-Type': 'application/json'
+      }
+    });
 
-    if (apiKey && apiKey !== 'YOUR_API_KEY_HERE') {
-      const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        const json = await response.json();
-        if (json.success && json.data && json.data.rashifal) {
-          const matchedObj = json.data.rashifal.find(item => item.rashi_hi === rashiName || item.rashi_en.toLowerCase() === rashiName.toLowerCase());
-          if (matchedObj) {
-            const langKey = currentLang === 'en' ? 'predictions_en' : 'predictions_hi';
-            const preds = matchedObj[langKey] || matchedObj.predictions_en;
-            
-            data = {
-              love: preds.love || "N/A",
-              career: preds.career || "N/A",
-              money: preds.finance || preds.money || "N/A",
-              health: preds.health || "N/A",
-              luckyNumber: matchedObj.lucky?.number?.toString() || "",
-              luckyColor: matchedObj.lucky?.colors ? matchedObj.lucky.colors.join(', ') : "",
-              advice: preds.overall || ""
-            };
-          }
+    if (response.ok) {
+      const json = await response.json();
+      if (json.success && json.data && json.data.rashifal) {
+        const matchedObj = json.data.rashifal.find(item => item.rashi_hi === rashiName || item.rashi_en.toLowerCase() === rashiName.toLowerCase());
+        if (matchedObj) {
+          const langKey = currentLang === 'en' ? 'predictions_en' : 'predictions_hi';
+          const preds = matchedObj[langKey] || matchedObj.predictions_en;
+          
+          data = {
+            love: preds.love || "N/A",
+            career: preds.career || "N/A",
+            money: preds.finance || preds.money || "N/A",
+            health: preds.health || "N/A",
+            luckyNumber: matchedObj.lucky?.number?.toString() || "",
+            luckyColor: matchedObj.lucky?.colors ? matchedObj.lucky.colors.join(', ') : "",
+            advice: preds.overall || ""
+          };
         }
       }
     }
@@ -404,7 +400,7 @@ async function showRashi(rashiName) {
     console.warn("GrahaApi fetch failed, falling back to local database:", error);
   }
 
-  // Fallback to local static database if API fails or is offline
+  // Fallback to local static database if API fails or returns no match
   if (!data) {
     const rashiObj = appData.predictions[rashiName];
     if (!rashiObj) return;
