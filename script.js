@@ -189,43 +189,6 @@ const appData = {
   }
 };
 
-
-// Inside your main initialization function or page load event in script.js
-async function loadDailyHoroscope() {
-  let titleDisplay = "";
-
-  // 👉 PUT THE FETCH BLOCK RIGHT HERE IN script.js
-  try {
-    const response = await fetch(`/api/horoscope`, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    
-    // Assign your fresh API data to your variables
-    titleDisplay = data.title; 
-    
-    // Update your DOM elements here with the live data
-    // document.getElementById('title-element').innerText = titleDisplay;
-
-  } catch (error) {
-    console.error("Failed to fetch from GrahaApi:", error);
-    
-    // If the fetch fails, your code will safely fall back to 
-    // your old prefilled static data here instead of breaking
-  }
-}
-
-// Call the function when your app loads
-loadDailyHoroscope();
-
-
 // Helper: Get English name from Hindi rashi key
 function getEnglishName(hindiRashi) {
   return appData.predictions[hindiRashi]?.enName || "";
@@ -378,7 +341,7 @@ function findRashiByDobFriendly() {
   showRashi(rashi);
 }
 
-// --- Async showRashi with Local Fallback Support ---
+// --- Async showRashi with Secure Cloudflare Proxy Integration ---
 async function showRashi(rashiName) {
   appData.selectedRashi = rashiName;
 
@@ -404,11 +367,10 @@ async function showRashi(rashiName) {
   let data = null;
   let titleDisplay = "";
 
-  // GrahaApi fetch block with correct API Key and formatting
+  // Securely fetch via Cloudflare Pages Function Proxy (/api/horoscope)
   try {
-    const response = await fetch(`https://api.grahaapi.com/v1/horoscope/daily`, {
+    const response = await fetch(`/api/horoscope`, {
       headers: {
-        'Authorization': `Bearer your_real_api_key_here`,
         'Content-Type': 'application/json'
       }
     });
@@ -434,7 +396,7 @@ async function showRashi(rashiName) {
       }
     }
   } catch (error) {
-    console.warn("GrahaApi fetch failed, falling back to local database:", error);
+    console.warn("Proxy fetch failed, falling back to local database:", error);
   }
 
   // Fallback to local static database if API fails or returns no match
