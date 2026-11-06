@@ -1,36 +1,34 @@
-export async function onRequest(context) {
-  const { env, request } = context;
-  const apiKey = env.GRAHA_API_KEY;
+// Inside your main initialization function or page load event in script.js
+async function loadDailyHoroscope() {
+  let titleDisplay = "";
 
-  const url = new URL(request.url);
-  const signIndex = url.searchParams.get('index'); // Optional: 0 to 11 for specific sign
-
+  // 👉 PUT THE FETCH BLOCK RIGHT HERE IN script.js
   try {
-    // Replace with your actual external Graha API base URL endpoint
-    const apiResponse = await fetch('https://api.grahaapi.com/v1/horoscope/daily', {
+    const response = await fetch(`/api/horoscope`, {
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json'
       }
     });
 
-    const data = await apiResponse.json();
-
-    // If a specific sign index was requested, filter it out; otherwise return all
-    if (signIndex !== null && data.success && data.data.rashifal) {
-      const singleSign = data.data.rashifal[parseInt(signIndex, 10)];
-      return new Response(JSON.stringify({ success: true, data: singleSign }), {
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-      });
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    return new Response(JSON.stringify(data), {
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-    });
-  } catch (err) {
-    return new Response(JSON.stringify({ success: false, error: 'Failed to fetch live horoscope data' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    const data = await response.json();
+    
+    // Assign your fresh API data to your variables
+    titleDisplay = data.title; 
+    
+    // Update your DOM elements here with the live data
+    // document.getElementById('title-element').innerText = titleDisplay;
+
+  } catch (error) {
+    console.error("Failed to fetch from GrahaApi:", error);
+    
+    // If the fetch fails, your code will safely fall back to 
+    // your old prefilled static data here instead of breaking
   }
 }
+
+// Call the function when your app loads
+loadDailyHoroscope();
