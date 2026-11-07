@@ -100,13 +100,12 @@ const appData = {
     }
   },
 
-  // Horoscope Predictions Database (Fallback)
   predictions: {
     "मेष": {
       enName: "Aries",
       hi: { love: "रिश्तों में मधुरता बनी रहेगी। पार्टनर के साथ समय बिताने का मौका मिलेगा।", career: "कार्यक्षेत्र में नए अवसर मिलेंगे। सहकर्मियों का सहयोग प्राप्त होगा।", money: "आर्थिक स्थिति मजबूत होगी। अटका हुआ धन वापस मिल सकता है.", health: "स्वास्थ्य सामान्य रहेगा, योग और व्यायाम करें।", luckyNumber: "9", luckyColor: "लाल (Red)", advice: "महत्वपूर्ण निर्णय लेते समय जल्दबाजी न करें।" },
       en: { love: "Sweetness will remain in relationships. You will get a chance to spend time with your partner.", career: "New opportunities will open up at work. Support from colleagues will boost progress.", money: "Financial condition will strengthen. Stuck money may be recovered.", health: "Health will be normal; practice yoga and light exercise.", luckyNumber: "9", luckyColor: "Red", advice: "Do not rush while making important decisions." },
-      or: { love: "ସମ୍ପର୍କରେ ମଧୁରତା ରହିବ। ସାଥୀଙ୍କ ସହିତ ସମୟ ବିତାଇବାର ସୁଯୋଗ ମିଳିବ।", career: "କାର୍ଯ୍ୟକ୍ଷେତ୍ରରେ ନୂତନ ସୁଯୋଗ ମିଳିବ। ସହକର୍ମୀଙ୍କ ସହଯୋଗ ମିଳିବ।", money: "ଆର୍ଥିକ ସ୍ଥିତି ଦୃଢ଼ ହେବ। ଅଟକି ରହିଥିବା ଟଙ୍କା ଫେରିପାରେ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଭଲ ରହିବ, ଯୋଗ ଏବଂ ବ୍ୟାୟାମ କରନ୍ତୁ।", luckyNumber: "9", luckyColor: "ଲାଲ୍ (Red)", advice: "ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ନିଷ୍ପତ୍ତି ନେବାବେଳେ βତଡ଼ା କରନ୍ତୁ ନାହିଁ।" },
+      or: { love: "ସମ୍ପର୍କରେ ମଧୁରତା ରହିବ। ସାଥୀଙ୍କ ସହିତ ସମୟ ବିତାଇବାର ସୁଯୋଗ ମିଳିବ।", career: "କାର୍ଯ୍ୟକ୍ଷେତ୍ରରେ ନୂତନ ସୁଯୋଗ ମିଳିବ। ସହକର୍ମୀଙ୍କ ସହଯୋଗ ମିଳିବ।", money: "ଆର୍ଥିକ ସ୍ଥିତି ଦୃଢ଼ ହେବ। ଅଟକି ରହିଥିବା ଟଙ୍କା ଫେରିପାରେ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଭଲ ରହିବ, ଯୋଗ ଏବଂ ବ୍ୟାୟାମ କରନ୍ତୁ।", luckyNumber: "9", luckyColor: "ଲାଲ୍ (Red)", advice: "ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ନିଷ୍ପତ୍ତି ନେବାବେଳେ ତଡ଼ା କରନ୍ତୁ ନାହିଁ।" },
       bn: { love: "সম্পর্কে মাধুর্য বজায় থাকবে। সঙ্গীর সাথে সময় কাটানোর সুযোগ পাবেন।", career: "কর্মক্ষেত্রে নতুন সুযোগ আসবে। সহকর্মীদের সহযোগিতা পাবেন।", money: "আর্থিক অবস্থার উন্নতি হবে। আটকে থাকা টাকা ফেরত পেতে পারেন।", health: "স্বাস্থ্য স্বাভাবিক থাকবে, যোগব্যায়াম করুন।", luckyNumber: "৯", luckyColor: "লাল (Red)", advice: "গুরুত্বপূর্ণ সিদ্ধান্ত নেওয়ার সময় তাড়াহুড়ো করবেন না।" }
     },
     "वृषभ": {
@@ -189,55 +188,47 @@ const appData = {
   }
 };
 
-// Helper: Get English name from Hindi rashi key
 function getEnglishName(hindiRashi) {
   return appData.predictions[hindiRashi]?.enName || "";
 }
 
-// --- 2. Core Language and UI Functions ---
 function changeLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('astroseek_lang', lang);
-    updateUI();
+  currentLang = lang;
+  localStorage.setItem('astroseek_lang', lang);
+  updateUI();
 }
 
 function updateUI() {
-    const t = appData.translations[currentLang];
-    if (!t) return;
-    
-    if(document.getElementById('appTitle')) document.getElementById('appTitle').innerText = t.appTitle;
-    if(document.getElementById('appSubtitle')) document.getElementById('appSubtitle').innerText = t.appSubtitle;
-    if(document.getElementById('todayHeading')) document.getElementById('todayHeading').innerText = t.todayRashifal;
-    if(document.getElementById('zodiacHeading')) document.getElementById('zodiacHeading').innerText = t.zodiacHeading;
-    if(document.getElementById('finderTitle')) document.getElementById('finderTitle').innerText = t.finderTitle;
-    if(document.getElementById('tabNameBtn')) document.getElementById('tabNameBtn').innerText = t.tabName;
-    if(document.getElementById('tabDobBtn')) document.getElementById('tabDobBtn').innerText = t.tabDob;
-    if(document.getElementById('userNameInput')) document.getElementById('userNameInput').placeholder = t.namePlaceholder;
-    if(document.getElementById('hLove')) document.getElementById('hLove').innerText = t.loveTitle;
-    if(document.getElementById('hCareer')) document.getElementById('hCareer').innerText = t.careerTitle;
-    if(document.getElementById('hMoney')) document.getElementById('hMoney').innerText = t.moneyTitle;
-    if(document.getElementById('hHealth')) document.getElementById('hHealth').innerText = t.healthTitle;
-    if(document.getElementById('hLuckyNum')) document.getElementById('hLuckyNum').innerText = t.luckyNumTitle;
-    if(document.getElementById('hLuckyColor')) document.getElementById('hLuckyColor').innerText = t.luckyColorTitle;
-    if(document.getElementById('hAdvice')) document.getElementById('hAdvice').innerText = t.adviceTitle;
+  const t = appData.translations[currentLang];
+  if (!t) return;
+  
+  if(document.getElementById('appTitle')) document.getElementById('appTitle').innerText = t.appTitle;
+  if(document.getElementById('appSubtitle')) document.getElementById('appSubtitle').innerText = t.appSubtitle;
+  if(document.getElementById('zodiacHeading')) document.getElementById('zodiacHeading').innerText = t.zodiacHeading;
+  if(document.getElementById('finderTitle')) document.getElementById('finderTitle').innerText = t.finderTitle;
+  if(document.getElementById('tabNameBtn')) document.getElementById('tabNameBtn').innerText = t.tabName;
+  if(document.getElementById('tabDobBtn')) document.getElementById('tabDobBtn').innerText = t.tabDob;
+  if(document.getElementById('userNameInput')) document.getElementById('userNameInput').placeholder = t.namePlaceholder;
+  if(document.getElementById('hLove')) document.getElementById('hLove').innerText = t.loveTitle;
+  if(document.getElementById('hCareer')) document.getElementById('hCareer').innerText = t.careerTitle;
+  if(document.getElementById('hMoney')) document.getElementById('hMoney').innerText = t.moneyTitle;
+  if(document.getElementById('hHealth')) document.getElementById('hHealth').innerText = t.healthTitle;
+  if(document.getElementById('hLuckyNum')) document.getElementById('hLuckyNum').innerText = t.luckyNumTitle;
+  if(document.getElementById('hLuckyColor')) document.getElementById('hLuckyColor').innerText = t.luckyColorTitle;
+  if(document.getElementById('hAdvice')) document.getElementById('hAdvice').innerText = t.adviceTitle;
 
-    document.querySelectorAll('button[onclick="findRashiByName()"], button[onclick="findRashiByDobFriendly()"]').forEach(btn => {
-        btn.textContent = t.findBtn;
-    });
+  const installPrompt = document.getElementById("installPrompt");
+  if (installPrompt) {
+    installPrompt.innerHTML = `${t.installText} <a id="installLink" href="install.html">${t.installLink}</a>`;
+  }
 
-    const installPrompt = document.getElementById("installPrompt");
-    if (installPrompt) {
-        installPrompt.innerHTML = `${t.installText} <a id="installLink" href="install.html">${t.installLink}</a>`;
-    }
+  if (appData.selectedRashi) {
+    showRashi(appData.selectedRashi);
+  }
 
-    if (appData.selectedRashi) {
-        showRashi(appData.selectedRashi);
-    }
-
-    updateTodayDate();
+  updateTodayDate();
 }
 
-// --- Dynamic Date Formatter ---
 function updateTodayDate() {
   const dateEl = document.getElementById("todayDate");
   if (!dateEl) return;
@@ -257,7 +248,6 @@ function updateTodayDate() {
   }
 }
 
-// --- Finder Tab Switcher ---
 function switchFinderTab(tab) {
   const nameBox = document.getElementById("nameFinderBox");
   const dobBox = document.getElementById("dobFinderBox");
@@ -285,7 +275,6 @@ function switchFinderTab(tab) {
   }
 }
 
-// --- Rashi Finder by First Letter ---
 function findRashiByName() {
   const input = document.getElementById("userNameInput").value.trim().toLowerCase();
   const msgEl = document.getElementById("nameResultMsg");
@@ -310,7 +299,6 @@ function findRashiByName() {
   showRashi(matchedRashi);
 }
 
-// --- Layman Friendly DOB Rashi Finder ---
 function findRashiByDobFriendly() {
   const day = parseInt(document.getElementById("dobDay").value);
   const month = parseInt(document.getElementById("dobMonth").value);
@@ -341,11 +329,9 @@ function findRashiByDobFriendly() {
   showRashi(rashi);
 }
 
-// --- Async showRashi with Secure Cloudflare Proxy Integration ---
 async function showRashi(rashiName) {
   appData.selectedRashi = rashiName;
 
-  // Highlight active card
   document.querySelectorAll('.rashi-card').forEach(card => {
     if (card.getAttribute('data-rashi') === rashiName) {
       card.classList.add('selected');
@@ -367,12 +353,9 @@ async function showRashi(rashiName) {
   let data = null;
   let titleDisplay = "";
 
-  // Securely fetch via Cloudflare Pages Function Proxy (/api/horoscope)
   try {
     const response = await fetch(`/api/horoscope`, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
@@ -399,7 +382,6 @@ async function showRashi(rashiName) {
     console.warn("Proxy fetch failed, falling back to local database:", error);
   }
 
-  // Fallback to local static database if API fails or returns no match
   if (!data) {
     const rashiObj = appData.predictions[rashiName];
     if (!rashiObj) return;
@@ -414,7 +396,6 @@ async function showRashi(rashiName) {
 
   if(document.getElementById("rashiTitle")) document.getElementById("rashiTitle").textContent = titleDisplay;
 
-  // Populate UI fields safely
   if(document.getElementById("love")) document.getElementById("love").textContent = data.love || "";
   if(document.getElementById("career")) document.getElementById("career").textContent = data.career || "";
   if(document.getElementById("money")) document.getElementById("money").textContent = data.money || "";
@@ -424,9 +405,7 @@ async function showRashi(rashiName) {
   if(document.getElementById("advice")) document.getElementById("advice").textContent = data.advice || "";
 }
 
-// --- Page Initialization ---
 window.addEventListener('DOMContentLoaded', () => {
-  // Populate DOB Day dropdown options
   const daySelect = document.getElementById('dobDay');
   if (daySelect && daySelect.options.length <= 1) {
     for (let i = 1; i <= 31; i++) {
@@ -437,13 +416,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Set initial language dropdown value if it exists
   const langSelect = document.getElementById('languageSelect');
   if (langSelect) {
     langSelect.value = currentLang;
   }
 
-  // Attach click events to Rashi cards
   document.querySelectorAll('.rashi-card').forEach(card => {
     card.addEventListener('click', () => {
       const rashiName = card.getAttribute('data-rashi');
@@ -451,6 +428,5 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initial UI render
   updateUI();
-});
+}); 
