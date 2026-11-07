@@ -107,41 +107,41 @@ const appData = {
       hi: { love: "रिश्तों में मधुरता बनी रहेगी। पार्टनर के साथ समय बिताने का मौका मिलेगा।", career: "कार्यक्षेत्र में नए अवसर मिलेंगे। सहकर्मियों का सहयोग प्राप्त होगा।", money: "आर्थिक स्थिति मजबूत होगी। अटका हुआ धन वापस मिल सकता है.", health: "स्वास्थ्य सामान्य रहेगा, योग और व्यायाम करें।", luckyNumber: "9", luckyColor: "लाल (Red)", advice: "महत्वपूर्ण निर्णय लेते समय जल्दबाजी न करें।" },
       en: { love: "Sweetness will remain in relationships. You will get a chance to spend time with your partner.", career: "New opportunities will open up at work. Support from colleagues will boost progress.", money: "Financial condition will strengthen. Stuck money may be recovered.", health: "Health will be normal; practice yoga and light exercise.", luckyNumber: "9", luckyColor: "Red", advice: "Do not rush while making important decisions." },
       or: { love: "ସମ୍ପର୍କରେ ମଧୁରତା ରହିବ। ସାଥୀଙ୍କ ସହିତ ସମୟ ବିତାଇବାର ସୁଯୋଗ ମିଳିବ।", career: "କାର୍ଯ୍ୟକ୍ଷେତ୍ରରେ ନୂତନ ସୁଯୋଗ ମିଳିବ। ସହକର୍ମୀଙ୍କ ସହଯୋଗ ମିଳିବ।", money: "ଆର୍ଥିକ ସ୍ଥିତି ଦୃଢ଼ ହେବ। ଅଟକି ରହିଥିବା ଟଙ୍କା ଫେରିପାରେ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଭଲ ରହିବ, ଯୋଗ ଏବଂ ବ୍ୟାୟାମ କରନ୍ତୁ।", luckyNumber: "9", luckyColor: "ଲାଲ୍ (Red)", advice: "ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ନିଷ୍ପତ୍ତି ନେବାବେଳେ βତଡ଼ା କରନ୍ତୁ ନାହିଁ।" },
-      bn: { love: "সম্পর্কে মাধুর্য বজায় থাকবে। সঙ্গীর সাথে সময় কাটানোর সুযোগ পাবেন।", career: "কর্মক্ষেত্রে নতুন সুযোগ আসবে। সহকর্মীদের সহযোগিতা পাবেন।", money: "আর্থিক অবস্থার উন্নতি হবে। আটকে থাকা টাকা ফেরত পেতে পারেন।", health: "স্বাস্থ্য স্বাভাবিক থাকবে, যোগব্যায়াম করুন।", luckyNumber: "৯", luckyColor: "লাল (Red)", advice: "গুরুত্বপূর্ণ সিদ্ধান্ত নেওয়ার সময় তাড়াহুড়ো করবেন না।" }
+      bn: { love: "সম্পর্কে মাধুর্য বজায় থাকবে। সঙ্গীর সাথে সময় কাটানোর সুযোগ পাবেন।", career: "কর্মক্ষেত্রে নতুন সুযোগ আসবে। সহকর্মীদের সহযোগিতা পাবেন।", money: "আর্থিক অবস্থার উন্নতি হবে। আটকে থাকা টাকা ফেরত পেতে পারেন।", health: "স্বাস্থ্য স্বাভাবিক থাকবে, যোগব্যায়াম করুন।", luckyNumber: "৯", luckyColor: "লাল (Red)", advice: "গুরুত্বপূর্ণ সিদ্ধান্ত নেওয়ার সময় তাড়াহুড়ো করবেন না।" }
     },
     "वृषभ": {
       enName: "Taurus",
       hi: { love: "परिवार में सुख-शांति बनी रहेगी। वैवाहिक जीवन आनंदमय रहेगा.", career: "व्यापार में लाभ के योग हैं। उच्च अधिकारियों का मार्गदर्शन मिलेगा।", money: "धन लाभ के नए स्रोत बन सकते हैं। खर्चों पर नियंत्रण रखें।", health: "खान-पान का ध्यान रखें, पेट से जुड़ी समस्या हो सकती है.", luckyNumber: "6", luckyColor: "गुलाबी (Pink)", advice: "अनावश्यक वाद-विवाद से दूर रहें।" },
       en: { love: "Peace and harmony will prevail at home. Married life will be joyful.", career: "Profits are likely in business. Guidance from seniors will be beneficial.", money: "New sources of income may open. Keep a check on unnecessary expenses.", health: "Take care of your diet; stomach issues may arise.", luckyNumber: "6", luckyColor: "Pink", advice: "Stay away from unnecessary arguments." },
       or: { love: "ପରିବାରରେ ଶାନ୍ତି ଏବଂ ଖୁସି ରହିବ। ବୈବାହିକ ଜୀବନ ଆନନ୍ଦଦାୟକ ହେବ।", career: "ବ୍ୟାପାରରେ ଲାଭର ଯୋଗ ରହିଛି। ବରିଷ୍ଠ ଅଧିକାରୀଙ୍କ ମାର୍ଗଦର୍ଶନ ମିଳିବ।", money: "ଧନଲାଭର ନୂତନ ଉତ୍ସ ସୃଷ୍ଟି ହୋଇପାରେ। ଖର୍ଚ୍ଚ ଉପରେ ନିୟନ୍ତ୍ରଣ ରଖନ୍ତୁ।", health: "ଖାଦ୍ୟପେୟ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ, ପେଟ ସମସ୍ୟା ହୋଇପାରେ।", luckyNumber: "6", luckyColor: "ଗୋଲାପୀ (Pink)", advice: "ଅନାବଶ୍ୟକ ଯୁକ୍ତିତର୍କରୁ ଦୂରେଇ ରୁହନ୍ତୁ।" },
-      bn: { love: "পরিবারে সুখ-শান্তি বজায় থাকবে। বৈবাহিক জীবন আনন্দময় হবে।", career: "ব্যবসায়ে লাভের যোগ রয়েছে। উচ্চপদস্থ কর্মকর্তাদের পরামর্শ পাবেন।", money: "অর্থ লাভের নতুন উৎস তৈরি হতে পারে। খরচের উপর নিয়ন্ত্রণ রাখুন।", health: "খাদ্যাভ্যাসের যত্ন নিন, পেটের সমস্যা হতে পারে।", luckyNumber: "৬", luckyColor: "গোলাপী (Pink)", advice: "অপ্রয়োজনীয় বিতর্ক থেকে দূরে থাকুন।" }
+      bn: { love: "পরিবারে সুখ-শান্তি বজায় থাকবে। বৈবাহিক জীবন আনন্দময় হবে।", career: "ব্যবসায়ে লাভের যোগ রয়েছে। উচ্চপদস্থ কর্মকর্তাদের পরামর্শ পাবেন।", money: "অর্থ লাভের নতুন উৎস তৈরি হতে পারে। খরচের উপর নিয়ন্ত্রণ রাখুন।", health: "খাদ্যাভ্যাসের যত্ন নিন, পেটের সমস্যা হতে পারে।", luckyNumber: "৬", luckyColor: "গোলাপী (Pink)", advice: "অপ্রয়োজনীয় বিতর্ক থেকে দূরে থাকুন।" }
     },
     "मिथुन": {
       enName: "Gemini",
       hi: { love: "प्रेम जीवन में संवाद की कमी न होने दें। भावनाएं खुलकर व्यक्त करें।", career: "क्रिएटिव कार्यों से जुड़े लोगों को बड़ी सफलता मिल सकती है।", money: "आय में वृद्धि हो सकती है। निवेश के लिए दिन अच्छा है।", health: "मानसिक तनाव से बचें, पर्याप्त नींद लें.", luckyNumber: "5", luckyColor: "हरा (Green)", advice: "दूसरों की बातों में आने से बचें।" },
       en: { love: "Do not let communication lag in love life. Express your feelings openly.", career: "People in creative fields can achieve major success.", money: "Income may increase. Favorable day for smart investments.", health: "Avoid mental stress and get adequate sleep.", luckyNumber: "5", luckyColor: "Green", advice: "Avoid getting influenced by others' opinions." },
       or: { love: "ପ୍ରେମ ଜୀବନରେ ଯୋଗାଯୋଗରେ ଅବହେଳା କରନ୍ତୁ ନାହିଁ। ଭାବନା ପ୍ରକାଶ କରନ୍ତୁ।", career: "ସୃଜନଶୀଳ କାର୍ଯ୍ୟରେ ଜଡିତ ବ୍ୟକ୍ତିମାନେ ବଡ଼ ସଫଳତା ପାଇପାରିବେ।", money: "ଆୟ ବୃଦ୍ଧି ପାଇପାରେ। ନିବେଶ ପାଇଁ ଦିନଟି ଭଲ ଅଛି।", health: "ମାନସିକ ଚାପରୁ ଦୂରେଇ ରୁହନ୍ତୁ, ପର୍ଯ୍ୟାପ୍ତ ନିଦ ନିଅନ୍ତୁ।", luckyNumber: "5", luckyColor: "ସବୁଜ (Green)", advice: "ଅନ୍ୟମାନଙ୍କ କଥାରେ ପ୍ରଭାବିତ ହୁଅନ୍ତୁ ନାହିଁ।" },
-      bn: { love: "প্রেম জীবনে যোগাযোগ রক্ষা করুন। খোলামেলাভাবে অনুভূতি প্রকাশ করুন।", career: "সৃজনশীল কাজের সাথে যুক্ত ব্যক্তিরা বড় সাফল্য পেতে পারেন।", money: "আয় বৃদ্ধি পেতে পারে। বিনিয়োগের জন্য দিনটি ভালো।", health: "মানসিক চাপ এড়িয়ে চলুন, পর্যাপ্ত ঘুমান।", luckyNumber: "৫", luckyColor: "সবুজ (Green)", advice: "অন্যের কথায় প্রভাবিত হওয়া থেকে বিরত থাকুন।" }
+      bn: { love: "প্রেম জীবনে যোগাযোগ রক্ষা করুন। খোলামেলাভাবে অনুভূতি প্রকাশ করুন।", career: "সৃজনশীল কাজের সাথে যুক্ত ব্যক্তিরা বড় সাফল্য পেতে পারেন।", money: "আয় বৃদ্ধি পেতে পারে। বিনিয়োগের জন্য দিনটি ভালো।", health: "মানসিক চাপ এড়িয়ে চলুন, পর্যাপ্ত ঘুমান।", luckyNumber: "৫", luckyColor: "সবুজ (Green)", advice: "অন্যের কথায় প্রভাবিত হওয়া থেকে বিরত থাকুন।" }
     },
     "कर्क": {
       enName: "Cancer",
       hi: { love: "जीवनसाथी का पूरा सहयोग मिलेगा। मन प्रसन्न रहेगा।", career: "नौकरीपेशा जातकों को प्रमोशन या नई जिम्मेदारी मिल सकती है.", money: "धन संचय करने में सफल रहेंगे। आर्थिक मजबूती आएगी।", health: "स्वास्थ्य उत्तम रहेगा। ऊर्जावान महसूस करेंगे।", luckyNumber: "2", luckyColor: "चांदी जैसा सफेद (White)", advice: "सकारात्मक सोच बनाए रखें।" },
       en: { love: "Full support will be received from your life partner. Mind will remain happy.", career: "Salaried individuals may get a promotion or new responsibilities.", money: "You will succeed in saving money. Financial strength will improve.", health: "Health will be excellent. You will feel energetic.", luckyNumber: "2", luckyColor: "White", advice: "Maintain a positive outlook throughout the day." },
       or: { love: "ଜୀବନସାଥୀଙ୍କର ପୂର୍ଣ୍ଣ ସହଯୋଗ ମିଳିବ। ମନ ପ୍ରସନ୍ନ ରହିବ।", career: "ଚାକିରି କରୁଥିବା ବ୍ୟକ୍ତିଙ୍କୁ ପଦୋନ୍ନତି କିମ୍ବା ନୂତନ ଦାୟିତ୍ୱ ମିଳିପାରେ।", money: "ଧନ ସଞ୍ଚୟ କରିବାରେ ସଫଳ ହେବେ। ଆର୍ଥିକ ଦୃଢ଼ତା ଆସିବ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଉତ୍ତମ ରହିବ। ଶକ୍ତିଶାଳୀ ଅନୁଭବ କରିବେ।", luckyNumber: "2", luckyColor: "ଧଳା (White)", advice: "ସକାରାତ୍ମକ ଚିନ୍ତାଧାରା ବଜାୟ ରଖନ୍ତୁ।" },
-      bn: { love: "জীবনসঙ্গীর পূর্ণ সহযোগিতা পাবেন। মন প্রফুল্ল থাকবে।", career: "চাকরিজীবীদের পদোন্নতি বা নতুন দায়িত্ব পাওয়ার সম্ভাবনা রয়েছে।", money: "টাকা সঞ্চয় করতে সফল হবেন। আর্থিক ভিত্তি মজবুত হবে।", health: "স্বাস্থ্য ভালো থাকবে। প্রাণবন্ত অনুভব করবেন।", luckyNumber: "২", luckyColor: "সাদা (White)", advice: "ইতিবাচক মনোভাব বজায় রাখুন।" }
+      bn: { love: "জীবনসঙ্গীর পূর্ণ সহযোগিতা পাবেন। মন প্রফুল্ল থাকবে।", career: "চাকরিজীবীদের পদোন্নতি বা নতুন দায়িত্ব পাওয়ার সম্ভাবনা রয়েছে।", money: "টাকা সঞ্চয় করতে সফল হবেন। আর্থিক ভিত্তি মজবুত হবে।", health: "স্বাস্থ্য ভালো থাকবে। প্রাণবন্ত অনুভব করবেন।", luckyNumber: "২", luckyColor: "সাদা (White)", advice: "ইতিবাচক মনোভাব বজায় রাখুন।" }
     },
     "सिंह": {
       enName: "Leo",
       hi: { love: "प्रेम संबंधों में आत्मीयता बढ़ेगी। कहीं घूमने जाने का प्लान बन सकता है.", career: "नेतृत्व क्षमता की सराहना होगी। ऑफिस में आपका दबदबा रहेगा.", money: "धन लाभ के प्रबल योग हैं। लग्जरी चीजों पर खर्च हो सकता है.", health: "थकान महसूस हो सकती है, आराम पर ध्यान दें।", luckyNumber: "1", luckyColor: "सुनहरा (Gold)", advice: "अहंकार से दूर रहें।" },
       en: { love: "Intimacy in love relationships will increase. Plans for an outing can be made.", career: "Leadership skills will be appreciated. Your dominance in the office will grow.", money: "Strong chances of financial gain. Expenses on luxury items are possible.", health: "You may feel tired; focus on getting proper rest.", luckyNumber: "1", luckyColor: "Gold", advice: "Keep ego at bay." },
       or: { love: "ପ୍ରେମ ସମ୍ପର୍କରେ ଆନ୍ତରିକତା ବୃଦ୍ଧି ପାଇବ। ବୁଲିବାକୁ ଯିବାର ଯୋଜନା ହୋଇପାରେ।", career: "ନେତୃତ୍ୱ କ୍ଷମତାର ପ୍ରଶଂସା କରାଯିବ। ଅଫିସରେ ଆପଣଙ୍କର ପ୍ରଭାବ ରହିବ।", money: "ଧନଲାଭର ପ୍ରବଳ ଯୋଗ ରହିଛି। ବିଳାସପୂର୍ଣ୍ଣ ଜିନିଷରେ ଖର୍ଚ୍ଚ ହୋଇପାରେ।", health: "କ୍ଳାନ୍ତ ଅନୁଭବ ହୋଇପାରେ, ବିଶ୍ରାମ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ।", luckyNumber: "1", luckyColor: "ସୁନା ରଙ୍ଗ (Gold)", advice: "ଅହଂକାରଠାରୁ ଦୂରେଇ ରୁହନ୍ତୁ।" },
-      bn: { love: "প্রেমের সম্পর্কে ঘনিষ্ঠতা বাড়বে। ঘুরতে যাওয়ার পরিকল্পনা হতে পারে।", career: "নেতৃত্বের ক্ষমতার প্রশংসা করা হবে। কর্মক্ষেত্রে আপনার প্রভাব বাড়বে।", money: "আর্থিক লাভের জোরালো যোগ রয়েছে। বিলাসবহুল জিনিসে খরচ হতে পারে।", health: "ক্লান্তি অনুভব হতে পারে, বিশ্রামের দিকে নজর দিন।", luckyNumber: "১", luckyColor: "সোনালী (Gold)", advice: "অহংকার থেকে দূরে থাকুন।" }
+      bn: { love: "প্রেমের সম্পর্কে ঘনিষ্ঠতা বাড়বে। ঘুরতে যাওয়ার পরিকল্পনা হতে পারে।", career: "নেতৃত্বের ক্ষমতার প্রশংসা করা হবে। কর্মক্ষেত্রে আপনার প্রভাব বাড়বে।", money: "আর্থিক লাভের জোরালো যোগ রয়েছে। বিলাসবহুল জিনিসে খরচ হতে পারে।", health: "ক্লান্তি অনুভব হতে পারে, বিশ্রামের দিকে নজর দিন।", luckyNumber: "১", luckyColor: "সোনালী (Gold)", advice: "অহংকার থেকে দূরে থাকুন।" }
     },
     "कन्या": {
       enName: "Virgo",
       hi: { love: "रिश्तों में पारदर्शिता रखें। दिल की बात साफ-साफ कहें।", career: "विद्यार्थियों के लिए समय उत्तम है। परीक्षा में सफलता मिलेगी।", money: "बजट बनाकर चलें, अनावश्यक खर्चों से बचें।", health: "पाचन तंत्र का ख्याल रखें, हल्का भोजन लें.", luckyNumber: "5", luckyColor: "हरा (Green)", advice: "दूसरों की आलोचना करने से बचें।" },
       en: { love: "Keep transparency in relationships. Express your heart clearly.", career: "Favorable time for students. Success is foreseen in examinations.", money: "Stick to a budget and avoid unnecessary expenses.", health: "Take care of your digestive system and eat light food.", luckyNumber: "5", luckyColor: "Green", advice: "Avoid criticizing others." },
-      or: { love: "ସମ୍ପର୍କରେ ସ୍ୱଚ୍ଛତା ରଖନ୍ତୁ। ମନର କଥା ସ୍ପଷ୍ଟ ଭାବରେ କୁହନ୍ତୁ।", career: "ଛାତ୍ରଛାତ୍ରୀମାନଙ୍କ ପାଇଁ ସମୟ ଉତ୍ତମ ଅଛି। ପରୀକ୍ଷାରେ ସଫଳତା ମିଳିବ।", money: "ବଜେଟ୍ ପ୍ରସ୍ତୁତ କରି ଚାଲନ୍ତୁ, ଅନାବଶ୍ୟକ ଖର୍ଚ୍ଚରୁ ବଞ୍ଚନ୍ତୁ।", health: "ପାଚନତନ୍ତ୍ରର ଯତ୍ନ ନିଅନ୍ତୁ, ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।", luckyNumber: "5", luckyColor: "ସବୁଜ (Green)", advice: "ଅନ୍ୟର ସମାଲୋଚନା କରିବାରୁ ବିରତ ରୁହନ୍ତୁ।" },
+      or: { love: "ସମ୍ପର୍କରେ ସ୍ୱଚ୍ଛତା ରଖନ୍ତୁ। ମନର କଥା ସ୍ପଷ୍ଟ ଭାବରେ କୁହନ୍ତୁ।", career: "ଛାତ୍ରଛାତ୍ରୀମାନଙ୍କ ପାଇଁ ସମୟ ଉତ୍ତମ ଅଛି। ପରୀକ୍ଷାରେ ସଫଳତା ମିଳିବ।", money: "ବଜେଟ୍ ପ୍ରସ୍ତୁତ କରି ଚାଲନ୍ତୁ, ଅନାବଶ୍ୟକ ଖର୍ଚ୍ଚରୁ ବଞ୍ଚନ୍ତୁ।", health: "ପାଚନତନ୍ତ୍ରର ଯତ୍ନ ନିଅନ୍ତୁ, ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।", luckyNumber: "5", luckyColor: "ସବୁଜ (Green)", advice: "ଅନ୍ୟର ସମାଲୋଚନା କରିବାରୁ ବିରତ ରୁହନ୍ତୁ।" },
       bn: { love: "সম্পর্কে স্বচ্ছতা বজায় রাখুন। মনের কথা স্পষ্টভাবে বলুন।", career: "ছাত্রছাত্রীদের জন্য সময় চমৎকার। পরীক্ষায় সাফল্য পাবেন।", money: "বাজেট মেনে চলুন, অপ্রয়োজনীয় খরচ এড়িয়ে চলুন।", health: "হজম শক্তির যত্ন নিন, হালকা খাবার খান।", luckyNumber: "৫", luckyColor: "সবুজ (Green)", advice: "অন্যের সমালোচনা করা থেকে বিরত থাকুন।" }
     },
     "तुला": {
@@ -149,7 +149,7 @@ const appData = {
       hi: { love: "दांपत्य जीवन में मधुरता आएगी। पुराने गिले-शिकवे दूर होंगे।", career: "व्यापारियों को नई डील्स मिलने की संभावना है।", money: "आर्थिक मामलों में सावधानी बरतें, किसी को उधार न दें।", health: "जोड़ों में दर्द या थकान की शिकायत हो सकती है.", luckyNumber: "6", luckyColor: "हल्का नीला (Light Blue)", advice: "संतुलित रवैया अपनाएं।" },
       en: { love: "Sweetness will come in conjugal life. Old grievances will be resolved.", career: "Businesspersons are likely to crack new deals.", money: "Exercise caution in financial matters; avoid lending money.", health: "Joint pain or fatigue complaints may arise.", luckyNumber: "6", luckyColor: "Light Blue", advice: "Adopt a balanced approach." },
       or: { love: "ଦାମ୍ପତ୍ୟ ଜୀବନରେ ମଧୁରତା ଆସିବ। ପୁରୁଣା ମତାମତ ଦୂର ହେବ।", career: "ବ୍ୟବସାୟୀମାନଙ୍କୁ ନୂତନ ଡିଲ୍ ମିଳିବାର ସମ୍ଭାବନା ଅଛି।", money: "ଆର୍ଥିକ ମାମଲାରେ ସତର୍କତା ଅବଲମ୍ବନ କରନ୍ତୁ, କାହାକୁ ଧାର ଦିଅନ୍ତୁ ନାହିଁ।", health: "ଗଣ୍ଠି ଯନ୍ତ୍ରଣା କିମ୍ବା କ୍ଳାନ୍ତ ଅନୁଭବ ହୋଇପାରେ।", luckyNumber: "6", luckyColor: "ହାଲୁକା ନୀଳ (Light Blue)", advice: "ସନ୍ତୁଳିତ ଆଚରଣ ଗ୍ରହଣ କରନ୍ତୁ।" },
-      bn: { love: "দাম্পত্য জীবনে মাধুর্য আসবে। পুরনো ভুল বোঝাবুঝি দূর হবে।", career: "ব্যবসায়ীদের নতুন চুক্তি পাওয়ার সম্ভাবনা রয়েছে।", money: "আর্থিক বিষয়ে সতর্কতা অবলম্বন করুন, কাউকে ধার দেবেন না।", health: "গাঁটে ব্যথা বা ক্লান্তির সমস্যা হতে পারে।", luckyNumber: "৬", luckyColor: "হালকা নীল (Light Blue)", advice: "সুষম মনোভাব বজায় রাখুন।" }
+      bn: { love: "দাম্পত্য জীবনে মাধুর্য আসবে। পুরনো ভুল বোঝাবুঝি দূর হবে।", career: "ব্যবসায়ীদের নতুন চুক্তি পাওয়ার সম্ভাবনা রয়েছে।", money: "আর্থিক বিষয়ে সতর্কতা অবলম্বন করুন, কাউকে ধার দেবেন না।", health: "গাঁটে ব্যথা বা ক্লান্তির সমস্যা হতে পারে।", luckyNumber: "৬", luckyColor: "হালকা নীল (Light Blue)", advice: "সুষম মনোভাব বজায় রাখুন।" }
     },
     "वृश्चिक": {
       enName: "Scorpio",
@@ -163,21 +163,21 @@ const appData = {
       hi: { love: "धार्मिक यात्रा या लॉन्ग ड्राइव पर जाने का योग है।", career: "नौकरी में प्रमोशन या स्थान परिवर्तन की संभावना है।", money: "आय के नए स्रोत बनेंगे। आर्थिक स्थिति मजबूत होगी।", health: "स्वास्थ्य अच्छा रहेगा, ऊर्जा बनी रहेगी।", luckyNumber: "3", luckyColor: "पीला (Yellow)", advice: "बड़ों का आशीर्वाद लें।" },
       en: { love: "Chances of a religious trip or a long drive with partner.", career: "Promotion or transfer is likely in your job.", money: "New sources of income will emerge. Financial condition will strengthen.", health: "Health will be good; energy levels will remain high.", luckyNumber: "3", luckyColor: "Yellow", advice: "Seek blessings from elders." },
       or: { love: "ଧାର୍ମିକ ଯାତ୍ରା କିମ୍ବା ଲଙ୍ଗ୍ ଡ୍ରାଇଭ୍ ଯିବାର ଯୋଗ ରହିଛି।", career: "ଚାକିରିରେ ପଦୋନ୍ନତି କିମ୍ବା ସ୍ଥାନ ପରିବର୍ତ୍ତନର ସମ୍ଭାବନା ଅଛି।", money: "ଆୟର ନୂତନ ଉତ୍ସ ସୃଷ୍ଟି ହେବ। ଆର୍ଥିକ ସ୍ଥିତି ଦୃଢ଼ ହେବ।", health: "ସ୍ୱାସ୍ଥ୍ୟ ଭଲ ରହିବ, ଶକ୍ତି ବଜାୟ ରହିବ।", luckyNumber: "3", luckyColor: "ହଳଦିଆ (Yellow)", advice: "ବଡ଼ମାନଙ୍କ ଆଶୀର୍ବାଦ ନିଅନ୍ତୁ।" },
-      bn: { love: "ধর্মীয় যাত্রা বা লং ড্রাইভে যাওয়ার সম্ভাবনা রয়েছে।", career: "চাকরিতে পদোন্নতি বা স্থান পরিবর্তনের সম্ভাবনা আছে।", money: "আয়ের নতুন উৎস তৈরি হবে। আর্থিক অবস্থা শক্তিশালী হবে।", health: "স্বাস্থ্য ভালো থাকবে, শক্তি বজায় থাকবে।", luckyNumber: "৩", luckyColor: "হলুদ (Yellow)", advice: "বড়দের আশীর্বাদ নিন।" }
+      bn: { love: "ধর্মীয় যাত্রা বা লং ড্রাইভে যাওয়ার সম্ভাবনা রয়েছে।", career: "চাকরিতে পদোন্নতি বা স্থান পরিবর্তনের সম্ভাবনা আছে।", money: "আয়ের নতুন উৎস তৈরি হবে। আর্থিক অবস্থা শক্তিশালী হবে।", health: "স্বাস্থ্য ভালো থাকবে, শক্তি বজায় থাকবে।", luckyNumber: "৩", luckyColor: "হলুদ (Yellow)", advice: "বড়দের আশীর্বাদ নিন।" }
     },
     "मकर": {
       enName: "Capricorn",
       hi: { love: "पारिवारिक जीवन में सामंजस्य बना रहेगा.", career: "मेहनत का पूरा फल मिलेगा। बॉस आपके काम से संतुष्ट रहेंगे।", money: "धन निवेश के लिए समय अनुकूल है। संपत्ति से लाभ हो सकता है.", health: "घुटनों या हड्डियों से जुड़ी समस्या हो सकती है, ध्यान रखें.", luckyNumber: "8", luckyColor: "गहरा नीला (Dark Blue)", advice: "कड़ी मेहनत जारी रखें।" },
       en: { love: "Harmony will prevail in family life.", career: "You will reap full rewards for your hard work. Boss will be satisfied.", money: "Time is favorable for investments. Property gains are likely.", health: "Knee or bone-related issues might arise; take precautions.", luckyNumber: "8", luckyColor: "Dark Blue", advice: "Continue working hard with dedication." },
-      or: { love: "ପାର୍ବାରିକ ଜୀବନରେ ସାମଞ୍ଜସ୍ୟ ବଜାୟ ରହିବ।", career: "ପରିଶ୍ରମର ପୂର୍ଣ୍ଣ ଫଳ ମିଳିବ। ବସ୍ ଆପଣଙ୍କ କାମରେ ସନ୍ତୁଷ୍ଟ ରହିବେ।", money: "ଧନ ନିବେଶ ପାଇଁ ସମୟ ଅନୁକୂଳ ଅଛି। ସମ୍ପତ୍ତିରୁ ଲାଭ ମିଳିପାରେ।", health: "ଆଣ୍ଠୁ କିମ୍ବା ହାଡ଼ ସମସ୍ୟା ହୋଇପାରେ, ଯତ୍ନ ନିଅନ୍ତୁ।", luckyNumber: "8", luckyColor: "ଗାଢ଼ ନୀଳ (Dark Blue)", advice: "କଠିନ ପରିଶ୍ରମ ଜାରି ରଖନ୍ତୁ।" },
-      bn: { love: "পারিবারিক জীবনে সুখ-শান্তি বজায় থাকবে।", career: "পরিশ্রমের পুরো ফল পাবেন। বস্ আপনার কাজে সন্তুষ্ট থাকবেন।", money: "বিনিয়োগের জন্য সময় অনুকূল। সম্পত্তি থেকে লাভ হতে পারে।", health: "হাঁটু বা হাড় সংক্রান্ত সমস্যা হতে পারে, যত্ন নিন।", luckyNumber: "৮", luckyColor: "গাঢ় নীল (Dark Blue)", advice: "কঠোর পরিশ্রম চালিয়ে যান।" }
+      or: { love: "ପାର୍ବାରିକ ଜୀବନରେ ସାମଞ୍ଜସ୍ୟ ବଜାୟ ରହିବ।", career: "ପରିଶ୍ରମର ପୂର୍ଣ୍ଣ ଫଳ ମିଳିବ। ବସ୍ ଆପଣଙ୍କ କାମରେ ସନ୍ତୁଷ୍ଟ ରହିବେ।", money: "ଧନ ନିବେଶ ପାଇଁ ସମୟ ଅନୁକୂଳ ଅଛି। ସମ୍ପତ୍ତିରୁ ଲାଭ ମିଳିପାରେ।", health: "ଆଣ୍ଠୁ କିମ୍ବା ହାଡ଼ ସମସ୍ୟା ହୋଇପାରେ, ଯତ୍ନ ନିଅନ୍ତୁ।", luckyNumber: "8", luckyColor: "ଗାଢ଼ ନୀଳ (Dark Blue)", advice: "କଠିନ ପରିଶ୍ରମ ଜାରି ରଖନ୍ତୁ।" },
+      bn: { love: "পারিবারিক জীবনে সুখ-শান্তি বজায় থাকবে।", career: "পরিশ্রমের পুরো ফল পাবেন। বস্ আপনার কাজে সন্তুষ্ট থাকবেন।", money: "বিনিয়োগের জন্য সময় অনুকূল। সম্পত্তি থেকে লাভ হতে পারে।", health: "হাঁটু বা হাড় সংক্রান্ত সমস্যা হতে পারে, যত্ন নিন।", luckyNumber: "৮", luckyColor: "গাঢ় নীল (Dark Blue)", advice: "কঠোর পরিশ্রম চালিয়ে যান।" }
     },
     "कुंभ": {
       enName: "Aquarius",
       hi: { love: "मित्रों का सहयोग मिलेगा। प्रेम संबंधों में प्रगाढ़ता आएगी।", career: "नई तकनीक या आइडिया पर काम करने का अवसर मिलेगा।", money: "अचानक खर्चे सामने आ सकते हैं, बजट का ध्यान रखें।", health: "मानसिक रूप से तरोताजा महसूस करेंगे.", luckyNumber: "4", luckyColor: "आसमानी (Sky Blue)", advice: "नया सीखने का प्रयास करें।" },
       en: { love: "Support from friends will be helpful. Intimacy in love will increase.", career: "Opportunity to work on new technology or innovative ideas.", money: "Sudden expenses may pop up; keep an eye on your budget.", health: "You will feel mentally refreshed and active.", luckyNumber: "4", luckyColor: "Sky Blue", advice: "Always keep trying to learn new things." },
       or: { love: "ବନ୍ଧୁମାନଙ୍କର ସହଯୋଗ ମିଳିବ। ପ୍ରେମ ସମ୍ପର୍କରେ ଘନିଷ୍ଠତା ବୃଦ୍ଧି ପାଇବ।", career: "ନୂତନ ପ୍ରଯୁକ୍ତିବିଦ୍ୟା କିମ୍ବା ବିଚାରରେ କାର୍ଯ୍ୟ କରିବାର ସୁଯୋଗ ମିଳିବ।", money: "ଅତର୍କିତ ଖର୍ଚ୍ଚ ସାମ୍ନାକୁ ଆସିପାରେ, ବଜେଟ୍ ପ୍ରତି ଧ୍ୟାନ ଦିଅନ୍ତୁ।", health: "ମାନସିକ ଭାବରେ ସତେଜ ଅନୁଭବ କରିବେ।", luckyNumber: "4", luckyColor: "ଆକାଶ ନୀଳ (Sky Blue)", advice: "କିଛି ନୂଆ ଶିଖିବା ପାଇଁ ଚେଷ୍ଟା କରନ୍ତୁ।" },
-      bn: { love: "বন্ধুদের সহযোগিতা পাবেন। প্রেমের সম্পর্কে গভীরতা আসবে।", career: "নতুন প্রযুক্তি বা আইডিয়া নিয়ে কাজ করার সুযোগ পাবেন।", money: "হঠাৎ খরচ সামনে আসতে পারে, বাজেট খেয়াল রাখুন।", health: "মানসিকভাবে চনমনে ও সতেজ অনুভব করবেন।", luckyNumber: "৪", luckyColor: "আসমানী (Sky Blue)", advice: "নতুন কিছু শেখার চেষ্টা চালিয়ে যান।" }
+      bn: { love: "বন্ধুদের সহযোগিতা পাবেন। প্রেমের সম্পর্কে গভীরতা আসবে।", career: "নতুন প্রযুক্তি বা আইডিয়া নিয়ে কাজ করার সুযোগ পাবেন।", money: "হঠাৎ খরচ সামনে আসতে পারে, বাজেট খেয়াল রাখুন।", health: "মানসিকভাবে চনমনে ও সতেজ অনুভব করবেন।", luckyNumber: "৪", luckyColor: "আসমানী (Sky Blue)", advice: "নতুন কিছু শেখার চেষ্টা চালিয়ে যান।" }
     },
     "मीन": {
       enName: "Pisces",
@@ -424,30 +424,33 @@ async function showRashi(rashiName) {
   if(document.getElementById("advice")) document.getElementById("advice").textContent = data.advice || "";
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const langSelect = document.getElementById('languageSelect');
-  if (langSelect) {
-    langSelect.value = currentLang;
-  }
-
-  // Populate Day dropdown choices dynamically (1 to 31)
+// --- Page Initialization ---
+window.addEventListener('DOMContentLoaded', () => {
+  // Populate DOB Day dropdown options
   const daySelect = document.getElementById('dobDay');
-  if (daySelect) {
+  if (daySelect && daySelect.options.length <= 1) {
     for (let i = 1; i <= 31; i++) {
-      let opt = document.createElement('option');
+      const opt = document.createElement('option');
       opt.value = i;
       opt.textContent = i;
       daySelect.appendChild(opt);
     }
   }
 
+  // Set initial language dropdown value if it exists
+  const langSelect = document.getElementById('languageSelect');
+  if (langSelect) {
+    langSelect.value = currentLang;
+  }
+
+  // Attach click events to Rashi cards
   document.querySelectorAll('.rashi-card').forEach(card => {
     card.addEventListener('click', () => {
-      showRashi(card.getAttribute('data-rashi'));
+      const rashiName = card.getAttribute('data-rashi');
+      showRashi(rashiName);
     });
   });
 
-  document.getElementById('prediction')?.classList.add('hidden');
-
+  // Initial UI render
   updateUI();
 });
