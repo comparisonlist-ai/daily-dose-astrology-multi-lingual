@@ -2,9 +2,8 @@
 let currentLang = localStorage.getItem('astroseek_lang') || 'hi';
 
 const appData = {
-  selectedRashi: null,
+  selectedRashi: 'मेष', // डिफ़ॉल्ट रूप से मेष सिलेक्टेड रहेगा ताकि पेज खाली न दिखे
 
-  // केवल यूआई (बटन, हेडिंग, भाषा) के लिए ट्रांसलेशन
   translations: {
     hi: {
       appTitle: "Daily Rashifal App",
@@ -14,7 +13,6 @@ const appData = {
       tabName: "नाम से (By Name)",
       tabDob: "जन्मतिथि से (By DOB)",
       namePlaceholder: "अपना पहला नाम लिखें (e.g. Rahul)",
-      findBtn: "Search",
       loveTitle: "❤️ प्रेम",
       careerTitle: "💼 करियर",
       moneyTitle: "💰 धन",
@@ -34,7 +32,6 @@ const appData = {
       tabName: "By Name",
       tabDob: "By DOB",
       namePlaceholder: "Enter your first name (e.g. Rahul)",
-      findBtn: "Search",
       loveTitle: "❤️ Love",
       careerTitle: "💼 Career",
       moneyTitle: "💰 Money",
@@ -54,7 +51,6 @@ const appData = {
       tabName: "ନାମରୁ (By Name)",
       tabDob: "ଜନ୍ମ ତାରିଖରୁ (By DOB)",
       namePlaceholder: "ଆପଣଙ୍କ ପ୍ରଥମ ନାମ ଲେଖନ୍ତୁ (e.g. Rahul)",
-      findBtn: "Search",
       loveTitle: "❤️ ପ୍ରେମ",
       careerTitle: "💼 କ୍ୟାରିଅର୍",
       moneyTitle: "💰 ଧନ",
@@ -74,7 +70,6 @@ const appData = {
       tabName: "নাম দ্বারা (By Name)",
       tabDob: "জন্ম তারিখ দ্বারা (By DOB)",
       namePlaceholder: "আপনার প্রথম নাম লিখুন (e.g. Rahul)",
-      findBtn: "Search",
       loveTitle: "❤️ প্রেম",
       careerTitle: "💼 ক্যারিয়ার",
       moneyTitle: "💰 ধন",
@@ -100,7 +95,7 @@ function updateUI() {
   if (!t) return;
   
   if(document.getElementById('appTitle')) document.getElementById('appTitle').innerHTML = `<img src="icon-512.png" alt="Logo" class="site-logo">${t.appTitle}`;
-  if(document.getElementById('appSubtitle')) document.getElementById('appSubtitle')[currentLang === 'hi' || currentLang === 'or' || currentLang === 'bn' ? 'innerText' : 'innerText'] = t.appSubtitle;
+  if(document.getElementById('appSubtitle')) document.getElementById('appSubtitle').innerText = t.appSubtitle;
   if(document.getElementById('zodiacHeading')) document.getElementById('zodiacHeading').innerText = t.zodiacHeading;
   if(document.getElementById('finderTitle')) document.getElementById('finderTitle').innerText = t.finderTitle;
   if(document.getElementById('tabNameBtn')) document.getElementById('tabNameBtn').innerText = t.tabName;
@@ -114,10 +109,6 @@ function updateUI() {
   if(document.getElementById('hLuckyNum')) document.getElementById('hLuckyNum').innerText = t.luckyNumTitle;
   if(document.getElementById('hLuckyColor')) document.getElementById('hLuckyColor').innerText = t.luckyColorTitle;
   if(document.getElementById('hAdvice')) document.getElementById('hAdvice').innerText = t.adviceTitle;
-
-  if (appData.selectedRashi) {
-    showRashi(appData.selectedRashi);
-  }
 
   updateTodayDate();
 }
@@ -218,7 +209,6 @@ function findRashiByDobFriendly() {
   showRashi(rashi);
 }
 
-// सीधे लाइव वर्कर से डेटा फेच करेगा (कोई पुराना फिक्स डेटा नहीं)
 async function showRashi(rashiName) {
   appData.selectedRashi = rashiName;
 
@@ -233,11 +223,9 @@ async function showRashi(rashiName) {
   const predSection = document.getElementById("prediction");
   if (predSection) {
     predSection.classList.remove("hidden");
-    predSection.scrollIntoView({ behavior: 'smooth' });
   }
 
   if(document.getElementById("rashiTitle")) {
-    document.getElementById("rashiTitleinnerHTML") = `${rashiName} - Loading live rashifal...`;
     document.getElementById("rashiTitle").textContent = `${rashiName} - Loading...`;
   }
 
@@ -257,7 +245,6 @@ async function showRashi(rashiName) {
       const matchedObj = rashifalList.find(item => item.rashi_hi === rashiName || (item.rashi_en && item.rashi_en.toLowerCase() === rashiName.toLowerCase()));
 
       if (matchedObj) {
-        // चुनी गई भाषा के आधार पर प्रेडिक्शन निकालना
         const langKey = `predictions_${currentLang}`;
         const preds = matchedObj[langKey] || matchedObj.predictions_hi || matchedObj.predictions_en || {};
         
@@ -272,7 +259,7 @@ async function showRashi(rashiName) {
         return;
       }
     }
-    throw new Error("Data not found in worker response");
+    throw new Error("Data not found");
   } catch (error) {
     console.error("Live fetch error:", error);
     document.getElementById("rashiTitle").textContent = `${rashiName} राशिफल`;
@@ -310,4 +297,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   updateUI();
+  
+  // पेज खुलते ही डिफ़ॉल्ट रूप से मेष राशि का डेटा लोड करें ताकि स्क्रीन खाली न लगे
+  showRashi('मेष');
 });
