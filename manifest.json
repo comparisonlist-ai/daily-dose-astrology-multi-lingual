@@ -1,21 +1,20 @@
 {
-  "background_color": "#0b1026",
-  "description": "Daily Rashifal App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "Daily Rashifal App",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "Rashifal",
+  "name": "Astroseek Horoscope",
+  "short_name": "Astroseek",
   "start_url": "/",
-  "theme_color": "#d4af37",
-  "id": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d97706",
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "https://via.placeholder.com/192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
