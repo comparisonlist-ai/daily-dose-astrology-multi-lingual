@@ -354,7 +354,8 @@ async function showRashi(rashiName) {
   let titleDisplay = "";
 
   try {
-    const response = await fetch(`/api/horoscope`, {
+    // Updated to point directly to your live worker endpoint
+    const response = await fetch(`https://daily-rashifal-app.comparisonlist.workers.dev`, {
       headers: { 'Content-Type': 'application/json' }
     });
 
@@ -379,7 +380,7 @@ async function showRashi(rashiName) {
       }
     }
   } catch (error) {
-    console.warn("Proxy fetch failed, falling back to local database:", error);
+    console.warn("Worker fetch failed, falling back to local database:", error);
   }
 
   if (!data) {
@@ -429,4 +430,4 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   updateUI();
-}); 
+});
