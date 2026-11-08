@@ -1,6 +1,17 @@
-self.options = {
-    "domain": "5gvci.com",
-    "zoneId": 12009181
-}
-self.lary = ""
-importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
+
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open('astroseek-pwa').then((cache) => {
+      return cache.addAll(['/', '/index.html']);
+    })
+  );
+});
+
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((cachedResponse) => {
+      return cachedResponse || fetch(e.request);
+    })
+  );
+});
