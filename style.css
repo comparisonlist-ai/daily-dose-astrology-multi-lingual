@@ -24,12 +24,21 @@ body {
   margin-bottom: 5px;
 }
 
+.header h1 .site-logo {
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+  margin-right: 8px !important;
+}
+
 .header p {
   font-size: 18px;
 }
 
 /* Language selector */
-
 .language-selector {
   position: absolute;
   top: 12px;
@@ -82,6 +91,7 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
   cursor: pointer;
   transition: transform 0.2s;
+  text-align: center;
 }
 
 .rashi-card:hover {
@@ -130,12 +140,13 @@ body {
 }
 
 footer {
-
-footer {
   padding: 20px 14px;
   text-align: center;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
+  color: #555;
+  background: #eee;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 footer p {
@@ -155,14 +166,6 @@ footer p {
 
 .footer-links a:hover {
   text-decoration: underline;
-}
-  
-  text-align: center;
-  padding: 25px 15px;
-  margin-top: 20px;
-  background: #eee;
-  color: #555;
-  font-size: 14px;
 }
 
 @media (max-width: 600px) {
@@ -188,13 +191,4 @@ footer p {
     font-size: 13px;
     padding: 5px 6px;
   }
-.header h1 .site-logo {
-  width: 48px !important;
-  height: 48px !important;
-  max-width: 48px !important;
-  max-height: 48px !important;
-  object-fit: contain !important;
-  vertical-align: middle !important;
-  margin-right: 8px !important;
 }
-
