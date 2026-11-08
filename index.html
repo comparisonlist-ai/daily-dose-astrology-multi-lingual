@@ -1,522 +1,180 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Daily Rashifal App | आज का राशिफल</title>
-
-  <meta
-    name="description"
-    content="Daily Rashifal App पर जानें आज का राशिफल, प्रेम, करियर, धन, स्वास्थ्य, शुभ अंक, शुभ रंग और आज की सलाह।"
-  >
-
-  <meta name="theme-color" content="#0b1026">
-  <meta name="color-scheme" content="dark">
-
-  <link rel="canonical" href="https://astroseek.solutions/">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon-512.png" type="image/png">
-  <link rel="apple-touch-icon" href="icon-512.png">
-
-  <!-- Keep the existing JavaScript file -->
-  <script src="script.js" defer></script>
-
-  <!-- Preserve Aplu notifications -->
-  <script src="https://push.aplu.io/push-notify.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astroseek - Daily Horoscope</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#d97706">
   <style>
-    :root {
-      color-scheme: dark;
-      --background: #0b1026;
-      --panel: #141c38;
-      --panel-light: #1b2546;
-      --gold: #d4af37;
-      --text: #f5f5f5;
-      --muted: #c1c8dc;
-      --border: #34405e;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
       margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Noto Sans",
-        "Noto Sans Devanagari", sans-serif;
-      line-height: 1.65;
-    }
-
-    button,
-    select {
-      font: inherit;
-    }
-
-    .header {
-      padding: 24px 16px;
-      text-align: center;
-      background: #101832;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header p {
-      margin: 0 0 8px;
-      color: var(--gold);
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    .site-logo {
-      display: block;
-      width: 88px;
-      height: 88px;
-      object-fit: contain;
-      margin: 12px auto;
-      border-radius: 18px;
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: clamp(1.5rem, 5vw, 2.1rem);
-      line-height: 1.3;
-    }
-
-    .language-area {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .language-area label {
-      color: var(--muted);
-    }
-
-    #languageSelect {
-      max-width: 100%;
-      padding: 9px 12px;
-      color: var(--text);
-      background: var(--panel);
-      border: 1px solid var(--gold);
-      border-radius: 8px;
-    }
-
-    .container {
-      width: min(100% - 28px, 1000px);
-      margin: 0 auto;
-      padding: 24px 0 40px;
-    }
-
-    .today-date {
-      margin: 0 0 22px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .section-title {
-      margin: 0 0 16px;
-      color: var(--gold);
-      text-align: center;
-      font-size: 1.35rem;
-    }
-
-    .rashi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .rashi-card {
-      min-width: 0;
-      min-height: 108px;
-      padding: 14px 6px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      color: var(--text);
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .rashi-card:hover,
-    .rashi-card:focus-visible {
-      border-color: var(--gold);
-      outline: none;
-    }
-
-    .rashi-card.selected {
-      background: var(--panel-light);
-      border: 2px solid var(--gold);
-    }
-
-    .rashi-card span {
-      font-size: 1.6rem;
-    }
-
-    .rashi-card strong {
-      font-size: 1rem;
-      overflow-wrap: anywhere;
-    }
-
-    .rashi-card small {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    .prediction {
-      margin-top: 30px;
       padding: 20px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      scroll-margin-top: 16px;
     }
-
-    .hidden {
-      display: none !important;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
-
-    .prediction > h2 {
-      margin: 0 0 20px;
-      color: var(--gold);
-      text-align: center;
-      font-size: 1.45rem;
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
     }
-
-    .prediction-item {
-      margin: 12px 0;
-      padding: 14px;
-      background: var(--panel-light);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-
-    .prediction-item h3 {
-      margin: 0 0 8px;
-      color: var(--gold);
-      font-size: 1.05rem;
-    }
-
-    .prediction-item p {
-      margin: 0;
-      overflow-wrap: anywhere;
-    }
-
-    footer {
-      padding: 20px 14px;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    footer p {
+    h1 {
+      color: #1e293b;
+      font-size: 22px;
       margin: 0;
     }
-
-    .footer-links {
-      margin: 0 0 12px;
-      line-height: 2;
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
     }
-
-    .footer-links a {
-      color: var(--gold);
-      text-decoration: none;
-      margin: 0 5px;
+    .search-box input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      flex-grow: 1;
     }
-
-    .footer-links a:hover {
-      text-decoration: underline;
+    #result-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
     }
-
-    .install-prompt {
-      margin: -10px 0 22px;
+    .rashi-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .rashi-card h3 {
+      color: #d97706;
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .rashi-card p {
+      margin: 6px 0;
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .loading {
+      grid-column: 1 / -1;
       text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .install-prompt a {
-      color: var(--gold);
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    @media (max-width: 360px) {
-      .container {
-        width: calc(100% - 18px);
-      }
-      .rashi-grid {
-        gap: 7px;
-      }
-      .rashi-card {
-        min-height: 100px;
-        padding: 10px 3px;
-      }
-      .rashi-card strong {
-        font-size: 0.9rem;
-      }
-      .prediction {
-        padding: 12px;
-      }
-    }
-
-    @media (min-width: 650px) {
-      .rashi-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .prediction {
-        padding: 26px;
-      }
+      color: #64748b;
+      padding: 30px;
     }
   </style>
 </head>
-
 <body>
-  <header class="header">
-    <p id="appSubtitle">आज का राशिफल</p>
 
-    <img
-      src="icon-512.png"
-      alt="AstroSeek Solutions Logo"
-      class="site-logo"
-      width="88"
-      height="88"
-    >
-
-    <h1 id="appTitle">Daily Rashifal App</h1>
-
-    <div class="language-area">
-      <label for="languageSelect">Language / भाषा:</label>
-      <select id="languageSelect" onchange="changeLanguage(this.value)">
-        <option value="hi">हिन्दी</option>
-        <option value="en">English</option>
-        <option value="or">ଓଡ଼ିଆ</option>
-        <option value="bn">বাংলা</option>
-      </select>
-    </div>
-  </header>
-
-  <main class="container">
-    <p id="todayDate" class="today-date"></p>
-
-    <p id="installPrompt" class="install-prompt">
-      रोज़ाना राशिफल चाहिए?
-      <a id="installLink" href="install.html">Click here</a>
-    </p>
-  
-    <!-- Rashi Finder by Name or DOB -->
-    <section class="prediction" style="margin-top: 0; margin-bottom: 25px;">
-      <h2 id="finderTitle" style="font-size: 1.25rem; margin-bottom: 14px;">🔍 नाम या जन्म तिथि से राशि जानें</h2>
-      
-      <div style="display: flex; gap: 8px; margin-bottom: 12px; justify-content: center;">
-        <button type="button" id="tabNameBtn" onclick="switchFinderTab('name')" style="padding: 8px 16px; background: var(--panel-light); border: 1px solid var(--gold); border-radius: 6px; color: var(--gold); cursor: pointer; font-weight: bold;">नाम से (By Name)</button>
-        <button type="button" id="tabDobBtn" onclick="switchFinderTab('dob')" style="padding: 8px 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; color: var(--muted); cursor: pointer;">जन्मतिथि से (By DOB)</button>
-      </div>
-
-      <!-- By Name Input -->
-      <div id="nameFinderBox">
-        <div style="display: flex; gap: 8px;">
-          <input type="text" id="userNameInput" placeholder="अपना पहला नाम लिखें (e.g. Rahul)" style="flex: 1; padding: 10px 14px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
-          <button type="button" onclick="findRashiByName()" style="padding: 10px 20px; background: var(--gold); color: #101010; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Search</button>
-        </div>
-        <small id="nameResultMsg" style="display: block; margin-top: 8px; color: var(--muted); text-align: center;"></small>
-      </div>
-
-      <!-- By DOB Input (Layman Friendly Dropdowns) -->
-      <div id="dobFinderBox" class="hidden">
-        <div style="display: flex; gap: 6px; margin-bottom: 10px;">
-          <select id="dobDay" style="flex: 1; padding: 10px 6px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
-            <option value="" disabled selected>दिन (Day)</option>
-          </select>
-
-          <select id="dobMonth" style="flex: 1.5; padding: 10px 6px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
-            <option value="" disabled selected>महीना (Month)</option>
-            <option value="1">जनवरी (Jan)</option>
-            <option value="2">फरवरी (Feb)</option>
-            <option value="3">मार्च (Mar)</option>
-            <option value="4">अप्रैल (Apr)</option>
-            <option value="5">मई (May)</option>
-            <option value="6">जून (Jun)</option>
-            <option value="7">जुलाई (Jul)</option>
-            <option value="8">अगस्त (Aug)</option>
-            <option value="9">सितंबर (Sep)</option>
-            <option value="10">अक्टूबर (Oct)</option>
-            <option value="11">नवंबर (Nov)</option>
-            <option value="12">दिसंबर (Dec)</option>
-          </select>
-
-          <input type="number" id="dobYear" placeholder="वर्ष (YYYY)" min="1930" max="2026" style="flex: 1.2; padding: 10px 8px; background: var(--background); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
-        </div>
-        <button type="button" onclick="findRashiByDobFriendly()" style="width: 100%; padding: 10px 20px; background: var(--gold); color: #101010; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Search</button>
-        <small id="dobResultMsg" style="display: block; margin-top: 8px; color: var(--muted); text-align: center;"></small>
-      </div>
-    </section>
-
-    <section aria-labelledby="zodiacHeading">
-      <h2 id="zodiacHeading" class="section-title">
-        अपनी राशि चुनें
-      </h2>
-
-      <div class="rashi-grid">
-        <button type="button" class="rashi-card" data-rashi="मेष">
-          <span aria-hidden="true">♈</span>
-          <strong>मेष</strong>
-          <small>Aries</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="वृषभ">
-          <span aria-hidden="true">♉</span>
-          <strong>वृषभ</strong>
-          <small>Taurus</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="मिथुन">
-          <span aria-hidden="true">♊</span>
-          <strong>मिथुन</strong>
-          <small>Gemini</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="कर्क">
-          <span aria-hidden="true">♋</span>
-          <strong>कर्क</strong>
-          <small>Cancer</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="सिंह">
-          <span aria-hidden="true">♌</span>
-          <strong>सिंह</strong>
-          <small>Leo</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="कन्या">
-          <span aria-hidden="true">♍</span>
-          <strong>कन्या</strong>
-          <small>Virgo</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="तुला">
-          <span aria-hidden="true">♎</span>
-          <strong>तुला</strong>
-          <small>Libra</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="वृश्चिक">
-          <span aria-hidden="true">♏</span>
-          <strong>वृश्चिक</strong>
-          <small>Scorpio</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="धनु">
-          <span aria-hidden="true">♐</span>
-          <strong>धनु</strong>
-          <small>Sagittarius</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="मकर">
-          <span aria-hidden="true">♑</span>
-          <strong>मकर</strong>
-          <small>Capricorn</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="कुंभ">
-          <span aria-hidden="true">♒</span>
-          <strong>कुंभ</strong>
-          <small>Aquarius</small>
-        </button>
-
-        <button type="button" class="rashi-card" data-rashi="मीन">
-          <span aria-hidden="true">♓</span>
-          <strong>मीन</strong>
-          <small>Pisces</small>
-        </button>
-      </div>
-    </section>
-
-    <section
-      id="prediction"
-      class="prediction hidden"
-      aria-live="polite"
-      aria-labelledby="rashiTitle"
-    >
-      <h2 id="rashiTitle"></h2>
-
-      <div class="prediction-item">
-        <h3 id="hLove">❤️ प्रेम</h3>
-        <p id="love"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3 id="hCareer">💼 करियर</h3>
-        <p id="career"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3 id="hMoney">💰 धन</h3>
-        <p id="money"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3 id="hHealth">❤️‍🩹 स्वास्थ्य</h3>
-        <p id="health"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3 id="hLuckyNum">🔢 शुभ अंक</h3>
-        <p id="luckyNumber"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3 id="hLuckyColor">🎨 शुभ रंग</h3>
-        <p id="luckyColor"></p>
-      </div>
-
-      <div class="prediction-item">
-        <h3 id="hAdvice">🙏 आज की सलाह</h3>
-        <p id="advice"></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-links">
-      <a href="about.html">About Us</a> |
-      <a href="contact.html">Contact Us</a> |
-      <a href="privacy-policy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms &amp; Conditions</a> |
-      <a href="https://blog.astroseek.solutions">Blog</a>
+  <div class="container">
+    <div class="header-row">
+      <h1>Astroseek Horoscope</h1>
     </div>
 
-    <p>© 2026 Daily Rashifal App</p>
-  </footer>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search Rashi (e.g. Aries, Mesh)..." onkeyup="filterHoroscope()">
+    </div>
+
+    <div id="result-container">
+      <div class="loading">Loading horoscope data...</div>
+    </div>
+  </div>
 
   <script>
-    (function(s) {
-      s.dataset.zone = '12037497';
-      s.src = 'https://nap5k.com/tag.min.js';
-    })(
-      [document.documentElement, document.body]
-        .filter(Boolean)
-        .pop()
-        .appendChild(document.createElement('script'))
-    );
-  </script>
+    const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev";
+    let allData = [];
 
-<script src="script.js" defer></script>
-  
+    async function loadData() {
+      try {
+        const response = await fetch(WORKER_URL, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Server returned status ${response.status}`);
+        }
+
+        const result = await response.json();
+        
+        // Supports both array responses or wrapped JSON objects
+        if (Array.isArray(result)) {
+          allData = result;
+        } else if (result.success && result.data && Array.isArray(result.data.rashifal)) {
+          allData = result.data.rashifal;
+        } else if (result.rashifal && Array.isArray(result.rashifal)) {
+          allData = result.rashifal;
+        } else {
+          throw new Error("Invalid data format received from worker");
+        }
+
+        if (allData.length > 0) {
+          renderCards(allData);
+        } else {
+          document.getElementById("result-container").innerHTML = "<div class='loading'>No horoscope records found.</div>";
+        }
+      } catch (err) {
+        console.error("Fetch error:", err);
+        document.getElementById("result-container").innerHTML = "<div class='loading'>Unable to load predictions right now. Please check your connection.</div>";
+      }
+    }
+
+    function renderCards(dataList) {
+      let html = "";
+      dataList.forEach(item => {
+        const rashiEn = item.rashi_en || item.name || 'Zodiac';
+        const rashiHi = item.rashi_hi || item.local_name || '';
+        const overall = item.predictions_hi?.overall || item.overall || item.description || 'Details unavailable.';
+        const career = item.predictions_hi?.career || item.career || '';
+        const luckyNum = item.lucky?.number || item.lucky_number || 'N/A';
+
+        html += `
+          <div class="rashi-card">
+            <h3>${rashiEn} ${rashiHi ? `(${rashiHi})` : ''}</h3>
+            <p><strong>Overall:</strong> ${overall}</p>
+            ${career ? `<p><strong>Career:</strong> ${career}</p>` : ''}
+            <p><strong>Lucky Number:</strong> ${luckyNum}</p>
+          </div>
+        `;
+      });
+      document.getElementById("result-container").innerHTML = html;
+    }
+
+    function filterHoroscope() {
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      if (!query) {
+        renderCards(allData);
+        return;
+      }
+      const filtered = allData.filter(item => {
+        const en = (item.rashi_en || '').toLowerCase();
+        const hi = (item.rashi_hi || '').toLowerCase();
+        return en.includes(query) || hi.includes(query);
+      });
+      renderCards(filtered);
+    }
+
+    // Load data on page launch
+    loadData();
+
+    // Register Service Worker matching your repository file structure
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.service.worker.js')
+        .then(() => console.log('Service worker registered successfully'))
+        .catch(err => console.log('Service worker registration failed:', err));
+    }
+  </script>
 </body>
 </html>
