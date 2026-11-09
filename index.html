@@ -196,54 +196,46 @@
         .then(() => console.log('Service Worker registered successfully'))
         .catch(err => console.error('Service Worker registration failed:', err));
     }
-  </script>
-
   
-<form id="astrologyForm">
-  <input type="text" id="name" placeholder="Enter name" autocomplete="off" />
-  <button type="submit" id="submitBtn">Get Horoscope</button>
-</form>
-<div id="resultContainer" class="astrology-card"></div>
-
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('astrologyForm');
   const resultContainer = document.getElementById('resultContainer');
+  const searchButton = document.querySelector('.search-btn'); // Update selector to match your search button class/ID
+  
+  // Clear any prefilled states on load
+  const nameInput = document.getElementById('nameInput');
+  if (nameInput) nameInput.value = '';
 
-  // Explicitly clear inputs on load to prevent prefilled states
-  form.reset();
+  // Handle Zodiac Sign Selection
+  const zodiacCards = document.querySelectorAll('.zodiac-card'); // Adjust to your actual zodiac element class
+  zodiacCards.forEach(card => {
+    card.addEventListener('click', async () => {
+      const sign = card.getAttribute('data-sign');
+      if (!sign) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const nameInput = document.getElementById('name').value.trim();
-    
-    if (!nameInput) return;
+      resultContainer.innerHTML = '<p class="loading">Loading horoscope...</p>';
 
-    resultContainer.innerHTML = '<p class="loading">Fetching details...</p>';
+      try {
+        const response = await fetch(`https://api.grahaapi.com/v1/horoscope?sign=${encodeURIComponent(sign)}`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        });
 
-    try {
-      const response = await fetch(`https://api.grahaapi.com/v1/endpoint?name=${encodeURIComponent(nameInput)}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-          // Add your API key headers here if required
-        }
-      });
+        if (!response.ok) throw new Error('Failed to fetch data');
+        const data = await response.json();
 
-      if (!response.ok) throw new Error('Failed to fetch data');
-
-      const data = await response.json();
-      
-      // Render data cleanly using your style.css classes
-      resultContainer.innerHTML = `
-        <h3>Horoscope for ${data.name || nameInput}</h3>
-        <p class="${data.statusClass || 'default-text'}">${data.prediction || 'Data unavailable.'}</p>
-      `;
-    } catch (error) {
-      resultContainer.innerHTML = '<p class="error">Unable to fetch data right now. Please try again.</p>';
-      console.error('GrahaApi Error:', error);
-    }
+        resultContainer.innerHTML = `
+          <h3>${sign} Horoscope</h3>
+          <p><strong> प्रेम (Love):</strong> ${data.love || 'N/A'}</p>
+          <p><strong> करियर (Career):</strong> ${data.career || 'N/A'}</p>
+          <p><strong> धन (Wealth):</strong> ${data.wealth || 'N/A'}</p>
+          <p><strong> स्वास्थ्य (Health):</strong> ${data.health || 'N/A'}</p>
+        `;
+      } catch (error) {
+        resultContainer.innerHTML = '<p class="error">लाइव डेटा लोड करने में समस्या आ रही है। कृपया इंटरनेट कनेक्शन जांचें।</p>';
+        console.error('GrahaApi Error:', error);
+      }
+    });
   });
 });
-
 </body>
 </html>
