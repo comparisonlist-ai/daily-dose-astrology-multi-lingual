@@ -204,5 +204,46 @@
   <button type="submit" id="submitBtn">Get Horoscope</button>
 </form>
 <div id="resultContainer" class="astrology-card"></div>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('astrologyForm');
+  const resultContainer = document.getElementById('resultContainer');
+
+  // Explicitly clear inputs on load to prevent prefilled states
+  form.reset();
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nameInput = document.getElementById('name').value.trim();
+    
+    if (!nameInput) return;
+
+    resultContainer.innerHTML = '<p class="loading">Fetching details...</p>';
+
+    try {
+      const response = await fetch(`https://api.grahaapi.com/v1/endpoint?name=${encodeURIComponent(nameInput)}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+          // Add your API key headers here if required
+        }
+      });
+
+      if (!response.ok) throw new Error('Failed to fetch data');
+
+      const data = await response.json();
+      
+      // Render data cleanly using your style.css classes
+      resultContainer.innerHTML = `
+        <h3>Horoscope for ${data.name || nameInput}</h3>
+        <p class="${data.statusClass || 'default-text'}">${data.prediction || 'Data unavailable.'}</p>
+      `;
+    } catch (error) {
+      resultContainer.innerHTML = '<p class="error">Unable to fetch data right now. Please try again.</p>';
+      console.error('GrahaApi Error:', error);
+    }
+  });
+});
+
 </body>
 </html>
