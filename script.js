@@ -1,130 +1,260 @@
-const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev";
-let allData = [];
-
-async function loadData() {
-  try {
-    const response = await fetch(WORKER_URL, {
-      method: 'GET',
-      headers: { 'Accept': 'application/json' }
-    });
-    
-    if (!response.ok) throw new Error(`Server status ${response.status}`);
-
-    const result = await response.json();
-    
-    if (Array.isArray(result)) {
-      allData = result;
-    } else if (result.data && Array.isArray(result.data.rashifal)) {
-      allData = result.data.rashifal;
-    } else if (result.data && Array.isArray(result.data)) {
-      allData = result.data;
-    } else {
-      throw new Error("Invalid data format");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astroseek - Daily Horoscope</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      --card-bg: #ffffff;
+      --primary: #7c3aed;
+      --primary-accent: #d97706;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
     }
 
-    if (allData.length > 0) {
-      renderCards(allData);
-    } else {
-      document.getElementById("result-container").innerHTML = "<div class='loading'>No records found.</div>";
-    }
-  } catch (err) {
-    console.error("Fetch error:", err);
-    document.getElementById("result-container").innerHTML = "<div class='loading'>Unable to load predictions. Check connection.</div>";
-  }
-}
-
-function renderCards(dataList) {
-  let html = "";
-  dataList.forEach((item, index) => {
-    const rashiEn = item.rashi_en || item.sign || 'Zodiac';
-    const rashiHi = item.rashi_hi || '';
-    const symbol = item.symbol || '';
-    const lord = item.rashi_lord || '';
-    const day = item.day || '';
-    const color = item.colors || '';
-    const mantra = item.mantra || '';
-    
-    const enOverall = item.predictions?.en?.overall || item.predictions_en?.overall || 'Details unavailable.';
-    const hiOverall = item.predictions?.hi?.overall || item.predictions_hi?.overall || '';
-
-    html += `
-      <div class="rashi-card" onclick="toggleCard(${index})" style="cursor: pointer;">
-        <h3>${rashiEn} (${rashiHi}) ${symbol ? `- ${symbol}` : ''}</h3>
-        <p><strong>Lord:</strong> ${lord} | <strong>Day:</strong> ${day}</p>
-        <p><strong>Color:</strong> ${color}</p>
-        <div id="details-${index}" style="display: none; margin-top: 10px; border-top: 1px solid #e2e8f0; padding-top: 10px;">
-          <p><strong>Mantra:</strong> ${mantra}</p>
-          <p><strong>English:</strong> ${enOverall}</p>
-          ${hiOverall ? `<p><strong>Hindi:</strong> ${hiOverall}</p>` : ''}
-        </div>
-      </div>
-    `;
-  });
-  document.getElementById("result-container").innerHTML = html;
-}
-
-function toggleCard(index) {
-  const details = document.getElementById(`details-${index}`);
-  if (details) {
-    details.style.display = details.style.display === 'none' ? 'block' : 'none';
-  }
-}
-
-function filterHoroscope() {
-  const query = document.getElementById("searchInput").value.toLowerCase().trim();
-  if (!query) {
-    renderCards(allData);
-    return;
-  }
-  const filtered = allData.filter(item => {
-    const en = (item.rashi_en || item.sign || '').toLowerCase();
-    const hi = (item.rashi_hi || '').toLowerCase();
-    return en.includes(query) || hi.includes(query);
-  });
-  renderCards(filtered);
-}
-
-loadData();
-
-
-async function loadData() {
-  try {
-    const response = await fetch(WORKER_URL, {
-      method: 'GET',
-      headers: { 'Accept': 'application/json' }
-    });
-    
-    if (!response.ok) throw new Error(`Server status ${response.status}`);
-
-    const result = await response.json();
-    
-    // Extract date if it exists at the top level or from the first item
-    const apiDate = result.data?.date || result.date;
-    
-    if (Array.isArray(result)) {
-      allData = result;
-    } else if (result.data && Array.isArray(result.data.rashifal)) {
-      allData = result.data.rashifal;
-    } else if (result.data && Array.isArray(result.data)) {
-      allData = result.data;
-    } else {
-      throw new Error("Invalid data format");
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    if (allData.length > 0) {
-      // THIS UPDATES THE DATE AUTOMATICALLY
-      // Change "loading-date" to match the actual id of the element showing "Loading date..." in your HTML
-      const dateElement = document.getElementById("loading-date"); 
-      if (dateElement) {
-        dateElement.innerText = apiDate || allData[0].day || "";
-      }
-
-      renderCards(allData);
-    } else {
-      document.getElementById("result-container").innerHTML = "<div class='loading'>No records found.</div>";
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8fafc;
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 40px;
     }
-  } catch (err) {
-    console.error("Fetch error:", err);
-    document.getElementById("result-container").innerHTML = "<div class='loading'>Unable to load predictions. Check connection.</div>";
-  }
-}
+
+    /* Hero Header */
+    .hero {
+      background: var(--bg-gradient);
+      color: #ffffff;
+      padding: 40px 20px 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, #fde047, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: #cbd5e1;
+    }
+
+    .date-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #f1f5f9;
+      margin-top: 14px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: -30px auto 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Search Input */
+    .search-wrapper {
+      margin-bottom: 24px;
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-family: inherit;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-wrapper input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.15);
+    }
+
+    /* Grid Layout */
+    #result-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    /* Rashi Card Styling */
+    .rashi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .rashi-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .card-title span {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--primary-accent);
+      margin-left: 4px;
+    }
+
+    .symbol-pill {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .meta-info span {
+      background: #f8fafc;
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .prediction-preview {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #334155;
+    }
+
+    /* Expandable Details Area */
+    .expanded-details {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    .detail-section {
+      margin-bottom: 10px;
+    }
+
+    .detail-section label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+
+    .detail-section p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #475569;
+    }
+
+    .click-hint {
+      display: block;
+      text-align: right;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 10px;
+    }
+
+    .loading {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--text-muted);
+      padding: 40px;
+      font-size: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Astroseek</h1>
+      <p>Daily Rashifal & Planetary Insights</p>
+      <div id="loading-date" class="date-badge">Loading date...</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" placeholder="Search Rashi (e.g. Aries, मेष)..." onkeyup="filterHoroscope()">
+    </div>
+
+    <div id="result-container">
+      <div class="loading">Fetching predictions from stars...</div>
+    </div>
+  </main>
+
+  <script src="/script.js"></script>
+
+</body>
+</html>
