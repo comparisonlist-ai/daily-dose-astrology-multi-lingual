@@ -46,22 +46,24 @@
     }
     #result-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
     .rashi-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
-      padding: 15px;
+      padding: 20px;
     }
     .rashi-card h3 {
       color: #d97706;
       margin-top: 0;
       font-size: 18px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
     }
     .rashi-card p {
-      margin: 6px 0;
+      margin: 8px 0;
       color: #475569;
       font-size: 13px;
       line-height: 1.4;
@@ -109,17 +111,12 @@
 
         const result = await response.json();
         
-        // Handles Graha API standard structures alongside existing Worker outputs
         if (Array.isArray(result)) {
           allData = result;
-        } else if (result.response && Array.isArray(result.response)) {
-          allData = result.response;
-        } else if (result.data && Array.isArray(result.data)) {
-          allData = result.data;
         } else if (result.data && Array.isArray(result.data.rashifal)) {
           allData = result.data.rashifal;
-        } else if (result.rashifal && Array.isArray(result.rashifal)) {
-          allData = result.rashifal;
+        } else if (result.data && Array.isArray(result.data)) {
+          allData = result.data;
         } else {
           throw new Error("Invalid data format received from endpoint");
         }
@@ -138,21 +135,26 @@
     function renderCards(dataList) {
       let html = "";
       dataList.forEach(item => {
-        // Safe mapping across Graha API keys and fallback properties
-        const rashiEn = item.sign || item.rashi_en || item.name || 'Zodiac';
-        const rashiHi = item.rashi_hi || item.local_name || item.hindi_name || '';
-        const overall = item.prediction || item.predictions_hi?.overall || item.overall || item.description || 'Details unavailable.';
-        const career = item.career || item.predictions_hi?.career || '';
-        const luckyNum = item.lucky_number || item.lucky?.number || 'N/A';
-        const luckyColor = item.lucky_color || item.lucky?.color || '';
+        const rashiEn = item.rashi_en || item.sign || 'Zodiac';
+        const rashiHi = item.rashi_hi || '';
+        const symbol = item.symbol || '';
+        const lord = item.rashi_lord || '';
+        const day = item.day || '';
+        const color = item.colors || '';
+        const mantra = item.mantra || '';
+        
+        const enOverall = item.predictions_en?.overall || 'Details unavailable.';
+        const hiOverall = item.predictions_hi?.overall || '';
 
         html += `
           <div class="rashi-card">
-            <h3>${rashiEn} ${rashiHi ? `(${rashiHi})` : ''}</h3>
-            <p><strong>Prediction:</strong> ${overall}</p>
-            ${career ? `<p><strong>Career:</strong> ${career}</p>` : ''}
-            <p><strong>Lucky Number:</strong> ${luckyNum}</p>
-            ${luckyColor ? `<p><strong>Lucky Color:</strong> ${luckyColor}</p>` : ''}
+            <h3>${rashiEn} (${rashiHi}) ${symbol ? `- ${symbol}` : ''}</h3>
+            <p><strong>Lord:</strong> ${lord} | <strong>Day:</strong> ${day}</p>
+            <p><strong>Color:</strong> ${color}</p>
+            <p><strong>Mantra:</strong> ${mantra}</p>
+            <hr style="border:0; border-top:1px solid #e2e8f0; margin:12px 0;">
+            <p><strong>English:</strong> ${enOverall}</p>
+            ${hiOverall ? `<p><strong>Hindi:</strong> ${hiOverall}</p>` : ''}
           </div>
         `;
       });
@@ -166,17 +168,15 @@
         return;
       }
       const filtered = allData.filter(item => {
-        const en = (item.sign || item.rashi_en || item.name || '').toLowerCase();
-        const hi = (item.rashi_hi || item.local_name || item.hindi_name || '').toLowerCase();
+        const en = (item.rashi_en || item.sign || '').toLowerCase();
+        const hi = (item.rashi_hi || '').toLowerCase();
         return en.includes(query) || hi.includes(query);
       });
       renderCards(filtered);
     }
 
-    // Load data on page launch
     loadData();
 
-    // Register Service Worker matching your repository file structure
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.service.worker.js')
         .then(() => console.log('Service worker registered successfully'))
@@ -184,11 +184,5 @@
     }
   </script>
 
-<div id="horoscope-container">
-  <p>Loading horoscopes...</p>
-</div>
-
-<script src="/script.js"></script>
-  
 </body>
 </html>
