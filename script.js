@@ -1,60 +1,87 @@
+const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev";
+let allData = [];
 
-<div id="horoscope-container">
-  <p>Loading horoscopes...</p>
-</div>
+async function loadData() {
+  try {
+    const response = await fetch(WORKER_URL, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if (!response.ok) throw new Error(`Server status ${response.status}`);
 
-<!-- Paste JavaScript right here -->
-<script>
-  async function loadHoroscopes() {
-    try {
-      const response = await fetch('https://risonlist.workers.dev');
-      const result = await response.json();
-      
-      if (!result.success || !result.data || !result.data.rashifal) {
-        document.getElementById('horoscope-container').innerHTML = '<p>Failed to load data.</p>';
-        return;
-      }
-      
-      const container = document.getElementById('horoscope-container');
-      container.innerHTML = '';
-
-      result.data.rashifal.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'rashi-card';
-        card.style.cssText = 'border: 1px solid #e2e8f0; padding: 20px; margin-bottom: 20px; border-radius: 8px; background: #fff;';
-        
-        card.innerHTML = `
-          <h2>${item.rashi_en} (${item.rashi_hi}) &mdash; Symbol: ${item.symbol}</h2>
-          <p><strong>Lord:</strong> ${item.rashi_lord} | <strong>Day:</strong> ${item.day} | <strong>Color:</strong> ${item.colors}</p>
-          <p><strong>Mantra:</strong> ${item.mantra}</p>
-          <p><strong>Auspicious Hours:</strong> ${item.auspicious_hours}</p>
-          <hr style="border: 0; border-top: 1px solid #edf2f7; margin: 15px 0;">
-          
-          <h3>English Predictions</h3>
-          <p><strong>Overall:</strong> ${item.predictions.en.overall}</p>
-          <p><strong>Career:</strong> ${item.predictions.en.career}</p>
-          <p><strong>Health:</strong> ${item.predictions.en.health}</p>
-          <p><strong>Finance:</strong> ${item.predictions.en.finance}</p>
-          <p><strong>Love:</strong> ${item.predictions.en.love}</p>
-          <p><strong>Spirit:</strong> ${item.predictions.en.spirit}</p>
-          
-          <h3 style="margin-top: 15px;">Hindi Predictions</h3>
-          <p><strong>Overall:</strong> ${item.predictions.hi.overall}</p>
-          <p><strong>Career:</strong> ${item.predictions.hi.career}</p>
-          <p><strong>Health:</strong> ${item.predictions.hi.health}</p>
-          <p><strong>Finance:</strong> ${item.predictions.hi.finance}</p>
-          <p><strong>Love:</strong> ${item.predictions.hi.love}</p>
-          <p><strong>Spirit:</strong> ${item.predictions.hi.spirit}</p>
-        `;
-        container.appendChild(card);
-      });
-    } catch (error) {
-      console.error('Error fetching horoscopes:', error);
-      document.getElementById('horoscope-container').innerHTML = '<p>Error loading horoscope content.</p>';
+    const result = await response.json();
+    
+    if (Array.isArray(result)) {
+      allData = result;
+    } else if (result.data && Array.isArray(result.data.rashifal)) {
+      allData = result.data.rashifal;
+    } else if (result.data && Array.isArray(result.data)) {
+      allData = result.data;
+    } else {
+      throw new Error("Invalid data format");
     }
+
+    if (allData.length > 0) {
+      renderCards(allData);
+    } else {
+      document.getElementById("result-container").innerHTML = "<div class='loading'>No records found.</div>";
+    }
+  } catch (err) {
+    console.error("Fetch error:", err);
+    document.getElementById("result-container").innerHTML = "<div class='loading'>Unable to load predictions. Check connection.</div>";
   }
+}
 
-  loadHoroscopes();
-</script>
+function renderCards(dataList) {
+  let html = "";
+  dataList.forEach((item, index) => {
+    const rashiEn = item.rashi_en || item.sign || 'Zodiac';
+    const rashiHi = item.rashi_hi || '';
+    const symbol = item.symbol || '';
+    const lord = item.rashi_lord || '';
+    const day = item.day || '';
+    const color = item.colors || '';
+    const mantra = item.mantra || '';
+    
+    const enOverall = item.predictions?.en?.overall || item.predictions_en?.overall || 'Details unavailable.';
+    const hiOverall = item.predictions?.hi?.overall || item.predictions_hi?.overall || '';
 
-</body>
+    html += `
+      <div class="rashi-card" onclick="toggleCard(${index})" style="cursor: pointer;">
+        <h3>${rashiEn} (${rashiHi}) ${symbol ? `- ${symbol}` : ''}</h3>
+        <p><strong>Lord:</strong> ${lord} | <strong>Day:</strong> ${day}</p>
+        <p><strong>Color:</strong> ${color}</p>
+        <div id="details-${index}" style="display: none; margin-top: 10px; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+          <p><strong>Mantra:</strong> ${mantra}</p>
+          <p><strong>English:</strong> ${enOverall}</p>
+          ${hiOverall ? `<p><strong>Hindi:</strong> ${hiOverall}</p>` : ''}
+        </div>
+      </div>
+    `;
+  });
+  document.getElementById("result-container").innerHTML = html;
+}
+
+function toggleCard(index) {
+  const details = document.getElementById(`details-${index}`);
+  if (details) {
+    details.style.display = details.style.display === 'none' ? 'block' : 'none';
+  }
+}
+
+function filterHoroscope() {
+  const query = document.getElementById("searchInput").value.toLowerCase().trim();
+  if (!query) {
+    renderCards(allData);
+    return;
+  }
+  const filtered = allData.filter(item => {
+    const en = (item.rashi_en || item.sign || '').toLowerCase();
+    const hi = (item.rashi_hi || '').toLowerCase();
+    return en.includes(query) || hi.includes(query);
+  });
+  renderCards(filtered);
+}
+
+loadData();
