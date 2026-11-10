@@ -85,3 +85,46 @@ function filterHoroscope() {
 }
 
 loadData();
+
+
+async function loadData() {
+  try {
+    const response = await fetch(WORKER_URL, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if (!response.ok) throw new Error(`Server status ${response.status}`);
+
+    const result = await response.json();
+    
+    // Extract date if it exists at the top level or from the first item
+    const apiDate = result.data?.date || result.date;
+    
+    if (Array.isArray(result)) {
+      allData = result;
+    } else if (result.data && Array.isArray(result.data.rashifal)) {
+      allData = result.data.rashifal;
+    } else if (result.data && Array.isArray(result.data)) {
+      allData = result.data;
+    } else {
+      throw new Error("Invalid data format");
+    }
+
+    if (allData.length > 0) {
+      // THIS UPDATES THE DATE AUTOMATICALLY
+      // Change "loading-date" to match the actual id of the element showing "Loading date..." in your HTML
+      const dateElement = document.getElementById("loading-date"); 
+      if (dateElement) {
+        dateElement.innerText = apiDate || allData[0].day || "";
+      }
+
+      renderCards(allData);
+    } else {
+      document.getElementById("result-container").innerHTML = "<div class='loading'>No records found.</div>";
+    }
+  } catch (err) {
+    console.error("Fetch error:", err);
+    document.getElementById("result-container").innerHTML = "<div class='loading'>Unable to load predictions. Check connection.</div>";
+  }
+}
