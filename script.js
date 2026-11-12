@@ -1,13 +1,12 @@
 const WORKER_URL = "https://daily-rashifal-app.comparisonlist.workers.dev";
-let allRashifalData = [];
+let cachedRashifalData = [];
 
+// पेज लोड होते ही डेटा फेच करें
 document.addEventListener("DOMContentLoaded", () => {
-    fetchRashifalData();
+    fetchAndStoreData();
 });
 
-async function fetchRashifalData() {
-    const dateBadge = document.getElementById("loading-date");
-    // अगर आपकी HTML में date दिखा रहा है
+async function fetchAndStoreData() {
     try {
         const response = await fetch(`${WORKER_URL}?lang=hi`);
         if (!response.ok) throw new Error("Network response was not ok");
@@ -15,48 +14,54 @@ async function fetchRashifalData() {
         const result = await response.json();
 
         if (result.success && result.data && Array.isArray(result.data.rashifal)) {
-            allRashifalData = result.data.rashifal;
+            cachedRashifalData = result.data.rashifal;
             
-            if (result.data.date) {
-                if (dateBadge) dateBadge.innerText = `📅 दिनांक: ${result.data.date}`;
-            }
-
-            // बाय डिफ़ॉल्ट मेष (Aries, index 0) लोड करें या जो भी पसंद हो
-            loadRashiDetails(1);
+            // डिफ़ॉल्ट रूप से पहली राशि (मेष / rashi_index: 0) को स्क्रीन पर दिखाएँ
+            renderRashiByIndex(0);
         } else {
-            console.error("Invalid data structure from worker");
+            console.error("Invalid JSON structure");
         }
     } catch (err) {
         console.error("Fetch error:", err);
-        if (dateBadge) dateBadge.innerText = "📅 डेटा लोड विफल";
     }
 }
 
-// जब यूजर किसी राशि बटन पर क्लिक करे
-function selectRashi(rashiNumber, rashiNameHi) {
-    loadRashiDetails(rashiNumber);
+// जब आप किसी भी राशि के बटन पर क्लिक करेंगे, यह फंक्शन चलेगा
+function selectRashi(rashiIndex) {
+    renderRashiByIndex(rashiIndex);
 }
 
-function loadRashiDetails(rashiNumber) {
-    // अगर आपके पास मुख्य परिणाम दिखाने के लिए कोई कार्ड/डिव है, तो यहाँ डेटा भरें।
-    // चूंकि आपके HTML में राशि बटन ऊपर हैं, हम चाहें तो क्लिक करने पर एक अलर्ट या डायनामिक कार्ड दिखा सकते हैं।
-    const matched = allRashifalData.find(r => r.rashi_index === (rashiNumber - 1));
+// स्क्रीन पर डेटा रेंडर करने का फंक्शन
+function renderRashiByIndex(index) {
+    const matched = cachedRashifalData.find(r => r.rashi_index === index);
     if (!matched) return;
 
     const p = matched.predictions_hi || {};
+    const lucky = matched.lucky || {};
+
+    // आपके HTML में परिणाम दिखाने के लिए जो भी कंटेनर हो (जैसे #result-container या नया डिव), उसमें डेटा भरें
+    let container = document.getElementById("result-container");
     
-    // यदि आपके HTML में कोई परिणाम दिखाने वाला कंटेनर है (जैसे #rashifalContent या इसी तरह), तो उसे अपडेट करें:
-    let contentBox = document.getElementById("rashifalContent") || document.getElementById("result-container");
-    
-    if (contentBox) {
-        contentBox.innerHTML = `
-            <div style="background: #fff; color: #0f172a; padding: 20px; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <h3 style="color: #7c3aed; margin-bottom: 10px;">${matched.rashi_hi} (${matched.rashi_en}) - ⭐ ${p.stars_label || 'शुभ'}</h3>
-                <p><strong>सार:</strong> ${p.overall}</p>
-                <p style="margin-top: 8px;"><strong>करियर:</strong> ${p.career}</p>
-                <p style="margin-top: 8px;"><strong>स्वास्थ्य:</strong> ${p.health}</p>
-                <p style="margin-top: 8px;"><strong>आर्थिक:</strong> ${p.finance}</p>
-                <p style="margin-top: 8px;"><strong>प्रेम:</strong> ${p.love}</p>
+    if (container) {
+        container.innerHTML = `
+            <div style="background: #ffffff; color: #0f172a; padding: 24px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-top: 20px;">
+                <h3 style="color: #7c3aed; margin-bottom: 12px; font-size: 20px;">
+                    ${matched.rashi_hi} (${matched.rashi_en}) 
+                    <span style="font-size: 14px; background: #fef3c7; color: #d97706; padding: 4px 10px; border-radius: 10px; float: right;">⭐ ${p.stars_label || 'शुभ'}</span>
+                </h3>
+                
+                <p style="margin-bottom: 12px; line-height: 1.6;"><strong>सार (Overview):</strong> ${p.overall}</p>
+                
+                <div style="margin-top: 10px; font-size: 14px; line-height: 1.5;">
+                    <p style="margin-bottom: 6px;">💼 <strong>करियर:</strong> ${p.career}</p>
+                    <p style="margin-bottom: 6px;">❤️ <strong>प्रेम:</strong> ${p.love}</p>
+                    <p style="margin-bottom: 6px;">💰 <strong>आर्थिक:</strong> ${p.finance}</p>
+                    <p style="margin-bottom: 6px;">🌿 <strong>स्वास्थ्य:</strong> ${p.health}</p>
+                </div>
+
+                <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b;">
+                    🔢 <strong>लकी नंबर:</strong> ${lucky.number} | 🎨 <strong>रंग:</strong> ${Array.isArray(lucky.colors) ? lucky.colors.join(', ') : lucky.colors}
+                </div>
             </div>
         `;
     }
