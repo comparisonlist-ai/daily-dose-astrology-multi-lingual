@@ -1,20 +1,16 @@
+
 {
-  "name": "Astroseek Horoscope",
+  "name": "Astroseek - আজকের রাশিফল",
   "short_name": "Astroseek",
+  "description": "Daily Rashifal in Bangla, Odia, English and Hindi",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#d97706",
+  "background_color": "#070b1f",
+  "theme_color": "#7c3aed",
+  "lang": "bn",
   "icons": [
-    {
-      "src": "https://via.placeholder.com/192",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://via.placeholder.com/512",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    { "src": "/icon-512.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
