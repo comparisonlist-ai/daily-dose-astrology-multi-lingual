@@ -3,12 +3,17 @@ let rashis = [];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function render(list) {
+  const GLYPHS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+function render(list) {
   const box = document.getElementById('result-container');
   if (!list.length) { box.innerHTML = '<div class="loading">No rashi found.</div>'; return; }
-  box.innerHTML = list.map(r => `
-    <div class="rashi-card" onclick="toggleCard(this)">
+  box.innerHTML = list.map((r, i) => `
+    <div class="rashi-card" style="animation-delay:${i * 50}ms" onclick="toggleCard(this)">
       <div class="card-header">
-        <div class="card-title">${esc(r.name)}<span>${esc(r.hindi)}</span></div>
+        <div class="card-head-left">
+          <div class="glyph">${GLYPHS[rashis.indexOf(r)]}</div>
+          <div class="card-title">${esc(r.name)}<span>${esc(r.hindi)}</span></div>
+        </div>
         <div class="symbol-pill">${esc(r.symbol)}</div>
       </div>
       <div class="meta-info">
@@ -23,6 +28,7 @@ function render(list) {
       </div>
       <span class="click-hint">Tap for details</span>
     </div>`).join('');
+}
 }
 
 function toggleCard(el) {
