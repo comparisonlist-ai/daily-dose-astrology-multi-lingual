@@ -1,89 +1,21 @@
-Astroseek
-Daily Rashifal & Planetary Insights
-
-14 Nov 2026
-Search Rashi (e.g. Aries, मेष)...
-Ariesमेष
-Ram
-Lucky color: Sea Green
-Lucky no: 9
-Luck supports you. Learning, travel and elders bring benefit.
-
-Tap for details
-Taurusवृषभ
-Bull
-Lucky color: Red
-Lucky no: 7
-Be careful with sudden expenses and sensitive topics. Stay patient.
-
-Tap for details
-Geminiमिथुन
-Twins
-Lucky color: Green
-Lucky no: 5
-Partnerships and agreements go well. Listen before you decide.
-
-Tap for details
-Cancerकर्क
-Crab
-Lucky color: Yellow
-Lucky no: 3
-Routine work and health need care. Avoid conflicts at work.
-
-Tap for details
-Leoसिंह
-Lion
-Lucky color: White
-Lucky no: 1
-Creativity and romance are favoured. Children or studies bring joy.
-
-Tap for details
-Virgoकन्या
-Maiden
-Lucky color: Orange
-Lucky no: 8
-Home and emotions come first. Rest and spend time with loved ones.
-
-Tap for details
-Libraतुला
-Scales
-Lucky color: Blue
-Lucky no: 6
-Good day for communication, short trips and meeting siblings or friends.
-
-Tap for details
-Scorpioवृश्चिक
-Scorpion
-Lucky color: Pink
-Lucky no: 4
-Money and family talks take centre stage. Speak kindly.
-
-Tap for details
-Sagittariusधनु
-Archer
-Lucky color: Maroon
-Lucky no: 2
-A day to focus on yourself. Confidence is high, but watch your temper.
-
-Tap for details
-Capricornमकर
-Goat
-Lucky color: Gold
-Lucky no: 9
-Quiet, reflective day. Rest, prayer and private time help.
-
-Tap for details
-Aquariusकुंभ
-Water Bearer
-Lucky color: Black
-Lucky no: 7
-Gains from friends and networks. A wish may move forward.
-
-Tap for details
-Piscesमीन
-Fish
-Lucky color: Sky Blue
-Lucky no: 5
-Career and reputation are in focus. Your effort gets noticed.
-
-Tap for details
+body{background:#070b1f;background-image:radial-gradient(circle at 15% 0%,#2e1a68 0,transparent 45%),radial-gradient(circle at 90% 35%,rgba(124,58,237,.25) 0,transparent 40%);background-attachment:fixed;color:#e2e8f0}
+.hero{background:transparent;padding:48px 20px 70px}
+.hero h1{font-size:36px;letter-spacing:1px}
+.hero p{color:#a5b4fc}
+.date-badge{background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+.search-wrapper input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:999px;padding:15px 24px}
+.search-wrapper input::placeholder{color:#94a3b8}
+.rashi-card{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);color:#e2e8f0;animation:rise .6s both}
+.rashi-card:hover{border-color:#a78bfa;box-shadow:0 14px 34px rgba(124,58,237,.35)}
+.card-head-left{display:flex;align-items:center;gap:12px}
+.glyph{font-size:34px;line-height:1;color:#fbbf24;text-shadow:0 0 14px rgba(251,191,36,.5)}
+.card-title{color:#fff}
+.card-title span{color:#fbbf24}
+.symbol-pill{background:rgba(251,191,36,.15);color:#fde68a}
+.meta-info span{background:rgba(255,255,255,.07);border:none;color:#cbd5e1}
+.prediction-preview,.detail-section p{color:#cbd5e1}
+.detail-section label{color:#fbbf24}
+.expanded-details{border-top-color:rgba(255,255,255,.12)}
+.click-hint{color:#a78bfa}
+.loading{color:#94a3b8}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
