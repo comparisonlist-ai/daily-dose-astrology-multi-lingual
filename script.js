@@ -12,6 +12,40 @@ try { const s = localStorage.getItem('lang'); if (s && UI[s]) lang = s; } catch 
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const t = r => (r.i18n && r.i18n[lang]) || {name:r.name,color:r.luckyColor,summary:r.summary,love:r.love,career:r.career,health:r.health};
+const INSTALL = {
+  bn:['📲 অ্যাপ ইনস্টল করুন','ইনস্টল করতে: Share বোতাম → Add to Home Screen'],
+  or:['📲 ଆପ୍ ଇନଷ୍ଟଲ୍ କରନ୍ତୁ','ଇନଷ୍ଟଲ୍ ପାଇଁ: Share ବଟନ୍ → Add to Home Screen'],
+  en:['📲 Install App','To install: tap Share → Add to Home Screen'],
+  hi:['📲 ऐप इंस्टॉल करें','इंस्टॉल के लिए: Share बटन → Add to Home Screen']
+};
+let deferredPrompt = null;
+const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; updateInstall(); });
+window.addEventListener('appinstalled', () => { deferredPrompt = null; updateInstall(); });
+
+function updateInstall() {
+  let b = document.getElementById('installBtn');
+  const show = !isStandalone() && (deferredPrompt || isIOS);
+  if (!show) { if (b) b.remove(); return; }
+  if (!b) {
+    b = document.createElement('button');
+    b.id = 'installBtn'; b.className = 'install-btn';
+    document.querySelector('.search-wrapper').before(b);
+  }
+  b.textContent = INSTALL[lang][deferredPrompt ? 0 : 1];
+  b.onclick = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    updateInstall();
+  };
+}
+
+const _applyUI = applyUI;
+applyUI = function () { _applyUI(); updateInstall(); };
 
 function buildBar() {
   let bar = document.getElementById('langBar');
