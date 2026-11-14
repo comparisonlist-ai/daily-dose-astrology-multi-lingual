@@ -60,3 +60,8 @@ const rashis = L.en.names.map((name, r) => {
 const date = now.toLocaleDateString('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', year: 'numeric' });
 fs.writeFileSync('today.json', JSON.stringify({ date, moonRashi: L.en.names[m], rashis }, null, 2));
 console.log('Moon in', L.en.names[m], sid.toFixed(2));
+
+body{font-family:'Plus Jakarta Sans','Noto Sans Bengali','Noto Sans Oriya','Noto Sans Devanagari',sans-serif}
+.lang-bar{display:flex;gap:8px;overflow-x:auto;margin-bottom:14px;padding-bottom:2px}
+.lang-btn{flex:none;padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:#e2e8f0;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.lang-btn.active{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1e1b4b;border-color:transparent}
