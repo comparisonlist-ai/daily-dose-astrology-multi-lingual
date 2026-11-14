@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
-
-
 import * as A from 'astronomy-engine';
 import fs from 'fs';
 
@@ -32,36 +29,4 @@ bn:{
 or:{
  names:['ମେଷ','ବୃଷ','ମିଥୁନ','କର୍କଟ','ସିଂହ','କନ୍ୟା','ତୁଳା','ବୃଶ୍ଚିକ','ଧନୁ','ମକର','କୁମ୍ଭ','ମୀନ'],
  colors:['ଲାଲ','ସବୁଜ','ହଳଦିଆ','ଧଳା','କମଳା','ନୀଳ','ଗୋଲାପୀ','ମାରୁନ୍','ସୁନେଲି','କଳା','ଆକାଶୀ','ସମୁଦ୍ର ସବୁଜ'],
- summary:['ଆଜି ନିଜ ଉପରେ ଧ୍ୟାନ ଦିଅନ୍ତୁ। ଆତ୍ମବିଶ୍ୱାସ ଭଲ ରହିବ, କିନ୍ତୁ ରାଗକୁ ସମ୍ଭାଳନ୍ତୁ।','ଆଜି ଧନ ଓ ପରିବାର ବିଷୟରେ କଥାବାର୍ତ୍ତା ହେବ। ମଧୁର ଭାବେ କୁହନ୍ତୁ।','ଯୋଗାଯୋଗ, ଛୋଟ ଯାତ୍ରା ଏବଂ ବନ୍ଧୁ ବା ଭାଇଭଉଣୀଙ୍କୁ ଭେଟିବା ପାଇଁ ଭଲ ଦିନ।','ଘର ଓ ମନର ଶାନ୍ତି ଆଗରେ। ପ୍ରିୟଜନଙ୍କ ସହ ସମୟ କାଟନ୍ତୁ।','ସୃଜନଶୀଳତା ଓ ପ୍ରେମ ପାଇଁ ଅନୁକୂଳ ଦିନ। ସନ୍ତାନ କିମ୍ବା ପାଠପଢ଼ାରୁ ଆନନ୍ଦ ମିଳିବ।','ନିୟମିତ କାମ ଓ ସ୍ୱାସ୍ଥ୍ୟର ଯତ୍ନ ନିଅନ୍ତୁ। କାର୍ଯ୍ୟସ୍ଥଳରେ ଝଗଡ଼ା ଏଡ଼ାନ୍ତୁ।','ସହଭାଗୀତା ଓ ଚୁକ୍ତିରେ ସଫଳତା ମିଳିବ। ନିଷ୍ପତ୍ତି ପୂର୍ବରୁ ଅନ୍ୟର କଥା ଶୁଣନ୍ତୁ।','ହଠାତ୍ ଖର୍ଚ୍ଚ ଓ ସମ୍ବେଦନଶୀଳ ବିଷୟରେ ସାବଧାନ ରୁହନ୍ତୁ। ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।','ଭାଗ୍ୟ ଆଜି ସାହାଯ୍ୟ କରିବ। ଶିକ୍ଷା, ଯାତ୍ରା ଓ ବଡ଼ମାନଙ୍କଠାରୁ ଲାଭ ମିଳିବ।','କର୍ମ ଓ ସୁନାମ ଉପରେ ଧ୍ୟାନ ରହିବ। ଆପଣଙ୍କ ପରିଶ୍ରମ ନଜରକୁ ଆସିବ।','ବନ୍ଧୁ ଓ ପରିଚିତଙ୍କଠାରୁ ଲାଭ ହେବ। କୌଣସି ଇଚ୍ଛା ପୂରଣ ପଥରେ ଆଗେଇପାରେ।','ଶାନ୍ତ ଓ ଚିନ୍ତନଭରା ଦିନ। ବିଶ୍ରାମ, ପ୍ରାର୍ଥନା ଓ ନିଜ ସମୟ ସହାୟକ ହେବ।'],
- love:['ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।','ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।','ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।'],
- career:['ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।','ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।','ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।'],
- health:['ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।','ଟିକେ ବୁଲନ୍ତୁ ଓ ଭଲ ଭାବେ ବିଶ୍ରାମ ନିଅନ୍ତୁ।','ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।']}
-};
-
-const now = new Date();
-const moon = A.Ecliptic(A.GeoVector(A.Body.Moon, now, true)).elon;
-const sid = (moon - AYANAMSA + 360) % 360;
-const m = Math.floor(sid / 30);
-const day = Math.floor(now / 864e5);
-
-const rashis = L.en.names.map((name, r) => {
-  const house = (m - r + 12) % 12;
-  const ci = (r + day) % 12, li = (day + r) % 3, cai = (day + r * 2) % 3, hi = (day + r * 3) % 3;
-  const i18n = {};
-  for (const k of Object.keys(L)) {
-    i18n[k] = { name: L[k].names[r], color: L[k].colors[ci], summary: L[k].summary[house],
-      love: L[k].love[li], career: L[k].career[cai], health: L[k].health[hi] };
-  }
-  return { name, hindi: L.hi.names[r], symbol: SYMBOLS[r],
-    luckyColor: L.en.colors[ci], luckyNumber: ((r * 7 + day) % 9) + 1,
-    summary: i18n.en.summary, love: i18n.en.love, career: i18n.en.career, health: i18n.en.health, i18n };
-});
-
-const date = now.toLocaleDateString('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', year: 'numeric' });
-fs.writeFileSync('today.json', JSON.stringify({ date, moonRashi: L.en.names[m], rashis }, null, 2));
-console.log('Moon in', L.en.names[m], sid.toFixed(2));
-
-body{font-family:'Plus Jakarta Sans','Noto Sans Bengali','Noto Sans Oriya','Noto Sans Devanagari',sans-serif}
-.lang-bar{display:flex;gap:8px;overflow-x:auto;margin-bottom:14px;padding-bottom:2px}
-.lang-btn{flex:none;padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:#e2e8f0;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
-.lang-btn.active{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1e1b4b;border-color:transparent}
+ summary:['ଆଜି ନିଜ
