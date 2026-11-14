@@ -1,0 +1,21 @@
+{
+"names":["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"],
+"colors":["Red","Green","Yellow","White","Orange","Blue","Pink","Maroon","Gold","Black","Sky Blue","Sea Green"],
+"summary":[
+"A day to focus on yourself. Confidence is high, but watch your temper.",
+"Money and family talks take centre stage. Speak kindly.",
+"Good day for communication, short trips and meeting siblings or friends.",
+"Home and emotions come first. Rest and spend time with loved ones.",
+"Creativity and romance are favoured. Children or studies bring joy.",
+"Routine work and health need care. Avoid conflicts at work.",
+"Partnerships and agreements go well. Listen before you decide.",
+"Be careful with sudden expenses and sensitive topics. Stay patient.",
+"Luck supports you. Learning, travel and elders bring benefit.",
+"Career and reputation are in focus. Your effort gets noticed.",
+"Gains from friends and networks. A wish may move forward.",
+"Quiet, reflective day. Rest, prayer and private time help."
+],
+"love":["Warm words go a long way.","Avoid assumptions with your partner.","A small gesture brings you closer."],
+"career":["Finish pending tasks first.","Teamwork brings results.","Stay patient with seniors."],
+"health":["Drink enough water.","Take short walks and rest well.","Keep meals light today."]
+}
