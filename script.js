@@ -1,9 +1,7 @@
-
 let rashis = [];
+const GLYPHS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-function render(list) {
-  const GLYPHS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
 function render(list) {
   const box = document.getElementById('result-container');
   if (!list.length) { box.innerHTML = '<div class="loading">No rashi found.</div>'; return; }
@@ -29,7 +27,6 @@ function render(list) {
       <span class="click-hint">Tap for details</span>
     </div>`).join('');
 }
-}
 
 function toggleCard(el) {
   const d = el.querySelector('.expanded-details');
@@ -48,11 +45,12 @@ function filterHoroscope() {
     const data = await res.json();
     rashis = data.rashis;
     const badge = document.getElementById('loading-date');
-    badge.textContent = data.date; badge.style.display = 'inline-block';
+    badge.textContent = data.date + ' · Moon in ' + data.moonRashi;
+    badge.style.display = 'inline-block';
     render(rashis);
   } catch (err) {
     document.getElementById('result-container').innerHTML =
-      '<div class="loading">Could not load today\'s rashifal. Please try again.</div>';
+      '<div class="loading">Could not load: ' + err.message + '</div>';
   }
 })();
 
