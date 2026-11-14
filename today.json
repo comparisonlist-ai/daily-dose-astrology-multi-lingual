@@ -1,0 +1,138 @@
+{
+  "date": "14 Nov 2026",
+  "moonRashi": "Sagittarius",
+  "rashis": [
+    {
+      "name": "Aries",
+      "hindi": "मेष",
+      "symbol": "Ram",
+      "luckyColor": "Sea Green",
+      "luckyNumber": 9,
+      "summary": "Luck supports you. Learning, travel and elders bring benefit.",
+      "love": "A small gesture brings you closer.",
+      "career": "Stay patient with seniors.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Taurus",
+      "hindi": "वृषभ",
+      "symbol": "Bull",
+      "luckyColor": "Red",
+      "luckyNumber": 7,
+      "summary": "Be careful with sudden expenses and sensitive topics. Stay patient.",
+      "love": "Warm words go a long way.",
+      "career": "Teamwork brings results.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Gemini",
+      "hindi": "मिथुन",
+      "symbol": "Twins",
+      "luckyColor": "Green",
+      "luckyNumber": 5,
+      "summary": "Partnerships and agreements go well. Listen before you decide.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Finish pending tasks first.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Cancer",
+      "hindi": "कर्क",
+      "symbol": "Crab",
+      "luckyColor": "Yellow",
+      "luckyNumber": 3,
+      "summary": "Routine work and health need care. Avoid conflicts at work.",
+      "love": "A small gesture brings you closer.",
+      "career": "Stay patient with seniors.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Leo",
+      "hindi": "सिंह",
+      "symbol": "Lion",
+      "luckyColor": "White",
+      "luckyNumber": 1,
+      "summary": "Creativity and romance are favoured. Children or studies bring joy.",
+      "love": "Warm words go a long way.",
+      "career": "Teamwork brings results.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Virgo",
+      "hindi": "कन्या",
+      "symbol": "Maiden",
+      "luckyColor": "Orange",
+      "luckyNumber": 8,
+      "summary": "Home and emotions come first. Rest and spend time with loved ones.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Finish pending tasks first.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Libra",
+      "hindi": "तुला",
+      "symbol": "Scales",
+      "luckyColor": "Blue",
+      "luckyNumber": 6,
+      "summary": "Good day for communication, short trips and meeting siblings or friends.",
+      "love": "A small gesture brings you closer.",
+      "career": "Stay patient with seniors.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Scorpio",
+      "hindi": "वृश्चिक",
+      "symbol": "Scorpion",
+      "luckyColor": "Pink",
+      "luckyNumber": 4,
+      "summary": "Money and family talks take centre stage. Speak kindly.",
+      "love": "Warm words go a long way.",
+      "career": "Teamwork brings results.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Sagittarius",
+      "hindi": "धनु",
+      "symbol": "Archer",
+      "luckyColor": "Maroon",
+      "luckyNumber": 2,
+      "summary": "A day to focus on yourself. Confidence is high, but watch your temper.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Finish pending tasks first.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Capricorn",
+      "hindi": "मकर",
+      "symbol": "Goat",
+      "luckyColor": "Gold",
+      "luckyNumber": 9,
+      "summary": "Quiet, reflective day. Rest, prayer and private time help.",
+      "love": "A small gesture brings you closer.",
+      "career": "Stay patient with seniors.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Aquarius",
+      "hindi": "कुंभ",
+      "symbol": "Water Bearer",
+      "luckyColor": "Black",
+      "luckyNumber": 7,
+      "summary": "Gains from friends and networks. A wish may move forward.",
+      "love": "Warm words go a long way.",
+      "career": "Teamwork brings results.",
+      "health": "Keep meals light today."
+    },
+    {
+      "name": "Pisces",
+      "hindi": "मीन",
+      "symbol": "Fish",
+      "luckyColor": "Sky Blue",
+      "luckyNumber": 5,
+      "summary": "Career and reputation are in focus. Your effort gets noticed.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Finish pending tasks first.",
+      "health": "Keep meals light today."
+    }
+  ]
+}
