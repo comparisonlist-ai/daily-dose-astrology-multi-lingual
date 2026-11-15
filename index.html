@@ -248,6 +248,11 @@
 
 <link rel="apple-touch-icon" href="/icon-512.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+#result-container{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+.rashi-card.open{grid-column:1/-1!important}
+@media(min-width:700px){#result-container{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+</style>
     
   </header>
 
