@@ -1,49 +1,49 @@
 {
-  "date": "17 Nov 2026",
-  "moonRashi": "Capricorn",
+  "date": "18 Nov 2026",
+  "moonRashi": "Aquarius",
   "rashis": [
     {
       "name": "Aries",
       "hindi": "मेष",
       "symbol": "Ram",
-      "luckyColor": "Yellow",
-      "luckyNumber": 3,
-      "summary": "Career and reputation are in focus. Your effort gets noticed.",
-      "love": "A small gesture brings you closer.",
-      "career": "Stay patient with seniors.",
-      "health": "Keep meals light today.",
+      "luckyColor": "White",
+      "luckyNumber": 4,
+      "summary": "Gains from friends and networks. A wish may move forward.",
+      "love": "Warm words go a long way.",
+      "career": "Finish pending tasks first.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Aries",
-          "color": "Yellow",
-          "summary": "Career and reputation are in focus. Your effort gets noticed.",
-          "love": "A small gesture brings you closer.",
-          "career": "Stay patient with seniors.",
-          "health": "Keep meals light today."
+          "color": "White",
+          "summary": "Gains from friends and networks. A wish may move forward.",
+          "love": "Warm words go a long way.",
+          "career": "Finish pending tasks first.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "मेष",
-          "color": "पीला",
-          "summary": "करियर और प्रतिष्ठा पर ध्यान रहेगा। आपकी मेहनत नज़र में आएगी।",
-          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
-          "career": "वरिष्ठों के साथ धैर्य रखें।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "सफ़ेद",
+          "summary": "मित्रों और संपर्कों से लाभ। कोई इच्छा आगे बढ़ सकती है।",
+          "love": "मीठे बोल बहुत असर करते हैं।",
+          "career": "पहले लंबित काम निपटाएँ।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "মেষ",
-          "color": "হলুদ",
-          "summary": "কর্ম ও সুনামের দিকে নজর দিন। আপনার পরিশ্রম নজরে আসবে।",
-          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
-          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "সাদা",
+          "summary": "বন্ধু ও পরিচিতদের কাছ থেকে লাভ হবে। কোনো ইচ্ছা পূরণের পথে এগোতে পারে।",
+          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
+          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ମେଷ",
-          "color": "ହଳଦିଆ",
-          "summary": "କର୍ମ ଓ ସୁନାମ ଉପରେ ଧ୍ୟାନ ରହିବ। ଆପଣଙ୍କ ପରିଶ୍ରମ ନଜରକୁ ଆସିବ।",
-          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
-          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ଧଳା",
+          "summary": "ବନ୍ଧୁ ଓ ପରିଚିତଙ୍କଠାରୁ ଲାଭ ହେବ। କୌଣସି ଇଚ୍ଛା ପୂରଣ ପଥରେ ଆଗେଇପାରେ।",
+          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
+          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -51,44 +51,44 @@
       "name": "Taurus",
       "hindi": "वृषभ",
       "symbol": "Bull",
-      "luckyColor": "White",
-      "luckyNumber": 1,
-      "summary": "Luck supports you. Learning, travel and elders bring benefit.",
-      "love": "Warm words go a long way.",
-      "career": "Teamwork brings results.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Orange",
+      "luckyNumber": 2,
+      "summary": "Career and reputation are in focus. Your effort gets noticed.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Stay patient with seniors.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Taurus",
-          "color": "White",
-          "summary": "Luck supports you. Learning, travel and elders bring benefit.",
-          "love": "Warm words go a long way.",
-          "career": "Teamwork brings results.",
-          "health": "Keep meals light today."
+          "color": "Orange",
+          "summary": "Career and reputation are in focus. Your effort gets noticed.",
+          "love": "Avoid assumptions with your partner.",
+          "career": "Stay patient with seniors.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "वृषभ",
-          "color": "सफ़ेद",
-          "summary": "भाग्य साथ देगा। शिक्षा, यात्रा और बड़ों से लाभ मिलेगा।",
-          "love": "मीठे बोल बहुत असर करते हैं।",
-          "career": "टीमवर्क से नतीजे मिलेंगे।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "नारंगी",
+          "summary": "करियर और प्रतिष्ठा पर ध्यान रहेगा। आपकी मेहनत नज़र में आएगी।",
+          "love": "साथी के बारे में अनुमान न लगाएँ।",
+          "career": "वरिष्ठों के साथ धैर्य रखें।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "বৃষ",
-          "color": "সাদা",
-          "summary": "ভাগ্য আজ সহায়। শিক্ষা, ভ্রমণ ও বড়দের কাছ থেকে উপকার পাবেন।",
-          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
-          "career": "দলগত কাজে সাফল্য আসবে।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "কমলা",
+          "summary": "কর্ম ও সুনামের দিকে নজর দিন। আপনার পরিশ্রম নজরে আসবে।",
+          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
+          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ବୃଷ",
-          "color": "ଧଳା",
-          "summary": "ଭାଗ୍ୟ ଆଜି ସାହାଯ୍ୟ କରିବ। ଶିକ୍ଷା, ଯାତ୍ରା ଓ ବଡ଼ମାନଙ୍କଠାରୁ ଲାଭ ମିଳିବ।",
-          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
-          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "କମଳା",
+          "summary": "କର୍ମ ଓ ସୁନାମ ଉପରେ ଧ୍ୟାନ ରହିବ। ଆପଣଙ୍କ ପରିଶ୍ରମ ନଜରକୁ ଆସିବ।",
+          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
+          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -96,44 +96,44 @@
       "name": "Gemini",
       "hindi": "मिथुन",
       "symbol": "Twins",
-      "luckyColor": "Orange",
-      "luckyNumber": 8,
-      "summary": "Be careful with sudden expenses and sensitive topics. Stay patient.",
-      "love": "Avoid assumptions with your partner.",
-      "career": "Finish pending tasks first.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Blue",
+      "luckyNumber": 9,
+      "summary": "Luck supports you. Learning, travel and elders bring benefit.",
+      "love": "A small gesture brings you closer.",
+      "career": "Teamwork brings results.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Gemini",
-          "color": "Orange",
-          "summary": "Be careful with sudden expenses and sensitive topics. Stay patient.",
-          "love": "Avoid assumptions with your partner.",
-          "career": "Finish pending tasks first.",
-          "health": "Keep meals light today."
+          "color": "Blue",
+          "summary": "Luck supports you. Learning, travel and elders bring benefit.",
+          "love": "A small gesture brings you closer.",
+          "career": "Teamwork brings results.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "मिथुन",
-          "color": "नारंगी",
-          "summary": "अचानक खर्च और संवेदनशील विषयों से सावधान रहें। धैर्य रखें।",
-          "love": "साथी के बारे में अनुमान न लगाएँ।",
-          "career": "पहले लंबित काम निपटाएँ।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "नीला",
+          "summary": "भाग्य साथ देगा। शिक्षा, यात्रा और बड़ों से लाभ मिलेगा।",
+          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
+          "career": "टीमवर्क से नतीजे मिलेंगे।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "মিথুন",
-          "color": "কমলা",
-          "summary": "হঠাৎ খরচ ও স্পর্শকাতর বিষয় নিয়ে সতর্ক থাকুন। ধৈর্য রাখুন।",
-          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
-          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "নীল",
+          "summary": "ভাগ্য আজ সহায়। শিক্ষা, ভ্রমণ ও বড়দের কাছ থেকে উপকার পাবেন।",
+          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
+          "career": "দলগত কাজে সাফল্য আসবে।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ମିଥୁନ",
-          "color": "କମଳା",
-          "summary": "ହଠାତ୍ ଖର୍ଚ୍ଚ ଓ ସମ୍ବେଦନଶୀଳ ବିଷୟରେ ସାବଧାନ ରୁହନ୍ତୁ। ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
-          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
-          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ନୀଳ",
+          "summary": "ଭାଗ୍ୟ ଆଜି ସାହାଯ୍ୟ କରିବ। ଶିକ୍ଷା, ଯାତ୍ରା ଓ ବଡ଼ମାନଙ୍କଠାରୁ ଲାଭ ମିଳିବ।",
+          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
+          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -141,44 +141,44 @@
       "name": "Cancer",
       "hindi": "कर्क",
       "symbol": "Crab",
-      "luckyColor": "Blue",
-      "luckyNumber": 6,
-      "summary": "Partnerships and agreements go well. Listen before you decide.",
-      "love": "A small gesture brings you closer.",
-      "career": "Stay patient with seniors.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Pink",
+      "luckyNumber": 7,
+      "summary": "Be careful with sudden expenses and sensitive topics. Stay patient.",
+      "love": "Warm words go a long way.",
+      "career": "Finish pending tasks first.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Cancer",
-          "color": "Blue",
-          "summary": "Partnerships and agreements go well. Listen before you decide.",
-          "love": "A small gesture brings you closer.",
-          "career": "Stay patient with seniors.",
-          "health": "Keep meals light today."
+          "color": "Pink",
+          "summary": "Be careful with sudden expenses and sensitive topics. Stay patient.",
+          "love": "Warm words go a long way.",
+          "career": "Finish pending tasks first.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "कर्क",
-          "color": "नीला",
-          "summary": "साझेदारी और समझौते अच्छे रहेंगे। निर्णय से पहले सुनें।",
-          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
-          "career": "वरिष्ठों के साथ धैर्य रखें।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "गुलाबी",
+          "summary": "अचानक खर्च और संवेदनशील विषयों से सावधान रहें। धैर्य रखें।",
+          "love": "मीठे बोल बहुत असर करते हैं।",
+          "career": "पहले लंबित काम निपटाएँ।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "কর্কট",
-          "color": "নীল",
-          "summary": "অংশীদারি ও চুক্তিতে সাফল্য আসবে। সিদ্ধান্তের আগে অন্যের কথা শুনুন।",
-          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
-          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "গোলাপি",
+          "summary": "হঠাৎ খরচ ও স্পর্শকাতর বিষয় নিয়ে সতর্ক থাকুন। ধৈর্য রাখুন।",
+          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
+          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "କର୍କଟ",
-          "color": "ନୀଳ",
-          "summary": "ସହଭାଗୀତା ଓ ଚୁକ୍ତିରେ ସଫଳତା ମିଳିବ। ନିଷ୍ପତ୍ତି ପୂର୍ବରୁ ଅନ୍ୟର କଥା ଶୁଣନ୍ତୁ।",
-          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
-          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ଗୋଲାପୀ",
+          "summary": "ହଠାତ୍ ଖର୍ଚ୍ଚ ଓ ସମ୍ବେଦନଶୀଳ ବିଷୟରେ ସାବଧାନ ରୁହନ୍ତୁ। ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
+          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
+          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -186,44 +186,44 @@
       "name": "Leo",
       "hindi": "सिंह",
       "symbol": "Lion",
-      "luckyColor": "Pink",
-      "luckyNumber": 4,
-      "summary": "Routine work and health need care. Avoid conflicts at work.",
-      "love": "Warm words go a long way.",
-      "career": "Teamwork brings results.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Maroon",
+      "luckyNumber": 5,
+      "summary": "Partnerships and agreements go well. Listen before you decide.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Stay patient with seniors.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Leo",
-          "color": "Pink",
-          "summary": "Routine work and health need care. Avoid conflicts at work.",
-          "love": "Warm words go a long way.",
-          "career": "Teamwork brings results.",
-          "health": "Keep meals light today."
+          "color": "Maroon",
+          "summary": "Partnerships and agreements go well. Listen before you decide.",
+          "love": "Avoid assumptions with your partner.",
+          "career": "Stay patient with seniors.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "सिंह",
-          "color": "गुलाबी",
-          "summary": "रोज़मर्रा के काम और सेहत का ध्यान रखें। कार्यस्थल पर विवाद से बचें।",
-          "love": "मीठे बोल बहुत असर करते हैं।",
-          "career": "टीमवर्क से नतीजे मिलेंगे।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "मरून",
+          "summary": "साझेदारी और समझौते अच्छे रहेंगे। निर्णय से पहले सुनें।",
+          "love": "साथी के बारे में अनुमान न लगाएँ।",
+          "career": "वरिष्ठों के साथ धैर्य रखें।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "সিংহ",
-          "color": "গোলাপি",
-          "summary": "নিয়মিত কাজ ও স্বাস্থ্যে যত্ন নিন। কর্মক্ষেত্রে ঝগড়া এড়িয়ে চলুন।",
-          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
-          "career": "দলগত কাজে সাফল্য আসবে।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "মেরুন",
+          "summary": "অংশীদারি ও চুক্তিতে সাফল্য আসবে। সিদ্ধান্তের আগে অন্যের কথা শুনুন।",
+          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
+          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ସିଂହ",
-          "color": "ଗୋଲାପୀ",
-          "summary": "ନିୟମିତ କାମ ଓ ସ୍ୱାସ୍ଥ୍ୟର ଯତ୍ନ ନିଅନ୍ତୁ। କାର୍ଯ୍ୟସ୍ଥଳରେ ଝଗଡ଼ା ଏଡ଼ାନ୍ତୁ।",
-          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
-          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ମାରୁନ୍",
+          "summary": "ସହଭାଗୀତା ଓ ଚୁକ୍ତିରେ ସଫଳତା ମିଳିବ। ନିଷ୍ପତ୍ତି ପୂର୍ବରୁ ଅନ୍ୟର କଥା ଶୁଣନ୍ତୁ।",
+          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
+          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -231,44 +231,44 @@
       "name": "Virgo",
       "hindi": "कन्या",
       "symbol": "Maiden",
-      "luckyColor": "Maroon",
-      "luckyNumber": 2,
-      "summary": "Creativity and romance are favoured. Children or studies bring joy.",
-      "love": "Avoid assumptions with your partner.",
-      "career": "Finish pending tasks first.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Gold",
+      "luckyNumber": 3,
+      "summary": "Routine work and health need care. Avoid conflicts at work.",
+      "love": "A small gesture brings you closer.",
+      "career": "Teamwork brings results.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Virgo",
-          "color": "Maroon",
-          "summary": "Creativity and romance are favoured. Children or studies bring joy.",
-          "love": "Avoid assumptions with your partner.",
-          "career": "Finish pending tasks first.",
-          "health": "Keep meals light today."
+          "color": "Gold",
+          "summary": "Routine work and health need care. Avoid conflicts at work.",
+          "love": "A small gesture brings you closer.",
+          "career": "Teamwork brings results.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "कन्या",
-          "color": "मरून",
-          "summary": "रचनात्मकता और प्रेम के लिए अनुकूल दिन। संतान या पढ़ाई से खुशी मिलेगी।",
-          "love": "साथी के बारे में अनुमान न लगाएँ।",
-          "career": "पहले लंबित काम निपटाएँ।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "सुनहरा",
+          "summary": "रोज़मर्रा के काम और सेहत का ध्यान रखें। कार्यस्थल पर विवाद से बचें।",
+          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
+          "career": "टीमवर्क से नतीजे मिलेंगे।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "কন্যা",
-          "color": "মেরুন",
-          "summary": "সৃজনশীলতা ও প্রেমের জন্য অনুকূল দিন। সন্তান বা পড়াশোনায় আনন্দ মিলবে।",
-          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
-          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "সোনালি",
+          "summary": "নিয়মিত কাজ ও স্বাস্থ্যে যত্ন নিন। কর্মক্ষেত্রে ঝগড়া এড়িয়ে চলুন।",
+          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
+          "career": "দলগত কাজে সাফল্য আসবে।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "କନ୍ୟା",
-          "color": "ମାରୁନ୍",
-          "summary": "ସୃଜନଶୀଳତା ଓ ପ୍ରେମ ପାଇଁ ଅନୁକୂଳ ଦିନ। ସନ୍ତାନ କିମ୍ବା ପାଠପଢ଼ାରୁ ଆନନ୍ଦ ମିଳିବ।",
-          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
-          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ସୁନେଲି",
+          "summary": "ନିୟମିତ କାମ ଓ ସ୍ୱାସ୍ଥ୍ୟର ଯତ୍ନ ନିଅନ୍ତୁ। କାର୍ଯ୍ୟସ୍ଥଳରେ ଝଗଡ଼ା ଏଡ଼ାନ୍ତୁ।",
+          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
+          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -276,44 +276,44 @@
       "name": "Libra",
       "hindi": "तुला",
       "symbol": "Scales",
-      "luckyColor": "Gold",
-      "luckyNumber": 9,
-      "summary": "Home and emotions come first. Rest and spend time with loved ones.",
-      "love": "A small gesture brings you closer.",
-      "career": "Stay patient with seniors.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Black",
+      "luckyNumber": 1,
+      "summary": "Creativity and romance are favoured. Children or studies bring joy.",
+      "love": "Warm words go a long way.",
+      "career": "Finish pending tasks first.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Libra",
-          "color": "Gold",
-          "summary": "Home and emotions come first. Rest and spend time with loved ones.",
-          "love": "A small gesture brings you closer.",
-          "career": "Stay patient with seniors.",
-          "health": "Keep meals light today."
+          "color": "Black",
+          "summary": "Creativity and romance are favoured. Children or studies bring joy.",
+          "love": "Warm words go a long way.",
+          "career": "Finish pending tasks first.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "तुला",
-          "color": "सुनहरा",
-          "summary": "घर और भावनाएँ पहले आएँगी। अपनों के साथ समय बिताएँ।",
-          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
-          "career": "वरिष्ठों के साथ धैर्य रखें।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "काला",
+          "summary": "रचनात्मकता और प्रेम के लिए अनुकूल दिन। संतान या पढ़ाई से खुशी मिलेगी।",
+          "love": "मीठे बोल बहुत असर करते हैं।",
+          "career": "पहले लंबित काम निपटाएँ।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "তুলা",
-          "color": "সোনালি",
-          "summary": "আজ ঘর ও মনের শান্তি আগে। প্রিয়জনদের সঙ্গে সময় কাটান।",
-          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
-          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "কালো",
+          "summary": "সৃজনশীলতা ও প্রেমের জন্য অনুকূল দিন। সন্তান বা পড়াশোনায় আনন্দ মিলবে।",
+          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
+          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ତୁଳା",
-          "color": "ସୁନେଲି",
-          "summary": "ଘର ଓ ମନର ଶାନ୍ତି ଆଗରେ। ପ୍ରିୟଜନଙ୍କ ସହ ସମୟ କାଟନ୍ତୁ।",
-          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
-          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "କଳା",
+          "summary": "ସୃଜନଶୀଳତା ଓ ପ୍ରେମ ପାଇଁ ଅନୁକୂଳ ଦିନ। ସନ୍ତାନ କିମ୍ବା ପାଠପଢ଼ାରୁ ଆନନ୍ଦ ମିଳିବ।",
+          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
+          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -321,44 +321,44 @@
       "name": "Scorpio",
       "hindi": "वृश्चिक",
       "symbol": "Scorpion",
-      "luckyColor": "Black",
-      "luckyNumber": 7,
-      "summary": "Good day for communication, short trips and meeting siblings or friends.",
-      "love": "Warm words go a long way.",
-      "career": "Teamwork brings results.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Sky Blue",
+      "luckyNumber": 8,
+      "summary": "Home and emotions come first. Rest and spend time with loved ones.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Stay patient with seniors.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Scorpio",
-          "color": "Black",
-          "summary": "Good day for communication, short trips and meeting siblings or friends.",
-          "love": "Warm words go a long way.",
-          "career": "Teamwork brings results.",
-          "health": "Keep meals light today."
+          "color": "Sky Blue",
+          "summary": "Home and emotions come first. Rest and spend time with loved ones.",
+          "love": "Avoid assumptions with your partner.",
+          "career": "Stay patient with seniors.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "वृश्चिक",
-          "color": "काला",
-          "summary": "बातचीत, छोटी यात्रा और मित्रों-भाई-बहनों से मिलने के लिए अच्छा दिन।",
-          "love": "मीठे बोल बहुत असर करते हैं।",
-          "career": "टीमवर्क से नतीजे मिलेंगे।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "आसमानी",
+          "summary": "घर और भावनाएँ पहले आएँगी। अपनों के साथ समय बिताएँ।",
+          "love": "साथी के बारे में अनुमान न लगाएँ।",
+          "career": "वरिष्ठों के साथ धैर्य रखें।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "বৃশ্চিক",
-          "color": "কালো",
-          "summary": "যোগাযোগ, ছোট ভ্রমণ এবং বন্ধু বা ভাইবোনের সঙ্গে দেখা করার জন্য ভালো দিন।",
-          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
-          "career": "দলগত কাজে সাফল্য আসবে।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "আকাশি",
+          "summary": "আজ ঘর ও মনের শান্তি আগে। প্রিয়জনদের সঙ্গে সময় কাটান।",
+          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
+          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ବୃଶ୍ଚିକ",
-          "color": "କଳା",
-          "summary": "ଯୋଗାଯୋଗ, ଛୋଟ ଯାତ୍ରା ଏବଂ ବନ୍ଧୁ ବା ଭାଇଭଉଣୀଙ୍କୁ ଭେଟିବା ପାଇଁ ଭଲ ଦିନ।",
-          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
-          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ଆକାଶୀ",
+          "summary": "ଘର ଓ ମନର ଶାନ୍ତି ଆଗରେ। ପ୍ରିୟଜନଙ୍କ ସହ ସମୟ କାଟନ୍ତୁ।",
+          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
+          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -366,44 +366,44 @@
       "name": "Sagittarius",
       "hindi": "धनु",
       "symbol": "Archer",
-      "luckyColor": "Sky Blue",
-      "luckyNumber": 5,
-      "summary": "Money and family talks take centre stage. Speak kindly.",
-      "love": "Avoid assumptions with your partner.",
-      "career": "Finish pending tasks first.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Sea Green",
+      "luckyNumber": 6,
+      "summary": "Good day for communication, short trips and meeting siblings or friends.",
+      "love": "A small gesture brings you closer.",
+      "career": "Teamwork brings results.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Sagittarius",
-          "color": "Sky Blue",
-          "summary": "Money and family talks take centre stage. Speak kindly.",
-          "love": "Avoid assumptions with your partner.",
-          "career": "Finish pending tasks first.",
-          "health": "Keep meals light today."
+          "color": "Sea Green",
+          "summary": "Good day for communication, short trips and meeting siblings or friends.",
+          "love": "A small gesture brings you closer.",
+          "career": "Teamwork brings results.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "धनु",
-          "color": "आसमानी",
-          "summary": "धन और परिवार की बातें आज केंद्र में रहेंगी। मधुरता से बोलें।",
-          "love": "साथी के बारे में अनुमान न लगाएँ।",
-          "career": "पहले लंबित काम निपटाएँ।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "समुद्री हरा",
+          "summary": "बातचीत, छोटी यात्रा और मित्रों-भाई-बहनों से मिलने के लिए अच्छा दिन।",
+          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
+          "career": "टीमवर्क से नतीजे मिलेंगे।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "ধনু",
-          "color": "আকাশি",
-          "summary": "আজ অর্থ ও পরিবার নিয়ে আলোচনা হতে পারে। মধুর ভাবে কথা বলুন।",
-          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
-          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "সামুদ্রিক সবুজ",
+          "summary": "যোগাযোগ, ছোট ভ্রমণ এবং বন্ধু বা ভাইবোনের সঙ্গে দেখা করার জন্য ভালো দিন।",
+          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
+          "career": "দলগত কাজে সাফল্য আসবে।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ଧନୁ",
-          "color": "ଆକାଶୀ",
-          "summary": "ଆଜି ଧନ ଓ ପରିବାର ବିଷୟରେ କଥାବାର୍ତ୍ତା ହେବ। ମଧୁର ଭାବେ କୁହନ୍ତୁ।",
-          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
-          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ସମୁଦ୍ର ସବୁଜ",
+          "summary": "ଯୋଗାଯୋଗ, ଛୋଟ ଯାତ୍ରା ଏବଂ ବନ୍ଧୁ ବା ଭାଇଭଉଣୀଙ୍କୁ ଭେଟିବା ପାଇଁ ଭଲ ଦିନ।",
+          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
+          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -411,44 +411,44 @@
       "name": "Capricorn",
       "hindi": "मकर",
       "symbol": "Goat",
-      "luckyColor": "Sea Green",
-      "luckyNumber": 3,
-      "summary": "A day to focus on yourself. Confidence is high, but watch your temper.",
-      "love": "A small gesture brings you closer.",
-      "career": "Stay patient with seniors.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Red",
+      "luckyNumber": 4,
+      "summary": "Money and family talks take centre stage. Speak kindly.",
+      "love": "Warm words go a long way.",
+      "career": "Finish pending tasks first.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Capricorn",
-          "color": "Sea Green",
-          "summary": "A day to focus on yourself. Confidence is high, but watch your temper.",
-          "love": "A small gesture brings you closer.",
-          "career": "Stay patient with seniors.",
-          "health": "Keep meals light today."
+          "color": "Red",
+          "summary": "Money and family talks take centre stage. Speak kindly.",
+          "love": "Warm words go a long way.",
+          "career": "Finish pending tasks first.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "मकर",
-          "color": "समुद्री हरा",
-          "summary": "आज खुद पर ध्यान दें। आत्मविश्वास ऊँचा रहेगा, पर गुस्से पर काबू रखें।",
-          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
-          "career": "वरिष्ठों के साथ धैर्य रखें।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "लाल",
+          "summary": "धन और परिवार की बातें आज केंद्र में रहेंगी। मधुरता से बोलें।",
+          "love": "मीठे बोल बहुत असर करते हैं।",
+          "career": "पहले लंबित काम निपटाएँ।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "মকর",
-          "color": "সামুদ্রিক সবুজ",
-          "summary": "আজ নিজের দিকে মনোযোগ দিন। আত্মবিশ্বাস থাকবে, তবে মেজাজ সামলে রাখুন।",
-          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
-          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "লাল",
+          "summary": "আজ অর্থ ও পরিবার নিয়ে আলোচনা হতে পারে। মধুর ভাবে কথা বলুন।",
+          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
+          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ମକର",
-          "color": "ସମୁଦ୍ର ସବୁଜ",
-          "summary": "ଆଜି ନିଜ ଉପରେ ଧ୍ୟାନ ଦିଅନ୍ତୁ। ଆତ୍ମବିଶ୍ୱାସ ଭଲ ରହିବ, କିନ୍ତୁ ରାଗକୁ ସମ୍ଭାଳନ୍ତୁ।",
-          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
-          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ଲାଲ",
+          "summary": "ଆଜି ଧନ ଓ ପରିବାର ବିଷୟରେ କଥାବାର୍ତ୍ତା ହେବ। ମଧୁର ଭାବେ କୁହନ୍ତୁ।",
+          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
+          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -456,44 +456,44 @@
       "name": "Aquarius",
       "hindi": "कुंभ",
       "symbol": "Water Bearer",
-      "luckyColor": "Red",
-      "luckyNumber": 1,
-      "summary": "Quiet, reflective day. Rest, prayer and private time help.",
-      "love": "Warm words go a long way.",
-      "career": "Teamwork brings results.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Green",
+      "luckyNumber": 2,
+      "summary": "A day to focus on yourself. Confidence is high, but watch your temper.",
+      "love": "Avoid assumptions with your partner.",
+      "career": "Stay patient with seniors.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Aquarius",
-          "color": "Red",
-          "summary": "Quiet, reflective day. Rest, prayer and private time help.",
-          "love": "Warm words go a long way.",
-          "career": "Teamwork brings results.",
-          "health": "Keep meals light today."
+          "color": "Green",
+          "summary": "A day to focus on yourself. Confidence is high, but watch your temper.",
+          "love": "Avoid assumptions with your partner.",
+          "career": "Stay patient with seniors.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "कुंभ",
-          "color": "लाल",
-          "summary": "शांत और चिंतन भरा दिन। आराम, प्रार्थना और एकांत लाभदायक रहेंगे।",
-          "love": "मीठे बोल बहुत असर करते हैं।",
-          "career": "टीमवर्क से नतीजे मिलेंगे।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "हरा",
+          "summary": "आज खुद पर ध्यान दें। आत्मविश्वास ऊँचा रहेगा, पर गुस्से पर काबू रखें।",
+          "love": "साथी के बारे में अनुमान न लगाएँ।",
+          "career": "वरिष्ठों के साथ धैर्य रखें।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "কুম্ভ",
-          "color": "লাল",
-          "summary": "শান্ত ও আত্মমগ্ন একটি দিন। বিশ্রাম, প্রার্থনা ও নিজের সময় কাজে দেবে।",
-          "love": "মিষ্টি কথায় অনেক কিছু হয়।",
-          "career": "দলগত কাজে সাফল্য আসবে।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "সবুজ",
+          "summary": "আজ নিজের দিকে মনোযোগ দিন। আত্মবিশ্বাস থাকবে, তবে মেজাজ সামলে রাখুন।",
+          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
+          "career": "ঊর্ধ্বতনদের সঙ্গে ধৈর্য রাখুন।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "କୁମ୍ଭ",
-          "color": "ଲାଲ",
-          "summary": "ଶାନ୍ତ ଓ ଚିନ୍ତନଭରା ଦିନ। ବିଶ୍ରାମ, ପ୍ରାର୍ଥନା ଓ ନିଜ ସମୟ ସହାୟକ ହେବ।",
-          "love": "ମିଠା କଥାରେ ଅନେକ କିଛି ହୁଏ।",
-          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ସବୁଜ",
+          "summary": "ଆଜି ନିଜ ଉପରେ ଧ୍ୟାନ ଦିଅନ୍ତୁ। ଆତ୍ମବିଶ୍ୱାସ ଭଲ ରହିବ, କିନ୍ତୁ ରାଗକୁ ସମ୍ଭାଳନ୍ତୁ।",
+          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
+          "career": "ଉପରିସ୍ଥମାନଙ୍କ ସହ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     },
@@ -501,44 +501,44 @@
       "name": "Pisces",
       "hindi": "मीन",
       "symbol": "Fish",
-      "luckyColor": "Green",
-      "luckyNumber": 8,
-      "summary": "Gains from friends and networks. A wish may move forward.",
-      "love": "Avoid assumptions with your partner.",
-      "career": "Finish pending tasks first.",
-      "health": "Keep meals light today.",
+      "luckyColor": "Yellow",
+      "luckyNumber": 9,
+      "summary": "Quiet, reflective day. Rest, prayer and private time help.",
+      "love": "A small gesture brings you closer.",
+      "career": "Teamwork brings results.",
+      "health": "Drink enough water.",
       "i18n": {
         "en": {
           "name": "Pisces",
-          "color": "Green",
-          "summary": "Gains from friends and networks. A wish may move forward.",
-          "love": "Avoid assumptions with your partner.",
-          "career": "Finish pending tasks first.",
-          "health": "Keep meals light today."
+          "color": "Yellow",
+          "summary": "Quiet, reflective day. Rest, prayer and private time help.",
+          "love": "A small gesture brings you closer.",
+          "career": "Teamwork brings results.",
+          "health": "Drink enough water."
         },
         "hi": {
           "name": "मीन",
-          "color": "हरा",
-          "summary": "मित्रों और संपर्कों से लाभ। कोई इच्छा आगे बढ़ सकती है।",
-          "love": "साथी के बारे में अनुमान न लगाएँ।",
-          "career": "पहले लंबित काम निपटाएँ।",
-          "health": "आज हल्का भोजन करें।"
+          "color": "पीला",
+          "summary": "शांत और चिंतन भरा दिन। आराम, प्रार्थना और एकांत लाभदायक रहेंगे।",
+          "love": "एक छोटा सा इशारा आपको करीब लाएगा।",
+          "career": "टीमवर्क से नतीजे मिलेंगे।",
+          "health": "पर्याप्त पानी पिएँ।"
         },
         "bn": {
           "name": "মীন",
-          "color": "সবুজ",
-          "summary": "বন্ধু ও পরিচিতদের কাছ থেকে লাভ হবে। কোনো ইচ্ছা পূরণের পথে এগোতে পারে।",
-          "love": "সঙ্গীর সম্পর্কে ধারণা করে নেবেন না।",
-          "career": "আগে অসমাপ্ত কাজগুলো শেষ করুন।",
-          "health": "আজ হালকা খাবার খান।"
+          "color": "হলুদ",
+          "summary": "শান্ত ও আত্মমগ্ন একটি দিন। বিশ্রাম, প্রার্থনা ও নিজের সময় কাজে দেবে।",
+          "love": "ছোট্ট একটি উপহার বা কথা কাছে আনবে।",
+          "career": "দলগত কাজে সাফল্য আসবে।",
+          "health": "পর্যাপ্ত জল পান করুন।"
         },
         "or": {
           "name": "ମୀନ",
-          "color": "ସବୁଜ",
-          "summary": "ବନ୍ଧୁ ଓ ପରିଚିତଙ୍କଠାରୁ ଲାଭ ହେବ। କୌଣସି ଇଚ୍ଛା ପୂରଣ ପଥରେ ଆଗେଇପାରେ।",
-          "love": "ସାଥୀଙ୍କ ବିଷୟରେ ଅନୁମାନ କରନ୍ତୁ ନାହିଁ।",
-          "career": "ପ୍ରଥମେ ବାକି କାମ ଶେଷ କରନ୍ତୁ।",
-          "health": "ଆଜି ହାଲୁକା ଖାଦ୍ୟ ଖାଆନ୍ତୁ।"
+          "color": "ହଳଦିଆ",
+          "summary": "ଶାନ୍ତ ଓ ଚିନ୍ତନଭରା ଦିନ। ବିଶ୍ରାମ, ପ୍ରାର୍ଥନା ଓ ନିଜ ସମୟ ସହାୟକ ହେବ।",
+          "love": "ଛୋଟ ଏକ ଆଚରଣ ଆପଣଙ୍କୁ ପାଖେଇ ଆଣିବ।",
+          "career": "ଦଳଗତ କାମରେ ଫଳ ମିଳିବ।",
+          "health": "ଯଥେଷ୍ଟ ପାଣି ପିଅନ୍ତୁ।"
         }
       }
     }
