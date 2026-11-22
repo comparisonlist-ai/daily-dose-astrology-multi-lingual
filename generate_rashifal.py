@@ -3,31 +3,39 @@ from zoneinfo import ZoneInfo
 
 KEY = os.environ["GEMINI_API_KEY"]
 MODEL = os.environ.get("GEMINI_MODEL", "gemini-4-hydrogen")
+FALLBACK = os.environ.get("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")
 FILE = os.environ.get("TODAY_JSON", "today.json")
 FIELDS = ["color", "summary", "love", "career", "health"]
 LANGS = {"hi": "Hindi", "bn": "Bangla (Bengali)", "or": "Odia"}
 PAUSE = 20  # seconds between calls, keeps you under the per-minute limit
 
+# Models to try, in order. The one that works is moved to the front.
+MODELS = [MODEL] if MODEL == FALLBACK else [MODEL, FALLBACK]
+
 
 def call(prompt, names, need_number):
-    """Call Gemini, return validated dict, or stop the script."""
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
+    """Try each model a few times, return validated dict, or stop the script."""
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0.9},
     }).encode()
-    for attempt in range(4):
-        try:
-            req = urllib.request.Request(url, data=body, headers={
-                "Content-Type": "application/json", "x-goog-api-key": KEY})
-            with urllib.request.urlopen(req, timeout=90) as r:
-                data = json.load(r)
-            out = json.loads(data["candidates"][0]["content"]["parts"][0]["text"])
-            validate(out, names, need_number)
-            return out
-        except Exception as e:
-            print(f"attempt {attempt + 1} failed: {e}")
-            time.sleep(30 * (attempt + 1))
+    for model in list(MODELS):
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(url, data=body, headers={
+                    "Content-Type": "application/json", "x-goog-api-key": KEY})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    data = json.load(r)
+                out = json.loads(data["candidates"][0]["content"]["parts"][0]["text"])
+                validate(out, names, need_number)
+                # remember the working model, use it first for later calls
+                MODELS.remove(model)
+                MODELS.insert(0, model)
+                return out
+            except Exception as e:
+                print(f"{model} attempt {attempt + 1} failed: {e}")
+                time.sleep(15 * (attempt + 1))
     raise SystemExit("Gemini failed. Keeping yesterday's file.")
 
 
