@@ -1,6 +1,6 @@
 name: daily
 on:
-  schedule: [{ cron: '30 0 * * *' }]  # 6:00 AM IST
+        schedule: [{ cron: '35 18 * * *' }]  # 12:05 AM IST
   workflow_dispatch:
 permissions: { contents: write }
 jobs:
