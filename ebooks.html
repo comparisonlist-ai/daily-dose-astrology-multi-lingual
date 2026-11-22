@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>গ্রহশান্তি ইবুক | Grahashanti Ebooks Bangla - Astroseek</title>
+  <meta name="description" content="১২ রাশির জন্য গ্রহশান্তির উপায় নিয়ে বাংলা ইবুক। প্রতিটি ইবুক মাত্র ₹99। Astroseek.">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon-512.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      --primary: #7c3aed;
+      --accent: #d97706;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafc;
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 40px;
+      line-height: 1.6;
+    }
+    a { color: var(--primary); }
+
+    .hero {
+      background: var(--bg-gradient);
+      color: #fff;
+      padding: 36px 20px 64px;
+      text-align: center;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .back-link {
+      display: inline-block;
+      color: #cbd5e1;
+      font-size: 13px;
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, #fde047, #f59e0b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    .hero p { font-size: 15px; color: #cbd5e1; }
+
+    .container {
+      max-width: 1000px;
+      margin: -34px auto 0;
+      padding: 0 16px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .intro {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 14.5px;
+      color: #334155;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 22px;
+    }
+
+    h2 { font-size: 18px; margin: 8px 0 12px; }
+
+    .featured {
+      background: #fff;
+      border: 2px solid var(--primary);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(124,58,237,0.12);
+      margin-bottom: 26px;
+    }
+    .badge {
+      display: inline-block;
+      background: #ede9fe;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .featured h3 { font-size: 21px; margin-bottom: 6px; }
+    .featured h3 span { font-size: 14px; color: var(--accent); font-weight: 500; margin-left: 4px; }
+    .featured p { font-size: 14px; color: #475569; margin-bottom: 14px; }
+    .price-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .price { font-size: 26px; font-weight: 700; color: var(--text-main); }
+    .price small { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+
+    .buy-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 13px 26px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(124,58,237,0.3);
+      text-align: center;
+    }
+    .buy-btn:active { transform: scale(0.98); }
+    .note { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    @media (min-width: 700px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .hero h1 { font-size: 32px; }
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .card h3 { font-size: 15px; margin-bottom: 4px; }
+    .card h3 span { display: block; font-size: 12px; color: var(--accent); font-weight: 500; }
+    .soon {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 10px;
+      margin-top: 6px;
+    }
+
+    .info {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 13.5px;
+      color: #475569;
+      margin-bottom: 14px;
+    }
+    .info h3 { font-size: 15px; color: var(--text-main); margin-bottom: 6px; }
+    footer { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 20px; padding: 0 16px; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <a class="back-link" href="/">← Astroseek হোমপেজ</a>
+      <h1>গ্রহশান্তি ইবুক সিরিজ</h1>
+      <p>১২ রাশির জন্য আলাদা বাংলা ইবুক</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="intro">
+      প্রতিটি রাশির জন্য আলাদা একটি গ্রহশান্তি ইবুক। নিজের রাশির ইবুকটি বেছে নিন এবং সহজ বাংলায় গ্রহশান্তির উপায় জানুন। প্রতিটি ইবুকের মূল্য মাত্র ₹৯৯।
+    </div>
+
+    <h2>এখন পাওয়া যাচ্ছে</h2>
+    <section class="featured">
+      <span class="badge">বাংলা ইবুক</span>
+      <h3>মেষ রাশির গ্রহশান্তি <span>Mesh Rashi (Aries)</span></h3>
+      <p>মেষ রাশির জাতক-জাতিকাদের জন্য গ্রহশান্তির উপায় নিয়ে সম্পূর্ণ বাংলা ইবুক।</p>
+      <div class="price-row">
+        <div class="price">₹99 <small>একবারের মূল্য</small></div>
+        <!-- IMPORTANT: replace the # below with your Razorpay payment link for the Mesh ebook -->
+        <a class="buy-btn" href="#" id="buy-mesh" rel="noopener">এখনই কিনুন</a>
+      </div>
+      <p class="note">UPI, কার্ড বা নেট ব্যাংকিংয়ে নিরাপদ পেমেন্ট। পেমেন্টের পর ইবুক আপনার ইমেইলে পাঠানো হবে।</p>
+    </section>
+
+    <h2>শীঘ্রই আসছে</h2>
+    <section class="grid">
+      <div class="card"><h3>বৃষ রাশি <span>Brish / Taurus</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>মিথুন রাশি <span>Mithun / Gemini</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>কর্কট রাশি <span>Karkat / Cancer</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>সিংহ রাশি <span>Singha / Leo</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>কন্যা রাশি <span>Kanya / Virgo</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>তুলা রাশি <span>Tula / Libra</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>বৃশ্চিক রাশি <span>Brishchik / Scorpio</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>ধনু রাশি <span>Dhanu / Sagittarius</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>মকর রাশি <span>Makar / Capricorn</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>কুম্ভ রাশি <span>Kumbha / Aquarius</span></h3><span class="soon">Coming soon</span></div>
+      <div class="card"><h3>মীন রাশি <span>Meen / Pisces</span></h3><span class="soon">Coming soon</span></div>
+    </section>
+
+    <div class="info">
+      <h3>জেনে রাখুন</h3>
+      ইবুকটি ডিজিটাল পণ্য (PDF)। পেমেন্ট ও ডেলিভারির পর টাকা ফেরত দেওয়া হয় না। তবে ইবুক না পেলে বা কোনো সমস্যা হলে আমাদের জানান, আমরা সাহায্য করব। বিস্তারিত জানতে <a href="/refund.html">Refund Policy</a> দেখুন।
+    </div>
+
+    <div class="info">
+      <h3>দ্রষ্টব্য</h3>
+      এই ইবুকের বিষয়বস্তু জ্যোতিষ বিশ্বাস ও ঐতিহ্যের ভিত্তিতে পথনির্দেশ হিসেবে দেওয়া। এটি কোনো ফলাফলের নিশ্চয়তা নয় এবং চিকিৎসা, আইনি বা আর্থিক পরামর্শের বিকল্প নয়।
+    </div>
+
+    <div class="info">
+      <h3>যোগাযোগ</h3>
+      ইমেইল: <a href="mailto:dailyhoroscoperashifal@gmail.com">dailyhoroscoperashifal@gmail.com</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms &amp; Conditions</a> · <a href="/refund.html">Refund Policy</a><br>
+    © Astroseek · astroseek.solutions
+  </footer>
+
+</body>
+</html>
