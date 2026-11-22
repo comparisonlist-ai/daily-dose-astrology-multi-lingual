@@ -37,6 +37,15 @@
 
     /* Hero */
     .hero {
+
+      .hero-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  margin: 0 auto 12px;
+  display: block;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
       background: var(--bg-gradient);
       color: #ffffff;
       padding: 40px 20px 60px;
@@ -214,7 +223,9 @@
 
   <header class="hero">
     <div class="hero-content">
-      <h1>Astroseek</h1>
+<img class="hero-logo" src="/icon-512.png" alt="Astroseek logo" width="72" height="72">
+<h1>Astroseek</h1>
+      
       <p>Daily Rashifal &amp; Planetary Insights</p>
       <div id="loading-date" class="date-badge"></div>
     </div>
