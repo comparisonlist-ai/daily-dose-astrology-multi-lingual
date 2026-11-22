@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>গ্রহশান্তি ইবুক | Grahashanti Ebooks Bangla - Astroseek</title>
-  <meta name="description" content="১২ রাশির জন্য গ্রহশান্তির উপায় নিয়ে বাংলা ইবুক। প্রতিটি ইবুক মাত্র ₹99। Astroseek.">
+  <title>Grahashanti Ebooks | গ্রহশান্তি ইবুক - Astroseek</title>
+  <meta name="description" content="Grahashanti ebooks for all 12 zodiac signs in Bangla, Hindi, English and Odia. Only ₹99 each. Astroseek.">
   <meta name="theme-color" content="#7c3aed">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/icon-512.png">
@@ -24,7 +24,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Oriya', sans-serif;
       background: #f8fafc;
       color: var(--text-main);
       min-height: 100vh;
@@ -36,17 +36,11 @@
     .hero {
       background: var(--bg-gradient);
       color: #fff;
-      padding: 36px 20px 64px;
+      padding: 36px 20px 70px;
       text-align: center;
     }
     .hero-content { max-width: 800px; margin: 0 auto; }
-    .back-link {
-      display: inline-block;
-      color: #cbd5e1;
-      font-size: 13px;
-      text-decoration: none;
-      margin-bottom: 14px;
-    }
+    .back-link { display: inline-block; color: #cbd5e1; font-size: 13px; text-decoration: none; margin-bottom: 14px; }
     .hero h1 {
       font-size: 26px;
       font-weight: 700;
@@ -59,13 +53,39 @@
     }
     .hero p { font-size: 15px; color: #cbd5e1; }
 
-    .container {
-      max-width: 1000px;
-      margin: -34px auto 0;
-      padding: 0 16px;
-      position: relative;
-      z-index: 10;
+    .container { max-width: 1000px; margin: -38px auto 0; padding: 0 16px; position: relative; z-index: 10; }
+
+    /* Language tabs */
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
     }
+    @media (min-width: 700px) {
+      .tabs { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px; }
+      .hero h1 { font-size: 32px; }
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .tab {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px 10px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+    .tab small { display: block; font-size: 11px; font-weight: 500; color: var(--text-muted); margin-top: 2px; }
+    .tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .tab.active small { color: #ddd6fe; }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
 
     .intro {
       background: #fff;
@@ -74,79 +94,53 @@
       padding: 18px;
       font-size: 14.5px;
       color: #334155;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      margin-bottom: 22px;
-    }
-
-    h2 { font-size: 18px; margin: 8px 0 12px; }
-
-    .featured {
-      background: #fff;
-      border: 2px solid var(--primary);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(124,58,237,0.12);
       margin-bottom: 26px;
     }
-    .badge {
-      display: inline-block;
-      background: #ede9fe;
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 12px;
-      margin-bottom: 10px;
-    }
-    .featured h3 { font-size: 21px; margin-bottom: 6px; }
-    .featured h3 span { font-size: 14px; color: var(--accent); font-weight: 500; margin-left: 4px; }
-    .featured p { font-size: 14px; color: #475569; margin-bottom: 14px; }
-    .price-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .price { font-size: 26px; font-weight: 700; color: var(--text-main); }
-    .price small { font-size: 12px; font-weight: 500; color: var(--text-muted); }
-
-    .buy-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 13px 26px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(124,58,237,0.3);
-      text-align: center;
-    }
-    .buy-btn:active { transform: scale(0.98); }
-    .note { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 26px;
-    }
-    @media (min-width: 700px) {
-      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .hero h1 { font-size: 32px; }
+      gap: 16px;
+      margin-bottom: 30px;
     }
     .card {
       background: #fff;
       border: 1px solid var(--border-color);
       border-radius: 14px;
-      padding: 14px;
+      padding: 16px 14px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
-    .card h3 { font-size: 15px; margin-bottom: 4px; }
-    .card h3 span { display: block; font-size: 12px; color: var(--accent); font-weight: 500; }
+    .card.available { border: 2px solid var(--primary); box-shadow: 0 8px 24px rgba(124,58,237,0.12); }
+    .card h3 { font-size: 16px; }
+    .card .en { font-size: 12px; color: var(--accent); font-weight: 500; }
+    .price { font-size: 20px; font-weight: 700; margin-top: 4px; }
+    .price small { font-size: 11px; font-weight: 500; color: var(--text-muted); }
+
+    .buy-btn {
+      display: block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 6px;
+    }
+    .buy-btn:active { transform: scale(0.98); }
     .soon {
-      display: inline-block;
+      display: block;
       background: #f1f5f9;
       color: #475569;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 10px 12px;
       border-radius: 10px;
+      text-align: center;
       margin-top: 6px;
     }
 
@@ -157,69 +151,35 @@
       padding: 16px;
       font-size: 13.5px;
       color: #475569;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .info h3 { font-size: 15px; color: var(--text-main); margin-bottom: 6px; }
-    footer { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 20px; padding: 0 16px; }
+    footer { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 24px; padding: 0 16px; }
   </style>
 </head>
 <body>
 
   <header class="hero">
     <div class="hero-content">
-      <a class="back-link" href="/">← Astroseek হোমপেজ</a>
-      <h1>গ্রহশান্তি ইবুক সিরিজ</h1>
-      <p>১২ রাশির জন্য আলাদা বাংলা ইবুক</p>
+      <a class="back-link" href="/">← Astroseek</a>
+      <h1>Grahashanti Ebooks</h1>
+      <p>Choose your language &middot; ₹99 per ebook</p>
     </div>
   </header>
 
   <main class="container">
 
-    <div class="intro">
-      প্রতিটি রাশির জন্য আলাদা একটি গ্রহশান্তি ইবুক। নিজের রাশির ইবুকটি বেছে নিন এবং সহজ বাংলায় গ্রহশান্তির উপায় জানুন। প্রতিটি ইবুকের মূল্য মাত্র ₹৯৯।
-    </div>
-
-    <h2>এখন পাওয়া যাচ্ছে</h2>
-    <section class="featured">
-      <span class="badge">বাংলা ইবুক</span>
-      <h3>মেষ রাশির গ্রহশান্তি <span>Mesh Rashi (Aries)</span></h3>
-      <p>মেষ রাশির জাতক-জাতিকাদের জন্য গ্রহশান্তির উপায় নিয়ে সম্পূর্ণ বাংলা ইবুক।</p>
-      <div class="price-row">
-        <div class="price">₹99 <small>একবারের মূল্য</small></div>
-        <!-- IMPORTANT: replace the # below with your Razorpay payment link for the Mesh ebook -->
-        <a class="buy-btn" href="#" id="buy-mesh" rel="noopener">এখনই কিনুন</a>
-      </div>
-      <p class="note">UPI, কার্ড বা নেট ব্যাংকিংয়ে নিরাপদ পেমেন্ট। পেমেন্টের পর ইবুক আপনার ইমেইলে পাঠানো হবে।</p>
-    </section>
-
-    <h2>শীঘ্রই আসছে</h2>
-    <section class="grid">
-      <div class="card"><h3>বৃষ রাশি <span>Brish / Taurus</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>মিথুন রাশি <span>Mithun / Gemini</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>কর্কট রাশি <span>Karkat / Cancer</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>সিংহ রাশি <span>Singha / Leo</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>কন্যা রাশি <span>Kanya / Virgo</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>তুলা রাশি <span>Tula / Libra</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>বৃশ্চিক রাশি <span>Brishchik / Scorpio</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>ধনু রাশি <span>Dhanu / Sagittarius</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>মকর রাশি <span>Makar / Capricorn</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>কুম্ভ রাশি <span>Kumbha / Aquarius</span></h3><span class="soon">Coming soon</span></div>
-      <div class="card"><h3>মীন রাশি <span>Meen / Pisces</span></h3><span class="soon">Coming soon</span></div>
-    </section>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div id="panels"></div>
 
     <div class="info">
-      <h3>জেনে রাখুন</h3>
-      ইবুকটি ডিজিটাল পণ্য (PDF)। পেমেন্ট ও ডেলিভারির পর টাকা ফেরত দেওয়া হয় না। তবে ইবুক না পেলে বা কোনো সমস্যা হলে আমাদের জানান, আমরা সাহায্য করব। বিস্তারিত জানতে <a href="/refund.html">Refund Policy</a> দেখুন।
+      <h3>Good to know</h3>
+      Each ebook is a digital PDF, delivered to your email after payment. Payment is by UPI, card or net banking. Please read our <a href="/refund.html">Refund Policy</a>. The content is guidance based on astrological belief and tradition. It is not a guarantee of results and not a substitute for medical, legal or financial advice.
     </div>
 
     <div class="info">
-      <h3>দ্রষ্টব্য</h3>
-      এই ইবুকের বিষয়বস্তু জ্যোতিষ বিশ্বাস ও ঐতিহ্যের ভিত্তিতে পথনির্দেশ হিসেবে দেওয়া। এটি কোনো ফলাফলের নিশ্চয়তা নয় এবং চিকিৎসা, আইনি বা আর্থিক পরামর্শের বিকল্প নয়।
-    </div>
-
-    <div class="info">
-      <h3>যোগাযোগ</h3>
-      ইমেইল: <a href="mailto:dailyhoroscoperashifal@gmail.com">dailyhoroscoperashifal@gmail.com</a>
+      <h3>Contact</h3>
+      Email: <a href="mailto:dailyhoroscoperashifal@gmail.com">dailyhoroscoperashifal@gmail.com</a>
     </div>
 
   </main>
@@ -228,6 +188,100 @@
     <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms &amp; Conditions</a> · <a href="/refund.html">Refund Policy</a><br>
     © Astroseek · astroseek.solutions
   </footer>
+
+  <script>
+    /* ================================================================
+       HOW TO ADD AN EBOOK: paste its Razorpay payment link between the
+       quotes. An empty "" automatically shows "Coming soon".
+       Order of signs: Mesh, Brish, Mithun, Karkat, Singha, Kanya,
+       Tula, Brishchik, Dhanu, Makar, Kumbha, Meen.
+       "#" shows a Buy button that does nothing until you replace it.
+       ================================================================ */
+    var LINKS = {
+      bn: ["#", "", "", "", "", "", "", "", "", "", "", ""],
+      hi: ["", "", "", "", "", "", "", "", "", "", "", ""],
+      en: ["", "", "", "", "", "", "", "", "", "", "", ""],
+      or: ["", "", "", "", "", "", "", "", "", "", "", ""]
+    };
+
+    var EN_NAMES = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
+
+    var LANGS = [
+      { id: "bn", label: "বাংলা", sub: "Bangla",
+        intro: "প্রতিটি রাশির জন্য আলাদা গ্রহশান্তি ইবুক। নিজের রাশির ইবুকটি বেছে নিন এবং সহজ বাংলায় গ্রহশান্তির উপায় জানুন।",
+        title: function(n){ return n + " রাশির গ্রহশান্তি"; },
+        buy: "এখনই কিনুন", soon: "শীঘ্রই আসছে", once: "একবারের মূল্য",
+        names: ["মেষ","বৃষ","মিথুন","কর্কট","সিংহ","কন্যা","তুলা","বৃশ্চিক","ধনু","মকর","কুম্ভ","মীন"] },
+      { id: "hi", label: "हिन्दी", sub: "Hindi",
+        intro: "हर राशि के लिए अलग ग्रहशांति ईबुक। अपनी राशि की ईबुक चुनें और सरल हिन्दी में ग्रहशांति के उपाय जानें।",
+        title: function(n){ return n + " राशि की ग्रहशांति"; },
+        buy: "अभी खरीदें", soon: "जल्द आ रही है", once: "एक बार का मूल्य",
+        names: ["मेष","वृषभ","मिथुन","कर्क","सिंह","कन्या","तुला","वृश्चिक","धनु","मकर","कुंभ","मीन"] },
+      { id: "en", label: "English", sub: "English",
+        intro: "A separate Grahashanti ebook for every zodiac sign. Choose your sign and learn the remedies in simple English.",
+        title: function(n){ return n + " Grahashanti"; },
+        buy: "Buy now", soon: "Coming soon", once: "one-time price",
+        names: EN_NAMES },
+      { id: "or", label: "ଓଡ଼ିଆ", sub: "Odia",
+        intro: "ପ୍ରତ୍ୟେକ ରାଶି ପାଇଁ ଅଲଗା ଗ୍ରହଶାନ୍ତି ଇବୁକ୍। ନିଜ ରାଶିର ଇବୁକ୍ ବାଛନ୍ତୁ ଏବଂ ସହଜ ଓଡ଼ିଆରେ ଗ୍ରହଶାନ୍ତିର ଉପାୟ ଜାଣନ୍ତୁ।",
+        title: function(n){ return n + " ରାଶିର ଗ୍ରହଶାନ୍ତି"; },
+        buy: "ଏବେ କିଣନ୍ତୁ", soon: "ଶୀଘ୍ର ଆସୁଛି", once: "ଥରକ ପାଇଁ ମୂଲ୍ୟ",
+        names: ["ମେଷ","ବୃଷ","ମିଥୁନ","କର୍କଟ","ସିଂହ","କନ୍ୟା","ତୁଳା","ବୃଶ୍ଚିକ","ଧନୁ","ମକର","କୁମ୍ଭ","ମୀନ"] }
+    ];
+
+    var tabsEl = document.getElementById("tabs");
+    var panelsEl = document.getElementById("panels");
+
+    LANGS.forEach(function (L) {
+      var tab = document.createElement("button");
+      tab.className = "tab";
+      tab.type = "button";
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("data-lang", L.id);
+      tab.innerHTML = L.label + "<small>" + L.sub + "</small>";
+      tab.addEventListener("click", function () { show(L.id); });
+      tabsEl.appendChild(tab);
+
+      var panel = document.createElement("section");
+      panel.className = "panel";
+      panel.setAttribute("data-lang", L.id);
+
+      var html = '<div class="intro">' + L.intro + '</div><div class="grid">';
+      for (var i = 0; i < 12; i++) {
+        var link = (LINKS[L.id] && LINKS[L.id][i]) || "";
+        var ready = link !== "";
+        html += '<div class="card' + (ready ? ' available' : '') + '">' +
+          '<h3>' + L.title(L.names[i]) + '</h3>' +
+          '<span class="en">' + EN_NAMES[i] + '</span>' +
+          '<div class="price">₹99 <small>' + L.once + '</small></div>' +
+          (ready
+            ? '<a class="buy-btn" href="' + link + '" rel="noopener">' + L.buy + '</a>'
+            : '<span class="soon">' + L.soon + '</span>') +
+          '</div>';
+      }
+      html += '</div>';
+      panel.innerHTML = html;
+      panelsEl.appendChild(panel);
+    });
+
+    function show(id) {
+      var tabs = document.querySelectorAll(".tab");
+      var panels = document.querySelectorAll(".panel");
+      for (var i = 0; i < tabs.length; i++) {
+        var on = tabs[i].getAttribute("data-lang") === id;
+        tabs[i].classList.toggle("active", on);
+        tabs[i].setAttribute("aria-selected", on ? "true" : "false");
+      }
+      for (var j = 0; j < panels.length; j++) {
+        panels[j].classList.toggle("active", panels[j].getAttribute("data-lang") === id);
+      }
+      try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    }
+
+    var start = (location.hash || "").replace("#", "");
+    var valid = LANGS.some(function (L) { return L.id === start; });
+    show(valid ? start : "bn");
+  </script>
 
 </body>
 </html>
