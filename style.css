@@ -192,3 +192,7 @@ footer p {
     padding: 5px 6px;
   }
 }
+.cta-box{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.cta{display:block;text-align:center;padding:10px;border-radius:10px;font-weight:600;text-decoration:none;color:#fff}
+.cta-book{background:linear-gradient(90deg,#d9480f,#f59f00)}
+.cta-chart{background:#4c3fb1}
