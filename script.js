@@ -18,6 +18,17 @@ const INSTALL = {
   en:['📲 Install App','To install: tap Share → Add to Home Screen'],
   hi:['📲 ऐप इंस्टॉल करें','इंस्टॉल के लिए: Share बटन → Add to Home Screen']
 };
+
+// ===== Buttons shown inside every rashi card =====
+const CHART_URL = 'PASTE_YOUR_AFFILIATE_LINK';
+const EBOOK_URL = 'https://astroseek.solutions/ebooks.html';
+const CTA = {
+  bn:['🔮 সম্পূর্ণ জন্মকুণ্ডলী দেখুন','📘 গ্রহশান্তি ই-বুক কিনুন (₹99)'],
+  or:['🔮 ସମ୍ପୂର୍ଣ୍ଣ ଜନ୍ମକୁଣ୍ଡଳୀ ଦେଖନ୍ତୁ','📘 ଗ୍ରହଶାନ୍ତି ଇ-ବୁକ୍ କିଣନ୍ତୁ (₹99)'],
+  en:['🔮 Get your complete birth chart','📘 Buy Grahashanti e-book (₹99)'],
+  hi:['🔮 पूरी जन्म कुंडली देखें','📘 ग्रहशांति ई-बुक खरीदें (₹99)']
+};
+
 let deferredPrompt = null;
 const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
 const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -105,6 +116,10 @@ function render(list) {
         <div class="detail-section"><label>${u.love}</label><p>${esc(x.love)}</p></div>
         <div class="detail-section"><label>${u.career}</label><p>${esc(x.career)}</p></div>
         <div class="detail-section"><label>${u.health}</label><p>${esc(x.health)}</p></div>
+        <div class="cta-box" onclick="event.stopPropagation()">
+          <a class="cta cta-book" href="${EBOOK_URL}" target="_blank" rel="noopener">${CTA[lang][1]}</a>
+          <a class="cta cta-chart" href="${CHART_URL}" target="_blank" rel="noopener sponsored">${CTA[lang][0]}</a>
+        </div>
       </div>
       <span class="click-hint">${u.tap}</span>
     </div>`;
