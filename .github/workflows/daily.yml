@@ -3,7 +3,7 @@ name: daily
 
 on:
   schedule:
-    - cron: '35 18 * * *'
+    - cron: '30 17 * * *'
   workflow_dispatch:
 
 permissions: { contents: write }
