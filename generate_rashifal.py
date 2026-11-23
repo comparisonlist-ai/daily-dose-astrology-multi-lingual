@@ -54,7 +54,7 @@ def main():
     with open(FILE, encoding="utf-8") as f:
         data = json.load(f)
     names = [r["name"] for r in data["rashis"]]
-    today = datetime.datetime.now(ZoneInfo("Asia/Kolkata"))
+    today = datetime.datetime.now(ZoneInfo("Asia/Kolkata")) + datetime.timedelta(hours=2)
     date_str = f"{today.day} {today:%b %Y}"
 
     en = call(
