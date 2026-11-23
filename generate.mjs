@@ -18,10 +18,11 @@ for (const c of ['en', 'hi', 'bn', 'or']) {
 if (!L.en) throw new Error('lang-en.json is required');
 
 const now = new Date();
+const target = new Date(now.getTime() + 2 * 3600 * 1000);
 const moon = A.Ecliptic(A.GeoVector(A.Body.Moon, now, true)).elon;
 const sid = (moon - AYANAMSA + 360) % 360;
 const m = Math.floor(sid / 30);
-const day = Math.floor(now / 864e5);
+const day = Math.floor((target.getTime() + 19800000) / 864e5);
 
 const rashis = L.en.names.map((name, r) => {
   const house = (m - r + 12) % 12;
@@ -36,6 +37,6 @@ const rashis = L.en.names.map((name, r) => {
     summary: i18n.en.summary, love: i18n.en.love, career: i18n.en.career, health: i18n.en.health, i18n };
 });
 
-const date = now.toLocaleDateString('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', year: 'numeric' });
+const date = target.toLocaleDateString('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', year: 'numeric' });
 fs.writeFileSync('today.json', JSON.stringify({ date, moonRashi: L.en.names[m], rashis }, null, 2));
 console.log('Languages:', Object.keys(L).join(','), '| Moon in', L.en.names[m]);
