@@ -1,6 +1,6 @@
 {
-  "date": "26 Nov 2026",
-  "moonRashi": "Taurus",
+  "date": "27 Nov 2026",
+  "moonRashi": "Gemini",
   "rashis": [
     {
       "name": "Aries",
@@ -8,42 +8,42 @@
       "symbol": "Ram",
       "luckyColor": "Red",
       "luckyNumber": 3,
-      "summary": "A lively spark helps you tackle unfinished tasks with ease today. Pace yourself so your enthusiasm lasts comfortably through the evening.",
-      "love": "A warm, spontaneous gesture brings extra smiles to your closest bond.",
-      "career": "Focusing on one priority at a time leads to smooth progress at work.",
-      "health": "A brisk walk outdoors will help refresh your mind and body.",
+      "summary": "Fresh energy helps you tackle small tasks with ease today. Stay patient with minor delays and focus on steady progress.",
+      "love": "A warm, spontaneous gesture brightens someone special's mood.",
+      "career": "Clear communication helps you wrap up an ongoing project smoothly.",
+      "health": "A brisk walk outdoors refreshes your mind and body.",
       "i18n": {
         "en": {
           "name": "Aries",
           "color": "Red",
-          "summary": "A lively spark helps you tackle unfinished tasks with ease today. Pace yourself so your enthusiasm lasts comfortably through the evening.",
-          "love": "A warm, spontaneous gesture brings extra smiles to your closest bond.",
-          "career": "Focusing on one priority at a time leads to smooth progress at work.",
-          "health": "A brisk walk outdoors will help refresh your mind and body."
+          "summary": "Fresh energy helps you tackle small tasks with ease today. Stay patient with minor delays and focus on steady progress.",
+          "love": "A warm, spontaneous gesture brightens someone special's mood.",
+          "career": "Clear communication helps you wrap up an ongoing project smoothly.",
+          "health": "A brisk walk outdoors refreshes your mind and body."
         },
         "hi": {
           "name": "मेष",
           "color": "लाल",
-          "summary": "आज आपके अंदर की ताज़गी और जोश अधूरे कामों को आसानी से पूरा करने में मदद करेंगे। अपनी रफ़्तार संतुलित रखें ताकि आपका उत्साह शाम तक आराम से बना रहे।",
-          "love": "प्यार भरा एक अचानक किया गया छोटा सा प्रयास आपके सबसे करीबी रिश्ते में और ज़्यादा मुस्कान लाएगा।",
-          "career": "एक समय में एक ही ज़रूरी काम पर ध्यान देने से दफ़्तर में काम आसानी से आगे बढ़ेगा।",
-          "health": "बाहर तेज़ कदमों से टहलने से आपका मन और शरीर तरोताज़ा महसूस करेगा।"
+          "summary": "आज नई ऊर्जा आपको छोटे काम आसानी से निपटाने में मदद करेगी। छोटी-मोटी देरी पर धैर्य रखें और लगातार आगे बढ़ने पर ध्यान दें।",
+          "love": "आपका एक प्यारा और अचानक किया गया छोटा-सा प्रयास किसी खास का मूड अच्छा कर देगा।",
+          "career": "साफ बातचीत से आपको चल रहे किसी प्रोजेक्ट को आसानी से पूरा करने में मदद मिलेगी।",
+          "health": "बाहर तेज़ कदमों से टहलना आपके मन और शरीर को तरोताज़ा कर देगा।"
         },
         "bn": {
           "name": "মেষ",
           "color": "লাল",
-          "summary": "আজ একটি সতেজ উদ্দীপনা আপনাকে অসম্পূর্ণ কাজগুলো সহজে সম্পন্ন করতে সাহায্য করবে। নিজের গতি বজায় রাখুন যাতে আপনার উৎসাহ সন্ধ্যা পর্যন্ত স্বাচ্ছন্দ্যে টিকে থাকে।",
-          "love": "একটি উষ্ণ, স্বতঃস্ফূর্ত অঙ্গভঙ্গি আপনার নিকটতম সম্পর্কে অতিরিক্ত হাসি নিয়ে আসবে।",
-          "career": "একবারে একটি অগ্রাধিকারের উপর মনোযোগ দিলে কর্মক্ষেত্রে মসৃণ অগ্রগতি হবে।",
-          "health": "বাইরে দ্রুত হাঁটা আপনার মন ও শরীরকে সতেজ করতে সাহায্য করবে।"
+          "summary": "আজ নতুন উদ্যমে ছোটখাটো কাজগুলো সহজেই সামলাতে পারবেন। সামান্য দেরিতে ধৈর্য ধরুন এবং ধীরে ধীরে এগোনোর দিকে মন দিন।",
+          "love": "আন্তরিক ও সহজ কোনো আচরণে প্রিয়জনের মন ভালো হয়ে উঠবে।",
+          "career": "স্পষ্ট যোগাযোগের মাধ্যমে চলমান একটি কাজ নির্বিঘ্নে শেষ করতে পারবেন।",
+          "health": "বাইরে দ্রুত পায়ে একটু হাঁটলে মন ও শরীর সতেজ থাকবে।"
         },
         "or": {
           "name": "ମେଷ",
-          "color": "ଲାଲ୍",
-          "summary": "ଆଜି ଆପଣଙ୍କ ଭିତରେ ଥିବା ଉତ୍ସାହ ଅଧା ରହିଥିବା କାମଗୁଡ଼ିକୁ ସହଜରେ ଶେଷ କରିବାରେ ସାହାଯ୍ୟ କରିବ। ନିଜ ଗତିକୁ ସନ୍ତୁଳିତ ରଖନ୍ତୁ ଯେପରି ସନ୍ଧ୍ୟା ପର୍ଯ୍ୟନ୍ତ ଆପଣଙ୍କ ଉତ୍ସାହ ଆରାମରେ ବଜାୟ ରହିପାରିବ।",
-          "love": "ଆପଣଙ୍କ ପକ୍ଷରୁ ହଠାତ୍ ମିଳିଥିବା ସ୍ନେହପୂର୍ଣ୍ଣ ବ୍ୟବହାର ପ୍ରିୟଜନଙ୍କ ମୁହଁରେ ଅଧିକ ହସ ଫୁଟାଇବ।",
-          "career": "ଥରକରେ ଗୋଟିଏ ଜରୁରୀ କାମ ଉପରେ ଧ୍ୟାନ ଦେଲେ କର୍ମକ୍ଷେତ୍ରରେ ସହଜରେ ଉନ୍ନତି ହେବ।",
-          "health": "ବାହାରେ ଟିକେ ଦ୍ରୁତ ଗତିରେ ଚାଲିବା ଦ୍ୱାରା ଆପଣଙ୍କ ମନ ଓ ଶରୀର ସତେଜ ରହିବ।"
+          "color": "ନାଲି",
+          "summary": "ଆଜି ନୂଆ ଶକ୍ତି ଆପଣଙ୍କୁ ଛୋଟ ଛୋଟ କାମ ସହଜରେ କରିବାରେ ସାହାଯ୍ୟ କରିବ। ସାମାନ୍ୟ ବିଳମ୍ବରେ ଧୈର୍ଯ୍ୟ ରଖନ୍ତୁ ଏବଂ ସ୍ଥିର ପ୍ରଗତି ଉପରେ ଧ୍ୟାନ ଦିଅନ୍ତୁ।",
+          "love": "ଏକ ଉଷ୍ମ, ସ୍ୱତଃପ୍ରବୃତ୍ତ ଅଙ୍ଗଭଙ୍ଗୀ କୌଣସି ବିଶେଷ ବ୍ୟକ୍ତିଙ୍କ ମନକୁ ଉଜ୍ଜ୍ୱଳ କରିବ।",
+          "career": "ସ୍ପଷ୍ଟ ଯୋଗାଯୋଗ ଆପଣଙ୍କୁ ଚାଲୁଥିବା ଏକ ପ୍ରକଳ୍ପକୁ ସହଜରେ ଶେଷ କରିବାରେ ସାହାଯ୍ୟ କରିବ।",
+          "health": "ବାହାରେ ଏକ ଦ୍ରୁତ ଚାଲି ଆପଣଙ୍କ ମନ ଓ ଶରୀରକୁ ସତେଜ କରିବ।"
         }
       }
     },
@@ -53,42 +53,42 @@
       "symbol": "Bull",
       "luckyColor": "Green",
       "luckyNumber": 6,
-      "summary": "Steady habits bring a comforting sense of calm to your day. Take time to appreciate the simple routines that keep you grounded.",
-      "love": "Listening patiently creates a deeper sense of trust with someone special.",
-      "career": "Your reliable approach helps settle an ongoing detail smoothly.",
-      "health": "Enjoying a nourishing, unhurried meal supports your natural energy.",
+      "summary": "Comfort and quiet focus guide your afternoon smoothly. Trust your practical instincts when organizing your daily schedule.",
+      "love": "Sharing a relaxed meal brings comforting closeness.",
+      "career": "Steady, reliable effort earns quiet appreciation from teammates.",
+      "health": "Gentle stretching eases lingering tension in your shoulders.",
       "i18n": {
         "en": {
           "name": "Taurus",
           "color": "Green",
-          "summary": "Steady habits bring a comforting sense of calm to your day. Take time to appreciate the simple routines that keep you grounded.",
-          "love": "Listening patiently creates a deeper sense of trust with someone special.",
-          "career": "Your reliable approach helps settle an ongoing detail smoothly.",
-          "health": "Enjoying a nourishing, unhurried meal supports your natural energy."
+          "summary": "Comfort and quiet focus guide your afternoon smoothly. Trust your practical instincts when organizing your daily schedule.",
+          "love": "Sharing a relaxed meal brings comforting closeness.",
+          "career": "Steady, reliable effort earns quiet appreciation from teammates.",
+          "health": "Gentle stretching eases lingering tension in your shoulders."
         },
         "hi": {
           "name": "वृषभ",
           "color": "हरा",
-          "summary": "आपकी नियमित आदतें आज आपके दिन में सुकून और शांति लाएंगी। उन साधारण रोज़मर्रा के कामों की कद्र करें जो आपको ज़मीन से जोड़े रखते हैं।",
-          "love": "धैर्य से किसी की बात सुनने से किसी ख़ास के साथ आपका भरोसा और गहरा होगा।",
-          "career": "आपका भरोसेमंद तरीका किसी चल रहे काम की बारीकियों को आसानी से सुलझाने में मदद करेगा।",
-          "health": "आराम से और पौष्टिक खाना खाने से आपकी प्राकृतिक ऊर्जा बनी रहेगी।"
+          "summary": "आराम और शांत ध्यान आपकी दोपहर को आसानी से आगे बढ़ाएंगे। अपनी रोज़मर्रा की दिनचर्या तय करते समय अपनी व्यावहारिक समझ पर भरोसा रखें।",
+          "love": "आराम से साथ बैठकर खाना खाने से रिश्तों में सुकून भरी नज़दीकी आएगी।",
+          "career": "आपकी लगातार और भरोसेमंद मेहनत को साथियों से चुपचाप सराहना मिलेगी।",
+          "health": "हल्की स्ट्रेचिंग से आपके कंधों का पुराना तनाव कम होगा।"
         },
         "bn": {
           "name": "বৃষ",
           "color": "সবুজ",
-          "summary": "স্থির অভ্যাসগুলো আপনার দিনে একটি আরামদায়ক শান্ত ভাব এনে দেবে। যে সাধারণ রুটিনগুলো আপনাকে স্থির রাখে, সেগুলোর প্রশংসা করার জন্য সময় নিন।",
-          "love": "ধৈর্য ধরে শুনলে বিশেষ কারো সাথে গভীর বিশ্বাস তৈরি হবে।",
-          "career": "আপনার নির্ভরযোগ্য পদ্ধতি একটি চলমান বিস্তারিত বিষয়কে সহজে মিটিয়ে ফেলতে সাহায্য করবে।",
-          "health": "একটি পুষ্টিকর, ধীরগতিতে খাওয়া খাবার আপনার স্বাভাবিক শক্তিকে ধরে রাখতে সাহায্য করবে।"
+          "summary": "স্বস্তি আর শান্ত মনোযোগ আপনার বিকেলটা সুন্দরভাবে কাটাতে সাহায্য করবে। প্রতিদিনের কাজের রুটিন সাজাতে নিজের বাস্তববুদ্ধির ওপর ভরসা রাখুন।",
+          "love": "একসঙ্গে আরাম করে খাবার খেলে সম্পর্কের উষ্ণতা ও নৈকট্য বাড়বে।",
+          "career": "আপনার একটানা ও নির্ভরযোগ্য কাজের জন্য সহকর্মীদের নীরব প্রশংসা পাবেন।",
+          "health": "হালকা স্ট্রেচিং করলে কাঁধের জমে থাকা টান বা ব্যথা কমে যাবে।"
         },
         "or": {
           "name": "ବୃଷ",
           "color": "ସବୁଜ",
-          "summary": "ନିୟମିତ ଅଭ୍ୟାସ ଆଜି ଆପଣଙ୍କ ଦିନକୁ ଶାନ୍ତ ଓ ଆରାମଦାୟକ କରିବ। ଯେଉଁ ସାଧାରଣ ଦୈନନ୍ଦିନ କାମ ଆପଣଙ୍କୁ ସ୍ଥିର ରଖେ, ତାକୁ ଉପଭୋଗ କରିବାକୁ ସମୟ ଦିଅନ୍ତୁ।",
-          "love": "ଧୈର୍ଯ୍ୟର ସହ କଥା ଶୁଣିବା ଦ୍ୱାରା ଜଣେ ବିଶେଷ ବ୍ୟକ୍ତିଙ୍କ ସହ ଆପଣଙ୍କ ବିଶ୍ୱାସ ଆହୁରି ଗଭୀର ହେବ।",
-          "career": "ଆପଣଙ୍କ ଭରସାଯୋଗ୍ୟ କାମ କରିବାର ଶୈଳୀ ଏକ ଚାଲିଥିବା କାମକୁ ସହଜରେ ସମାଧାନ କରିବାରେ ସାହାଯ୍ୟ କରିବ।",
-          "health": "ଆରାମରେ ବସି ପୁଷ୍ଟିକର ଖାଦ୍ୟ ଖାଇବା ଆପଣଙ୍କ ଶରୀରର ସ୍ୱାଭାବିକ ଶକ୍ତିକୁ ବଜାୟ ରଖିବ।"
+          "summary": "ଆରାମ ଏବଂ ନୀରବ ଧ୍ୟାନ ଆପଣଙ୍କ ଅପରାହ୍ନକୁ ସହଜରେ ପରିଚାଳିତ କରିବ। ଆପଣଙ୍କ ଦୈନିକ କାର୍ଯ୍ୟସୂଚୀକୁ ସଜାଡ଼ିବା ବେଳେ ଆପଣଙ୍କ ବ୍ୟବହାରିକ ପ୍ରବୃତ୍ତି ଉପରେ ବିଶ୍ୱାସ କରନ୍ତୁ।",
+          "love": "ଏକ ଆରାମଦାୟକ ଭୋଜନ ବାଣ୍ଟିବା ଆରାମଦାୟକ ନିକଟତା ଆଣିବ।",
+          "career": "ସ୍ଥିର, ବିଶ୍ୱାସଯୋଗ୍ୟ ପ୍ରୟାସ ସହକର୍ମୀଙ୍କ ଠାରୁ ନୀରବ ପ୍ରଶଂସା ଅର୍ଜନ କରିବ।",
+          "health": "ହୁଲୁକା ଷ୍ଟ୍ରେଚିଂ ଆପଣଙ୍କ କାନ୍ଧରେ ଲାଗିରହିଥିବା ଚାପକୁ କମ କରିବ।"
         }
       }
     },
@@ -98,42 +98,42 @@
       "symbol": "Twins",
       "luckyColor": "Yellow",
       "luckyNumber": 5,
-      "summary": "Curiosity opens the door to interesting conversations and helpful insights. Stay open to adjusting your schedule if a good idea pops up.",
-      "love": "Playful banter keeps the mood light and welcoming.",
-      "career": "Sharing a fresh perspective in a discussion sparks useful teamwork.",
-      "health": "Give your eyes and mind short breaks away from screens.",
+      "summary": "Curiosity sparks pleasant conversations and helpful new ideas today. Keep your notes handy so inspiration does not slip away.",
+      "love": "Playful banter creates a lighthearted and easy connection.",
+      "career": "Brainstorming with a colleague uncovers a clever workflow shortcut.",
+      "health": "Stay hydrated and give your eyes regular breaks from screens.",
       "i18n": {
         "en": {
           "name": "Gemini",
           "color": "Yellow",
-          "summary": "Curiosity opens the door to interesting conversations and helpful insights. Stay open to adjusting your schedule if a good idea pops up.",
-          "love": "Playful banter keeps the mood light and welcoming.",
-          "career": "Sharing a fresh perspective in a discussion sparks useful teamwork.",
-          "health": "Give your eyes and mind short breaks away from screens."
+          "summary": "Curiosity sparks pleasant conversations and helpful new ideas today. Keep your notes handy so inspiration does not slip away.",
+          "love": "Playful banter creates a lighthearted and easy connection.",
+          "career": "Brainstorming with a colleague uncovers a clever workflow shortcut.",
+          "health": "Stay hydrated and give your eyes regular breaks from screens."
         },
         "hi": {
           "name": "मिथुन",
           "color": "पीला",
-          "summary": "आपकी जिज्ञासा आज दिलचस्प बातचीत और काम की जानकारियों के रास्ते खोलेगी। अगर कोई अच्छा विचार आए, तो अपने कार्यक्रम में थोड़ा बदलाव करने के लिए तैयार रहें।",
-          "love": "हल्की-फुल्की हंसी-मज़ाक से माहौल खुशनुमा और अपनापन भरा रहेगा।",
-          "career": "चर्चा में अपना नया नज़रिया रखने से टीम के साथ मिलकर काम करने में मदद मिलेगी।",
-          "health": "स्क्रीन से दूर रहकर अपनी आँखों और दिमाग को थोड़ा आराम दें।"
+          "summary": "आज आपकी जिज्ञासा से अच्छी बातचीत शुरू होगी और काम के नए विचार आएंगे। नोट्स साथ रखें ताकि कोई अच्छा विचार हाथ से न निकल जाए।",
+          "love": "हल्की-फुल्की हंसी-मज़ाक से रिश्ते में सहजता और अपनापन बढ़ेगा।",
+          "career": "किसी सहकर्मी के साथ मिलकर सोचने से काम को जल्दी और बेहतर करने का आसान तरीका मिल सकता है।",
+          "health": "भरपूर पानी पिएं और स्क्रीन से अपनी आंखों को नियमित आराम दें।"
         },
         "bn": {
           "name": "মিথুন",
           "color": "হলুদ",
-          "summary": "কৌতূহল আকর্ষণীয় কথোপকথন এবং সহায়ক অন্তর্দৃষ্টির দ্বার খুলে দেবে। যদি কোনো ভালো ধারণা আসে, আপনার সময়সূচী সামঞ্জস্য করার জন্য প্রস্তুত থাকুন।",
-          "love": "কৌতুকপূর্ণ ঠাট্টা-তামাশা পরিবেশকে হালকা ও স্বাগত জানানোর মতো রাখবে।",
-          "career": "আলোচনায় একটি নতুন দৃষ্টিভঙ্গি ভাগ করে নেওয়া কার্যকর দলগত কাজকে উৎসাহিত করবে।",
-          "health": "আপনার চোখ ও মনকে পর্দা থেকে দূরে রেখে ছোট বিরতি দিন।"
+          "summary": "আজ কৌতূহল থেকে সুন্দর আলাপ আর দারুণ কিছু নতুন ধারণা আসবে। হাতের কাছে নোটবুক রাখুন, যেন ভালো কোনো ভাবনা হারিয়ে না যায়।",
+          "love": "হালকা খুনসুটি আর হাসি-ঠাট্টায় সম্পর্ক আরও সহজ ও প্রাণবন্ত হবে।",
+          "career": "সহকর্মীর সঙ্গে আলোচনায় কাজ দ্রুত ও সহজে করার দারুণ কোনো উপায় বেরিয়ে আসবে।",
+          "health": "পর্যাপ্ত পানি পান করুন এবং স্ক্রিন থেকে চোখকে নিয়মিত বিরতি দিন।"
         },
         "or": {
           "name": "ମିଥୁନ",
           "color": "ହଳଦିଆ",
-          "summary": "ଆପଣଙ୍କ ଜିଜ୍ଞାସା ଆଜି ରୋଚକ କଥାବାର୍ତ୍ତା ଓ ଉପକାରୀ ଉପଦେଶର ବାଟ ଖୋଲିବ। ଯଦି କୌଣସି ଭଲ ବିଚାର ଆସେ, ତେବେ ନିଜ ସମୟ ସୂଚୀରେ ସାମାନ୍ୟ ପରିବର୍ତ୍ତନ କରିବାକୁ ପ୍ରସ୍ତୁତ ରୁହନ୍ତୁ।",
-          "love": "ହସମଜା ଓ ହାଲୁକା କଥାବାର୍ତ୍ତା ସମ୍ପର୍କର ପରିବେଶକୁ ଖୁସି ଓ ମଧୁର ରଖିବ।",
-          "career": "ଆଲୋଚନା ସମୟରେ ନୂଆ ଚିନ୍ତାଧାରା ବାଣ୍ଟିବା ଦ୍ୱାରା ଦଳଗତ କାମରେ ଭଲ ଫଳ ମିଳିବ।",
-          "health": "ମୋବାଇଲ୍ ବା କମ୍ପ୍ୟୁଟର ସ୍କ୍ରିନ୍‌ରୁ ଦୂରେଇ ରହି ଆଖି ଓ ମନକୁ କିଛି ସମୟ ବିଶ୍ରାମ ଦିଅନ୍ତୁ।"
+          "summary": "ଆଜି ଜିଜ୍ଞାସା ସୁଖଦ ବାର୍ତ୍ତାଳାପ ଏବଂ ସହାୟକ ନୂତନ ଚିନ୍ତାଧାରା ସୃଷ୍ଟି କରିବ। ଆପଣଙ୍କ ଟିପ୍ପଣୀଗୁଡ଼ିକୁ ହାତ ପାଆନ୍ତାରେ ରଖନ୍ତୁ ଯାହାଫଳରେ ପ୍ରେରଣା ହାତଛଡ଼ା ନହେଉ।",
+          "love": "ଖେଳୁଆଡ଼ କଥାବାର୍ତ୍ତା ଏକ ହାଲୁକା ଏବଂ ସହଜ ସମ୍ପର୍କ ସୃଷ୍ଟି କରିବ।",
+          "career": "ଜଣେ ସହକର୍ମୀଙ୍କ ସହ ମିଶି ଚିନ୍ତା କରିବା ଏକ ଚତୁର କାର୍ଯ୍ୟପ୍ରଣାଳୀର ସୁବିଧା ଉନ୍ମୋଚନ କରିବ।",
+          "health": "ଜଳିୟ ଅଂଶ ପୂରଣ କରନ୍ତୁ ଏବଂ ପରଦା (screen) ରୁ ଆପଣଙ୍କ ଆଖିକୁ ନିୟମିତ ବିଶ୍ରାମ ଦିଅନ୍ତୁ।"
         }
       }
     },
@@ -143,42 +143,42 @@
       "symbol": "Crab",
       "luckyColor": "White",
       "luckyNumber": 2,
-      "summary": "Gentle intuition guides your choices well from morning until night. Creating a peaceful space around you will lift your spirits.",
-      "love": "Thoughtful care speaks louder than grand promises today.",
-      "career": "Organizing your workspace sets a calm tone for productive hours.",
-      "health": "Prioritize quiet rest and plenty of water to feel your best.",
+      "summary": "Your thoughtful nature brings harmony to your surroundings today. Take a quiet moment to appreciate how far you have come.",
+      "love": "Listening closely strengthens emotional trust with those you care about.",
+      "career": "Supporting a coworker builds helpful goodwill for future tasks.",
+      "health": "A calm evening routine prepares you for restful sleep.",
       "i18n": {
         "en": {
           "name": "Cancer",
           "color": "White",
-          "summary": "Gentle intuition guides your choices well from morning until night. Creating a peaceful space around you will lift your spirits.",
-          "love": "Thoughtful care speaks louder than grand promises today.",
-          "career": "Organizing your workspace sets a calm tone for productive hours.",
-          "health": "Prioritize quiet rest and plenty of water to feel your best."
+          "summary": "Your thoughtful nature brings harmony to your surroundings today. Take a quiet moment to appreciate how far you have come.",
+          "love": "Listening closely strengthens emotional trust with those you care about.",
+          "career": "Supporting a coworker builds helpful goodwill for future tasks.",
+          "health": "A calm evening routine prepares you for restful sleep."
         },
         "hi": {
           "name": "कर्क",
-          "color": "सफ़ेद",
-          "summary": "सुबह से रात तक आपके मन की आवाज़ आपको सही फ़ैसले लेने में मदद करेगी। अपने आस-पास शांत माहौल बनाने से आपका मन खुश रहेगा।",
-          "love": "आज बड़े-बड़े वादों से ज़्यादा आपकी छोटी-छोटी देखभाल और परवाह मायने रखेगी।",
-          "career": "अपने काम की जगह को व्यवस्थित रखने से काम के घंटों में शांति और बेहतर नतीजे मिलेंगे।",
-          "health": "खुद को बेहतर महसूस कराने के लिए शांत आराम और भरपूर पानी पीने पर ध्यान दें।"
+          "color": "सफेद",
+          "summary": "आज आपका समझदार स्वभाव आपके आसपास के माहौल में शांति लाएगा। थोड़ा शांत समय निकालकर इस बात की सराहना करें कि आपने अब तक कितना सफर तय किया है।",
+          "love": "ध्यान से बात सुनने से अपनों के साथ भावनात्मक भरोसा और मजबूत होगा।",
+          "career": "किसी सहकर्मी की मदद करने से आगे के कामों के लिए अच्छा तालमेल बनेगा।",
+          "health": "शाम की शांत दिनचर्या आपको गहरी और सुकून भरी नींद के लिए तैयार करेगी।"
         },
         "bn": {
           "name": "কর্কট",
           "color": "সাদা",
-          "summary": "সকাল থেকে রাত পর্যন্ত আপনার মৃদু স্বজ্ঞা আপনার পছন্দগুলোকে ভালোভাবে পরিচালিত করবে। আপনার চারপাশে একটি শান্তিপূর্ণ স্থান তৈরি করলে আপনার মন উৎফুল্ল হবে।",
-          "love": "আজ সুচিন্তিত যত্ন বড় প্রতিশ্রুতির চেয়ে বেশি কথা বলবে।",
-          "career": "আপনার কর্মক্ষেত্রকে গুছিয়ে রাখা উৎপাদনশীল সময়ের জন্য একটি শান্ত পরিবেশ তৈরি করবে।",
-          "health": "নিজেকে সেরা অনুভব করার জন্য শান্ত বিশ্রাম এবং প্রচুর জল পানকে অগ্রাধিকার দিন।"
+          "summary": "আজ আপনার চিন্তাশীল স্বভাব চারপাশে শান্তি ও সম্প্রীতি আনবে। নিরিবিলিতে একটু সময় নিয়ে ভাবুন, আপনি কতদূর এগিয়ে এসেছেন।",
+          "love": "মনোযোগ দিয়ে কথা শুনলে প্রিয়জনদের সঙ্গে মানসিক আস্থা আরও দৃঢ় হবে।",
+          "career": "সহকর্মীকে সাহায্য করলে ভবিষ্যতের কাজের জন্য ভালো সম্পর্ক ও সুনাম তৈরি হবে।",
+          "health": "সন্ধ্যায় শান্ত ও নিরিবিলি রুটিন মেনে চললে রাতে গভীর ও আরামদায়ক ঘুম হবে।"
         },
         "or": {
           "name": "କର୍କଟ",
           "color": "ଧଳା",
-          "summary": "ସକାଳୁ ରାତି ପର୍ଯ୍ୟନ୍ତ ଆପଣଙ୍କ ଅନ୍ତରାତ୍ମାର ଭାବନା ଆପଣଙ୍କୁ ସଠିକ୍ ନିଷ୍ପତ୍ତି ନେବାରେ ବାଟ ଦେଖାଇବ। ନିଜ ଚାରିପାଖରେ ଶାନ୍ତ ପରିବେଶ ରଖିଲେ ମନ ପ୍ରଫୁଲ୍ଲ ରହିବ।",
-          "love": "ଆଜି ବଡ଼ ପ୍ରତିଶ୍ରୁତି ଅପେକ୍ଷା ଛୋଟ ଛୋଟ ଯତ୍ନ ଓ ସ୍ନେହ ଅଧିକ ପ୍ରଭାବ ପକାଇବ।",
-          "career": "ନିଜ କାମ କରିବା ସ୍ଥାନକୁ ସଜାଡ଼ି ରଖିଲେ ଶାନ୍ତ ମନରେ ଭଲ କାମ କରିପାରିବେ।",
-          "health": "ସୁସ୍ଥ ଓ ସତେଜ ଅନୁଭବ କରିବା ପାଇଁ ଶାନ୍ତିରେ ବିଶ୍ରାମ ନେବା ସହ ପ୍ରଚୁର ପାଣି ପିଅନ୍ତୁ।"
+          "summary": "ଆଜି ଆପଣଙ୍କ ଚିନ୍ତାଶୀଳ ପ୍ରକୃତି ଆପଣଙ୍କ ଚାରିପାଖରେ ସୌହାର୍ଦ୍ଦ୍ୟ ଆଣିବ। ଆପଣ କେତେ ଦୂର ଆସିଛନ୍ତି, ତାହାକୁ ପ୍ରଶଂସା କରିବା ପାଇଁ ଏକ ନୀରବ ମୁହୂର୍ତ୍ତ ନିଅନ୍ତୁ।",
+          "love": "ନିବିଡ଼ ଭାବରେ ଶୁଣିବା ଆପଣ ଯତ୍ନ ନେଉଥିବା ଲୋକଙ୍କ ସହ ଭାବନାତ୍ମକ ବିଶ୍ୱାସକୁ ମଜବୁତ କରିବ।",
+          "career": "ଜଣେ ସହକର୍ମୀଙ୍କୁ ସମର୍ଥନ କରିବା ଭବିଷ୍ୟତ କାର୍ଯ୍ୟ ପାଇଁ ସହାୟକ ସଦ୍ଭାବନା ସୃଷ୍ଟି କରିବ।",
+          "health": "ଏକ ଶାନ୍ତ ସନ୍ଧ୍ୟା କାର୍ଯ୍ୟକ୍ରମ ଆପଣଙ୍କୁ ଆରାମଦାୟକ ନିଦ ପାଇଁ ପ୍ରସ୍ତୁତ କରିବ।"
         }
       }
     },
@@ -186,44 +186,44 @@
       "name": "Leo",
       "hindi": "सिंह",
       "symbol": "Lion",
-      "luckyColor": "Gold",
+      "luckyColor": "Orange",
       "luckyNumber": 1,
-      "summary": "Your natural warmth draws encouraging energy from the people around you. Channel your confidence into a creative project you enjoy.",
-      "love": "Expressing genuine appreciation brightens your romantic connection.",
-      "career": "Taking thoughtful initiative helps your team move forward smoothly.",
-      "health": "Light stretching in the morning keeps your posture and mood lifted.",
+      "summary": "Natural warmth draws supportive people into your orbit today. Lead with kindness and let your creativity shine gently.",
+      "love": "Expressing genuine gratitude makes your partner or friend feel valued.",
+      "career": "Presenting your ideas with quiet confidence opens a welcoming door.",
+      "health": "Light, enjoyable movement boosts your energy without overexertion.",
       "i18n": {
         "en": {
           "name": "Leo",
-          "color": "Gold",
-          "summary": "Your natural warmth draws encouraging energy from the people around you. Channel your confidence into a creative project you enjoy.",
-          "love": "Expressing genuine appreciation brightens your romantic connection.",
-          "career": "Taking thoughtful initiative helps your team move forward smoothly.",
-          "health": "Light stretching in the morning keeps your posture and mood lifted."
+          "color": "Orange",
+          "summary": "Natural warmth draws supportive people into your orbit today. Lead with kindness and let your creativity shine gently.",
+          "love": "Expressing genuine gratitude makes your partner or friend feel valued.",
+          "career": "Presenting your ideas with quiet confidence opens a welcoming door.",
+          "health": "Light, enjoyable movement boosts your energy without overexertion."
         },
         "hi": {
           "name": "सिंह",
-          "color": "सुनहरा",
-          "summary": "आपका अपनापन भरा स्वभाव आस-पास के लोगों से आपको सकारात्मक ऊर्जा दिलाएगा। अपने आत्मविश्वास को किसी ऐसे रचनात्मक काम में लगाएं जो आपको पसंद हो।",
-          "love": "दिल से तारीफ़ करने से आपका प्रेम संबंध और भी खिल उठेगा।",
-          "career": "सोच-समझकर पहल करने से आपकी टीम को आसानी से आगे बढ़ने में मदद मिलेगी।",
-          "health": "सुबह हल्की स्ट्रेचिंग करने से आपका शरीर चुस्त और मूड अच्छा बना रहेगा।"
+          "color": "नारंगी",
+          "summary": "आज आपका स्वाभाविक अपनापन मददगार लोगों को आपकी ओर खींचेगा। दयालुता से आगे बढ़ें और अपनी रचनात्मकता को सहजता से निखरने दें।",
+          "love": "सच्चे मन से आभार जताने से आपके साथी या दोस्त को खास महसूस होगा।",
+          "career": "शांत आत्मविश्वास के साथ अपने विचार रखने से नए अवसर का रास्ता खुल सकता है।",
+          "health": "हल्की और मज़ेदार शारीरिक गतिविधि बिना ज़्यादा थकान के आपकी ऊर्जा बढ़ाएगी।"
         },
         "bn": {
           "name": "সিংহ",
-          "color": "সোনালী",
-          "summary": "আপনার স্বাভাবিক উষ্ণতা আপনার চারপাশের মানুষের কাছ থেকে উৎসাহব্যঞ্জক শক্তি আকর্ষণ করবে। আপনার আত্মবিশ্বাসকে এমন একটি সৃজনশীল প্রকল্পে প্রয়োগ করুন যা আপনি উপভোগ করেন।",
-          "love": "আন্তরিক কৃতজ্ঞতা প্রকাশ আপনার রোমান্টিক সম্পর্ককে উজ্জ্বল করবে।",
-          "career": "সুচিন্তিত উদ্যোগ গ্রহণ আপনার দলকে মসৃণভাবে এগিয়ে যেতে সাহায্য করবে।",
-          "health": "সকালে হালকা স্ট্রেচিং আপনার ভঙ্গি এবং মেজাজকে উন্নত রাখবে।"
+          "color": "কমলা",
+          "summary": "আজ আপনার সহজাত আন্তরিকতায় সহযোগী মানুষজন কাছে আসবে। সহানুভূতির সঙ্গে নেতৃত্ব দিন এবং নিজের সৃজনশীলতাকে সুন্দরভাবে প্রকাশ করুন।",
+          "love": "আন্তরিক কৃতজ্ঞতা প্রকাশ করলে আপনার সঙ্গী বা বন্ধু নিজেকে গুরুত্বপূর্ণ মনে করবেন।",
+          "career": "শান্ত আত্মবিশ্বাসের সঙ্গে নিজের মতামত তুলে ধরলে নতুন সুযোগ তৈরি হবে।",
+          "health": "বেশি পরিশ্রম না করে হালকা ও আনন্দদায়ক ব্যায়াম করলে শরীরের শক্তি বাড়বে।"
         },
         "or": {
           "name": "ସିଂହ",
-          "color": "ସୁନେଲି",
-          "summary": "ଆପଣଙ୍କ ସ୍ନେହୀ ସ୍ୱଭାବ ଚାରିପାଖର ଲୋକଙ୍କଠାରୁ ଉତ୍ସାହଜନକ ଶକ୍ତି ଆଣିଦେବ। ନିଜ ଆତ୍ମବିଶ୍ୱାସକୁ ଆପଣ ପସନ୍ଦ କରୁଥିବା କୌଣସି ସୃଜନଶୀଳ କାମରେ ଲଗାନ୍ତୁ।",
-          "love": "ହୃଦୟରୁ ପ୍ରଶଂସା କରିବା ଦ୍ୱାରା ଆପଣଙ୍କ ପ୍ରେମ ସମ୍ପର୍କ ଆହୁରି ଉଜ୍ଜ୍ୱଳ ହେବ।",
-          "career": "ଭାବିଚିନ୍ତି ଆଗକୁ ବଢ଼ି ପଦକ୍ଷେପ ନେବା ଦ୍ୱାରା ଆପଣଙ୍କ ଦଳ ସହଜରେ ଆଗେଇ ପାରିବ।",
-          "health": "ସକାଳେ ହାଲୁକା ବ୍ୟାୟାମ କଲେ ଶରୀରର ଭଙ୍ଗୀ ଠିକ୍ ରହିବା ସହ ମନ ବି ଭଲ ରହିବ।"
+          "color": "କମଳା",
+          "summary": "ଆଜି ପ୍ରାକୃତିକ ଉଷ୍ମତା ସହାୟକ ଲୋକଙ୍କୁ ଆପଣଙ୍କ ପାଖକୁ ଟାଣି ଆଣିବ। ଦୟାଳୁ ଭାବେ ନେତୃତ୍ୱ ନିଅନ୍ତୁ ଏବଂ ଆପଣଙ୍କ ସୃଜନଶୀଳତାକୁ ଧୀରେ ଧୀରେ ଚମକିବାକୁ ଦିଅନ୍ତୁ।",
+          "love": "ସତ୍ୟ ପ୍ରଶଂସା ପ୍ରକାଶ କରିବା ଆପଣଙ୍କ ସାଥୀ ବା ବନ୍ଧୁଙ୍କୁ ମୂଲ୍ୟବାନ ଅନୁଭବ କରାଇବ।",
+          "career": "ନୀରବ ଆତ୍ମବିଶ୍ୱାସ ସହିତ ଆପଣଙ୍କ ଚିନ୍ତାଧାରା ଉପସ୍ଥାପନ କରିବା ଏକ ସ୍ୱାଗତଯୋଗ୍ୟ ଦ୍ୱାର ଖୋଲିବ।",
+          "health": "ହୁଲୁକା, ଆନନ୍ଦଦାୟକ ଚଳପ୍ରଚଳ ଅତ୍ୟଧିକ ପରିଶ୍ରମ ନକରି ଆପଣଙ୍କ ଶକ୍ତି ବଢ଼ାଇବ।"
         }
       }
     },
@@ -233,42 +233,42 @@
       "symbol": "Maiden",
       "luckyColor": "Blue",
       "luckyNumber": 4,
-      "summary": "Clear thinking makes it easy to sort out small details without stress. Celebrate tiny wins rather than aiming for perfection.",
-      "love": "A practical favor shows someone how much you truly care.",
-      "career": "Reviewing your notes carefully saves valuable time later in the week.",
-      "health": "Keeping a steady sleep and meal rhythm helps you feel balanced.",
+      "summary": "Attention to small details makes your day run effortlessly. Give yourself credit for keeping everything balanced and tidy.",
+      "love": "Helping with a practical favor shows how deeply you care.",
+      "career": "Organizing your workspace clears mental clutter for important tasks.",
+      "health": "Simple, nourishing meals keep your energy steady all afternoon.",
       "i18n": {
         "en": {
           "name": "Virgo",
           "color": "Blue",
-          "summary": "Clear thinking makes it easy to sort out small details without stress. Celebrate tiny wins rather than aiming for perfection.",
-          "love": "A practical favor shows someone how much you truly care.",
-          "career": "Reviewing your notes carefully saves valuable time later in the week.",
-          "health": "Keeping a steady sleep and meal rhythm helps you feel balanced."
+          "summary": "Attention to small details makes your day run effortlessly. Give yourself credit for keeping everything balanced and tidy.",
+          "love": "Helping with a practical favor shows how deeply you care.",
+          "career": "Organizing your workspace clears mental clutter for important tasks.",
+          "health": "Simple, nourishing meals keep your energy steady all afternoon."
         },
         "hi": {
           "name": "कन्या",
           "color": "नीला",
-          "summary": "साफ़ सोच की वजह से आप बिना किसी तनाव के छोटी-छोटी बातें आसानी से सुलझा लेंगे। हर चीज़ को एकदम सही करने के बजाय अपनी छोटी सफलताओं की खुशी मनाएं।",
-          "love": "किसी के काम में हाथ बंटाने से यह ज़ाहिर होगा कि आप उनकी कितनी परवाह करते हैं।",
-          "career": "अपने नोट्स को ध्यान से दोबारा देखने से इस हफ़्ते के बाकी दिनों में आपका कीमती समय बचेगा।",
-          "health": "सोने और खाने का सही समय बनाए रखने से आप संतुलित महसूस करेंगे।"
+          "summary": "छोटी बातों पर ध्यान देने से आपका दिन बिना किसी परेशानी के बीतेगा। सब कुछ संतुलित और व्यवस्थित रखने के लिए खुद को शाबाशी दें।",
+          "love": "ज़रूरत के समय किसी काम में मदद करना दिखाता है कि आप कितनी गहराई से परवाह करते हैं।",
+          "career": "अपनी काम करने की जगह को व्यवस्थित करने से ज़रूरी कामों के लिए मन शांत और साफ रहेगा।",
+          "health": "सादा और पौष्टिक भोजन पूरी दोपहर आपकी ऊर्जा को बनाए रखेगा।"
         },
         "bn": {
           "name": "কন্যা",
           "color": "নীল",
-          "summary": "স্পষ্ট চিন্তাভাবনা ছোট ছোট বিবরণগুলো চাপ ছাড়াই সহজে সমাধান করতে সাহায্য করবে। পরিপূর্ণতার লক্ষ্যে না ছুটে ছোট ছোট জয় উদযাপন করুন।",
-          "love": "একটি বাস্তবসম্মত সাহায্য কাউকে দেখাবে যে আপনি কতটা যত্নশীল।",
-          "career": "আপনার নোটগুলো সাবধানে পর্যালোচনা করলে সপ্তাহের শেষে মূল্যবান সময় বাঁচবে।",
-          "health": "একটি নিয়মিত ঘুম ও খাবারের ছন্দ বজায় রাখলে আপনি ভারসাম্যপূর্ণ অনুভব করবেন।"
+          "summary": "ছোটখাটো বিষয়ে মনোযোগ দেওয়ায় আজকের দিনটি বেশ সহজেই কাটবে। সবকিছু গুছিয়ে ও ভারসাম্য রেখে চলার জন্য নিজেকেও কিছুটা কৃতিত্ব দিন।",
+          "love": "কাজের মাধ্যমে ছোট কোনো সাহায্য করলে বোঝা যাবে আপনি কতটা যত্নশীল।",
+          "career": "কাজের জায়গা গুছিয়ে রাখলে মনের অস্থিরতা কমবে এবং জরুরি কাজে মন বসবে।",
+          "health": "সহজ ও পুষ্টিকর খাবার খেলে পুরো বিকেলজুড়ে শরীরে শক্তি অটুট থাকবে।"
         },
         "or": {
           "name": "କନ୍ୟା",
           "color": "ନୀଳ",
-          "summary": "ସ୍ପଷ୍ଟ ଚିନ୍ତାଧାରା ବିନା ଚାପରେ ଛୋଟ ଛୋଟ କାମଗୁଡ଼ିକୁ ସଜାଡ଼ିବାରେ ସାହାଯ୍ୟ କରିବ। ସବୁକିଛି ସମ୍ପୂର୍ଣ୍ଣ ଠିକ୍ କରିବା ପଛରେ ନ ଗୋଡ଼ାଇ ଛୋଟ ସଫଳତାକୁ ବି ଉପଭୋଗ କରନ୍ତୁ।",
-          "love": "କାହାକୁ କିଛି ଦରକାରୀ କାମରେ ସାହାଯ୍ୟ କରିବା ଦ୍ୱାରା ଆପଣ ତାଙ୍କର କେତେ ଯତ୍ନ ନିଅନ୍ତି ତାହା ଜଣାପଡ଼ିବ।",
-          "career": "ନିଜ ନୋଟ୍‌ଗୁଡ଼ିକୁ ଭଲ ଭାବେ ଦେଖିନେଲେ ସପ୍ତାହର ବାକି ଦିନରେ ବହୁତ ମୂଲ୍ୟବାନ ସମୟ ବଞ୍ଚିବ।",
-          "health": "ଠିକ୍ ସମୟରେ ଶୋଇବା ଓ ଖାଇବା ଅଭ୍ୟାସ ଆପଣଙ୍କୁ ସନ୍ତୁଳିତ ଅନୁଭବ କରାଇବ।"
+          "summary": "ଛୋଟ ଛୋଟ ବିଷୟ ଉପରେ ଧ୍ୟାନ ଦେବା ଆପଣଙ୍କ ଦିନକୁ ଅକ୍ଳାନ୍ତରେ ଚାଲୁ ରଖିବ। ସବୁକିଛି ସନ୍ତୁଳିତ ଏବଂ ପରିଷ୍କାର ରଖିବା ପାଇଁ ନିଜକୁ ଶ୍ରେୟ ଦିଅନ୍ତୁ।",
+          "love": "ଏକ ବ୍ୟବହାରିକ ସାହାଯ୍ୟ କରିବା ଦର୍ଶାଏ ଯେ ଆପଣ କେତେ ଗଭୀର ଭାବରେ ଯତ୍ନ ନିଅନ୍ତି।",
+          "career": "ଆପଣଙ୍କ କାର୍ଯ୍ୟସ୍ଥଳକୁ ସଜାଡ଼ିବା ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ କାର୍ଯ୍ୟ ପାଇଁ ମାନସିକ ଅବ୍ୟବସ୍ଥା ଦୂର କରିବ।",
+          "health": "ସରଳ, ପୌଷ୍ଟିକ ଭୋଜନ ସାରା ଅପରାହ୍ନରେ ଆପଣଙ୍କ ଶକ୍ତିକୁ ସ୍ଥିର ରଖିବ।"
         }
       }
     },
@@ -278,42 +278,42 @@
       "symbol": "Scales",
       "luckyColor": "Pink",
       "luckyNumber": 7,
-      "summary": "Harmony comes naturally when you approach decisions with fairness and grace. A pleasant social moment adds brightness to your afternoon.",
-      "love": "Meeting halfway brings effortless peace to any shared plans.",
-      "career": "Diplomatic communication helps smooth over a minor scheduling mix-up.",
-      "health": "Gentle breathing exercises can ease tension in your shoulders.",
+      "summary": "Balance and grace help you navigate choices smoothly today. Seek beauty in small moments to keep your spirits high.",
+      "love": "A thoughtful compliment sparks a sweet and easy conversation.",
+      "career": "Fair compromise resolves a minor scheduling mix-up effortlessly.",
+      "health": "Slow, deep breathing exercises help maintain your inner calm.",
       "i18n": {
         "en": {
           "name": "Libra",
           "color": "Pink",
-          "summary": "Harmony comes naturally when you approach decisions with fairness and grace. A pleasant social moment adds brightness to your afternoon.",
-          "love": "Meeting halfway brings effortless peace to any shared plans.",
-          "career": "Diplomatic communication helps smooth over a minor scheduling mix-up.",
-          "health": "Gentle breathing exercises can ease tension in your shoulders."
+          "summary": "Balance and grace help you navigate choices smoothly today. Seek beauty in small moments to keep your spirits high.",
+          "love": "A thoughtful compliment sparks a sweet and easy conversation.",
+          "career": "Fair compromise resolves a minor scheduling mix-up effortlessly.",
+          "health": "Slow, deep breathing exercises help maintain your inner calm."
         },
         "hi": {
           "name": "तुला",
           "color": "गुलाबी",
-          "summary": "जब आप निष्पक्ष और शांत होकर फ़ैसले लेते हैं, तो जीवन में तालमेल अपने आप बन जाता है। दोपहर में लोगों से मिलने-जुलने का कोई सुखद पल आपका दिन बना देगा।",
-          "love": "आपसी समझौते से आगे बढ़ने पर किसी भी साझा योजना में आसानी से शांति बनी रहेगी।",
-          "career": "समझदारी भरी बातचीत से समय को लेकर हुई किसी छोटी सी गड़बड़ी को आसानी से सुलझाया जा सकेगा।",
-          "health": "हल्के सांस लेने के अभ्यास से आपके कंधों का तनाव कम हो सकता है।"
+          "summary": "संतुलन और सहजता आज आपको सही फैसले लेने में मदद करेंगे। अपना उत्साह बनाए रखने के लिए छोटे-छोटे पलों में खुशी तलाशें।",
+          "love": "सच्चे मन से की गई तारीफ एक प्यारी और सहज बातचीत की शुरुआत करेगी।",
+          "career": "सही समझौते से समय को लेकर हुई छोटी-सी उलझन आसानी से सुलझ जाएगी।",
+          "health": "धीमी और गहरी सांस लेने का अभ्यास आपके मन की शांति बनाए रखने में मदद करेगा।"
         },
         "bn": {
           "name": "তুলা",
-          "color": "গোলাপী",
-          "summary": "যখন আপনি ন্যায্যতা ও কমনীয়তার সাথে সিদ্ধান্ত গ্রহণ করেন, তখন সম্প্রীতি স্বাভাবিকভাবেই আসে। একটি আনন্দদায়ক সামাজিক মুহূর্ত আপনার বিকেলকে উজ্জ্বল করবে।",
-          "love": "মাঝামাঝি একটি বোঝাপড়া যেকোনো যৌথ পরিকল্পনায় অনায়াসে শান্তি আনবে।",
-          "career": "কূটনৈতিক যোগাযোগ একটি ছোট সময়সূচী বিভ্রান্তি দূর করতে সাহায্য করবে।",
-          "health": "মৃদু শ্বাস-প্রশ্বাসের ব্যায়াম আপনার কাঁধের টান কমাতে পারে।"
+          "color": "গোলাপি",
+          "summary": "আজ ভারসাম্য আর স্নিগ্ধতার সঙ্গে সিদ্ধান্তগুলো সহজেই নিতে পারবেন। মন ভালো রাখতে ছোট ছোট মুহূর্তগুলোর মাঝে সৌন্দর্য খুঁজে নিন।",
+          "love": "আন্তরিক একটি প্রশংসা মিষ্টি ও সহজ আলাপের সূচনা করবে।",
+          "career": "ন্যায্য সমঝোতার মাধ্যমে সময়ের সূচি নিয়ে ছোটখাটো ঝামেলা সহজেই মিটে যাবে।",
+          "health": "ধীরে ও গভীরভাবে শ্বাস-প্রশ্বাসের ব্যায়াম করলে মনের শান্তি বজায় থাকবে।"
         },
         "or": {
           "name": "ତୁଳା",
           "color": "ଗୋଲାପୀ",
-          "summary": "ନିରପେକ୍ଷ ଓ ନମ୍ର ଭାବରେ ନିଷ୍ପତ୍ତି ନେଲେ ସହଜରେ ଶାନ୍ତି ଓ ତାଳମେଳ ବଜାୟ ରହିବ। ଅପରାହ୍ଣରେ ଲୋକଙ୍କ ସହ ଏକ ସୁନ୍ଦର ମୁହୂର୍ତ୍ତ ଆପଣଙ୍କ ଦିନକୁ ଖୁସି କରିବ।",
-          "love": "ଉଭୟଙ୍କ ସୁବିଧା ଦେଖି ନିଷ୍ପତ୍ତି ନେଲେ ମିଳିତ ଯୋଜନାରେ ସହଜରେ ଶାନ୍ତି ରହିବ।",
-          "career": "ବୁଦ୍ଧିମତ୍ତାର ସହ କଥାବାର୍ତ୍ତା କଲେ ସମୟ ସୂଚୀରେ ହୋଇଥିବା ଛୋଟ ଅସୁବିଧା ଦୂର ହୋଇଯିବ।",
-          "health": "ଧୀରେ ଧୀରେ ନିଃଶ୍ୱାସ ପ୍ରଶ୍ୱାସ ନେବା ବ୍ୟାୟାମ କଲେ କାନ୍ଧର ଚାପ କମିଯିବ।"
+          "summary": "ଆଜି ସନ୍ତୁଳନ ଏବଂ କୃପା ଆପଣଙ୍କୁ ପସନ୍ଦଗୁଡ଼ିକୁ ସହଜରେ ପରିଚାଳନା କରିବାରେ ସାହାଯ୍ୟ କରିବ। ଆପଣଙ୍କ ମନୋବଳକୁ ଉଚ୍ଚ ରଖିବା ପାଇଁ ଛୋଟ ଛୋଟ ମୁହୂର୍ତ୍ତରେ ସୌନ୍ଦର୍ଯ୍ୟ ଖୋଜନ୍ତୁ।",
+          "love": "ଏକ ଚିନ୍ତାଶୀଳ ପ୍ରଶଂସା ଏକ ମଧୁର ଏବଂ ସହଜ ବାର୍ତ୍ତାଳାପ ସୃଷ୍ଟି କରିବ।",
+          "career": "ନିରପେକ୍ଷ ବୁଝାମଣା ଏକ ସାମାନ୍ୟ କାର୍ଯ୍ୟସୂଚୀ ଗଡ଼ବଡ଼କୁ ଅକ୍ଳାନ୍ତରେ ସମାଧାନ କରିବ।",
+          "health": "ଧୀର, ଗଭୀର ନିଶ୍ୱାସ ପ୍ରଶ୍ୱାସ ବ୍ୟାୟାମ ଆପଣଙ୍କ ଆଭ୍ୟନ୍ତରୀଣ ଶାନ୍ତି ବଜାୟ ରଖିବାରେ ସାହାଯ୍ୟ କରିବ।"
         }
       }
     },
@@ -321,44 +321,44 @@
       "name": "Scorpio",
       "hindi": "वृश्चिक",
       "symbol": "Scorpion",
-      "luckyColor": "Orange",
-      "luckyNumber": 9,
-      "summary": "Quiet determination allows you to make meaningful headway behind the scenes. Trust your steady focus while keeping your plans simple.",
-      "love": "Honest, calm conversation deepens understanding between you and a partner.",
-      "career": "Diving deep into research uncovers a useful solution for a task.",
-      "health": "Unplugging early tonight supports deeper, more restful sleep.",
+      "luckyColor": "Brown",
+      "luckyNumber": 8,
+      "summary": "Quiet determination helps you finish something meaningful today. Keep your focus grounded and trust your calm intuition.",
+      "love": "Honest, gentle words deepen understanding with someone close.",
+      "career": "Focused review reveals a useful detail that others overlooked.",
+      "health": "Taking quiet time alone recharges your emotional battery.",
       "i18n": {
         "en": {
           "name": "Scorpio",
-          "color": "Orange",
-          "summary": "Quiet determination allows you to make meaningful headway behind the scenes. Trust your steady focus while keeping your plans simple.",
-          "love": "Honest, calm conversation deepens understanding between you and a partner.",
-          "career": "Diving deep into research uncovers a useful solution for a task.",
-          "health": "Unplugging early tonight supports deeper, more restful sleep."
+          "color": "Brown",
+          "summary": "Quiet determination helps you finish something meaningful today. Keep your focus grounded and trust your calm intuition.",
+          "love": "Honest, gentle words deepen understanding with someone close.",
+          "career": "Focused review reveals a useful detail that others overlooked.",
+          "health": "Taking quiet time alone recharges your emotional battery."
         },
         "hi": {
           "name": "वृश्चिक",
-          "color": "नारंगी",
-          "summary": "आपका शांत और पक्का इरादा आपको परदे के पीछे से ज़रूरी कामों में अच्छी तरक्की दिलाएगा। अपनी योजनाओं को सरल रखते हुए अपनी एकाग्रता पर भरोसा रखें।",
-          "love": "सच्ची और शांत बातचीत से आपके और आपके साथी के बीच समझ और गहरी होगी।",
-          "career": "किसी विषय की गहराई से जांच करने पर आपको अपने काम के लिए एक उपयोगी समाधान मिल जाएगा।",
-          "health": "आज रात जल्दी फ़ोन और स्क्रीन से दूर रहने से आपको गहरी और सुकून भरी नींद आएगी।"
+          "color": "भूरा",
+          "summary": "आपका शांत और पक्का इरादा आज किसी खास काम को पूरा करने में मदद करेगा। अपना ध्यान स्थिर रखें और अपनी शांत अंतरात्मा पर भरोसा करें।",
+          "love": "ईमानदार और नरम शब्द किसी करीबी के साथ आपकी समझ को और गहरा करेंगे।",
+          "career": "ध्यान से जांच करने पर एक ऐसी काम की बात सामने आएगी जिस पर दूसरों का ध्यान नहीं गया।",
+          "health": "अकेले में थोड़ा शांत समय बिताने से आपका मन फिर से तरोताज़ा हो जाएगा।"
         },
         "bn": {
           "name": "বৃশ্চিক",
-          "color": "কমলা",
-          "summary": "নীরব সংকল্প আপনাকে পর্দার আড়ালে অর্থপূর্ণ অগ্রগতি করতে সাহায্য করবে। আপনার পরিকল্পনাগুলো সহজ রেখে আপনার স্থির মনোযোগের উপর বিশ্বাস রাখুন।",
-          "love": "সৎ, শান্ত কথোপকথন আপনার এবং সঙ্গীর মধ্যে বোঝাপড়াকে গভীর করবে।",
-          "career": "গবেষণায় গভীরভাবে ডুব দিলে একটি কাজের জন্য একটি কার্যকর সমাধান বেরিয়ে আসবে।",
-          "health": "আজ রাতে তাড়াতাড়ি ইলেকট্রনিক্স থেকে বিচ্ছিন্ন হওয়া গভীর, আরও restful ঘুমকে সমর্থন করবে।"
+          "color": "বাদামি",
+          "summary": "নীরব দৃঢ়তার সঙ্গে আজ অর্থবহ কোনো কাজ শেষ করতে পারবেন। স্থির হয়ে কাজে মন দিন এবং নিজের শান্ত অনুভূতির ওপর ভরসা রাখুন।",
+          "love": "সৎ ও নরম কথায় কাছের মানুষের সঙ্গে বোঝাপড়া আরও গভীর হবে।",
+          "career": "মনোযোগ দিয়ে খতিয়ে দেখলে এমন একটি দরকারি তথ্য পাবেন, যা অন্যদের চোখ এড়িয়ে গেছে।",
+          "health": "নিরিবিলিতে কিছুটা সময় একা কাটালে মানসিক ক্লান্তি দূর হয়ে মন সতেজ হবে।"
         },
         "or": {
           "name": "ବୃଶ୍ଚିକ",
-          "color": "କମଳା",
-          "summary": "ଶାନ୍ତ ଦୃଢ଼ତା ଆପଣଙ୍କୁ ପରଦା ପଛରେ ରହି ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଅଗ୍ରଗତି କରିବାରେ ସାହାଯ୍ୟ କରିବ। ନିଜ ଯୋଜନାକୁ ସରଳ ରଖି ସ୍ଥିର ମନ ଉପରେ ଭରସା ରଖନ୍ତୁ।",
-          "love": "ସଚ୍ଚୋଟ ଓ ଶାନ୍ତ କଥାବାର୍ତ୍ତା ଆପଣ ଓ ଆପଣଙ୍କ ସାଥୀଙ୍କ ମଧ୍ୟରେ ବୁଝାମଣାକୁ ଆହୁରି ଗଭୀର କରିବ।",
-          "career": "କୌଣସି ବିଷୟକୁ ଗଭୀର ଭାବେ ଅନୁଧ୍ୟାନ କଲେ ଏକ କାମର ଭଲ ସମାଧାନ ବାହାରିବ।",
-          "health": "ଆଜି ରାତିରେ ଶୀଘ୍ର ଫୋନ୍ ଓ ଟିଭି ବନ୍ଦ କଲେ ଗଭୀର ଓ ଆରାମଦାୟକ ନିଦ ହେବ।"
+          "color": "ବାଦାମୀ",
+          "summary": "ଆଜି ନୀରବ ଦୃଢ଼ତା ଆପଣଙ୍କୁ କିଛି ମହତ୍ତ୍ୱପୂର୍ଣ୍ଣ କାର୍ଯ୍ୟ ଶେଷ କରିବାରେ ସାହାଯ୍ୟ କରିବ। ଆପଣଙ୍କ ଧ୍ୟାନକୁ ଭୂମିରେ ରଖନ୍ତୁ ଏବଂ ଆପଣଙ୍କ ଶାନ୍ତ ଅନ୍ତର୍ଜ୍ଞାନ ଉପରେ ବିଶ୍ୱାସ କରନ୍ତୁ।",
+          "love": "ସଚ୍ଚୋଟ, କୋମଳ ଶବ୍ଦ ନିକଟତର କାହା ସହିତ ବୁଝାମଣାକୁ ଗଭୀର କରିବ।",
+          "career": "କେନ୍ଦ୍ରିତ ସମୀକ୍ଷା ଏକ ଉପଯୋଗୀ ବିବରଣୀ ପ୍ରକାଶ କରିବ ଯାହା ଅନ୍ୟମାନେ ଅଣଦେଖା କରିଥିଲେ।",
+          "health": "ଏକାକୀ ନୀରବ ସମୟ ନେବା ଆପଣଙ୍କ ଭାବନାତ୍ମକ ଶକ୍ତିକୁ ପୁନର୍ଭରଣ କରିବ।"
         }
       }
     },
@@ -367,43 +367,43 @@
       "hindi": "धनु",
       "symbol": "Archer",
       "luckyColor": "Purple",
-      "luckyNumber": 8,
-      "summary": "An optimistic outlook helps you see promising possibilities in everyday routines. Learning something new brings a welcome burst of inspiration.",
-      "love": "Planning a fun outing together brings fresh excitement to your bond.",
-      "career": "Your big-picture thinking encourages colleagues to stay hopeful.",
-      "health": "Spending time in fresh air keeps your spirits high and active.",
+      "luckyNumber": 9,
+      "summary": "An optimistic outlook turns minor detours into pleasant surprises. Stay open to learning something interesting from a casual chat.",
+      "love": "Planning a fun future outing brings shared excitement.",
+      "career": "Exploring a fresh perspective improves your approach to routine work.",
+      "health": "Getting plenty of fresh air lifts your mood and vitality.",
       "i18n": {
         "en": {
           "name": "Sagittarius",
           "color": "Purple",
-          "summary": "An optimistic outlook helps you see promising possibilities in everyday routines. Learning something new brings a welcome burst of inspiration.",
-          "love": "Planning a fun outing together brings fresh excitement to your bond.",
-          "career": "Your big-picture thinking encourages colleagues to stay hopeful.",
-          "health": "Spending time in fresh air keeps your spirits high and active."
+          "summary": "An optimistic outlook turns minor detours into pleasant surprises. Stay open to learning something interesting from a casual chat.",
+          "love": "Planning a fun future outing brings shared excitement.",
+          "career": "Exploring a fresh perspective improves your approach to routine work.",
+          "health": "Getting plenty of fresh air lifts your mood and vitality."
         },
         "hi": {
           "name": "धनु",
           "color": "बैंगनी",
-          "summary": "सकारात्मक नज़रिया आपको रोज़मर्रा के कामों में भी नई उम्मीदें दिखाएगा। कुछ नया सीखने से आपको एक ताज़ा और अच्छी प्रेरणा मिलेगी।",
-          "love": "साथ मिलकर कहीं घूमने की योजना बनाने से आपके रिश्ते में नया उत्साह आएगा।",
-          "career": "आपकी दूर की सोच साथ काम करने वालों को भी उम्मीद बनाए रखने के लिए प्रेरित करेगी।",
-          "health": "ताज़ी हवा में समय बिताने से आपका मन खुश और शरीर सक्रिय रहेगा।"
+          "summary": "सकारात्मक सोच छोटी रुकावटों को भी सुखद अनुभव में बदल देगी। किसी आम बातचीत से भी कुछ दिलचस्प सीखने के लिए तैयार रहें।",
+          "love": "आगे कहीं घूमने की मज़ेदार योजना बनाने से साथ में उत्साह बढ़ेगा।",
+          "career": "नए नज़रिए से सोचने पर रोज़मर्रा के काम करने का आपका तरीका बेहतर होगा।",
+          "health": "ताज़ी हवा में समय बिताने से आपका मूड अच्छा होगा और स्फूर्ति बढ़ेगी।"
         },
         "bn": {
           "name": "ধনু",
           "color": "বেগুনি",
-          "summary": "একটি আশাবাদী দৃষ্টিভঙ্গি আপনাকে দৈনন্দিন রুটিনে আশাব্যঞ্জক সম্ভাবনা দেখতে সাহায্য করবে। নতুন কিছু শেখা অনুপ্রেরণার এক স্বাগতপূর্ণ স্ফুরণ নিয়ে আসবে।",
-          "love": "একসাথে একটি মজার ভ্রমণের পরিকল্পনা আপনার সম্পর্কে নতুন উত্তেজনা আনবে।",
-          "career": "আপনার সামগ্রিক চিন্তাভাবনা সহকর্মীদের আশাবাদী থাকতে উৎসাহিত করবে।",
-          "health": "তাজা বাতাসে সময় কাটানো আপনার মনকে সতেজ ও সক্রিয় রাখবে।"
+          "summary": "ইতিবাচক দৃষ্টিভঙ্গি ছোটখাটো পরিবর্তনকেও আনন্দদায়ক অভিজ্ঞতায় বদলে দেবে। সাধারণ কথাবার্তা থেকে মজার কিছু শেখার জন্য মন খোলা রাখুন।",
+          "love": "সামনে একসঙ্গে ঘুরতে যাওয়ার পরিকল্পনা করলে দুজনের মধ্যেই আনন্দ ও উৎসাহ বাড়বে।",
+          "career": "নতুন দৃষ্টিভঙ্গি নিয়ে দেখলে প্রতিদিনের একঘেয়ে কাজ আরও ভালোভাবে করতে পারবেন।",
+          "health": "খোলা ও নির্মল বাতাসে থাকলে মন ভালো থাকবে এবং প্রাণশক্তি বাড়বে।"
         },
         "or": {
           "name": "ଧନୁ",
           "color": "ବାଇଗଣୀ",
-          "summary": "ସକାରାତ୍ମକ ଚିନ୍ତାଧାରା ଦୈନନ୍ଦିନ କାମରେ ନୂଆ ସମ୍ଭାବନା ଦେଖିବାରେ ସାହାଯ୍ୟ କରିବ। କିଛି ନୂଆ ଶିଖିବା ଦ୍ୱାରା ମନରେ ନୂଆ ପ୍ରେରଣା ଜାଗିବ।",
-          "love": "ଏକସାଥିରେ ବାହାରକୁ ବୁଲିଯିବାର ଯୋଜନା କଲେ ସମ୍ପର୍କରେ ନୂଆ ଉତ୍ସାହ ଆସିବ।",
-          "career": "ଆପଣଙ୍କ ଦୂରଦୃଷ୍ଟି ସହକର୍ମୀମାନଙ୍କୁ ଆଶାବାଦୀ ରହିବାକୁ ଉତ୍ସାହିତ କରିବ।",
-          "health": "ଖୋଲା ଓ ସତେଜ ପବନରେ କିଛି ସମୟ ବିତାଇଲେ ମନ ଖୁସି ଓ ସକ୍ରିୟ ରହିବ।"
+          "summary": "ଏକ ଆଶାବାଦୀ ଦୃଷ୍ଟିକୋଣ ସାମାନ୍ୟ ବିଚ୍ୟୁତିକୁ ସୁଖଦ ଆଶ୍ଚର୍ଯ୍ୟରେ ପରିଣତ କରିବ। ଏକ ସାଧାରଣ କଥାବାର୍ତ୍ତାରୁ କିଛି ମଜାଦାର ଶିଖିବା ପାଇଁ ଖୋଲା ରୁହନ୍ତୁ।",
+          "love": "ଭବିଷ୍ୟତରେ ଏକ ମଜାଦାର ଭ୍ରମଣ ଯୋଜନା କରିବା ଅଂଶୀଦାର ଉତ୍ସାହ ଆଣିବ।",
+          "career": "ଏକ ନୂତନ ଦୃଷ୍ଟିକୋଣ ଅନୁସନ୍ଧାନ କରିବା ଆପଣଙ୍କର ନିତିଦିନିଆ କାର୍ଯ୍ୟ ପ୍ରତି ଆଭିମୁଖ୍ୟକୁ ଉନ୍ନତ କରିବ।",
+          "health": "ପ୍ରଚୁର ସତେଜ ବାୟୁ ପାଇବା ଆପଣଙ୍କ ମନୋଭାବ ଏବଂ ଜୀବନଶକ୍ତି ବଢ଼ାଇବ।"
         }
       }
     },
@@ -411,44 +411,44 @@
       "name": "Capricorn",
       "hindi": "मकर",
       "symbol": "Goat",
-      "luckyColor": "Brown",
+      "luckyColor": "Gray",
       "luckyNumber": 4,
-      "summary": "Practical steps bring satisfying structure to your goals today. Keep your expectations realistic so you can enjoy your steady pace.",
-      "love": "Consistent kindness builds lasting warmth with those you love.",
-      "career": "Checking off foundational tasks clears the way for smoother days ahead.",
-      "health": "Remember to stand and stretch regularly during long periods of sitting.",
+      "summary": "Patience and steady pacing reward your efforts today. Focus on one priority at a time for peaceful productivity.",
+      "love": "Your reliable presence speaks louder than grand gestures tonight.",
+      "career": "Reviewing your upcoming goals keeps you comfortably on track.",
+      "health": "Mindful posture and short breaks keep afternoon fatigue away.",
       "i18n": {
         "en": {
           "name": "Capricorn",
-          "color": "Brown",
-          "summary": "Practical steps bring satisfying structure to your goals today. Keep your expectations realistic so you can enjoy your steady pace.",
-          "love": "Consistent kindness builds lasting warmth with those you love.",
-          "career": "Checking off foundational tasks clears the way for smoother days ahead.",
-          "health": "Remember to stand and stretch regularly during long periods of sitting."
+          "color": "Gray",
+          "summary": "Patience and steady pacing reward your efforts today. Focus on one priority at a time for peaceful productivity.",
+          "love": "Your reliable presence speaks louder than grand gestures tonight.",
+          "career": "Reviewing your upcoming goals keeps you comfortably on track.",
+          "health": "Mindful posture and short breaks keep afternoon fatigue away."
         },
         "hi": {
           "name": "मकर",
-          "color": "भूरा",
-          "summary": "आज व्यावहारिक कदम उठाने से आपके लक्ष्यों को एक संतोषजनक दिशा मिलेगी। अपनी उम्मीदें हकीकत के करीब रखें ताकि आप अपनी स्थिर रफ़्तार का आनंद ले सकें।",
-          "love": "लगातार दिखाया गया स्नेह और अच्छा व्यवहार आपके अपनों के साथ रिश्ते में हमेशा के लिए अपनापन बनाए रखेगा।",
-          "career": "बुनियादी कामों को पूरा कर लेने से आने वाले दिनों में काम करना और आसान हो जाएगा।",
-          "health": "लंबे समय तक बैठे रहने के दौरान बीच-बीच में उठकर थोड़ा स्ट्रेच करना याद रखें।"
+          "color": "सलेटी",
+          "summary": "धैर्य और संतुलित गति आज आपकी मेहनत का अच्छा फल देंगे। शांति से काम पूरा करने के लिए एक समय में एक ही ज़रूरी काम पर ध्यान दें।",
+          "love": "आज रात बड़े दिखावे से ज़्यादा आपका भरोसेमंद साथ मायने रखेगा।",
+          "career": "आने वाले लक्ष्यों पर एक नज़र डालने से आप आसानी से सही राह पर बने रहेंगे।",
+          "health": "सही ढंग से बैठने और छोटे-छोटे ब्रेक लेने से दोपहर की थकान दूर रहेगी।"
         },
         "bn": {
           "name": "মকর",
-          "color": "বাদামী",
-          "summary": "ব্যবহারিক পদক্ষেপগুলো আজ আপনার লক্ষ্যগুলোকে একটি সন্তোষজনক কাঠামো দেবে। আপনার প্রত্যাশা বাস্তবসম্মত রাখুন যাতে আপনি আপনার স্থির গতি উপভোগ করতে পারেন।",
-          "love": "ধারাবাহিক দয়া আপনার প্রিয়জনদের সাথে দীর্ঘস্থায়ী উষ্ণতা তৈরি করবে।",
-          "career": "মৌলিক কাজগুলো সম্পন্ন করা আগামী দিনের জন্য পথ সুগম করবে।",
-          "health": "দীর্ঘক্ষণ বসে থাকার সময় নিয়মিত দাঁড়াতে এবং স্ট্রেচ করতে ভুলবেন না।"
+          "color": "ধূসর",
+          "summary": "আজ ধৈর্য আর স্থির গতিতে কাজ করলে ভালো ফল পাবেন। শান্তভাবে ভালো কাজ করতে একবারে একটি জরুরি বিষয়ে মনোযোগ দিন।",
+          "love": "আজ রাতে বড় কোনো আয়োজনের চেয়ে আপনার নির্ভরযোগ্য উপস্থিতিই বেশি গুরুত্ব পাবে।",
+          "career": "সামনের লক্ষ্যগুলো একবার ঝালিয়ে নিলে আপনি সঠিক পথেই এগিয়ে যেতে পারবেন।",
+          "health": "সঠিকভাবে বসা এবং কাজের ফাঁকে ছোট বিরতি নিলে বিকেলের ক্লান্তি দূরে থাকবে।"
         },
         "or": {
           "name": "ମକର",
-          "color": "ବାଦାମୀ",
-          "summary": "ବାସ୍ତବବାଦୀ ପଦକ୍ଷେପ ଆଜି ଆପଣଙ୍କ ଲକ୍ଷ୍ୟକୁ ସୁନ୍ଦର ରୂପ ଦେବ। ନିଜ ଆଶାକୁ ବାସ୍ତବ ସମ୍ମତ ରଖନ୍ତୁ, ଯେପରି ଆପଣ ନିଜ ସ୍ଥିର ଗତିକୁ ଉପଭୋଗ କରିପାରିବେ।",
-          "love": "ନିରନ୍ତର ଦୟା ଓ ସ୍ନେହ ଆପଣଙ୍କ ପ୍ରିୟଜନଙ୍କ ସହ ସମ୍ପର୍କରେ ଚିରସ୍ଥାୟୀ ମଧୁରତା ଆଣିବ।",
-          "career": "ମୂଳ ଓ ଜରୁରୀ କାମଗୁଡ଼ିକୁ ଶେଷ କରିଦେଲେ ଆଗାମୀ ଦିନଗୁଡ଼ିକ ସହଜ ହୋଇଯିବ।",
-          "health": "ଅଧିକ ସମୟ ବସି କାମ କଲେ ମଝିରେ ମଝିରେ ଠିଆ ହୋଇ ହାତଗୋଡ଼ ଟାଣିବାକୁ ମନେରଖନ୍ତୁ।"
+          "color": "ଧୂସର",
+          "summary": "ଆଜି ଧୈର୍ଯ୍ୟ ଏବଂ ସ୍ଥିର ଗତି ଆପଣଙ୍କ ପ୍ରୟାସକୁ ପୁରସ୍କୃତ କରିବ। ଶାନ୍ତିପୂର୍ଣ୍ଣ ଉତ୍ପାଦକତା ପାଇଁ ଗୋଟିଏ ସମୟରେ ଗୋଟିଏ ପ୍ରାଥମିକତା ଉପରେ ଧ୍ୟାନ ଦିଅନ୍ତୁ।",
+          "love": "ଆଜି ରାତିରେ ଆପଣଙ୍କ ବିଶ୍ୱାସଯୋଗ୍ୟ ଉପସ୍ଥିତି ବଡ଼ ଅଙ୍ଗଭଙ୍ଗୀ ଅପେକ୍ଷା ଅଧିକ କଥା କହିବ।",
+          "career": "ଆପଣଙ୍କ ଆଗାମୀ ଲକ୍ଷ୍ୟଗୁଡ଼ିକୁ ସମୀକ୍ଷା କରିବା ଆପଣଙ୍କୁ ଆରାମଦାୟକ ଭାବରେ ଠିକ୍ ରାସ୍ତାରେ ରଖିବ।",
+          "health": "ସଚେତନ ମୁଦ୍ରା ଏବଂ ସ୍ୱଳ୍ପ ବିରତି ଅପରାହ୍ନର କ୍ଳାନ୍ତିକୁ ଦୂରରେ ରଖିବ।"
         }
       }
     },
@@ -458,42 +458,42 @@
       "symbol": "Water Bearer",
       "luckyColor": "Silver",
       "luckyNumber": 7,
-      "summary": "Original ideas flow easily when you step back from the usual routine. Connecting with a friend or group brings helpful encouragement.",
-      "love": "Respecting each other's independence strengthens your closeness today.",
-      "career": "Brainstorming outside the box leads to an inventive workflow tweak.",
-      "health": "Trying a soothing herbal tea or mindful pause refreshes your focus.",
+      "summary": "Original thinking brings a refreshing twist to your routine. Share your friendly spirit with neighbors or community members.",
+      "love": "Respecting personal space creates a supportive, easy rhythm.",
+      "career": "Trying a new organizational method saves you valuable time.",
+      "health": "Stepping away from notifications for an hour brings welcome peace.",
       "i18n": {
         "en": {
           "name": "Aquarius",
           "color": "Silver",
-          "summary": "Original ideas flow easily when you step back from the usual routine. Connecting with a friend or group brings helpful encouragement.",
-          "love": "Respecting each other's independence strengthens your closeness today.",
-          "career": "Brainstorming outside the box leads to an inventive workflow tweak.",
-          "health": "Trying a soothing herbal tea or mindful pause refreshes your focus."
+          "summary": "Original thinking brings a refreshing twist to your routine. Share your friendly spirit with neighbors or community members.",
+          "love": "Respecting personal space creates a supportive, easy rhythm.",
+          "career": "Trying a new organizational method saves you valuable time.",
+          "health": "Stepping away from notifications for an hour brings welcome peace."
         },
         "hi": {
           "name": "कुंभ",
-          "color": "रुपहला",
-          "summary": "जब आप रोज़ के ढर्रे से थोड़ा हटकर सोचते हैं, तो नए और अनोखे विचार आसानी से आते हैं। किसी दोस्त या समूह से जुड़ने पर आपको अच्छा हौसला मिलेगा।",
-          "love": "आज एक-दूसरे की आज़ादी का सम्मान करने से आप दोनों के बीच की नज़दीकियाँ और बढ़ेंगी।",
-          "career": "लीक से हटकर सोचने से काम करने के तरीके में एक नया और बेहतर बदलाव आएगा।",
-          "health": "हर्बल चाय पीने या थोड़ी देर शांत बैठकर खुद पर ध्यान देने से आपकी एकाग्रता फिर से ताज़ा हो जाएगी।"
+          "color": "सिल्वर",
+          "summary": "आपकी नई सोच रोज़मर्रा के कामों में ताज़गी लाएगी। पड़ोसियों या आसपास के लोगों के साथ अपना मिलनसार व्यवहार साझा करें।",
+          "love": "एक-दूसरे के निजी दायरे का सम्मान करने से रिश्ते में सहजता और सहयोग बना रहेगा।",
+          "career": "काम व्यवस्थित करने का कोई नया तरीका अपनाने से आपका कीमती समय बचेगा।",
+          "health": "एक घंटे के लिए फोन के नोटिफिकेशन से दूर रहने पर मन को सुकून मिलेगा।"
         },
         "bn": {
           "name": "কুম্ভ",
-          "color": "রূপালী",
-          "summary": "যখন আপনি স্বাভাবিক রুটিন থেকে সরে আসেন, তখন মৌলিক ধারণাগুলো সহজে প্রবাহিত হয়। একজন বন্ধু বা দলের সাথে সংযোগ সহায়ক উৎসাহ নিয়ে আসবে।",
-          "love": "আজ একে অপরের স্বাধীনতাকে সম্মান জানানো আপনার ঘনিষ্ঠতা বাড়াবে।",
-          "career": "প্রচলিত ধারণার বাইরে গিয়ে চিন্তা-ভাবনা একটি উদ্ভাবনী কর্মপ্রবাহের উন্নতি ঘটাবে।",
-          "health": "একটি প্রশান্তিদায়ক ভেষজ চা বা মননশীল বিরতি আপনার মনোযোগকে সতেজ করবে।"
+          "color": "রুপালি",
+          "summary": "মৌলিক চিন্তাভাবনা আপনার প্রতিদিনের রুটিনে নতুনত্ব নিয়ে আসবে। প্রতিবেশী বা আশপাশের মানুষদের সঙ্গে আপনার বন্ধুত্বপূর্ণ মনোভাব ভাগ করে নিন।",
+          "love": "একে অপরের ব্যক্তিগত জায়গাকে সম্মান দিলে সম্পর্ক সহজ ও সহযোগিতাপূর্ণ থাকে।",
+          "career": "কাজ গোছানোর নতুন কোনো পদ্ধতি চেষ্টা করলে আপনার অনেক মূল্যবান সময় বাঁচবে।",
+          "health": "এক ঘণ্টার জন্য ফোনের নোটিফিকেশন থেকে দূরে থাকলে মনে দারুণ শান্তি পাবেন।"
         },
         "or": {
           "name": "କୁମ୍ଭ",
-          "color": "ରୂପେଲି",
-          "summary": "ସାଧାରଣ ନିୟମିତ କାମରୁ ଟିକେ ହଟି ଭାବିଲେ ସହଜରେ ନୂଆ ଓ ମୌଳିକ ଚିନ୍ତାଧାରା ଆସିବ। କୌଣସି ବନ୍ଧୁ ବା ଗୋଷ୍ଠୀ ସହ ଯୋଡ଼ି ହେଲେ ଉପକାରୀ ଉତ୍ସାହ ମିଳିବ।",
-          "love": "ଆଜି ପରସ୍ପରର ସ୍ୱାଧୀନତାକୁ ସମ୍ମାନ ଦେଲେ ଆପଣଙ୍କ ଘନିଷ୍ଠତା ଆହୁରି ବଢ଼ିବ।",
-          "career": "ଭିନ୍ନ ଧରଣର ଚିନ୍ତା କରିବା ଦ୍ୱାରା କାମ କରିବାର ପ୍ରଣାଳୀରେ ଏକ ନୂଆ ଓ ଭଲ ପରିବର୍ତ୍ତନ ଆସିବ।",
-          "health": "ଆରାମଦାୟକ ହର୍ବାଲ୍ ଚା ପିଇବା ବା ମନକୁ ଶାନ୍ତ କରି କିଛି ସମୟ ବିରତି ନେଲେ ଆପଣଙ୍କ ଏକାଗ୍ରତା ସତେଜ ହେବ।"
+          "color": "ରୂପା",
+          "summary": "ମୂଳ ଚିନ୍ତାଧାରା ଆପଣଙ୍କ ନିତିଦିନିଆ କାର୍ଯ୍ୟରେ ଏକ ସତେଜ ପରିବର୍ତ୍ତନ ଆଣିବ। ଆପଣଙ୍କ ବନ୍ଧୁତ୍ୱପୂର୍ଣ୍ଣ ଭାବନା ପଡ଼ୋଶୀ କିମ୍ବା ସମ୍ପ୍ରଦାୟର ସଦସ୍ୟମାନଙ୍କ ସହିତ ବାଣ୍ଟନ୍ତୁ।",
+          "love": "ବ୍ୟକ୍ତିଗତ ସ୍ଥାନକୁ ସମ୍ମାନ ଦେବା ଏକ ସହାୟକ, ସହଜ ତାଳମେଳ ସୃଷ୍ଟି କରିବ।",
+          "career": "ଏକ ନୂତନ ସାଙ୍ଗଠନିକ ପଦ୍ଧତି ଚେଷ୍ଟା କରିବା ଆପଣଙ୍କର ମୂଲ୍ୟବାନ ସମୟ ସଞ୍ଚୟ କରିବ।",
+          "health": "ଏକ ଘଣ୍ଟା ପାଇଁ ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକରୁ ଦୂରେଇ ରହିବା ସ୍ୱାଗତଯୋଗ୍ୟ ଶାନ୍ତି ଆଣିବ।"
         }
       }
     },
@@ -501,44 +501,44 @@
       "name": "Pisces",
       "hindi": "मीन",
       "symbol": "Fish",
-      "luckyColor": "Teal",
-      "luckyNumber": 2,
-      "summary": "Soft creativity and empathy color your interactions in a lovely way. Protect your quiet time so you do not take on extra worries.",
-      "love": "A kind, attentive ear brings comfort to someone dear to you.",
-      "career": "Blending imagination with a simple checklist keeps your work on track.",
-      "health": "Listening to calming music helps you unwind and recharge gently.",
+      "luckyColor": "Gold",
+      "luckyNumber": 3,
+      "summary": "Gentle imagination adds warmth to your everyday tasks today. Let empathy guide your interactions while protecting your own peace.",
+      "love": "A kind, heartfelt message leaves a lovely lasting impression.",
+      "career": "Creative problem-solving helps smooth over a tricky assignment.",
+      "health": "Soothing music or a warm cup of tea helps you unwind.",
       "i18n": {
         "en": {
           "name": "Pisces",
-          "color": "Teal",
-          "summary": "Soft creativity and empathy color your interactions in a lovely way. Protect your quiet time so you do not take on extra worries.",
-          "love": "A kind, attentive ear brings comfort to someone dear to you.",
-          "career": "Blending imagination with a simple checklist keeps your work on track.",
-          "health": "Listening to calming music helps you unwind and recharge gently."
+          "color": "Gold",
+          "summary": "Gentle imagination adds warmth to your everyday tasks today. Let empathy guide your interactions while protecting your own peace.",
+          "love": "A kind, heartfelt message leaves a lovely lasting impression.",
+          "career": "Creative problem-solving helps smooth over a tricky assignment.",
+          "health": "Soothing music or a warm cup of tea helps you unwind."
         },
         "hi": {
           "name": "मीन",
-          "color": "फ़ीरोज़ी",
-          "summary": "आपकी कोमल रचनात्मकता और दूसरों के प्रति हमदर्दी आज आपकी बातचीत को खूबसूरत बनाएगी। अपने शांत समय को बचाए रखें ताकि आप बेवजह की चिंताएं अपने सिर न लें।",
-          "love": "प्यार और ध्यान से किसी की बात सुनने से आपके किसी करीबी को बहुत सुकून मिलेगा।",
-          "career": "अपनी कल्पना को एक साधारण कार्य-सूची के साथ जोड़कर चलने से आपका काम सही दिशा में चलता रहेगा।",
-          "health": "शांत संगीत सुनने से आपका तनाव कम होगा और आप हल्का व तरोताज़ा महसूस करेंगे।"
+          "color": "सुनहरा",
+          "summary": "आज आपकी कोमल कल्पना रोज़मर्रा के कामों में अपनापन जोड़ेगी। अपनी शांति बनाए रखते हुए दूसरों से सहानुभूति के साथ व्यवहार करें।",
+          "love": "दिल से भेजा गया एक प्यारा संदेश सामने वाले पर गहरा और अच्छा असर छोड़ेगा।",
+          "career": "रचनात्मक सोच से किसी मुश्किल काम को आसानी से संभालने में मदद मिलेगी।",
+          "health": "मधुर संगीत या एक कप गर्म चाय आपको थकान मिटाने में मदद करेगी।"
         },
         "bn": {
           "name": "মীন",
-          "color": "নীল-সবুজ",
-          "summary": "মৃদু সৃজনশীলতা এবং সহানুভূতি আপনার মিথস্ক্রিয়াগুলিকে সুন্দরভাবে রঙিন করবে। আপনার শান্ত সময় রক্ষা করুন যাতে আপনি অতিরিক্ত উদ্বেগ গ্রহণ না করেন।",
-          "love": "একটি দয়ালু, মনোযোগী কান আপনার প্রিয় কারো জন্য স্বস্তি আনবে।",
-          "career": "কল্পনা ও একটি সাধারণ চেকলিস্টের মিশ্রণ আপনার কাজকে সঠিক পথে রাখবে।",
-          "health": "শান্ত সঙ্গীত শোনা আপনাকে ধীরে ধীরে বিশ্রাম নিতে এবং পুনরায় শক্তি জোগাতে সাহায্য করবে।"
+          "color": "সোনালি",
+          "summary": "আজ কোমল কল্পনাশক্তি আপনার প্রতিদিনের কাজে উষ্ণতা যোগাবে। নিজের মনের শান্তি বজায় রেখে সহানুভূতির সঙ্গে সবার সাথে মিশুন।",
+          "love": "আন্তরিক ও স্নেহময় একটি বার্তা মনে দীর্ঘস্থায়ী সুন্দর ছাপ রেখে যাবে।",
+          "career": "সৃজনশীল উপায়ে সমস্যার সমাধান করলে জটিল একটি কাজ সহজেই সামলে নিতে পারবেন।",
+          "health": "শান্ত কোনো গান বা এক কাপ গরম চা আপনাকে আরাম পেতে সাহায্য করবে।"
         },
         "or": {
           "name": "ମୀନ",
-          "color": "ନୀଳ-ସବୁଜ",
-          "summary": "ଆପଣଙ୍କ କୋମଳ ସୃଜନଶୀଳତା ଓ ସହାନୁଭୂତି ଲୋକଙ୍କ ସହ ମିଳାମିଶାକୁ ସୁନ୍ଦର କରିବ। ଅଯଥା ଚିନ୍ତାରୁ ଦୂରେଇ ରହିବା ପାଇଁ ନିଜର ଶାନ୍ତ ସମୟକୁ ବଞ୍ଚାଇ ରଖନ୍ତୁ।",
-          "love": "ସ୍ନେହ ଓ ଧ୍ୟାନର ସହ କଥା ଶୁଣିବା ଦ୍ୱାରା ଆପଣଙ୍କ ଜଣେ ପ୍ରିୟଜନଙ୍କୁ ଆଶ୍ୱସ୍ତି ମିଳିବ।",
-          "career": "କଳ୍ପନାଶକ୍ତି ସହ ଏକ ସରଳ କାମର ତାଲିକା ରଖିଲେ ଆପଣଙ୍କ କାମ ଠିକ୍ ବାଟରେ ଚାଲିବ।",
-          "health": "ଶାନ୍ତ ଓ ମଧୁର ସଙ୍ଗୀତ ଶୁଣିବା ଦ୍ୱାରା ମନ ହାଲୁକା ହେବ ଏବଂ ଶରୀରରେ ନୂଆ ଶକ୍ତି ଆସିବ।"
+          "color": "ସୁନା",
+          "summary": "ଆଜି କୋମଳ କଳ୍ପନା ଆପଣଙ୍କ ଦୈନନ୍ଦିନ କାର୍ଯ୍ୟରେ ଉଷ୍ମତା ଯୋଗ କରିବ। ଆପଣଙ୍କ ନିଜ ଶାନ୍ତି ରକ୍ଷା କରିବା ସହିତ ସହାନୁଭୂତି ଆପଣଙ୍କର ଆଦାନପ୍ରଦାନକୁ ମାର୍ଗଦର୍ଶନ କରୁ।",
+          "love": "ଏକ ଦୟାଳୁ, ହୃଦୟସ୍ପର୍ଶୀ ବାର୍ତ୍ତା ଏକ ସୁନ୍ଦର ସ୍ଥାୟୀ ପ୍ରଭାବ ଛାଡ଼ିବ।",
+          "career": "ସୃଜନଶୀଳ ସମସ୍ୟା ସମାଧାନ ଏକ ଜଟିଳ କାର୍ଯ୍ୟକୁ ସହଜ କରିବାରେ ସାହାଯ୍ୟ କରିବ।",
+          "health": "ଆରାମଦାୟକ ସଙ୍ଗୀତ କିମ୍ବା ଏକ ଗରମ କପ୍ ଚା ଆପଣଙ୍କୁ ଆରାମ ଦେବାରେ ସାହାଯ୍ୟ କରିବ।"
         }
       }
     }
